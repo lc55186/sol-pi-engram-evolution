@@ -219,18 +219,30 @@ class ContentTypeDetector:
 
         # 代码关键字检测
         code_keywords = [
-            'function', 'def ', 'class ', 'import ', 'from ',
-            'return ', 'if ', 'else', 'for ', 'while ',
-            'const ', 'let ', 'var ', '=>', 'async', 'await',
-            'console.log', 'print(', 'System.out',
-            'public ', 'private ', 'protected ', 'static ',
-            'void ', 'int ', 'string ', 'bool ', 'float ',
-            'echo ', '<?php', '?>', '<%', '%>',
+            ('function', 0.08), ('def ', 0.1), ('class ', 0.1),
+            ('import ', 0.08), ('from ', 0.06), ('return ', 0.08),
+            ('if ', 0.05), ('else', 0.04), ('for ', 0.05), ('while ', 0.05),
+            ('const ', 0.08), ('let ', 0.06), ('var ', 0.06), ('=>', 0.08),
+            ('async', 0.06), ('await', 0.06),
+            ('console.log', 0.1), ('print(', 0.08), ('System.out', 0.1),
+            ('public ', 0.08), ('private ', 0.08), ('protected ', 0.08),
+            ('static ', 0.06), ('void ', 0.08), ('int ', 0.06),
+            ('string ', 0.06), ('bool ', 0.06), ('float ', 0.06),
+            ('echo ', 0.08), ('<?php', 0.1), ('self.', 0.08),
+            ('__init__', 0.1),
         ]
-        for keyword in code_keywords:
+        matched_count = 0
+        for keyword, weight in code_keywords:
             if keyword in content:
                 reasons.append(f"代码关键字: {keyword}")
-                confidence += 0.05
+                confidence += weight
+                matched_count += 1
+
+        # 多个关键字组合加分（代码特征组合越强）
+        if matched_count >= 3:
+            confidence += 0.15
+        if matched_count >= 5:
+            confidence += 0.1
 
         # 代码块标记
         if re.search(r'```\w*', content):
@@ -262,10 +274,16 @@ class ContentTypeDetector:
         # 日志级别
         log_levels = ['ERROR', 'WARN', 'WARNING', 'INFO', 'DEBUG', 'FATAL', 'CRITICAL',
                       'error', 'warn', 'warning', 'info', 'debug', 'fatal', 'critical']
+        level_count = 0
         for level in log_levels:
             if re.search(rf'\b{level}\b', content):
                 reasons.append(f"日志级别: {level}")
                 confidence += 0.1
+                level_count += 1
+
+        # 多个不同日志级别出现（强日志特征）
+        if level_count >= 2:
+            confidence += 0.15
 
         # 时间戳模式
         timestamp_patterns = [
@@ -289,17 +307,16 @@ class ContentTypeDetector:
             reasons.append("日志级别后跟冒号")
             confidence += 0.1
 
-        # 多行日志
-        lines = content.split('\n')
-        if len(lines) > 5:
-            # 检查是否每行都有类似结构
+        # 多行日志结构化检测
+        lines = [l for l in content.split('\n') if l.strip()]
+        if len(lines) >= 3:
             structured_lines = 0
             for line in lines:
                 if re.search(r'(ERROR|WARN|INFO|DEBUG|\d{4}-\d{2}-\d{2}|\[)', line):
                     structured_lines += 1
-            if structured_lines > len(lines) * 0.5:
+            if structured_lines >= len(lines) * 0.5:
                 reasons.append("结构化日志")
-                confidence += 0.15
+                confidence += 0.2
 
         return TypeDetectionResult(
             content_type=ContentType.TYPE_LOG,
@@ -363,9 +380,20 @@ class ContentTypeDetector:
             reasons.append("自然语言标点")
             confidence += 0.1
 
+        # 如果内容包含大量代码特征关键字，降低文本置信度
+        code_indicators = ['def ', 'class ', 'function', 'const ', '=>', 'import ', '__init__']
+        code_hits = sum(1 for k in code_indicators if k in content)
+        if code_hits >= 2:
+            confidence -= 0.2
+        # 如果内容包含日志特征，降低文本置信度
+        log_indicators = ['ERROR', 'WARN', 'INFO', 'DEBUG']
+        log_hits = sum(1 for k in log_indicators if k in content)
+        if log_hits >= 2:
+            confidence -= 0.15
+
         return TypeDetectionResult(
             content_type=ContentType.TYPE_TEXT,
-            confidence=min(1.0, confidence),
+            confidence=max(0.1, min(1.0, confidence)),
             reasons=reasons
         )
 

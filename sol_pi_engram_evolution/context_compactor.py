@@ -52,8 +52,10 @@ def compact_context(context: dict[str, Any],
     evaluator = ValueEvaluator(store=store)
     scored_nodes = []
     for node in nodes:
-        score = evaluator.evaluate(node)
-        scored_nodes.append((node, score))
+        # node 可能是 dict 或 (dict, score) 元组
+        node_dict = node[0] if isinstance(node, tuple) else node
+        score = evaluator.evaluate(node_dict)
+        scored_nodes.append((node_dict, score))
     scored_nodes.sort(key=lambda x: x[1], reverse=True)
 
     # Step 2: ContextBudget 动态预算分配

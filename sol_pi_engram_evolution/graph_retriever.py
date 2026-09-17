@@ -31,19 +31,14 @@ class GraphRetriever:
         self._cache_hits = 0
         self._cache_misses = 0
 
-    def _query_hash(self, query: str) -> str:
-        """生成查询哈希，用于 O(1) 缓存查找"""
-        import hashlib
-        return hashlib.md5(query.lower().strip().encode()).hexdigest()[:12]
-
     def retrieve(self, query: str, top_k: int = 5,
                  min_score: float = 0.0) -> list[tuple[dict, float]]:
         """检索与查询相关的节点，返回 (节点字典, 相似度分数) 元组列表
         
         集成 Engram O(1) 查找 + 三信号融合检索
         """
-        # Step 1: Engram O(1) cache lookup
-        qhash = self._query_hash(query)
+        # Step 1: Engram O(1) cache lookup (include min_score in cache key)
+        qhash = self._query_hash(query, min_score)
         if qhash in self._engram_cache:
             self._cache_hits += 1
             cached = self._engram_cache[qhash]
@@ -76,6 +71,12 @@ class GraphRetriever:
         # Step 3: Cache the result (Engram O(1) write)
         self._engram_cache[qhash] = result
         return result
+
+    def _query_hash(self, query: str, min_score: float = 0.0) -> str:
+        """生成查询哈希，用于 O(1) 缓存查找"""
+        import hashlib
+        key = f"{query.lower().strip()}|ms={min_score}"
+        return hashlib.md5(key.encode()).hexdigest()[:12]
 
     def _entity_match(self, keywords: list[str]) -> list[tuple[dict, float]]:
         """Signal 2: 实体链接匹配（Mem0 v3 Entity Linking 风格）"""

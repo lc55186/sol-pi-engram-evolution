@@ -1,7 +1,8 @@
 {
   "category": "warning",
   "templates": [
-    "注意{topic}，因为{reason}（AI 分析，仅供参考）"
+    "注意{topic}，因为{reason}（AI 分析，仅供参考）",
+    "【重要】注意{topic}，因为{reason}"
   ],
-  "updated_at": "2026-09-17T01:15:42.105464"
+  "updated_at": "2026-09-17T14:40:45.693782"
 }

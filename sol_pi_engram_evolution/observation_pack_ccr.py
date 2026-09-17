@@ -54,7 +54,11 @@ class CCRCache:
         返回该条目的唯一 hash 标记
         """
         content_id = handle['content_id']
-        content_hash = handle['content_hash']
+        content_hash = handle.get('content_hash')
+        if not content_hash:
+            # 如果没有 content_hash，基于内容生成
+            content = handle.get('content', '')
+            content_hash = hashlib.sha256(content.encode()).hexdigest()[:32]
         content_type = handle.get('content_type', 'text')
         archived_at = handle.get('archived_at', datetime.now().isoformat())
         original_size = handle.get('original_size', 0)
@@ -189,6 +193,11 @@ class CCRCache:
                      request_content: str) -> bool:
         """检查归档内容是否与请求相关"""
         # 简单启发式：检查请求中的关键词是否在归档中出现
+        # 对于中文（无空格分隔），使用子串匹配
+        if any('\u4e00' <= c <= '\u9fff' for c in request_content):
+            # 中文场景：请求是归档的子串即认为相关
+            return request_content.lower() in archived_content.lower()
+        # 英文/混合场景：词重叠
         request_words = set(request_content.lower().split())
         archived_words = set(archived_content.lower().split())
         overlap = request_words & archived_words

@@ -1,0 +1,1 @@
+{"timestamp": "2026-09-17T06:48:54.748256+00:00", "level": "ERROR", "logger": "pipeline", "module": "logger", "function": "error", "line": 101, "message": "EngramMemory 初始化失败: 'NoneType' object has no attribute '__dict__'", "levelno": 40}

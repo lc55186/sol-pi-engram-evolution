@@ -66,10 +66,12 @@ class LLMConfig:
     fallback_api_key: str = ""
     fallback_api_base: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
-    # 分级模型
-    l1_model: str = "deepseek-chat"  # 轻量分类（便宜档）
-    l2_model: str = "deepseek-chat"  # 深度分析（均衡档）
+    # 分级模型（2026-09-17 更新：瑞芯微 Day-0 适配 Qwen3.8-27B + MiniCPM5-2B）
+    l1_model: str = "qwen3.8-27b"      # 轻量分类（便宜档，瑞芯微适配）
+    l2_model: str = "deepseek-chat"    # 深度分析（均衡档）
     post_session_model: str = "deepseek-chat"  # 会后纪要（强模型）
+    # 端侧模型（RK1860+）
+    ondevice_model: str = "minicpm5-2b"  # 瑞芯微 Day-0 适配，轻量实时
 
     # 定价（元/百万token）
     l1_input_price: float = 1.0
@@ -225,6 +227,111 @@ class BillingConfig:
 
 
 @dataclass
+class NPUConfig:
+    """NPU 硬件抽象配置（RK1828 / RK1860 / RK1880 兼容）
+    
+    支持自动探测 NPU 型号，按算力自动选择模型版本。
+    切换芯片只需重新编译 RKNN 模型，代码无需修改。
+    """
+    # NPU 型号（auto = 启动时自动探测）
+    # 注: rk1828 → rk182x（瑞芯微官方命名已更新，RK182X 系列）
+    # rk3688 为旗舰 SoC，2027 年才贡献营收，暂不纳入 auto 探测
+    npu_type: str = "auto"  # "rk182x" | "rk1860" | "rk3688" | "none"
+    
+    # 算力等级（TOPS INT8，auto 时自动填充）
+    compute_tops: int = 0  # 0 = 自动探测
+    
+    # 模型选择映射（按 NPU 型号自动匹配）
+    # 2026-09-17 更新: RK182X 已量产(数百客户/几十个行业), RK1860 研发完成即将推出
+    # 瑞芯微 Day-0 适配: Qwen3.8-27B(复杂推理) + MiniCPM5-2B(轻量实时)
+    model_map: dict = field(default_factory=lambda: {
+        "rk182x": {
+            "llm": "qwen3.8-27b-int4",       # 瑞芯微 Day-0 适配
+            "asr": "minicpm5-2b-ondevice",    # 轻量级端侧 ASR 兜底
+            "emotion": "acoustic-cnn-small",
+        },
+        "rk1860": {
+            "llm": "qwen3.8-27b-int4",       # 瑞芯微 Day-0 适配，协处理器
+            "asr": "minicpm5-2b-ondevice",
+            "emotion": "acoustic-cnn-full",
+        },
+        "rk3688": {
+            "llm": "qwen3.8-72b-int4",       # 旗舰 SoC，2027 营收
+            "asr": "whisper-large-v3-int8",
+            "emotion": "acoustic-cnn-full",
+        },
+    })
+    
+    # 能力开关（按算力自动设置）
+    offline_llm: bool = False        # RK1860+ 开启
+    offline_asr: bool = False        # RK1860+ 开启
+    offline_emotion: bool = False    # RK1860+ 开启
+    multi_role_parallel: int = 1     # RK1860+ 设为 3
+    
+    # 内存预算（MB，按 NPU 自动设置）
+    memory_budget_mb: int = 2048     # RK1828: 2GB, RK1860: 8GB, RK1880: 16GB
+    
+    # 降级策略
+    fallback_to_cloud: bool = True   # NPU 不足时回退云端
+    min_tops_for_llm: int = 10       # 低于此算力不跑端侧 LLM
+    
+    def resolve_npu(self) -> str:
+        """解析 NPU 型号（自动探测或返回手动设置）"""
+        if self.npu_type != "auto":
+            return self.npu_type
+        # 尝试探测 RKNN 设备
+        try:
+            from pyrknn.api import RKNN
+            rknn = RKNN()
+            target = rknn.query(cmd='platform', rknn_version=self.npu_type)
+            rknn.release()
+            if '1860' in str(target):
+                return "rk1860"
+            elif '3688' in str(target):
+                return "rk3688"
+            elif '182' in str(target):
+                return "rk182x"
+        except Exception:
+            pass
+        return "none"
+    
+    def auto_configure(self) -> None:
+        """根据 NPU 型号自动配置所有参数"""
+        npu = self.resolve_npu()
+        self.npu_type = npu
+        
+        presets = {
+            "rk182x": dict(
+                compute_tops=10, offline_llm=False, offline_asr=False,
+                offline_emotion=False, multi_role_parallel=1,
+                memory_budget_mb=2048,
+            ),
+            "rk1860": dict(
+                compute_tops=60, offline_llm=True, offline_asr=True,
+                offline_emotion=True, multi_role_parallel=3,
+                memory_budget_mb=8192,
+            ),
+            "rk3688": dict(
+                compute_tops=120, offline_llm=True, offline_asr=True,
+                offline_emotion=True, multi_role_parallel=5,
+                memory_budget_mb=16384,
+            ),
+            "none": dict(
+                compute_tops=0, offline_llm=False, offline_asr=False,
+                offline_emotion=False, multi_role_parallel=1,
+                memory_budget_mb=0,
+            ),
+        }
+        
+        for key, value in presets.get(npu, presets["none"]).items():
+            setattr(self, key, value)
+    
+    def get_model_name(self, task: str) -> str:
+        """获取当前 NPU 对应的模型名称"""
+        return self.model_map.get(self.npu_type, {}).get(task, "")
+
+
+@dataclass
 class SecurityConfig:
     """安全配置"""
     # JWT
@@ -270,6 +377,7 @@ class Config:
     compliance: ComplianceConfig = field(default_factory=ComplianceConfig)
     billing: BillingConfig = field(default_factory=BillingConfig)
     security: SecurityConfig = field(default_factory=SecurityConfig)
+    npu: NPUConfig = field(default_factory=NPUConfig)
 
     # 项目根目录
     project_root: Path = Path(__file__).resolve().parent

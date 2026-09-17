@@ -63,6 +63,7 @@ def test_register_and_intercept():
     stats = cache.get_stats()
     assert stats['total_entries'] == 1
 
+    cache.close()
     shutil.rmtree(tmpdir)
     print("✓ Register and intercept passed")
 
@@ -84,6 +85,7 @@ def test_intercept_without_marker():
     assert result['hit'] is True
     assert '数据库设计' in result['content']
 
+    cache.close()
     shutil.rmtree(tmpdir)
     print("✓ Intercept without marker passed")
 
@@ -100,6 +102,7 @@ def test_intercept_no_match():
 
     assert result is None
 
+    cache.close()
     shutil.rmtree(tmpdir)
     print("✓ Intercept no match passed")
 
@@ -125,6 +128,7 @@ def test_stats():
     stats = cache.get_stats()
     assert stats['accessed_entries'] >= 2
 
+    cache.close()
     shutil.rmtree(tmpdir)
     print("✓ Stats passed")
 
@@ -141,6 +145,7 @@ def test_retrieve_by_content_id():
     assert retrieved is not None
     assert retrieved['content'] == "可取回的内容"
 
+    cache.close()
     shutil.rmtree(tmpdir)
     print("✓ Retrieve by content_id passed")
 
@@ -161,6 +166,7 @@ def test_register_duplicate():
     stats = cache.get_stats()
     assert stats['total_entries'] == 1  # 重复注册不增加数量
 
+    cache.close()
     shutil.rmtree(tmpdir)
     print("✓ Register duplicate passed")
 

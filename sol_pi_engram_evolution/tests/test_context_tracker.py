@@ -36,6 +36,7 @@ def test_record_and_retrieve():
     assert history[0]['query'] == query
     assert history[0]['round_id'] == round_id
 
+    tracker.close()
     shutil.rmtree(tmpdir)
     print("✓ Record and retrieve passed")
 
@@ -55,6 +56,7 @@ def test_relevance_detection():
     assert relevant[0]['query'] == "数据库设计 PostgreSQL"
     assert relevant[0]['relevance_score'] >= 0.3
 
+    tracker.close()
     shutil.rmtree(tmpdir)
     print("✓ Relevance detection passed")
 
@@ -79,8 +81,9 @@ def test_expand_context():
 
     assert result['expanded'] is True
     assert len(result['expanded_items']) >= 1
-    assert '数据库设计 PostgreSQL' in result['combined_content']
+    assert '设计用户表和订单表，使用 PostgreSQL' in result['combined_content']
 
+    tracker.close()
     shutil.rmtree(tmpdir)
     print("✓ Expand context passed")
 
@@ -98,6 +101,7 @@ def test_expand_no_relevance():
     assert result['reason'] == '无相关历史上下文'
     assert len(result['expanded_items']) == 0
 
+    tracker.close()
     shutil.rmtree(tmpdir)
     print("✓ Expand no relevance passed")
 
@@ -117,6 +121,7 @@ def test_clear_session():
     history = tracker.get_session_history(session_id)
     assert len(history) == 0
 
+    tracker.close()
     shutil.rmtree(tmpdir)
     print("✓ Clear session passed")
 
@@ -132,6 +137,7 @@ def test_stats():
     assert stats['total_rounds'] == 3
     assert stats['total_sessions'] == 3
 
+    tracker.close()
     shutil.rmtree(tmpdir)
     print("✓ Stats passed")
 

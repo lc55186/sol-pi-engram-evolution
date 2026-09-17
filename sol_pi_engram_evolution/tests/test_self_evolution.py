@@ -161,6 +161,7 @@ def test_self_evolution_engine():
     print("\n[Test] SelfEvolutionEngine 整合测试...")
 
     with tempfile.TemporaryDirectory() as tmpdir:
+        orig_dir = os.getcwd()
         os.chdir(tmpdir)
 
         engine = SelfEvolutionEngine()
@@ -204,6 +205,7 @@ def test_self_evolution_engine():
         print(f"  ✓ 引擎状态: {status['evolution_log_count']} 个进化事件")
 
         print("  ✅ SelfEvolutionEngine 全部通过")
+        os.chdir(orig_dir)
         return True
 
 

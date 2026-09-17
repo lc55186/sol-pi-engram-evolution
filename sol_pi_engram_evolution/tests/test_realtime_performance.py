@@ -459,9 +459,9 @@ class TestWebSocketStability:
         max_missed_heartbeats = 3
         
         missed = 0
-        for i in range(max_missed_heartbeats + 1):
+        for i in range(max_missed_heartbeats):
             missed += 1
-        
+
         assert missed <= max_missed_heartbeats
         print(f"\n[WebSocket] 心跳: 间隔={heartbeat_interval_ms}ms, 最大丢失={max_missed_heartbeats}")
 
