@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block title %}技术架构 — BOSS-AI-R{% endblock %}
+{% block content %}
+<div class="page-header"><h1>🏗️ 技术架构</h1><p class="page-desc">七层架构 · 部署方案 · 成本对比</p></div>
+
+<!-- 模块 A: 七层架构可视化 -->
+<div class="panel">
+  <div class="panel-header"><h2>📐 七层架构可视化</h2></div>
+  <div class="panel-body">
+    <div class="architecture-layers">
+      <div class="arch-layer" style="border-left-color:#4A90D9">
+        <div class="layer-title">端侧层</div>
+        <div class="layer-components">
+          <span class="comp-tag">iOS Swift</span>
+          <span class="comp-tag">Android Kotlin</span>
+          <span class="comp-tag">RNNoise</span>
+          <span class="comp-tag">WebRTC VAD</span>
+          <span class="comp-tag">sherpa-onnx</span>
+          <span class="comp-tag">L0 关键词</span>
+        </div>
+        <div class="layer-deploy">📍 部署位置：老板手机</div>
+      </div>
+      <div class="arch-layer" style="border-left-color:#50B86C">
+        <div class="layer-title">传输层</div>
+        <div class="layer-components">
+          <span class="comp-tag">WebSocket 网关</span>
+          <span class="comp-tag">TLS 1.2+</span>
+          <span class="comp-tag">Opus 上行</span>
+          <span class="comp-tag">DLP 脱敏</span>
+        </div>
+        <div class="layer-deploy">📍 部署位置：云</div>
+      </div>
+      <div class="arch-layer" style="border-left-color:#E8A838">
+        <div class="layer-title">实时处理层</div>
+        <div class="layer-components">
+          <span class="comp-tag">FunASR</span>
+          <span class="comp-tag">3D-Speaker</span>
+          <span class="comp-tag">声学情绪</span>
+          <span class="comp-tag">L1/L2 LLM</span>
+          <span class="comp-tag">提示决策器</span>
+        </div>
+        <div class="layer-deploy">📍 部署位置：省内云</div>
+      </div>
+      <div class="arch-layer" style="border-left-color:#9B59B6">
+        <div class="layer-title">异步处理层</div>
+        <div class="layer-components">
+          <span class="comp-tag">large ASR 校正</span>
+          <span class="comp-tag">纪要生成</span>
+          <span class="comp-tag">Celery 队列</span>
+          <span class="comp-tag">n8n</span>
+        </div>
+        <div class="layer-deploy">📍 部署位置：省内云</div>
+      </div>
+      <div class="arch-layer" style="border-left-color:#1ABC9C">
+        <div class="layer-title">经营外脑层</div>
+        <div class="layer-components">
+          <span class="comp-tag">Dify</span>
+          <span class="comp-tag">RAGFlow</span>
+          <span class="comp-tag">DB-GPT</span>
+          <span class="comp-tag">规则引擎</span>
+        </div>
+        <div class="layer-deploy">📍 部署位置：省内云</div>
+      </div>
+      <div class="arch-layer" style="border-left-color:#E74C3C">
+        <div class="layer-title">数据层</div>
+        <div class="layer-components">
+          <span class="comp-tag">PostgreSQL (RLS)</span>
+          <span class="comp-tag">向量库</span>
+          <span class="comp-tag">MinIO</span>
+          <span class="comp-tag">Redis</span>
+        </div>
+        <div class="layer-deploy">📍 部署位置：阿里云华北3</div>
+      </div>
+      <div class="arch-layer" style="border-left-color:#F39C12">
+        <div class="layer-title">大模型层</div>
+        <div class="layer-components">
+          <span class="comp-tag">DeepSeek (主)</span>
+          <span class="comp-tag">Qwen (备)</span>
+          <span class="comp-tag">分级调用</span>
+        </div>
+        <div class="layer-deploy">📍 部署位置：境内备案 API</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模块 B: 部署架构图 -->
+<div class="panel">
+  <div class="panel-header"><h2>🗺️ 部署架构图（四层）</h2></div>
+  <div class="panel-body">
+    <div class="deploy-layers">
+      <div class="deploy-layer">
+        <div class="deploy-icon">📱</div>
+        <div class="deploy-info">
+          <strong>L1 端侧</strong>
+          <span class="text-muted">数据不出手机</span>
+        </div>
+        <div class="deploy-users">适用客户：全部客户默认</div>
+      </div>
+      <div class="deploy-layer">
+        <div class="deploy-icon">☁️</div>
+        <div class="deploy-info">
+          <strong>L2 省内云</strong>
+          <span class="text-muted">阿里云华北3 张家口</span>
+        </div>
+        <div class="deploy-users">适用客户：全部订阅客户</div>
+      </div>
+      <div class="deploy-layer">
+        <div class="deploy-icon">🏢</div>
+        <div class="deploy-info">
+          <strong>L3 私有化</strong>
+          <span class="text-muted">客户内网部署</span>
+        </div>
+        <div class="deploy-users">适用客户：L3 陪跑版、政企</div>
+      </div>
+      <div class="deploy-layer">
+        <div class="deploy-icon">🔒</div>
+        <div class="deploy-info">
+          <strong>L4 混合脱敏</strong>
+          <span class="text-muted">出端仅脱敏文本</span>
+        </div>
+        <div class="deploy-users">适用客户：默认对 LLM 调用启用</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模块 C: 成本对比表 -->
+<div class="panel">
+  <div class="panel-header"><h2>💰 成本对比表（元/月）</h2></div>
+  <div class="panel-body">
+    <table style="width:100%;border-collapse:collapse">
+      <thead>
+        <tr style="text-align:left;border-bottom:2px solid var(--border)">
+          <th>成本项</th><th>云方案</th><th>自建方案</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ASR</td><td>58-72 元</td><td>6-24 元</td></tr>
+        <tr><td>LLM</td><td>1.2-3.9 元</td><td>1.2-3.9 元</td></tr>
+        <tr><td>服务器</td><td>5-15 元</td><td>3-8 元</td></tr>
+        <tr><td>存储</td><td>~0.1 元</td><td>~0.05 元</td></tr>
+        <tr><td>网络</td><td>0.3-0.5 元</td><td>0.2-0.3 元</td></tr>
+        <tr style="font-weight:700;border-top:2px solid var(--border)">
+          <td>合计</td><td style="color:var(--accent-red)">60-80 元</td><td style="color:var(--accent-green)">5-15 元</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;color:var(--text-muted);font-size:13px">💡 自建方案成本仅为云方案的 1/5 ~ 1/10，是规模化后的必选项。</p>
+  </div>
+</div>
+{% endblock %}

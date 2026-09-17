@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}定价 — BOSS-AI-R{% endblock %}
+{% block content %}
+<div class="page-header"><h1>💳 定价</h1><p class="page-desc">四级订阅 · 商业模式 · L2 经济模型</p></div>
+
+<!-- 模块 A: 四级定价卡片 -->
+<div class="panel">
+  <div class="panel-header"><h2>🎫 四级定价</h2></div>
+  <div class="panel-body">
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <div class="tier-name">L0 体验钩子</div>
+          <div class="tier-price">0<span class="unit">元/年</span></div>
+        </div>
+        <div class="pricing-body">
+          <ul>
+            <li>月 3 次实时转写</li>
+            <li>每次 ≤20 分钟</li>
+            <li>会后基础纪要</li>
+            <li>仅文字提示</li>
+          </ul>
+        </div>
+        <div class="pricing-footer">
+          <span class="badge tag-blue">免费</span>
+        </div>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <div class="tier-name">L1 入门付费</div>
+          <div class="tier-price">1,980<span class="unit">元/年</span></div>
+        </div>
+        <div class="pricing-body">
+          <ul>
+            <li>会后结构化（五件套）</li>
+            <li>月 10h 录音时长</li>
+            <li>关键词预警 + 锁屏</li>
+            <li>基础经营日报</li>
+            <li>PDF 纪要导出</li>
+          </ul>
+        </div>
+        <div class="pricing-footer">
+          <span class="badge tag-green">入门</span>
+        </div>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-header">
+          <div class="tier-name">⭐ L2 实时副驾</div>
+          <div class="tier-price">9,800-15,800<span class="unit">元/年</span></div>
+        </div>
+        <div class="pricing-body">
+          <ul>
+            <li><strong>不限时实时转写</strong></li>
+            <li><strong>手表/耳机耳语提示</strong></li>
+            <li>声学情绪双通道</li>
+            <li>完整经营外脑 6 场景</li>
+            <li>知识图谱可视化</li>
+            <li>决策追溯回放</li>
+            <li>多设备同步</li>
+          </ul>
+        </div>
+        <div class="pricing-footer">
+          <span class="badge tag-orange">主推</span>
+        </div>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-header">
+          <div class="tier-name">L3 私有化+陪跑</div>
+          <div class="tier-price">39,800-69,800<span class="unit">元/年</span></div>
+        </div>
+        <div class="pricing-body">
+          <ul>
+            <li><strong>私有化部署</strong></li>
+            <li><strong>SIP 通话录音桥</strong></li>
+            <li>行业话术库定制</li>
+            <li>专属客户成功经理</li>
+            <li>季度经营复盘</li>
+            <li>API 开放接口</li>
+            <li>SLA 99.9%</li>
+          </ul>
+        </div>
+        <div class="pricing-footer">
+          <span class="badge tag-purple">旗舰</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模块 B: L2 经济模型 -->
+<div class="panel">
+  <div class="panel-header"><h2>📊 L2 经济模型</h2></div>
+  <div class="panel-body">
+    <div class="stats-grid">
+      <div class="stat-item"><span class="stat-value">12,800元</span><span class="stat-label">年客单价</span></div>
+      <div class="stat-item"><span class="stat-value">5-15元</span><span class="stat-label">月云成本</span></div>
+      <div class="stat-item"><span class="stat-value">75%</span><span class="stat-label">首年毛利率</span></div>
+      <div class="stat-item"><span class="stat-value">18:1</span><span class="stat-label">LTV/CAC</span></div>
+    </div>
+    <p style="margin-top:16px;color:var(--text-muted);font-size:13px">💡 高 LTV/CAC 渠道：老板转介绍 > 直营 > 代账渠道。月云成本远低于客单价，毛利空间大。</p>
+  </div>
+</div>
+{% endblock %}

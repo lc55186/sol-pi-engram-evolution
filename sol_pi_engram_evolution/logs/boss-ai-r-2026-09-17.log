@@ -1,0 +1,29 @@
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-17 07:57:34 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-17 07:57:34 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-17 07:57:34 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-17 07:57:34 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-17 07:57:35 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-17 07:57:37 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-17 07:57:37 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-17 07:57:37 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-17 07:57:37 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-17 07:57:37 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-17 07:57:37 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-17 07:57:37 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-17 07:57:37 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-17 07:57:37 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-17 07:57:37 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-17 07:57:37 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-17 07:57:37 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-17 07:57:37 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-17 07:57:37 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-17 07:57:37 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================

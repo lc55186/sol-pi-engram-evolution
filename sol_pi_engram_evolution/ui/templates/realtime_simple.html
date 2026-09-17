@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实时副驾 — BOSS-AI-R</title>
+<link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body class="realtime-page">
+<header class="header">
+  <div class="header-left">
+    <a href="/" class="logo-link"><div class="logo">军</div></a>
+    <div class="logo-text">实时副驾</div>
+  </div>
+  <div class="header-right">
+    <nav class="nav">
+      <a href="/" class="nav-link">主控台</a>
+      <a href="/realtime" class="nav-link active">实时副驾</a>
+      <a href="/brain" class="nav-link">经营外脑</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+<section class="recording-section">
+  <h1 class="page-title">🎙️ 实时副驾</h1>
+  <p class="page-desc">谈判/会议现场实时转写、风险预警、耳语提示</p>
+  
+  <!-- 录音控制 -->
+  <div class="recording-card">
+    <div class="recording-circle" id="recording-circle">
+      <div class="recording-inner">
+        <span class="recording-icon">🎤</span>
+        <span class="recording-time" id="recording-time">00:00</span>
+      </div>
+    </div>
+    <div class="recording-controls">
+      <button class="btn btn-primary btn-large" id="btn-start" onclick="startRecording()">▶ 开始</button>
+      <button class="btn btn-large" id="btn-pause" onclick="pauseRecording()" disabled>⏸ 暂停</button>
+      <button class="btn btn-danger btn-large" id="btn-stop" onclick="stopRecording()" disabled>⏹ 结束</button>
+    </div>
+    <div class="recording-options">
+      <label>场景：
+        <select id="scene-select" class="input">
+          <option value="business_negotiation">商务谈判</option>
+          <option value="meeting">办公会议</option>
+          <option value="public_dinner">公开用餐</option>
+        </select>
+      </label>
+      <label>模式：
+        <label class="radio-label"><input type="radio" name="mode" value="inform" checked> 告知</label>
+        <label class="radio-label"><input type="radio" name="mode" value="self_record"> 自行记录</label>
+      </label>
+    </div>
+  </div>
+  
+  <!-- 实时转写 -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>📝 实时转写</h2>
+      <span id="word-count" class="text-muted">0 字</span>
+    </div>
+    <div class="transcript-container" id="transcript-container">
+      <div class="transcript-empty">点击「开始录音」启动实时转写</div>
+    </div>
+  </div>
+</section>
+
+<section class="analysis-section">
+  <!-- 情绪分析 -->
+  <div class="panel">
+    <div class="panel-header"><h2>🎭 声学情绪</h2></div>
+    <div class="emotion-bars">
+      <div class="emotion-bar-group">
+        <span class="emotion-label">唤醒度</span>
+        <div class="emotion-bar"><div class="emotion-bar-fill arousal" id="arousal-bar" style="width:30%"></div></div>
+        <span id="arousal-value">0.30</span>
+      </div>
+      <div class="emotion-bar-group">
+        <span class="emotion-label">效价</span>
+        <div class="emotion-bar"><div class="emotion-bar-fill valence" id="valence-bar" style="width:50%"></div></div>
+        <span id="valence-value">0.50</span>
+      </div>
+      <div class="emotion-bar-group">
+        <span class="emotion-label">确定度</span>
+        <div class="emotion-bar"><div class="emotion-bar-fill confidence" id="confidence-bar" style="width:60%"></div></div>
+        <span id="confidence-value">0.60</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 提示队列 -->
+  <div class="panel">
+    <div class="panel-header"><h2>⚡ 实时提示 <span id="prompt-count" class="badge">0</span></h2></div>
+    <div class="prompt-list" id="prompt-list">
+      <div class="prompt-empty">等待提示触发...</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<script src="/static/js/realtime.js"></script>
+</body>
+</html>

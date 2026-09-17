@@ -1,0 +1,55 @@
+2026-09-16 23:25:34 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:34 | INFO     | api.request          | logger:log_request:228 | GET /health → 200 (5.0ms)
+2026-09-16 23:25:34 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-09-16 23:25:34 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:34 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/compliance/check → 200 (2.2ms)
+2026-09-16 23:25:34 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/compliance/check "HTTP/1.1 200 OK"
+2026-09-16 23:25:34 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:34 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/subscription → 200 (2.0ms)
+2026-09-16 23:25:34 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/subscription "HTTP/1.1 200 OK"
+2026-09-16 23:25:34 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:34 | INFO     | api.request          | logger:log_request:228 | GET /api/v1/quota/t1 → 200 (1.2ms)
+2026-09-16 23:25:34 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: GET http://testserver/api/v1/quota/t1 "HTTP/1.1 200 OK"
+2026-09-16 23:25:34 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:34 | INFO     | api.request          | logger:log_request:228 | GET /api/v1/cost/t1 → 200 (3.0ms)
+2026-09-16 23:25:34 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: GET http://testserver/api/v1/cost/t1 "HTTP/1.1 200 OK"
+2026-09-16 23:25:34 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:34 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/recording/start → 403 (3.1ms)
+2026-09-16 23:25:34 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/recording/start "HTTP/1.1 403 Forbidden"
+2026-09-16 23:25:48 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:48 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/consent/u1 → 200 (5.5ms)
+2026-09-16 23:25:48 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/consent/u1?consent_type=user_agreement&tenant_id=t1 "HTTP/1.1 200 OK"
+2026-09-16 23:25:48 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:48 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/consent/u1 → 200 (1.0ms)
+2026-09-16 23:25:48 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/consent/u1?consent_type=microphone&tenant_id=t1 "HTTP/1.1 200 OK"
+2026-09-16 23:25:48 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:48 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/consent/u1 → 200 (0.0ms)
+2026-09-16 23:25:48 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/consent/u1?consent_type=cloud_upload&tenant_id=t1 "HTTP/1.1 200 OK"
+2026-09-16 23:25:48 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:48 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/consent/u1 → 200 (0.0ms)
+2026-09-16 23:25:48 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/consent/u1?consent_type=privacy_policy&tenant_id=t1 "HTTP/1.1 200 OK"
+2026-09-16 23:25:48 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:48 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/compliance/check → 200 (2.0ms)
+2026-09-16 23:25:48 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/compliance/check "HTTP/1.1 200 OK"
+2026-09-16 23:25:48 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:25:48 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/recording/start → 402 (1.0ms)
+2026-09-16 23:25:48 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/recording/start "HTTP/1.1 402 Payment Required"
+2026-09-16 23:26:12 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:26:12 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/consent/u1 → 200 (6.0ms)
+2026-09-16 23:26:12 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/consent/u1?consent_type=user_agreement&tenant_id=t1 "HTTP/1.1 200 OK"
+2026-09-16 23:26:12 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:26:12 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/consent/u1 → 200 (0.0ms)
+2026-09-16 23:26:12 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/consent/u1?consent_type=microphone&tenant_id=t1 "HTTP/1.1 200 OK"
+2026-09-16 23:26:12 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:26:12 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/consent/u1 → 200 (1.0ms)
+2026-09-16 23:26:12 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/consent/u1?consent_type=cloud_upload&tenant_id=t1 "HTTP/1.1 200 OK"
+2026-09-16 23:26:12 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:26:12 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/consent/u1 → 200 (0.0ms)
+2026-09-16 23:26:12 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/consent/u1?consent_type=privacy_policy&tenant_id=t1 "HTTP/1.1 200 OK"
+2026-09-16 23:26:12 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:26:12 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/subscription → 200 (2.2ms)
+2026-09-16 23:26:12 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/subscription "HTTP/1.1 200 OK"
+2026-09-16 23:26:12 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-16 23:26:12 | INFO     | api                  | app:start_recording:310 | Recording started: session=16b9cb2a, tenant=t1
+2026-09-16 23:26:12 | INFO     | api.request          | logger:log_request:228 | POST /api/v1/recording/start → 200 (4.0ms)
+2026-09-16 23:26:12 | INFO     | httpx2               | _client:_send_single_request:1090 | HTTP Request: POST http://testserver/api/v1/recording/start "HTTP/1.1 200 OK"

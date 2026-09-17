@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}路线图 — BOSS-AI-R{% endblock %}
+{% block content %}
+<div class="page-header"><h1>🗺️ 路线图</h1><p class="page-desc">18 个月四阶段演进 · SoL-Pi 融合模块清单</p></div>
+
+<!-- 模块 A: 四阶段时间轴 -->
+<div class="panel">
+  <div class="panel-header"><h2>📅 四阶段时间轴</h2></div>
+  <div class="panel-body">
+    <div class="timeline">
+      <div class="timeline-item done">
+        <div class="timeline-marker">V0.1</div>
+        <div class="timeline-content">
+          <div class="timeline-title">MVP · 0-4 月</div>
+          <div class="timeline-theme">纯 APP 跑通</div>
+          <div class="timeline-delivery">实时转写 + 关键词耳语 + 五件套</div>
+          <span class="tag tag-green">已完成</span>
+        </div>
+      </div>
+      <div class="timeline-item current">
+        <div class="timeline-marker">V0.2</div>
+        <div class="timeline-content">
+          <div class="timeline-title">体验打磨 · 6 月</div>
+          <div class="timeline-theme">情绪双通道</div>
+          <div class="timeline-delivery">声学情绪 + 自建 ASR + 手表耳机适配</div>
+          <span class="tag tag-blue">进行中</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">V0.3</div>
+        <div class="timeline-content">
+          <div class="timeline-title">行业纵深 · 12 月</div>
+          <div class="timeline-theme">三行业话术库</div>
+          <div class="timeline-delivery">汽配/体品/再生资源话术 + SIP 桥 + 私有化</div>
+          <span class="tag tag-orange">计划中</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">V1.0</div>
+        <div class="timeline-content">
+          <div class="timeline-title">完整矩阵 · 18 月</div>
+          <div class="timeline-theme">端到端语音大模型</div>
+          <div class="timeline-delivery">端到端语音大模型 + 城市合伙人</div>
+          <span class="tag tag-purple">远期</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模块 B: SoL-Pi 融合模块清单 -->
+<div class="panel">
+  <div class="panel-header"><h2>🧩 SoL-Pi 融合模块清单</h2></div>
+  <div class="panel-body">
+    <div class="module-list">
+      <div class="module-item">
+        <div class="module-name">prompt_decider.py</div>
+        <span class="tag tag-red">P0</span>
+        <span class="module-workload">2 周</span>
+        <span class="module-capability">提示去重/分级/择时</span>
+      </div>
+      <div class="module-item">
+        <div class="module-name">compliance.py</div>
+        <span class="tag tag-red">P0</span>
+        <span class="module-workload">1 周</span>
+        <span class="module-capability">受托人架构/权利响应</span>
+      </div>
+      <div class="module-item">
+        <div class="module-name">realtime_audio.py</div>
+        <span class="tag tag-orange">P1</span>
+        <span class="module-workload">3 周</span>
+        <span class="module-capability">端侧降噪+VAD+L0</span>
+      </div>
+      <div class="module-item">
+        <div class="module-name">billing.py</div>
+        <span class="tag tag-orange">P1</span>
+        <span class="module-workload">1 周</span>
+        <span class="module-capability">四级订阅/配额</span>
+      </div>
+      <div class="module-item">
+        <div class="module-name">acoustic_emotion.py</div>
+        <span class="tag tag-yellow">P2</span>
+        <span class="module-workload">2 周</span>
+        <span class="module-capability">声学情绪检测</span>
+      </div>
+      <div class="module-item">
+        <div class="module-name">graph_schema 扩展</div>
+        <span class="tag tag-yellow">P2</span>
+        <span class="module-workload">1 周</span>
+        <span class="module-capability">谈判/商机/决策卡节点</span>
+      </div>
+      <div class="module-item">
+        <div class="module-name">说话人分离集成</div>
+        <span class="tag tag-blue">P3</span>
+        <span class="module-workload">2 周</span>
+        <span class="module-capability">3D-Speaker CAM++</span>
+      </div>
+      <div class="module-item">
+        <div class="module-name">deployment.py</div>
+        <span class="tag tag-blue">P3</span>
+        <span class="module-workload">1 周</span>
+        <span class="module-capability">数据不出省部署</span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

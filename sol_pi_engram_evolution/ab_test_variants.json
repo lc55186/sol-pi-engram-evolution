@@ -1,0 +1,166 @@
+{
+  "variants": {
+    "daily_report": [
+      {
+        "id": "b80773db",
+        "template": "老板早上好，今天有 {count} 件事需要关注：{items}",
+        "description": "标准问候版",
+        "created_at": "2026-09-17T01:14:05.711886",
+        "total_uses": 146,
+        "positive_feedback": 146,
+        "negative_feedback": 0
+      },
+      {
+        "id": "ba95f551",
+        "template": "老王早，今日{count}项待办：{items}",
+        "description": "简洁直接版",
+        "created_at": "2026-09-17T01:14:05.712878",
+        "total_uses": 46,
+        "positive_feedback": 46,
+        "negative_feedback": 0
+      },
+      {
+        "id": "80b2f833",
+        "template": "【经营日报】{date}必读：您有{count}项关键事项待处理。详情：{items}",
+        "description": "正式版",
+        "created_at": "2026-09-17T01:14:05.712878",
+        "total_uses": 8,
+        "positive_feedback": 0,
+        "negative_feedback": 8
+      },
+      {
+        "id": "b80773db",
+        "template": "老板早上好，今天有 {count} 件事需要关注：{items}",
+        "description": "标准问候版",
+        "created_at": "2026-09-17T01:14:27.646105",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "ba95f551",
+        "template": "老王早，今日{count}项待办：{items}",
+        "description": "简洁直接版",
+        "created_at": "2026-09-17T01:14:27.646613",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "80b2f833",
+        "template": "【经营日报】{date}必读：您有{count}项关键事项待处理。详情：{items}",
+        "description": "正式版",
+        "created_at": "2026-09-17T01:14:27.647624",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      }
+    ],
+    "greeting": [
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-17T01:15:42.103393",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-17T01:15:42.103393",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-17T01:35:05.511545",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-17T01:35:05.511545",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-17T01:35:25.040487",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-17T01:35:25.041485",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-17T07:47:16.649207",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-17T07:47:16.650579",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-17T07:58:03.371034",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-17T07:58:03.372324",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      }
+    ],
+    "negotiation_warning": [
+      {
+        "id": "c753b72e",
+        "template": "注意{topic}，{reason}",
+        "description": "简洁警告版",
+        "created_at": "2026-09-17T01:37:34.363801",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      }
+    ]
+  },
+  "active": {
+    "daily_report": "b80773db"
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}BOSS-AI-R 主控台{% endblock %}</title>
+<link rel="stylesheet" href="/static/css/main.css">
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+<header class="header">
+  <div class="header-left">
+    <div class="logo">军</div>
+    <div class="logo-text">老板口袋军师 · 实时谈判版</div>
+    <span class="badge badge-v2">V{{ version }}</span>
+    {% if env == "development" %}<span class="badge badge-beta">DEV</span>{% endif %}
+  </div>
+  <div class="header-right">
+    <nav class="nav">
+      <a href="/" class="nav-link {% if active == 'dashboard' %}active{% endif %}">主控台</a>
+      <a href="/realtime" class="nav-link {% if active == 'realtime' %}active{% endif %}">实时副驾</a>
+      <a href="/brain" class="nav-link {% if active == 'brain' %}active{% endif %}">经营外脑</a>
+      <a href="/graph" class="nav-link {% if active == 'graph' %}active{% endif %}">知识图谱</a>
+      <a href="/compliance" class="nav-link {% if active == 'compliance' %}active{% endif %}">合规</a>
+      <a href="/pricing" class="nav-link {% if active == 'pricing' %}active{% endif %}">定价</a>
+      <a href="/roadmap" class="nav-link {% if active == 'roadmap' %}active{% endif %}">路线图</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <p>BOSS-AI-R v{{ version }} · 定州试点版 · 2026</p>
+</footer>
+
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

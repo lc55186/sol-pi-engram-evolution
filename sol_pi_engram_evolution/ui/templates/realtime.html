@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+
+{% block title %}实时副驾 — BOSS-AI-R{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>🎙️ 实时副驾</h1>
+  <p class="page-desc">谈判/会议现场实时转写、风险预警、耳语提示</p>
+</div>
+
+<div class="panel-grid">
+  <!-- 左：录音控制 + 转写 -->
+  <div class="panel-col">
+    <div class="panel">
+      <div class="panel-header">
+        <h2>📱 录音控制</h2>
+        <span id="recording-status" class="tag tag-blue">待机</span>
+      </div>
+      <div class="panel-body">
+        <div class="recording-visual" id="recording-visual">
+          <div class="recording-circle" id="recording-circle">
+            <div class="recording-inner">
+              <span class="recording-icon">🎤</span>
+              <span class="recording-time" id="recording-time">00:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="recording-controls">
+          <button class="btn btn-primary btn-large" id="btn-start" onclick="startRecording()">
+            ▶ 开始录音
+          </button>
+          <button class="btn btn-large" id="btn-pause" onclick="pauseRecording()" disabled>
+            ⏸ 暂停
+          </button>
+          <button class="btn btn-danger btn-large" id="btn-stop" onclick="stopRecording()" disabled>
+            ⏹ 结束
+          </button>
+        </div>
+        <div class="scene-selector">
+          <label>场景：</label>
+          <select id="scene-select" class="input">
+            <option value="business_negotiation">商务谈判</option>
+            <option value="meeting">办公会议</option>
+            <option value="public_dinner">公开用餐</option>
+            <option value="private">私密聚会</option>
+            <option value="others_place">他人场所</option>
+          </select>
+        </div>
+        <div class="mode-selector">
+          <label>模式：</label>
+          <label class="radio-label">
+            <input type="radio" name="mode" value="inform" checked> 告知模式
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="mode" value="self_record"> 自行记录
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="panel">
+      <div class="panel-header">
+        <h2>📝 实时转写</h2>
+        <span id="word-count" class="text-muted">0 字</span>
+      </div>
+      <div class="panel-body">
+        <div class="transcript-container" id="transcript-container">
+          <div class="transcript-empty">
+            <span class="empty-icon">🎤</span>
+            <p>点击「开始录音」启动实时转写</p>
+            <p class="text-muted">支持中文连续识别，延迟约 1-2 秒</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 中：情绪分析 + 说话人 -->
+  <div class="panel-col">
+    <div class="panel">
+      <div class="panel-header">
+        <h2>🎭 声学情绪分析</h2>
+        <label class="toggle-label">
+          <input type="checkbox" id="emotion-enabled" disabled>
+          <span class="toggle-text">启用</span>
+        </label>
+      </div>
+      <div class="panel-body">
+        <div class="emotion-chart" id="emotion-chart">
+          <div class="emotion-bars">
+            <div class="emotion-bar-group">
+              <span class="emotion-label">唤醒度</span>
+              <div class="emotion-bar">
+                <div class="emotion-bar-fill arousal" id="arousal-bar" style="width: 30%"></div>
+              </div>
+              <span class="emotion-value" id="arousal-value">0.30</span>
+            </div>
+            <div class="emotion-bar-group">
+              <span class="emotion-label">效价</span>
+              <div class="emotion-bar">
+                <div class="emotion-bar-fill valence" id="valence-bar" style="width: 50%"></div>
+              </div>
+              <span class="emotion-value" id="valence-value">0.50</span>
+            </div>
+            <div class="emotion-bar-group">
+              <span class="emotion-label">确定度</span>
+              <div class="emotion-bar">
+                <div class="emotion-bar-fill confidence" id="confidence-bar" style="width: 60%"></div>
+              </div>
+              <span class="emotion-value" id="confidence-value">0.60</span>
+            </div>
+          </div>
+          <div class="emotion-events" id="emotion-events"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="panel">
+      <div class="panel-header">
+        <h2>👥 说话人分离</h2>
+      </div>
+      <div class="panel-body">
+        <div class="speaker-list" id="speaker-list">
+          <div class="speaker-item" id="speaker-owner">
+            <div class="speaker-avatar owner">李</div>
+            <div class="speaker-info">
+              <div class="speaker-name">李总（您）</div>
+              <div class="speaker-status">声纹已注册</div>
+            </div>
+            <div class="speaker-voicebar"><div class="fill" id="voice-owner"></div></div>
+          </div>
+          <div class="speaker-item" id="speaker-opponent">
+            <div class="speaker-avatar opponent">王</div>
+            <div class="speaker-info">
+              <div class="speaker-name">王采购（对方）</div>
+              <div class="speaker-status">已识别</div>
+            </div>
+            <div class="speaker-voicebar"><div class="fill" id="voice-opponent"></div></div>
+          </div>
+          <div class="speaker-item" id="speaker-other">
+            <div class="speaker-avatar other">?</div>
+            <div class="speaker-info">
+              <div class="speaker-name">其他参会人</div>
+              <div class="speaker-status">未识别</div>
+            </div>
+            <div class="speaker-voicebar"><div class="fill" id="voice-other" style="animation: none; width: 10%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 右：提示队列 + 手表反馈 -->
+  <div class="panel-col">
+    <div class="panel">
+      <div class="panel-header">
+        <h2>⚡ 实时提示队列</h2>
+        <span id="prompt-count" class="badge tag-red">0 条</span>
+      </div>
+      <div class="panel-body">
+        <div class="prompt-list" id="prompt-list">
+          <div class="prompt-empty">
+            <span class="empty-icon">⚡</span>
+            <p>等待提示触发...</p>
+            <p class="text-muted">检测到风险/商机时自动推送</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="panel">
+      <div class="panel-header">
+        <h2>⌚ 智能手表反馈</h2>
+      </div>
+      <div class="panel-body">
+        <div class="watch-preview" id="watch-preview">
+          <div class="watch-screen" id="watch-screen">
+            <div class="watch-content" id="watch-content">
+              <span class="watch-icon">⌚</span>
+              <span class="watch-text">等待震动...</span>
+            </div>
+          </div>
+        </div>
+        <div class="watch-desc">
+          <p><strong>震动编码：</strong></p>
+          <ul>
+            <li><span class="vibration-demo">📳</span> 短震 = 注意</li>
+            <li><span class="vibration-demo">📳📳</span> 长震 = 风险</li>
+            <li><span class="vibration-demo">📳📳</span> 双震 = 商机</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="panel">
+      <div class="panel-header">
+        <h2>📊 会话统计</h2>
+      </div>
+      <div class="panel-body">
+        <div class="stats-grid" id="session-stats">
+          <div class="stat-item">
+            <span class="stat-value" id="stat-duration">00:00</span>
+            <span class="stat-label">录音时长</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="stat-words">0</span>
+            <span class="stat-label">转写字数</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="stat-prompts">0</span>
+            <span class="stat-label">触发提示</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="stat-latency">0ms</span>
+            <span class="stat-label">端到端延迟</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="/static/js/realtime.js"></script>
+{% endblock %}

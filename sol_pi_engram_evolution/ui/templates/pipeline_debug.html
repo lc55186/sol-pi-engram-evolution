@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% block title %}音频链路 — BOSS-AI-R{% endblock %}
+{% block content %}
+<div class="page-header"><h1>🔧 音频链路调试</h1><p class="page-desc">10 段流水线可视化 · 延迟预算 · 四级降级策略</p></div>
+
+<!-- 模块 A: 10 段流水线 -->
+<div class="panel">
+  <div class="panel-header"><h2>🔗 10 段流水线可视化</h2><button class="btn btn-primary" onclick="playPipelineAnimation()">▶ 播放动画</button></div>
+  <div class="panel-body">
+    <div class="pipeline-container" id="pipeline">
+      <div class="pipeline-stage" data-stage="1" onclick="showStageDetail(1)">
+        <div class="stage-icon">🎤</div><div class="stage-name">采集</div><div class="stage-latency">20ms</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-stage" data-stage="2" onclick="showStageDetail(2)">
+        <div class="stage-icon">🔇</div><div class="stage-name">降噪</div><div class="stage-latency">10ms</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-stage" data-stage="3" onclick="showStageDetail(3)">
+        <div class="stage-icon">✂️</div><div class="stage-name">VAD</div><div class="stage-latency">50ms</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-stage" data-stage="4" onclick="showStageDetail(4)">
+        <div class="stage-icon">📡</div><div class="stage-name">上行</div><div class="stage-latency">80ms</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-stage bottleneck" data-stage="5" onclick="showStageDetail(5)">
+        <div class="stage-icon">🎙️</div><div class="stage-name">流式 ASR</div><div class="stage-latency">600ms</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-stage" data-stage="6" onclick="showStageDetail(6)">
+        <div class="stage-icon">👥</div><div class="stage-name">说话人分离</div><div class="stage-latency">+200ms</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-stage" data-stage="7" onclick="showStageDetail(7)">
+        <div class="stage-icon">🎭</div><div class="stage-name">声学情绪</div><div class="stage-latency">+100ms</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-stage bottleneck" data-stage="8" onclick="showStageDetail(8)">
+        <div class="stage-icon">🤖</div><div class="stage-name">L0/L1/L2</div><div class="stage-latency">50-3000ms</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-stage" data-stage="9" onclick="showStageDetail(9)">
+        <div class="stage-icon">⚡</div><div class="stage-name">提示决策器</div><div class="stage-latency">100ms</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-stage" data-stage="10" onclick="showStageDetail(10)">
+        <div class="stage-icon">📱</div><div class="stage-name">推送</div><div class="stage-latency">100ms</div>
+      </div>
+    </div>
+    <div id="stage-detail" class="stage-detail" style="display:none;margin-top:20px;padding:16px;background:var(--bg-tertiary);border-radius:8px;">
+      <p class="text-muted">点击上方阶段查看详情</p>
+    </div>
+  </div>
+</div>
+
+<!-- 模块 B: 延迟预算表 -->
+<div class="panel">
+  <div class="panel-header"><h2>⏱️ 延迟预算表 (P90)</h2></div>
+  <div class="panel-body">
+    <div class="delay-table">
+      <div class="delay-row header"><span>环节</span><span>延迟</span><span>占比</span><span>状态</span></div>
+      <div class="delay-row"><span>采集+帧打包</span><span>20ms</span><div class="delay-bar"><div class="delay-fill green" style="width:1.3%"></div></div><span class="tag tag-green">正常</span></div>
+      <div class="delay-row"><span>端侧降噪</span><span>10ms</span><div class="delay-bar"><div class="delay-fill green" style="width:0.7%"></div></div><span class="tag tag-green">正常</span></div>
+      <div class="delay-row"><span>VAD 端点检测</span><span>50ms</span><div class="delay-bar"><div class="delay-fill green" style="width:3.3%"></div></div><span class="tag tag-green">正常</span></div>
+      <div class="delay-row"><span>网络上行</span><span>80ms</span><div class="delay-bar"><div class="delay-fill yellow" style="width:5.3%"></div></div><span class="tag tag-yellow">正常</span></div>
+      <div class="delay-row"><span>流式 ASR</span><span>600ms</span><div class="delay-bar"><div class="delay-fill yellow" style="width:40%"></div></div><span class="tag tag-yellow">⚠️ 瓶颈</span></div>
+      <div class="delay-row"><span>说话人分离</span><span>+200ms</span><div class="delay-bar"><div class="delay-fill yellow" style="width:13.3%"></div></div><span class="tag tag-yellow">⚠️ 偏高</span></div>
+      <div class="delay-row"><span>声学情绪</span><span>+100ms</span><div class="delay-bar"><div class="delay-fill green" style="width:6.7%"></div></div><span class="tag tag-green">正常</span></div>
+      <div class="delay-row"><span>L0 关键词</span><span>&lt;50ms</span><div class="delay-bar"><div class="delay-fill green" style="width:3.3%"></div></div><span class="tag tag-green">正常</span></div>
+      <div class="delay-row"><span>L1 轻量分类</span><span>200ms</span><div class="delay-bar"><div class="delay-fill yellow" style="width:13.3%"></div></div><span class="tag tag-yellow">偏高</span></div>
+      <div class="delay-row"><span>L2 深度 LLM</span><span>800-3000ms</span><div class="delay-bar"><div class="delay-fill red" style="width:60%"></div></div><span class="tag tag-red">🔴 瓶颈</span></div>
+      <div class="delay-row"><span>网络下行</span><span>100ms</span><div class="delay-bar"><div class="delay-fill green" style="width:6.7%"></div></div><span class="tag tag-green">正常</span></div>
+      <div class="delay-row"><span>反馈呈现</span><span>100ms</span><div class="delay-bar"><div class="delay-fill green" style="width:6.7%"></div></div><span class="tag tag-green">正常</span></div>
+    </div>
+    <p style="margin-top:12px;color:var(--text-muted);font-size:13px">💡 关键洞察：ASR + L2 占总延迟 80%+，是优化重点。</p>
+  </div>
+</div>
+
+<!-- 模块 C: 四级降级 -->
+<div class="panel">
+  <div class="panel-header"><h2>📉 四级自动降级策略</h2><span class="badge tag-green" id="current-level-badge">当前：L-A 优</span></div>
+  <div class="panel-body">
+    <div class="degradation-grid">
+      <div class="degradation-card optimal" data-level="L-A">
+        <div class="deg-level">L-A 优</div>
+        <div class="deg-condition">网络良好、算力正常</div>
+        <div class="deg-mode">云 ASR + 云 L2 全功能</div>
+        <div class="deg-perception">完整体验</div>
+      </div>
+      <div class="degradation-card warning" data-level="L-B">
+        <div class="deg-level">L-B 弱网</div>
+        <div class="deg-condition">RTT>500ms 或丢包</div>
+        <div class="deg-mode">端侧 ASR + 本地关键词</div>
+        <div class="deg-perception">只有震动预警</div>
+      </div>
+      <div class="degradation-card caution" data-level="L-C">
+        <div class="deg-level">L-C 嘈杂</div>
+        <div class="deg-condition">信噪比低/多人重叠</div>
+        <div class="deg-mode">提高置信度阈值</div>
+        <div class="deg-perception">提示减少</div>
+      </div>
+      <div class="degradation-card danger" data-level="L-D">
+        <div class="deg-level">L-D 超时</div>
+        <div class="deg-condition">L2 >3s 未回</div>
+        <div class="deg-mode">丢弃 L2，只保留 L0/L1</div>
+        <div class="deg-perception">无深度分析</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;text-align:center">
+      <button class="btn" onclick="simulateDegradation('L-B')">模拟弱网</button>
+      <button class="btn" onclick="simulateDegradation('L-C')">模拟嘈杂</button>
+      <button class="btn" onclick="simulateDegradation('L-D')">模拟超时</button>
+      <button class="btn btn-primary" onclick="simulateDegradation('L-A')">恢复 L-A</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+const stageDetails = {
+  1: { name:'采集', desc:'10-20ms 帧打包，16kHz/16bit PCM 单声道', logs:['帧大小: 320 samples','缓冲区: 双缓冲','抖动: <5ms'] },
+  2: { name:'降噪', desc:'RNNoise 帧级降噪 / DeepFilterNet / WebRTC NS', logs:['算法: RNNoise v0.2','延迟: <10ms','抑制: 20dB+'] },
+  3: { name:'VAD', desc:'WebRTC VAD 端点检测 / silero-VAD', logs:['灵敏度: 中等','帧长: 30ms','检出率: >95%'] },
+  4: { name:'上行', desc:'Opus 24kbps 网络传输，WebSocket 长连', logs:['码率: 24kbps','封装: RTP-like','重连: 自动'] },
+  5: { name:'流式 ASR', desc:'Paraformer-online 2pass，online 初稿 + offline 纠错', logs:['模型: Paraformer-online','CER: <8%','延迟: ~600ms'] },
+  6: { name:'说话人分离', desc:'3D-Speaker CAM++ 声纹嵌入', logs:['模型: CAM++','DER: <12%(2人)','仅内存使用'] },
+  7: { name:'声学情绪', desc:'F0/能量/语速特征提取', logs:['特征: 11 维','窗口: 1s','仅描述声学现象'] },
+  8: { name:'L0/L1/L2', desc:'三级 LLM 触发：L0 关键词规则 / L1 轻量分类 / L2 深度分析', logs:['L0: <50ms (本地)','L1: ~200ms','L2: 800-3000ms'] },
+  9: { name:'提示决策器', desc:'去重/分级/择时，相似度 >0.85 合并', logs:['去重窗口: 30s','择时: VAD 端点后 500ms','通道: 4选N'] },
+  10: { name:'推送', desc:'震动/手表/TTS/锁屏 四通道分发', logs:['震动: 100-300ms','手表: 200-500ms','TTS: 200-600ms'] }
+};
+
+function showStageDetail(n) {
+  const d = stageDetails[n];
+  const el = document.getElementById('stage-detail');
+  el.style.display = 'block';
+  el.innerHTML = `<h3>${n}. ${d.name}</h3><p>${d.desc}</p><ul>${d.logs.map(l=>`<li>${l}</li>`).join('')}</ul>`;
+}
+
+function playPipelineAnimation() {
+  const stages = document.querySelectorAll('.pipeline-stage');
+  stages.forEach(s => s.classList.remove('active','processing'));
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i > 0) stages[i-1].classList.remove('processing');
+    if (i >= stages.length) { clearInterval(interval); return; }
+    stages[i].classList.add('processing');
+    i++;
+  }, 400);
+}
+
+function simulateDegradation(level) {
+  const badge = document.getElementById('current-level-badge');
+  const levels = {
+    'L-A': { text:'当前：L-A 优', cls:'tag-green' },
+    'L-B': { text:'当前：L-B 弱网', cls:'tag-yellow' },
+    'L-C': { text:'当前：L-C 嘈杂', cls:'tag-orange' },
+    'L-D': { text:'当前：L-D 超时', cls:'tag-red' }
+  };
+  badge.textContent = levels[level].text;
+  badge.className = 'badge ' + levels[level].cls;
+}
+</script>
+{% endblock %}

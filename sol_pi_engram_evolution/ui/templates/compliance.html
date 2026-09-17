@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}合规中心 — BOSS-AI-R{% endblock %}
+{% block content %}
+<div class="page-header"><h1>⚖️ 合规中心</h1><p class="page-desc">受托人架构 · PIPIA · 三重录音指示 · 权利响应</p></div>
+
+<!-- 模块 A: 合规检查清单 -->
+<div class="panel">
+  <div class="panel-header"><h2>✅ 合规检查清单（6 项全通过）</h2></div>
+  <div class="panel-body">
+    <div class="checklist">
+      <div class="checklist-item"><span class="check-icon green">✅</span><div><strong>用户协议+隐私政策双弹窗</strong><br><span class="text-muted">首次使用强制阅读并同意</span></div></div>
+      <div class="checklist-item"><span class="check-icon green">✅</span><div><strong>麦克风权限单独同意</strong><br><span class="text-muted">Android/iOS 系统级权限弹窗</span></div></div>
+      <div class="checklist-item"><span class="check-icon green">✅</span><div><strong>告知模式/自行记录模式</strong><br><span class="text-muted">默认告知模式，对方知情</span></div></div>
+      <div class="checklist-item"><span class="check-icon green">✅</span><div><strong>场景五选一</strong><br><span class="text-muted">商务谈判/办公会议/公开用餐/私密聚会/他人场所</span></div></div>
+      <div class="checklist-item"><span class="check-icon green">✅</span><div><strong>权限"用时申请"</strong><br><span class="text-muted">录音时再申请，非安装时</span></div></div>
+      <div class="checklist-item"><span class="check-icon green">✅</span><div><strong>告知短信/微信模板</strong><br><span class="text-muted">自动发送给对方："本次对话将被录音记录"</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 模块 B: 三重录音指示 -->
+<div class="panel">
+  <div class="panel-header"><h2>🔴 三重录音指示</h2></div>
+  <div class="panel-body">
+    <div class="indicator-layers">
+      <div class="indicator-layer">
+        <div class="layer-icon">📱</div>
+        <div class="layer-name">应用内</div>
+        <div class="layer-desc">红色脉冲 + 波形 + 计时器</div>
+      </div>
+      <div class="indicator-layer">
+        <div class="layer-icon">🟠</div>
+        <div class="layer-name">系统级 (iOS)</div>
+        <div class="layer-desc">橙点/红色状态栏指示器</div>
+      </div>
+      <div class="indicator-layer">
+        <div class="layer-icon">🟢</div>
+        <div class="layer-name">系统级 (安卓)</div>
+        <div class="layer-desc">麦克风使用绿点 + 常驻通知</div>
+      </div>
+      <div class="indicator-layer">
+        <div class="layer-icon">🔔</div>
+        <div class="layer-name">常驻通知</div>
+        <div class="layer-desc">「正在录音/转写」可一键停止</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 模块 C: 三条红线 -->
+<div class="panel">
+  <div class="panel-header"><h2>⛔ 三条红线</h2></div>
+  <div class="panel-body">
+    <div class="red-lines">
+      <div class="red-line"><div class="red-icon">⛔</div><div><strong>非参与方偷录</strong><br><span class="text-muted">禁止远程静默、伪装界面、无提示采集</span></div></div>
+      <div class="red-line"><div class="red-icon">⛔</div><div><strong>蜂窝/VoIP 通话录音</strong><br><span class="text-muted">iOS 无 API / Android 10+ 已封死</span></div></div>
+      <div class="red-line"><div class="red-icon">⛔</div><div><strong>测谎/读心式情绪结论</strong><br><span class="text-muted">声学分析仅描述现象，无科学确定性</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 模块 D: 权利响应流程 -->
+<div class="panel">
+  <div class="panel-header"><h2>📩 权利响应流程</h2><span class="badge tag-blue">15 工作日</span></div>
+  <div class="panel-body">
+    <div class="rights-flow">
+      <div class="flow-step"><div class="step-num">1</div><div class="step-content"><strong>📩 被录音方请求</strong><br><span class="text-muted">邮箱/表单入口提交</span></div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="step-num">2</div><div class="step-content"><strong>🆔 身份核实</strong><br><span class="text-muted">15 个工作日内完成验证</span></div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="step-num">3</div><div class="step-content"><strong>🗑️ 删除/去标识</strong><br><span class="text-muted">端云联动清除数据</span></div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="step-num">4</div><div class="step-content"><strong>✅ 操作留痕</strong><br><span class="text-muted">审计日志永久保存</span></div></div>
+    </div>
+    <div class="countdown" style="margin-top:16px;padding:12px;background:var(--bg-tertiary);border-radius:8px;text-align:center">
+      <span style="font-size:24px;font-weight:700;color:var(--accent-blue)">15</span>
+      <span style="color:var(--text-muted)"> 工作日倒计时</span>
+    </div>
+  </div>
+</div>
+{% endblock %}

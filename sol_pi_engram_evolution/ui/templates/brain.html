@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}经营外脑 — BOSS-AI-R{% endblock %}
+{% block content %}
+<div class="page-header"><h1>🧠 经营决策外脑</h1><p class="page-desc">实时副驾数据 + 经营数据融合，AI 驱动决策</p></div>
+<div class="panel-grid">
+  <div class="panel"><div class="panel-header"><h2>📅 今日必盯 3 件事</h2></div><div class="panel-body">
+    <div style="padding:12px;background:var(--bg-tertiary);border-radius:8px;border-left:4px solid var(--accent-red);margin-bottom:8px"><div style="font-weight:600">⚠️ 王总口头承诺 30 天账期尚未签合同</div><div style="font-size:12px;color:var(--text-muted)">来源：昨日汽配谈判 · 原声 03:24</div></div>
+    <div style="padding:12px;background:var(--bg-tertiary);border-radius:8px;border-left:4px solid var(--accent-orange);margin-bottom:8px"><div style="font-weight:600">📦 河北 XX 催单 200 件，库存仅 150</div><div style="font-size:12px;color:var(--text-muted)">来源：经销商订货会</div></div>
+    <div style="padding:12px;background:var(--bg-tertiary);border-radius:8px;border-left:4px solid var(--accent-green)"><div style="font-weight:600">💰 饭局捕获新商机：天津李总询 50 万配件</div><div style="font-size:12px;color:var(--text-muted)">来源：谈判商机清单</div></div>
+  </div></div>
+  <div class="panel"><div class="panel-header"><h2>📊 经营统计</h2></div><div class="panel-body">
+    <div class="stats-grid">
+      <div class="stat-item"><span class="stat-value">¥2.4M</span><span class="stat-label">本月营收</span></div>
+      <div class="stat-item"><span class="stat-value">38.2%</span><span class="stat-label">毛利率</span></div>
+      <div class="stat-item"><span class="stat-value">¥63万</span><span class="stat-label">应收账款</span></div>
+      <div class="stat-item"><span class="stat-value">156</span><span class="stat-label">谈判次数</span></div>
+    </div>
+  </div></div>
+  <div class="panel"><div class="panel-header"><h2>🔄 数据融合闭环</h2></div><div class="panel-body" style="text-align:center;padding:40px 0">
+    <div style="font-size:48px;margin-bottom:16px">🎙️ → 📊 → 💾 → 🧠 → ⚡ → ⌚</div>
+    <p style="color:var(--text-muted)">现场感知 → 实时分析 → 结构化写入 → 经营外脑 → 反哺实时 → 更准提示</p>
+  </div></div>
+</div>
+{% endblock %}

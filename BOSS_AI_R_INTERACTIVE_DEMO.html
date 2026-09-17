@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老板口袋军师·实时谈判版 — 交互原型 Demo</title>
+<style>
+:root {
+  --bg: #0a0e1a;
+  --bg2: #111827;
+  --bg3: #1e293b;
+  --accent: #3b82f6;
+  --accent2: #8b5cf6;
+  --accent3: #06b6d4;
+  --danger: #ef4444;
+  --warn: #f59e0b;
+  --success: #10b981;
+  --text: #e2e8f0;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --border: #334155;
+  --glow: rgba(59, 130, 246, 0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.badge-live { background: rgba(239,68,68,0.2); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+.badge-beta { background: rgba(139,92,246,0.2); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.3); }
+.badge-v2 { background: rgba(6,182,212,0.2); color: #67e8f9; border: 1px solid rgba(6,182,212,0.3); }
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  overflow-x: auto;
+}
+
+.nav-tab {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text2);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+  position: relative;
+}
+
+.nav-tab:hover { color: var(--text); }
+.nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.nav-tab .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-left: 6px;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Main Content */
+.main {
+  display: none;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.main.active { display: block; }
+
+/* Cards */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+.card:hover { border-color: var(--accent); box-shadow: 0 0 30px rgba(59,130,246,0.1); }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title .icon { font-size: 20px; }
+
+/* Real-time View */
+.realtime-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 1000px) {
+  .realtime-grid { grid-template-columns: 1fr; }
+}
+
+/* Phone Simulator */
+.phone-sim {
+  background: #0f172a;
+  border: 2px solid var(--border);
+  border-radius: 32px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.phone-sim::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.phone-screen {
+  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+  border-radius: 20px;
+  padding: 16px;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.recording-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rec-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--danger);
+  animation: pulse 1s infinite;
+}
+
+.rec-text { font-size: 12px; color: #fca5a5; font-weight: 600; }
+
+.scene-selector {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.scene-btn {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.scene-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+.transcript-box {
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 160px;
+  max-height: 220px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.transcript-line {
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.transcript-line.owner { background: rgba(59,130,246,0.1); border-left: 3px solid var(--accent); }
+.transcript-line.opponent { background: rgba(245,158,11,0.1); border-left: 3px solid var(--warn); }
+
+.speaker-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+.speaker-tag.owner { background: var(--accent); }
+.speaker-tag.opponent { background: var(--warn); }
+
+.time-tag { color: var(--text3); font-size: 10px; margin-left: 6px; }
+
+/* Prompt/Alert Box */
+.prompt-box {
+  position: absolute;
+  bottom: 16px;
+  left: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.95), rgba(139,92,246,0.95));
+  border-radius: 12px;
+  padding: 12px 14px;
+  animation: slideUp 0.4s;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.prompt-box.danger {
+  background: linear-gradient(135deg, rgba(239,68,68,0.95), rgba(220,38,38,0.95));
+}
+
+.prompt-box.success {
+  background: linear-gradient(135deg, rgba(16,185,129,0.95), rgba(5,150,105,0.95));
+}
+
+.prompt-type {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.prompt-content {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.prompt-evidence {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Emotion Meter */
+.emotion-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.emotion-meter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emotion-label {
+  font-size: 12px;
+  width: 60px;
+  color: var(--text2);
+}
+
+.emotion-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--bg3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.emotion-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.emotion-fill.arousal { background: linear-gradient(90deg, #3b82f6, #8b5cf6); }
+.emotion-fill.valence { background: linear-gradient(90deg, #10b981, #06b6d4); }
+.emotion-fill.confidence { background: linear-gradient(90deg, #f59e0b, #ef4444); }
+
+.emotion-value {
+  font-size: 12px;
+  font-weight: 600;
+  width: 40px;
+  text-align: right;
+}
+
+/* Pipeline Visualization */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 0;
+  overflow-x: auto;
+}
+
+.pipeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-width: 80px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.pipeline-step.active {
+  border-color: var(--accent);
+  background: rgba(59,130,246,0.15);
+  box-shadow: 0 0 20px var(--glow);
+}
+
+.pipeline-step.processing {
+  border-color: var(--warn);
+  animation: processing 1s infinite;
+}
+
+@keyframes processing {
+  0%, 100% { box-shadow: 0 0 10px rgba(245,158,11,0.3); }
+  50% { box-shadow: 0 0 25px rgba(245,158,11,0.6); }
+}
+
+.pipeline-step .step-icon { font-size: 22px; }
+.pipeline-step .step-name { font-size: 11px; font-weight: 600; text-align: center; }
+.pipeline-step .step-latency { font-size: 10px; color: var(--text3); }
+
+.pipeline-arrow {
+  color: var(--text3);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Speaker Panel */
+.speaker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.speaker-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: var(--bg3);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.speaker-item:hover { border-color: var(--accent); }
+.speaker-item.talking { border-color: var(--warn); background: rgba(245,158,11,0.1); }
+
+.speaker-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.speaker-avatar.owner { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.speaker-avatar.opponent { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.speaker-avatar.other { background: linear-gradient(135deg, #64748b, #475569); }
+
+.speaker-info { flex: 1; }
+.speaker-name { font-size: 13px; font-weight: 600; }
+.speaker-status { font-size: 11px; color: var(--text3); }
+
+.speaker-voicebar {
+  width: 40px;
+  height: 4px;
+  background: var(--bg);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.speaker-voicebar .fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  animation: voicebar 0.5s infinite alternate;
+}
+
+@keyframes voicebar {
+  from { width: 30%; }
+  to { width: 100%; }
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.stat-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.stat-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label { font-size: 12px; color: var(--text2); margin-top: 4px; }
+.stat-change { font-size: 11px; margin-top: 4px; }
+.stat-change.up { color: var(--success); }
+.stat-change.down { color: var(--danger); }
+
+/* Pricing Table */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1000px) {
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+
+.pricing-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card.featured {
+  border-color: var(--accent);
+  box-shadow: 0 0 40px var(--glow);
+  transform: scale(1.02);
+}
+
+.pricing-card.featured::before {
+  content: '主推';
+  position: absolute;
+  top: 12px;
+  right: -28px;
+  background: var(--accent);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 32px;
+  transform: rotate(45deg);
+}
+
+.pricing-tier { font-size: 14px; font-weight: 700; color: var(--text2); margin-bottom: 8px; }
+.pricing-name { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.pricing-price { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+.pricing-price span { font-size: 14px; font-weight: 500; color: var(--text2); }
+.pricing-period { font-size: 12px; color: var(--text3); margin-bottom: 16px; }
+
+.pricing-features {
+  text-align: left;
+  margin-top: 16px;
+}
+
+.pricing-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 13px;
+  color: var(--text2);
+}
+
+.pricing-feature .check { color: var(--success); }
+.pricing-feature .cross { color: var(--text3); opacity: 0.5; }
+
+.pricing-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: all 0.2s;
+}
+
+.pricing-btn:hover { background: var(--accent); border-color: var(--accent); }
+.pricing-btn.primary { background: var(--accent); border-color: var(--accent); }
+
+/* Compliance Panel */
+.compliance-checks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 700px) {
+  .compliance-checks { grid-template-columns: 1fr; }
+}
+
+.compliance-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--bg3);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.compliance-item.pass { border-color: rgba(16,185,129,0.3); }
+.compliance-item.fail { border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.05); }
+
+.compliance-icon { font-size: 20px; }
+.compliance-text { flex: 1; }
+.compliance-title { font-size: 13px; font-weight: 600; }
+.compliance-desc { font-size: 11px; color: var(--text3); }
+
+/* Graph View */
+.graph-container {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+.graph-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.graph-node {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.graph-node:hover { filter: brightness(1.3); }
+
+.graph-tooltip {
+  position: absolute;
+  background: rgba(15,23,42,0.95);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 12px;
+  max-width: 250px;
+  pointer-events: none;
+  z-index: 50;
+  display: none;
+}
+
+.graph-legend {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+/* Architecture Diagram */
+.arch-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.arch-layer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.arch-layer-label {
+  width: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text3);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.arch-components {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.arch-comp {
+  padding: 8px 14px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arch-comp:hover { border-color: var(--accent); background: rgba(59,130,246,0.1); }
+.arch-comp.highlight { border-color: var(--accent); background: rgba(59,130,246,0.15); }
+.arch-comp .comp-icon { font-size: 14px; }
+
+.arch-arrows {
+  text-align: center;
+  color: var(--text3);
+  font-size: 18px;
+  padding: 4px 0;
+}
+
+/* Delay Monitor */
+.delay-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.delay-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.delay-label { width: 140px; font-size: 12px; color: var(--text2); }
+.delay-track {
+  flex: 1;
+  height: 6px;
+  background: var(--bg3);
+  border-radius: 3px;
+  position: relative;
+}
+.delay-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+.delay-fill.good { background: var(--success); }
+.delay-fill.warn { background: var(--warn); }
+.delay-fill.bad { background: var(--danger); }
+.delay-val { width: 50px; font-size: 12px; font-weight: 600; text-align: right; }
+
+/* Interactive Buttons */
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover { background: var(--accent); border-color: var(--accent); }
+.btn-primary { background: var(--accent); border-color: var(--accent); }
+.btn-danger { background: var(--danger); border-color: var(--danger); }
+.btn-sm { padding: 4px 10px; font-size: 12px; }
+
+/* Simulation Controls */
+.sim-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.sim-scenario {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Log Console */
+.log-console {
+  background: #0f0f1a;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 11px;
+  max-height: 200px;
+  overflow-y: auto;
+  line-height: 1.8;
+}
+
+.log-line { display: flex; gap: 8px; }
+.log-time { color: var(--text3); flex-shrink: 0; }
+.log-level { flex-shrink: 0; width: 50px; font-weight: 700; }
+.log-level.info { color: var(--accent3); }
+.log-level.warn { color: var(--warn); }
+.log-level.error { color: var(--danger); }
+.log-level.success { color: var(--success); }
+.log-msg { color: var(--text2); }
+
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.data-table th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text2);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.data-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(51,65,85,0.5);
+}
+
+.data-table tr:hover td { background: rgba(59,130,246,0.05); }
+
+/* Tag */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.tag-blue { background: rgba(59,130,246,0.15); color: #93c5fd; }
+.tag-purple { background: rgba(139,92,246,0.15); color: #c4b5fd; }
+.tag-green { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+.tag-red { background: rgba(239,68,68,0.15); color: #fca5a5; }
+.tag-orange { background: rgba(245,158,11,0.15); color: #fcd34d; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+
+/* Animations */
+.fade-in { animation: fadeIn 0.5s; }
+.slide-in { animation: slideIn 0.4s; }
+
+@keyframes slideIn {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Watch Mock */
+.watch-mock {
+  width: 120px;
+  height: 140px;
+  background: #1a1a2e;
+  border: 3px solid #334155;
+  border-radius: 24px;
+  margin: 16px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: relative;
+}
+
+.watch-mock::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  width: 20px;
+  height: 8px;
+  background: #334155;
+  border-radius: 2px;
+}
+
+.watch-vibration {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: vibrate 0.3s infinite;
+  margin-bottom: 4px;
+}
+
+@keyframes vibrate {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.watch-text { font-size: 10px; font-weight: 600; color: var(--accent); text-align: center; padding: 0 8px; }
+.watch-sub { font-size: 9px; color: var(--text3); }
+
+/* Section Divider */
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-desc {
+  font-size: 14px;
+  color: var(--text2);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* Flow Chart */
+.flow-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  overflow-x: auto;
+  justify-content: center;
+}
+
+.flow-box {
+  padding: 12px 18px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 90px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.flow-box:hover { border-color: var(--accent); transform: translateY(-2px); }
+.flow-box.active { border-color: var(--accent); background: rgba(59,130,246,0.15); }
+
+.flow-arrow { color: var(--text3); font-size: 20px; }
+
+/* Risk Matrix */
+.risk-matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 700px) {
+  .risk-matrix { grid-template-columns: 1fr; }
+}
+
+.risk-item {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+}
+
+.risk-item.high { border-left: 4px solid var(--danger); }
+.risk-item.medium { border-left: 4px solid var(--warn); }
+.risk-item.low { border-left: 4px solid var(--success); }
+
+.risk-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.risk-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
+.risk-badge { margin-top: 8px; }
+
+/* Toggle Switch */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.toggle input { display: none; }
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--bg3);
+  border-radius: 24px;
+  transition: 0.3s;
+  border: 1px solid var(--border);
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background: var(--text2);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.toggle input:checked + .toggle-slider { background: var(--accent); }
+.toggle input:checked + .toggle-slider::before { transform: translateX(20px); background: white; }
+
+/* Row layout */
+.row { display: flex; align-items: center; gap: 12px; }
+.row-between { display: flex; align-items: center; justify-content: space-between; }
+
+/* Demo mode selector */
+.demo-modes {
+  display: flex;
+  gap: 4px;
+  background: var(--bg3);
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.demo-mode {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text2);
+}
+
+.demo-mode.active { background: var(--accent); color: white; }
+
+/* Hidden sections */
+.hidden { display: none !important; }
+
+/* Tooltip */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 100;
+}
+
+[data-tooltip]:hover::after { opacity: 1; }
+
+/* Watermark */
+.watermark {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  font-size: 11px;
+  color: var(--text3);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Responsive phone */
+@media (max-width: 600px) {
+  .realtime-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-left">
+    <div class="logo">军</div>
+    <div class="logo-text">老板口袋军师 · 实时谈判版</div>
+    <span class="badge badge-v2">V2.0</span>
+    <span class="badge badge-beta">BETA</span>
+  </div>
+  <div class="header-right">
+    <span class="badge badge-live">● LIVE DEMO</span>
+    <span style="font-size:12px;color:var(--text2)">BOSS-AI-R × SoL-Pi 融合原型</span>
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="nav-tabs">
+  <div class="nav-tab active" data-view="realtime">实时副驾 <span class="dot"></span></div>
+  <div class="nav-tab" data-view="pipeline">音频链路</div>
+  <div class="nav-tab" data-view="brain">经营外脑</div>
+  <div class="nav-tab" data-view="graph">知识图谱</div>
+  <div class="nav-tab" data-view="arch">技术架构</div>
+  <div class="nav-tab" data-view="compliance">合规</div>
+  <div class="nav-tab" data-view="pricing">定价</div>
+  <div class="nav-tab" data-view="roadmap">路线图</div>
+</div>
+
+<!-- ============ VIEW: 实时副驾 ============ -->
+<div class="main active" id="view-realtime">
+  <div class="section-title">🎙️ 实时副驾 — 谈判现场模拟</div>
+  <div class="section-desc">模拟汽配贸易账期谈判场景。系统实时转写 → 识别风险 → 通过手表震动 + 锁屏提示推送耳语。</div>
+  
+  <div class="sim-controls">
+    <button class="btn btn-primary" onclick="startRecording()">▶ 开始录音</button>
+    <button class="btn" onclick="pauseRecording()">⏸ 暂停</button>
+    <button class="btn btn-danger" onclick="stopRecording()">⏹ 结束</button>
+    <button class="btn btn-sm" onclick="resetSim()">↺ 重置</button>
+    <div class="demo-modes">
+      <div class="demo-mode active" data-scenario="auto" onclick="setScenario('auto')">自动演示</div>
+      <div class="demo-mode" data-scenario="qipei" onclick="setScenario('qipei')">汽配谈判</div>
+      <div class="demo-mode" data-scenario="tiyu" onclick="setScenario('tiyu')">体品订货</div>
+      <div class="demo-mode" data-scenario="zaisheng" onclick="setScenario('zaisheng')">再生资源</div>
+    </div>
+  </div>
+
+  <div class="realtime-grid">
+    <!-- Phone -->
+    <div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span class="icon">📱</span> 老板手机</div>
+          <div class="row" style="gap:4px">
+            <span id="recStatus" class="tag tag-blue">待机</span>
+          </div>
+        </div>
+        <div class="phone-sim">
+          <div class="phone-screen">
+            <div class="recording-indicator" id="recIndicator" style="display:none">
+              <div class="rec-dot"></div>
+              <div class="rec-text" id="recTime">00:00:00 录音中</div>
+            </div>
+            
+            <div class="scene-selector">
+              <div class="scene-btn active">商务谈判</div>
+              <div class="scene-btn">办公会议</div>
+              <div class="scene-btn">公开用餐</div>
+            </div>
+            
+            <div class="transcript-box" id="transcriptBox">
+              <div style="color:var(--text3);text-align:center;padding:40px 0;font-size:13px;">
+                点击「开始录音」启动实时转写
+              </div>
+            </div>
+            
+            <div id="promptBox"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Watch Mock -->
+      <div class="card" style="margin-top:16px">
+        <div class="card-header">
+          <div class="card-title"><span class="icon">⌚</span> 智能手表反馈</div>
+        </div>
+        <div class="watch-mock" id="watchMock" style="opacity:0.4">
+          <div style="font-size:11px;color:var(--text3)">等待震动...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Emotion + Speaker -->
+    <div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span class="icon">🎭</span> 声学情绪分析</div>
+          <span class="tag tag-purple">双通道</span>
+        </div>
+        <div class="emotion-panel">
+          <div class="emotion-meter">
+            <div class="emotion-label">唤醒度</div>
+            <div class="emotion-bar"><div class="emotion-fill arousal" id="arousalBar" style="width:30%"></div></div>
+            <div class="emotion-value" id="arousalVal">0.30</div>
+          </div>
+          <div class="emotion-meter">
+            <div class="emotion-label">效价</div>
+            <div class="emotion-bar"><div class="emotion-fill valence" id="valenceBar" style="width:50%"></div></div>
+            <div class="emotion-value" id="valenceVal">0.50</div>
+          </div>
+          <div class="emotion-meter">
+            <div class="emotion-label">确定度</div>
+            <div class="emotion-bar"><div class="emotion-fill confidence" id="confidenceBar" style="width:60%"></div></div>
+            <div class="emotion-value" id="confidenceVal">0.60</div>
+          </div>
+        </div>
+        <div id="emotionEvents" style="margin-top:14px"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span class="icon">👥</span> 说话人分离</div>
+          <span class="tag tag-green">3D-Speaker</span>
+        </div>
+        <div class="speaker-list">
+          <div class="speaker-item" id="spOwner">
+            <div class="speaker-avatar owner">李</div>
+            <div class="speaker-info">
+              <div class="speaker-name">李总（您）<span class="tag tag-blue" style="margin-left:6px">本人</span></div>
+              <div class="speaker-status">声纹已注册</div>
+            </div>
+            <div class="speaker-voicebar"><div class="fill" id="voiceOwner"></div></div>
+          </div>
+          <div class="speaker-item" id="spOpponent">
+            <div class="speaker-avatar opponent">王</div>
+            <div class="speaker-info">
+              <div class="speaker-name">王采购（对方）<span class="tag tag-orange" style="margin-left:6px">主谈</span></div>
+              <div class="speaker-status">已识别</div>
+            </div>
+            <div class="speaker-voicebar"><div class="fill" id="voiceOpponent"></div></div>
+          </div>
+          <div class="speaker-item" id="spOther">
+            <div class="speaker-avatar other">?</div>
+            <div class="speaker-info">
+              <div class="speaker-name">其他参会人</div>
+              <div class="speaker-status">未识别</div>
+            </div>
+            <div class="speaker-voicebar"><div class="fill" id="voiceOther" style="animation:none;width:10%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prompts + Stats -->
+    <div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span class="icon">⚡</span> 实时提示队列</div>
+          <span class="tag tag-red" id="promptCount">0 条</span>
+        </div>
+        <div id="promptList" style="max-height:300px;overflow-y:auto">
+          <div style="color:var(--text3);text-align:center;padding:20px;font-size:12px;">
+            等待提示触发...
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span class="icon">📊</span> 会话统计</div>
+        </div>
+        <div class="stats-grid" style="grid-template-columns:1fr 1fr;gap:10px">
+          <div class="stat-card" style="padding:12px">
+            <div class="stat-value" id="statDuration" style="font-size:22px">00:00</div>
+            <div class="stat-label">录音时长</div>
+          </div>
+          <div class="stat-card" style="padding:12px">
+            <div class="stat-value" id="statWords" style="font-size:22px">0</div>
+            <div class="stat-label">转写字数</div>
+          </div>
+          <div class="stat-card" style="padding:12px">
+            <div class="stat-value" id="statPrompts" style="font-size:22px">0</div>
+            <div class="stat-label">触发提示</div>
+          </div>
+          <div class="stat-card" style="padding:12px">
+            <div class="stat-value" id="statLatency" style="font-size:22px">0ms</div>
+            <div class="stat-label">端到端延迟</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title"><span class="icon">📝</span> 系统日志</div>
+        </div>
+        <div class="log-console" id="logConsole">
+          <div class="log-line"><span class="log-time">--:--:--</span><span class="log-level info">INFO</span><span class="log-msg">系统就绪，等待开始录音...</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIEW: 音频链路 ============ -->
+<div class="main" id="view-pipeline">
+  <div class="section-title">🔊 实时音频链路 — 9 段处理流程</div>
+  <div class="section-desc">端到端延迟预算：采集(20ms) → 降噪(10ms) → VAD(50ms) → 流式ASR(600-1500ms) → 分离/情绪(+200-800ms) → L0/L1/L2(50-3000ms) → 推送(100-500ms)</div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">🔗</span> 处理流水线</div>
+      <div class="row">
+        <button class="btn btn-sm btn-primary" onclick="animatePipeline()">▶ 播放流程动画</button>
+        <button class="btn btn-sm" onclick="highlightStage(4)">⚠️ ASR 瓶颈</button>
+        <button class="btn btn-sm" onclick="highlightStage(7)">⚡ L2 触发</button>
+      </div>
+    </div>
+    <div class="pipeline" id="pipelineViz">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">⏱️</span> 延迟预算表 (P90)</div>
+    </div>
+    <div class="delay-bars">
+      <div class="delay-row"><div class="delay-label">采集+帧打包</div><div class="delay-track"><div class="delay-fill good" style="width:2%"></div></div><div class="delay-val">20ms</div></div>
+      <div class="delay-row"><div class="delay-label">端侧降噪 AEC/NS</div><div class="delay-track"><div class="delay-fill good" style="width:1%"></div></div><div class="delay-val">10ms</div></div>
+      <div class="delay-row"><div class="delay-label">VAD 端点检测</div><div class="delay-track"><div class="delay-fill good" style="width:5%"></div></div><div class="delay-val">50ms</div></div>
+      <div class="delay-row"><div class="delay-label">网络上行 (Opus)</div><div class="delay-track"><div class="delay-fill good" style="width:8%"></div></div><div class="delay-val">80ms</div></div>
+      <div class="delay-row"><div class="delay-label">流式 ASR (稳定片段)</div><div class="delay-track"><div class="delay-fill warn" style="width:40%"></div></div><div class="delay-val">600ms</div></div>
+      <div class="delay-row"><div class="delay-label">说话人分离 (并行)</div><div class="delay-track"><div class="delay-fill warn" style="width:25%"></div></div><div class="delay-val">+200ms</div></div>
+      <div class="delay-row"><div class="delay-label">声学情绪事件 (并行)</div><div class="delay-track"><div class="delay-fill good" style="width:10%"></div></div><div class="delay-val">+100ms</div></div>
+      <div class="delay-row"><div class="delay-label">L0 关键词匹配</div><div class="delay-track"><div class="delay-fill good" style="width:1%"></div></div><div class="delay-val">&lt;50ms</div></div>
+      <div class="delay-row"><div class="delay-label">L1 轻量分类</div><div class="delay-track"><div class="delay-fill good" style="width:12%"></div></div><div class="delay-val">200ms</div></div>
+      <div class="delay-row"><div class="delay-label">L2 深度 LLM</div><div class="delay-track"><div class="delay-fill bad" style="width:60%"></div></div><div class="delay-val">800-3000ms</div></div>
+      <div class="delay-row"><div class="delay-label">网络下行+推送通道</div><div class="delay-track"><div class="delay-fill good" style="width:8%"></div></div><div class="delay-val">100ms</div></div>
+      <div class="delay-row"><div class="delay-label">反馈呈现 (震动/手表)</div><div class="delay-track"><div class="delay-fill good" style="width:5%"></div></div><div class="delay-val">100ms</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">📉</span> 四级自动降级策略</div>
+    </div>
+    <div class="flow-container" style="flex-wrap:wrap">
+      <div class="flow-box" style="border-color:var(--success);background:rgba(16,185,129,0.1)">
+        <div style="font-size:18px">L-A</div>
+        <div>优</div>
+        <div style="font-size:10px;color:var(--success)">云 ASR + L2 全功能</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:var(--warn);background:rgba(245,158,11,0.1)">
+        <div style="font-size:18px">L-B</div>
+        <div>弱网</div>
+        <div style="font-size:10px;color:var(--warn)">端侧 ASR + 本地关键词</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:var(--accent);background:rgba(59,130,246,0.1)">
+        <div style="font-size:18px">L-C</div>
+        <div>嘈杂</div>
+        <div style="font-size:10px;color:var(--accent)">只报高级风险/数字</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:var(--danger);background:rgba(239,68,68,0.1)">
+        <div style="font-size:18px">L-D</div>
+        <div>超时</div>
+        <div style="font-size:10px;color:var(--danger)">丢弃 L2，保 L0/L1</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIEW: 经营外脑 ============ -->
+<div class="main" id="view-brain">
+  <div class="section-title">🧠 经营决策外脑 — 六大场景</div>
+  <div class="section-desc">实时副驾数据自动汇入经营外脑，与财务/销售数据融合，形成"现场感知→后台决策"闭环。</div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">¥2.4M</div>
+      <div class="stat-label">本月营收</div>
+      <div class="stat-change up">↑ 12.5% 环比</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">38.2%</div>
+      <div class="stat-label">毛利率</div>
+      <div class="stat-change down">↓ 1.3% 环比</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">¥63万</div>
+      <div class="stat-label">应收账款</div>
+      <div class="stat-change down">⚠️ 超期47天</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">156</div>
+      <div class="stat-label">谈判/饭局次数</div>
+      <div class="stat-change up">本月累计</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span class="icon">📅</span> 今日必盯 3 件事</div>
+        <span class="tag tag-red">日报 8:00</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:12px;background:var(--bg3);border-radius:10px;border-left:4px solid var(--danger)">
+          <div style="font-size:14px;font-weight:600">⚠️ 王总口头承诺的 30 天账期尚未签合同</div>
+          <div style="font-size:12px;color:var(--text2);margin-top:4px">来源：昨日汽配谈判 · 原声 03:24</div>
+          <div style="margin-top:8px"><span class="tag tag-red">风险</span><span class="tag tag-blue" style="margin-left:6px">待办</span></div>
+        </div>
+        <div style="padding:12px;background:var(--bg3);border-radius:10px;border-left:4px solid var(--warn)">
+          <div style="font-size:14px;font-weight:600">📦 河北 XX 催单 200 件，库存仅 150</div>
+          <div style="font-size:12px;color:var(--text2);margin-top:4px">来源：经销商订货会 · 待协调产能</div>
+        </div>
+        <div style="padding:12px;background:var(--bg3);border-radius:10px;border-left:4px solid var(--success)">
+          <div style="font-size:14px;font-weight:600">💰 昨日饭局捕获新商机：天津李总询 50 万配件</div>
+          <div style="font-size:12px;color:var(--text2);margin-top:4px">来源：谈判商机清单 · 决策人:李总 预算:50万</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span class="icon">💡</span> 昨日谈判捕获</div>
+        <span class="tag tag-purple">实时副驾 → 外脑</span>
+      </div>
+      <table class="data-table">
+        <tr><th>类型</th><th>内容</th><th>状态</th></tr>
+        <tr><td><span class="tag tag-green">商机</span></td><td>天津李总 50万配件需求</td><td>待跟进</td></tr>
+        <tr><td><span class="tag tag-orange">待办</span></td><td>王总账期合同签署</td><td>今日</td></tr>
+        <tr><td><span class="tag tag-red">风险</span></td><td>口头担保无书面确认</td><td>关注</td></tr>
+        <tr><td><span class="tag tag-blue">决策</span></td><td>接受 5% 降价换 30 天账期</td><td>已确认</td></tr>
+      </table>
+      <div style="margin-top:12px;padding:10px;background:rgba(59,130,246,0.1);border-radius:8px;font-size:12px">
+        🔗 数据自动写入经营库：商机进CRM、待办进任务、风险进预警、决策卡进追溯库
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><span class="icon">🔄</span> 双向融合闭环</div>
+    </div>
+    <div class="flow-container" style="flex-wrap:wrap">
+      <div class="flow-box" style="min-width:120px">
+        <div>🎙️ 现场录音</div>
+        <div style="font-size:10px;color:var(--text3)">实时副驾</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="min-width:120px">
+        <div>📊 实时分析</div>
+        <div style="font-size:10px;color:var(--text3)">情绪/风险/商机</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="min-width:120px;border-color:var(--success)">
+        <div>💾 结构化写入</div>
+        <div style="font-size:10px;color:var(--text3)">五件套</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="min-width:120px">
+        <div>🧠 经营外脑</div>
+        <div style="font-size:10px;color:var(--text3)">CRM+待办+预警</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-box" style="min-width:120px;border-color:var(--accent)">
+        <div>📋 谈判档案</div>
+        <div style="font-size:10px;color:var(--text3)">客户历史+应收</div>
+      </div>
+      <div class="flow-arrow">↑</div>
+      <div class="flow-box" style="min-width:120px;border-color:var(--accent)">
+        <div>⚡ 反哺实时</div>
+        <div style="font-size:10px;color:var(--text3)">L2注入上下文</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="min-width:120px">
+        <div>⌚ 更准提示</div>
+        <div style="font-size:10px;color:var(--text3)">个性化建议</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIEW: 知识图谱 ============ -->
+<div class="main" id="view-graph">
+  <div class="section-title">🕸️ 知识图谱 — 谈判知识网络</div>
+  <div class="section-desc">SoL-Pi 融合后新增的谈判节点类型：NegotiationNode、OpportunityNode、DecisionCardNode、ComplianceEventNode</div>
+
+  <div class="graph-container">
+    <svg class="graph-svg" id="graphSvg">
+      <!-- Generated by JS -->
+    </svg>
+    <div class="graph-tooltip" id="graphTooltip"></div>
+    <div class="graph-legend">
+      <span><span class="legend-dot" style="background:#3b82f6"></span>客户</span>
+      <span><span class="legend-dot" style="background:#f59e0b"></span>谈判</span>
+      <span><span class="legend-dot" style="background:#10b981"></span>商机</span>
+      <span><span class="legend-dot" style="background:#8b5cf6"></span>决策卡</span>
+      <span><span class="legend-dot" style="background:#ef4444"></span>风险</span>
+      <span><span class="legend-dot" style="background:#06b6d4"></span>待办</span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:16px">
+    <div class="card">
+      <div class="card-header"><div class="card-title">📊 图谱统计</div></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="row-between"><span style="color:var(--text2);font-size:13px">总节点</span><span style="font-weight:700">1,247</span></div>
+        <div class="row-between"><span style="color:var(--text2);font-size:13px">谈判节点</span><span style="font-weight:700;color:#fbbf24">156</span></div>
+        <div class="row-between"><span style="color:var(--text2);font-size:13px">商机节点</span><span style="font-weight:700;color:#34d399">43</span></div>
+        <div class="row-between"><span style="color:var(--text2);font-size:13px">决策卡</span><span style="font-weight:700;color:#a78bfa">89</span></div>
+        <div class="row-between"><span style="color:var(--text2);font-size:13px">关系边</span><span style="font-weight:700">3,891</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-title">🔍 决策追溯示例</div></div>
+      <div style="font-size:13px;line-height:1.8">
+        <div style="padding:8px;background:var(--bg3);border-radius:8px;margin-bottom:8px">
+          <div style="font-weight:600">结论：接受 5% 降价</div>
+          <div style="color:var(--text2);font-size:11px">时间: 2026-09-16 15:32</div>
+          <div style="color:var(--accent3);font-size:11px;margin-top:4px">"王总说了，只要降5%马上签"</div>
+          <div style="margin-top:6px"><span class="tag tag-green">原声回跳</span></div>
+        </div>
+        <div class="row-between"><span style="color:var(--text2);font-size:11px">当时建议</span><span style="font-size:11px">可接受</span></div>
+        <div class="row-between"><div class="row" style="gap:4px"><span class="tag tag-blue">历史欠款63万</span></div><span class="tag tag-orange">风险已提示</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-title">⚡ 实时节点注入</div></div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.6">
+        每次谈判自动提取：
+        <ul style="margin:8px 0 0 16px">
+          <li>谈判节点（行业/参与人/时长）</li>
+          <li>商机节点（需求/预算/时间窗）</li>
+          <li>待办节点（到人到时间）</li>
+          <li>决策卡（依据+原声回跳）</li>
+          <li>风险节点（类型+等级）</li>
+        </ul>
+        <div style="margin-top:10px;padding:8px;background:rgba(245,158,11,0.1);border-radius:6px;font-size:11px">
+          ⚠️ 老板会后确认才写入经营库（PLAUD式主动澄清）
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIEW: 技术架构 ============ -->
+<div class="main" id="view-arch">
+  <div class="section-title">🏗️ 技术架构 — 七层结构</div>
+  <div class="section-desc">BOSS-AI-R 七层架构与 SoL-Pi 融合后的统一视图</div>
+
+  <div class="card">
+    <div class="arch-diagram">
+      <div class="arch-layer">
+        <div class="arch-layer-label">端侧层</div>
+        <div class="arch-components">
+          <div class="arch-comp"><span class="comp-icon">📱</span> iOS Swift / Android Kotlin 原生</div>
+          <div class="arch-comp"><span class="comp-icon">🔇</span> RNNoise 降噪</div>
+          <div class="arch-comp"><span class="comp-icon">🎤</span> WebRTC VAD</div>
+          <div class="arch-comp"><span class="comp-icon">🧠</span> sherpa-onnx + SenseVoice</div>
+          <div class="arch-comp"><span class="comp-icon">⚡</span> L0 关键词/正则</div>
+          <div class="arch-comp"><span class="comp-icon">⌚</span> 分级震动/手表/耳机 TTS</div>
+        </div>
+      </div>
+      <div class="arch-arrows">↕ WebSocket 长连 (wss) ↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-label">传输层</div>
+        <div class="arch-components">
+          <div class="arch-comp"><span class="comp-icon">🔗</span> 自建 WebSocket 网关</div>
+          <div class="arch-comp"><span class="comp-icon">🔐</span> TLS 1.2+</div>
+          <div class="arch-comp"><span class="comp-icon">📡</span> Opus 24kbps 上行</div>
+          <div class="arch-comp highlight"><span class="comp-icon">🛡️</span> 出口 DLP 脱敏</div>
+        </div>
+      </div>
+      <div class="arch-arrows">↕ ↕ ↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-label">实时处理层</div>
+        <div class="arch-components">
+          <div class="arch-comp"><span class="comp-icon">🎙️</span> FunASR 2pass 流式 ASR</div>
+          <div class="arch-comp"><span class="comp-icon">👥</span> 3D-Speaker 说话人分离</div>
+          <div class="arch-comp"><span class="comp-icon">🎭</span> 声学情绪服务</div>
+          <div class="arch-comp"><span class="comp-icon">🤖</span> L1/L2 LLM 编排</div>
+          <div class="arch-comp highlight"><span class="comp-icon">⚡</span> 提示决策器 (自研)</div>
+        </div>
+      </div>
+      <div class="arch-arrows">↕ ↕ ↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-label">异步处理层</div>
+        <div class="arch-components">
+          <div class="arch-comp"><span class="comp-icon">📝</span> large ASR 全文校正</div>
+          <div class="arch-comp"><span class="comp-icon">📊</span> 纪要/商机/待办生成</div>
+          <div class="arch-comp"><span class="comp-icon">🔄</span> Celery 任务队列</div>
+          <div class="arch-comp"><span class="comp-icon">⏰</span> n8n 定时/事件流水线</div>
+        </div>
+      </div>
+      <div class="arch-arrows">↕ ↕ ↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-label">经营外脑层</div>
+        <div class="arch-components">
+          <div class="arch-comp"><span class="comp-icon">🔄</span> Dify Agent 编排</div>
+          <div class="arch-comp"><span class="comp-icon">📚</span> RAGFlow 知识库</div>
+          <div class="arch-comp"><span class="comp-icon">🗃️</span> DB-GPT Text-to-SQL</div>
+          <div class="arch-comp"><span class="comp-icon">⚙️</span> 自研规则引擎</div>
+        </div>
+      </div>
+      <div class="arch-arrows">↕ ↕ ↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-label">数据层</div>
+        <div class="arch-components">
+          <div class="arch-comp"><span class="comp-icon">🐘</span> PostgreSQL (RLS)</div>
+          <div class="arch-comp"><span class="comp-icon">🔍</span> 向量库 (RAGFlow)</div>
+          <div class="arch-comp"><span class="comp-icon">📦</span> MinIO 对象存储</div>
+          <div class="arch-comp"><span class="comp-icon">⚡</span> Redis 热数据</div>
+          <div class="arch-comp highlight"><span class="comp-icon">🏛️</span> 阿里云华北3（张家口）</div>
+        </div>
+      </div>
+      <div class="arch-arrows">↕ ↕ ↕</div>
+      <div class="arch-layer">
+        <div class="arch-layer-label">大模型层</div>
+        <div class="arch-components">
+          <div class="arch-comp"><span class="comp-icon">🧠</span> DeepSeek (主)</div>
+          <div class="arch-comp"><span class="comp-icon">🔀</span> Qwen (备)</div>
+          <div class="arch-comp"><span class="comp-icon">💰</span> L1: Turbo/Flash/Lite</div>
+          <div class="arch-comp"><span class="comp-icon">⚖️</span> L2: 均衡档</div>
+          <div class="arch-comp highlight"><span class="comp-icon">🚫</span> 只用境内备案模型</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div class="card">
+      <div class="card-header"><div class="card-title"><span class="icon">🏢</span> 部署架构 — 数据不出河北</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:12px;background:var(--bg3);border-radius:10px;border-left:4px solid var(--success)">
+          <div style="font-weight:600;font-size:14px">L1 端侧</div>
+          <div style="font-size:12px;color:var(--text2)">降噪/VAD/L0关键词 → 不出手机</div>
+        </div>
+        <div style="padding:12px;background:var(--bg3);border-radius:10px;border-left:4px solid var(--accent)">
+          <div style="font-weight:600;font-size:14px">L2 省内云（主形态）</div>
+          <div style="font-size:12px;color:var(--text2)">阿里云华北3 张家口 · 备份同地域</div>
+        </div>
+        <div style="padding:12px;background:var(--bg3);border-radius:10px;border-left:4px solid var(--accent2)">
+          <div style="font-weight:600;font-size:14px">L3 私有化（V0.3）</div>
+          <div style="font-size:12px;color:var(--text2)">Qwen + vLLM 一体机 · BYOK</div>
+        </div>
+        <div style="padding:12px;background:var(--bg3);border-radius:10px;border-left:4px solid var(--accent3)">
+          <div style="font-weight:600;font-size:14px">L4 混合脱敏（贯穿）</div>
+          <div style="font-size:12px;color:var(--text2)">端侧转文本→NER脱敏→脱敏文本上云</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-title"><span class="icon">💰</span> 单用户月成本模型</div></div>
+      <table class="data-table">
+        <tr><th>成本项</th><th>云方案</th><th>自建方案</th></tr>
+        <tr><td>ASR</td><td style="color:var(--warn)">58-72 元</td><td style="color:var(--success)">6-24 元</td></tr>
+        <tr><td>LLM</td><td>1.2-3.9 元</td><td>1.2-3.9 元</td></tr>
+        <tr><td>服务器</td><td>5-15 元</td><td>3-8 元</td></tr>
+        <tr><td>存储</td><td>~0.1 元</td><td>~0.05 元</td></tr>
+        <tr><td>网络</td><td>0.3-0.5 元</td><td>0.2-0.3 元</td></tr>
+        <tr style="font-weight:700"><td>合计</td><td style="color:var(--warn)">60-80 元</td><td style="color:var(--success)">5-15 元</td></tr>
+      </table>
+      <div style="margin-top:10px;font-size:11px;color:var(--text3)">
+        切换触发: >500 付费用户 或 >100 并发 → 自建 FunASR
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIEW: 合规 ============ -->
+<div class="main" id="view-compliance">
+  <div class="section-title">⚖️ 合规设计 — 受托人架构</div>
+  <div class="section-desc">把产品做成"老板手里的智能录音笔＋会后参谋"（受托人/工具人），不是"悄悄分析所有人的读心机"</div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--success)">18</div>
+      <div class="stat-label">功能模块风险分级</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--danger)">3</div>
+      <div class="stat-label">红线禁止项</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--warn)">4</div>
+      <div class="stat-label">PIPIA 必备章节</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color:var(--accent)">100%</div>
+      <div class="stat-label">合规自查清单</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+    <div class="card">
+      <div class="card-header"><div class="card-title"><span class="icon">✅</span> 录音前：知情同意</div></div>
+      <div class="compliance-checks">
+        <div class="compliance-item pass"><span class="compliance-icon">📋</span><div class="compliance-text"><div class="compliance-title">用户协议+隐私政策双弹窗</div></div></div>
+        <div class="compliance-item pass"><span class="compliance-icon">🎤</span><div class="compliance-text"><div class="compliance-title">麦克风权限单独同意</div></div></div>
+        <div class="compliance-item pass"><span class="compliance-icon">🔊</span><div class="compliance-text"><div class="compliance-title">告知模式/自行记录模式</div></div></div>
+        <div class="compliance-item pass"><span class="compliance-icon">🏷️</span><div class="compliance-text"><div class="compliance-title">场景五选一</div></div></div>
+        <div class="compliance-item pass"><span class="compliance-icon">⏰</span><div class="compliance-text"><div class="compliance-title">权限"用时申请"</div></div></div>
+        <div class="compliance-item pass"><span class="compliance-icon">🔔</span><div class="compliance-text"><div class="compliance-title">告知短信/微信模板</div></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-title"><span class="icon">🔴</span> 录音中：三重指示</div></div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:12px;background:var(--bg3);border-radius:10px">
+          <div style="font-weight:600;font-size:14px;margin-bottom:6px">应用内</div>
+          <div style="font-size:12px;color:var(--text2)">红色脉冲录音指示 + 波形 + 计时器</div>
+        </div>
+        <div style="padding:12px;background:var(--bg3);border-radius:10px">
+          <div style="font-weight:600;font-size:14px;margin-bottom:6px">系统级</div>
+          <div style="font-size:12px;color:var(--text2)">iOS 橙点/红色状态栏 · 安卓麦克风绿点</div>
+        </div>
+        <div style="padding:12px;background:var(--bg3);border-radius:10px">
+          <div style="font-weight:600;font-size:14px;margin-bottom:6px">安卓常驻通知</div>
+          <div style="font-size:12px;color:var(--text2)">「正在录音/转写」可点停</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-title"><span class="icon">🚫</span> 三条红线</div></div>
+    <div class="risk-matrix">
+      <div class="risk-item high">
+        <div class="risk-title">⛔ 非参与方偷录</div>
+        <div class="risk-desc">远程静默唤起、伪装界面、无提示采集。可被认定为"窃听专用器材（含软件）"</div>
+        <div class="risk-badge"><span class="tag tag-red">红线·禁止</span></div>
+      </div>
+      <div class="risk-item high">
+        <div class="risk-title">⛔ 蜂窝/VoIP 通话录音</div>
+        <div class="risk-desc">iOS 无公开 API、Android 10 封死、Google Play 2022 年封杀。V0.3 仅走 SIP 桥</div>
+        <div class="risk-badge"><span class="tag tag-red">高·不可行</span></div>
+      </div>
+      <div class="risk-item high">
+        <div class="risk-title">⛔ 测谎/读心式情绪结论</div>
+        <div class="risk-desc">无科学确定性，触发 PIPL 第8/24条与反法第9条。只描述声学现象</div>
+        <div class="risk-badge"><span class="tag tag-red">高·不做</span></div>
+      </div>
+      <div class="risk-item medium">
+        <div class="risk-title">⚠️ 声纹跨会话人物库</div>
+        <div class="risk-desc">向量仅内存、会后即毁、不跨会话。仅限本人+书面同意员工</div>
+        <div class="risk-badge"><span class="tag tag-orange">高</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-title"><span class="icon">🛡️</span> 数据权利响应 (PIPL 第50条)</div></div>
+    <div class="flow-container" style="flex-wrap:wrap">
+      <div class="flow-box"><div>📩 被录音方请求</div><div style="font-size:10px;color:var(--text3)">邮箱/表单入口</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box"><div>🆔 身份核实</div><div style="font-size:10px;color:var(--text3)">15个工作日</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:var(--accent)"><div>🗑️ 删除/去标识</div><div style="font-size:10px;color:var(--text3)">涉其片段</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box"><div>✅ 操作留痕</div><div style="font-size:10px;color:var(--text3)">审计日志≥180天</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIEW: 定价 ============ -->
+<div class="main" id="view-pricing">
+  <div class="section-title">💳 四级定价与商业模式</div>
+  <div class="section-desc">纯 APP 订阅模式，实时耳语能力从 L2 起含，L0 限次体验做转化钩子</div>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-tier">L0 免费层</div>
+      <div class="pricing-name">体验钩子</div>
+      <div class="pricing-price">0<span> 元/年</span></div>
+      <div class="pricing-period">私域沉淀用</div>
+      <div class="pricing-features">
+        <div class="pricing-feature"><span class="check">✓</span> 每日 1 条精简红绿灯</div>
+        <div class="pricing-feature"><span class="check">✓</span> 月 5 次提问</div>
+        <div class="pricing-feature"><span class="check">✓</span> 行业简报</div>
+        <div class="pricing-feature"><span class="check">✓</span> 月 3 次实时转写 (≤20min)</div>
+        <div class="pricing-feature"><span class="cross">✗</span> 不含耳语提示</div>
+        <div class="pricing-feature"><span class="cross">✗</span> 不含会后结构化</div>
+      </div>
+      <button class="pricing-btn">免费注册</button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-tier">L1 基础版</div>
+      <div class="pricing-name">入门付费</div>
+      <div class="pricing-price">1,980<span> 元/年</span></div>
+      <div class="pricing-period">月付 199 元可选</div>
+      <div class="pricing-features">
+        <div class="pricing-feature"><span class="check">✓</span> 经营日报 + 财务体检</div>
+        <div class="pricing-feature"><span class="check">✓</span> 决策问答 (月 50 次)</div>
+        <div class="pricing-feature"><span class="check">✓</span> 会后结构化 (月 10h)</div>
+        <div class="pricing-feature"><span class="check">✓</span> 纪要/商机/待办</div>
+        <div class="pricing-feature"><span class="cross">✗</span> 不含实时耳语</div>
+        <div class="pricing-feature"><span class="cross">✗</span> 不含情绪识别</div>
+      </div>
+      <button class="pricing-btn">选择 L1</button>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="pricing-tier">L2 专业版</div>
+      <div class="pricing-name">⭐ 实时副驾</div>
+      <div class="pricing-price">9,800<span> 元起/年</span></div>
+      <div class="pricing-period">区间 9,800-15,800</div>
+      <div class="pricing-features">
+        <div class="pricing-feature"><span class="check">✓</span> 全部 6 大经营场景</div>
+        <div class="pricing-feature"><span class="check">✓</span> 不限时实时转写</div>
+        <div class="pricing-feature"><span class="check">✓</span> 说话人分离</div>
+        <div class="pricing-feature"><span class="check">✓</span> 关键词/数字/风险耳语</div>
+        <div class="pricing-feature"><span class="check">✓</span> 决策追溯卡 + 谈判复盘</div>
+        <div class="pricing-feature"><span class="check">✓</span> 手表/耳机通道</div>
+      </div>
+      <button class="pricing-btn primary">选择 L2</button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-tier">L3 陪跑版</div>
+      <div class="pricing-name">私有化 + 陪跑</div>
+      <div class="pricing-price">39,800<span> 元起/年</span></div>
+      <div class="pricing-period">区间 39,800-69,800</div>
+      <div class="pricing-features">
+        <div class="pricing-feature"><span class="check">✓</span> L2 全部能力</div>
+        <div class="pricing-feature"><span class="check">✓</span> 私有化/一体机</div>
+        <div class="pricing-feature"><span class="check">✓</span> SIP 通话录音桥</div>
+        <div class="pricing-feature"><span class="check">✓</span> 行业话术库定制</div>
+        <div class="pricing-feature"><span class="check">✓</span> 1对1 诊断 + 私董圈</div>
+        <div class="pricing-feature"><span class="check">✓</span> 专属谈判策略陪跑</div>
+      </div>
+      <button class="pricing-btn">联系销售</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="card-header"><div class="card-title"><span class="icon">📈</span> L2 单用户经济模型</div></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center">
+      <div>
+        <div style="font-size:24px;font-weight:700;color:var(--accent)">12,800</div>
+        <div style="font-size:12px;color:var(--text2)">年客单价(元)</div>
+      </div>
+      <div>
+        <div style="font-size:24px;font-weight:700;color:var(--success)">5-15</div>
+        <div style="font-size:12px;color:var(--text2)">月云成本(元)</div>
+      </div>
+      <div>
+        <div style="font-size:24px;font-weight:700;color:var(--warn)">75%</div>
+        <div style="font-size:12px;color:var(--text2)">首年毛利率</div>
+      </div>
+      <div>
+        <div style="font-size:24px;font-weight:700;color:var(--accent3)">18:1</div>
+        <div style="font-size:12px;color:var(--text2)">LTV/CAC</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIEW: 路线图 ============ -->
+<div class="main" id="view-roadmap">
+  <div class="section-title">🗺️ 发展路线图 — V0.1 → V1.0</div>
+  <div class="section-desc">18 个月四阶段路线，从纯 APP 到完整产品矩阵</div>
+
+  <div class="card">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <!-- V0.1 -->
+      <div style="display:flex;gap:20px;border-left:4px solid var(--accent);padding-left:20px;position:relative">
+        <div style="position:absolute;left:-10px;top:0;width:20px;height:20px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">V0</div>
+        <div style="flex:1">
+          <div style="font-size:18px;font-weight:700;margin-bottom:4px">V0.1 MVP <span style="font-size:14px;color:var(--text2)">0-4 个月</span></div>
+          <div style="font-size:13px;color:var(--text2);margin-bottom:12px">纯 APP 跑通"现场 1v1/小型谈判" + 经营外脑</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">📱 客户端</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">安卓优先、iOS 同步；原生音频链路 + 保活引导页</div>
+            </div>
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">⚡ 实时能力</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">腾讯 ASR + L0/L1 触发 + 震动预警 <2.5s</div>
+            </div>
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">📊 会后产出</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">纪要/商机/待办/决策卡/复盘 五件套</div>
+            </div>
+          </div>
+          <div style="margin-top:12px"><span class="tag tag-green">定州 50 家内测</span><span class="tag tag-blue" style="margin-left:6px">付费 50-80 家</span></div>
+        </div>
+      </div>
+
+      <!-- V0.2 -->
+      <div style="display:flex;gap:20px;border-left:4px solid var(--accent2);padding-left:20px;position:relative">
+        <div style="position:absolute;left:-10px;top:0;width:20px;height:20px;border-radius:50%;background:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">V1</div>
+        <div style="flex:1">
+          <div style="font-size:18px;font-weight:700;margin-bottom:4px">V0.2 <span style="font-size:14px;color:var(--text2)">~6 个月</span></div>
+          <div style="font-size:13px;color:var(--text2);margin-bottom:12px">体验打磨、降本、硬件评估</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">🎭 情绪双通道</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">声学现象级 + L2 复杂插话 5-10s</div>
+            </div>
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">💰 自建 ASR</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">FunASR 替换云 ASR → 5-15 元/月</div>
+            </div>
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">⌚ 手表/耳机</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">TTS 通道 + iOS Live Activities</div>
+            </div>
+          </div>
+          <div style="margin-top:12px"><span class="tag tag-purple">进保定/石家庄</span><span class="tag tag-green" style="margin-left:6px">付费 300-500 家</span></div>
+        </div>
+      </div>
+
+      <!-- V0.3 -->
+      <div style="display:flex;gap:20px;border-left:4px solid var(--accent3);padding-left:20px;position:relative">
+        <div style="position:absolute;left:-10px;top:0;width:20px;height:20px;border-radius:50%;background:var(--accent3);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">V2</div>
+        <div style="flex:1">
+          <div style="font-size:18px;font-weight:700;margin-bottom:4px">V0.3 <span style="font-size:14px;color:var(--text2)">~12 个月</span></div>
+          <div style="font-size:13px;color:var(--text2);margin-bottom:12px">行业纵深 + 电话场景 + 私有化</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">📚 行业话术库</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">汽配/体品/再生资源三套</div>
+            </div>
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">📞 SIP 桥</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">三方通话、服务器侧双声道</div>
+            </div>
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">🏛️ 私有化</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">Qwen + vLLM 一体机、BYOK</div>
+            </div>
+          </div>
+          <div style="margin-top:12px"><span class="tag tag-orange">河北 10 县</span><span class="tag tag-green" style="margin-left:6px">付费 1,000+</span></div>
+        </div>
+      </div>
+
+      <!-- V1.0 -->
+      <div style="display:flex;gap:20px;border-left:4px solid var(--success);padding-left:20px;position:relative">
+        <div style="position:absolute;left:-10px;top:0;width:20px;height:20px;border-radius:50%;background:var(--success);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">V3</div>
+        <div style="flex:1">
+          <div style="font-size:18px;font-weight:700;margin-bottom:4px">V1.0 <span style="font-size:14px;color:var(--text2)">~18 个月</span></div>
+          <div style="font-size:13px;color:var(--text2);margin-bottom:12px">完整矩阵 + 规模化</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">🎯 行业包扩展</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">食品/装备制造 + 端到端语音大模型</div>
+            </div>
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">🏙️ 城市合伙人</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">在线支付续费 + 自动化 SOP</div>
+            </div>
+            <div style="padding:12px;background:var(--bg3);border-radius:8px">
+              <div style="font-weight:600;font-size:13px">🚀 外省探索</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px">山东/河南县域复制</div>
+            </div>
+          </div>
+          <div style="margin-top:12px"><span class="tag tag-green">河北全域 30+ 县</span><span class="tag tag-blue" style="margin-left:6px">3,000-5,000 家</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><div class="card-title"><span class="icon">📋</span> SoL-Pi 融合模块清单</div></div>
+    <table class="data-table">
+      <tr><th>模块</th><th>优先级</th><th>工作量</th><th>对应 BOSS-AI-R 能力</th></tr>
+      <tr><td><code>prompt_decider.py</code></td><td><span class="tag tag-red">P0</span></td><td>2 周</td><td>提示去重/分级/择时/打断保护</td></tr>
+      <tr><td><code>compliance.py</code></td><td><span class="tag tag-red">P0</span></td><td>1 周</td><td>受托人架构/权利响应/PIPIA</td></tr>
+      <tr><td><code>realtime_audio.py</code></td><td><span class="tag tag-orange">P1</span></td><td>3 周</td><td>端侧降噪+VAD+L0 触发</td></tr>
+      <tr><td><code>billing.py</code></td><td><span class="tag tag-orange">P1</span></td><td>1 周</td><td>四级订阅/配额/成本监控</td></tr>
+      <tr><td><code>acoustic_emotion.py</code></td><td><span class="tag tag-blue">P2</span></td><td>2 周</td><td>声学情绪检测（仅触发器）</td></tr>
+      <tr><td><code>graph_schema</code> 扩展</td><td><span class="tag tag-blue">P2</span></td><td>1 周</td><td>谈判/商机/决策卡/合规节点</td></tr>
+      <tr><td>说话人分离集成</td><td><span class="tag tag-purple">P3</span></td><td>2 周</td><td>3D-Speaker CAM++</td></tr>
+      <tr><td><code>deployment.py</code></td><td><span class="tag tag-purple">P3</span></td><td>1 周</td><td>数据不出省部署约束</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="watermark">BOSS-AI-R × SoL-Pi · 交互原型 Demo · 2026</div>
+
+<script>
+// ===== Navigation =====
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.main').forEach(m => m.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('view-' + tab.dataset.view).classList.add('active');
+    if (tab.dataset.view === 'graph') drawGraph();
+  });
+});
+
+// ===== Demo Modes =====
+let currentScenario = 'auto';
+function setScenario(s) {
+  currentScenario = s;
+  document.querySelectorAll('.demo-mode').forEach(m => m.classList.remove('active'));
+  document.querySelector(`.demo-mode[data-scenario="${s}"]`).classList.add('active');
+}
+
+// ===== Pipeline Visualization =====
+const pipelineStages = [
+  { icon: '🎤', name: '采集', latency: '20ms', color: 'var(--accent)' },
+  { icon: '🔇', name: '降噪', latency: '10ms', color: 'var(--accent)' },
+  { icon: '✂️', name: 'VAD', latency: '50ms', color: 'var(--accent)' },
+  { icon: '📡', name: '上行', latency: '80ms', color: 'var(--accent)' },
+  { icon: '🎙️', name: '流式ASR', latency: '600ms', color: 'var(--warn)' },
+  { icon: '👥', name: '分离', latency: '+200ms', color: 'var(--accent)' },
+  { icon: '🎭', name: '情绪', latency: '+100ms', color: 'var(--accent)' },
+  { icon: '🤖', name: 'L0/L1/L2', latency: '50-3000ms', color: 'var(--danger)' },
+  { icon: '⚡', name: '决策器', latency: '100ms', color: 'var(--accent)' },
+  { icon: '📱', name: '推送', latency: '100ms', color: 'var(--accent)' }
+];
+
+function renderPipeline() {
+  const container = document.getElementById('pipelineViz');
+  container.innerHTML = '';
+  pipelineStages.forEach((stage, i) => {
+    const el = document.createElement('div');
+    el.className = 'pipeline-step';
+    el.id = 'stage-' + i;
+    el.innerHTML = `<div class="step-icon">${stage.icon}</div><div class="step-name">${stage.name}</div><div class="step-latency">${stage.latency}</div>`;
+    el.addEventListener('click', () => highlightStage(i));
+    container.appendChild(el);
+    if (i < pipelineStages.length - 1) {
+      const arrow = document.createElement('div');
+      arrow.className = 'pipeline-arrow';
+      arrow.textContent = '→';
+      container.appendChild(arrow);
+    }
+  });
+}
+renderPipeline();
+
+function highlightStage(idx) {
+  document.querySelectorAll('.pipeline-step').forEach(s => s.classList.remove('active', 'processing'));
+  const stage = document.getElementById('stage-' + idx);
+  stage.classList.add('active');
+  stage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function animatePipeline() {
+  document.querySelectorAll('.pipeline-step').forEach(s => s.classList.remove('active', 'processing'));
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i > 0) document.getElementById('stage-' + (i - 1)).classList.remove('processing');
+    if (i >= pipelineStages.length) { clearInterval(interval); return; }
+    const stage = document.getElementById('stage-' + i);
+    stage.classList.add('processing');
+    stage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    i++;
+  }, 400);
+}
+
+// ===== Real-time Simulation =====
+let simState = {
+  recording: false,
+  paused: false,
+  startTime: null,
+  elapsed: 0,
+  timer: null,
+  promptTimer: null,
+  prompts: [],
+  words: 0,
+  scenario: 'qipei'
+};
+
+const scenarios = {
+  qipei: {
+    lines: [
+      { speaker: 'opponent', text: '李总，这次我们希望账期能放到 60 天。' },
+      { speaker: 'owner', text: '60 天太长了，我们公司一般 30 天。' },
+      { speaker: 'opponent', text: '上次我们订的那批货，质量有点小问题啊...' },
+      { speaker: 'owner', text: '哪批货？你说的是 7 月份那 200 件？' },
+      { speaker: 'opponent', text: '就是那批。我们客户那边反馈说有 5% 的不良率。' },
+      { speaker: 'owner', text: '5%？我们的检验记录是 1.5% 啊。' },
+      { speaker: 'opponent', text: '你看这样，账期 60 天，不良品我们各担一半。' },
+      { speaker: 'owner', text: '那我得回去跟财务商量一下。' },
+      { speaker: 'opponent', text: '行，但本周得给我答复，我们还有一家在谈。' }
+    ],
+    prompts: [
+      { at: 3, type: 'danger', content: '⚠️ 账期风险：对方要求 60 天 vs 我方 30 天标准', evidence: '"账期能放到 60 天"', channel: 'vibration' },
+      { at: 6, type: 'danger', content: '⚠️ 质量争议：对方称 5% 不良 vs 我方记录 1.5%', evidence: '"5% 的不良率"', channel: 'watch' },
+      { at: 9, type: 'success', content: '💡 商机信号：对方在比价，可抢先签约', evidence: '"还有一家在谈"', channel: 'lockscreen' }
+    ]
+  },
+  tiyu: {
+    lines: [
+      { speaker: 'opponent', text: '王总，今年订货会政策怎么样？' },
+      { speaker: 'owner', text: '跟去年一样，100 件起批，返点 3%。' },
+      { speaker: 'opponent', text: '3% 太低了，现在人家都给 5%。' },
+      { speaker: 'owner', text: '那不一样，我们有区域保护。' },
+      { speaker: 'opponent', text: '区域保护？保定张总也在跨区域窜货吧？' },
+      { speaker: 'owner', text: '那是他自己的问题，我们会处理。' },
+      { speaker: 'opponent', text: '这样，给我 5% 返点 + 保定归我。' },
+      { speaker: 'owner', text: '保定不可能，5% 返点可以考虑。' },
+      { speaker: 'opponent', text: '那我先订 200 件，但你要给我独家。' }
+    ],
+    prompts: [
+      { at: 3, type: 'danger', content: '⚠️ 返点风险：对方要 5% vs 你标准 3%', evidence: '"人家都给 5%"', channel: 'vibration' },
+      { at: 4, type: 'danger', content: '⚠️ 区域冲突：提及保定张总窜货', evidence: '"保定张总也在跨区域窜货"', channel: 'watch' },
+      { at: 8, type: 'success', content: '💡 商机：对方要 200 件 + 独家', evidence: '"订 200 件...给我独家"', channel: 'lockscreen' }
+    ]
+  },
+  zaisheng: {
+    lines: [
+      { speaker: 'opponent', text: '刘总，这批废钢什么价？' },
+      { speaker: 'owner', text: '2850 吨，现款现货。' },
+      { speaker: 'opponent', text: '太高了，隔壁厂给 2800。' },
+      { speaker: 'owner', text: '他那个杂质多，我们这纯度 95% 以上。' },
+      { speaker: 'opponent', text: '这样，2820 我全吃，但账期 7 天。' },
+      { speaker: 'owner', text: '现款是我们的底线。' },
+      { speaker: 'opponent', text: '那我加点，2830 现款，但过磅你让 2 个点。' },
+      { speaker: 'owner', text: '过磅的事到时候看。' }
+    ],
+    prompts: [
+      { at: 3, type: 'danger', content: '⚠️ 竞价比价：对方称隔壁 2800', evidence: '"隔壁厂给 2800"', channel: 'vibration' },
+      { at: 6, type: 'warn', content: '⚠️ 价格逼近底线：2830 vs 你报价 2850', evidence: '"2830 现款"', channel: 'watch' },
+      { at: 7, type: 'warn', content: '⚠️ 过磅模糊回应：后续可能被扣杂', evidence: '"过磅你让 2 个点"', channel: 'lockscreen' }
+    ]
+  }
+};
+
+function getScenario() {
+  if (currentScenario === 'auto') return scenarios.qipei;
+  return scenarios[currentScenario] || scenarios.qipei;
+}
+
+function startRecording() {
+  if (simState.recording) return;
+  simState.recording = true;
+  simState.paused = false;
+  simState.startTime = Date.now() - simState.elapsed;
+  simState.elapsed = 0;
+  simState.prompts = [];
+  simState.words = 0;
+  
+  document.getElementById('recIndicator').style.display = 'flex';
+  document.getElementById('recStatus').textContent = '录音中';
+  document.getElementById('recStatus').className = 'tag tag-red';
+  document.getElementById('transcriptBox').innerHTML = '';
+  document.getElementById('promptList').innerHTML = '';
+  document.getElementById('promptBox').innerHTML = '';
+  document.getElementById('promptCount').textContent = '0 条';
+  
+  addLog('info', '录音开始 — 告知模式已激活');
+  addLog('success', '合规检查通过：三重录音指示已激活');
+  
+  simState.timer = setInterval(() => {
+    simState.elapsed = Date.now() - simState.startTime;
+    updateTimer();
+    updateEmotion();
+  }, 1000);
+  
+  // Start line-by-line simulation
+  const scn = getScenario();
+  let lineIdx = 0;
+  const lineInterval = setInterval(() => {
+    if (!simState.recording || simState.paused) return;
+    if (lineIdx >= scn.lines.length) {
+      clearInterval(lineInterval);
+      stopRecording();
+      return;
+    }
+    addTranscriptLine(scn.lines[lineIdx]);
+    lineIdx++;
+  }, 3500);
+  simState.lineInterval = lineInterval;
+  
+  // Check prompts
+  simState.promptTimer = setInterval(() => {
+    const elapsed = simState.elapsed / 1000;
+    const scn2 = getScenario();
+    scn2.prompts.forEach(p => {
+      if (!p.triggered && elapsed >= p.at + 2) {
+        p.triggered = true;
+        triggerPrompt(p);
+      }
+    });
+  }, 500);
+}
+
+function pauseRecording() {
+  if (!simState.recording) return;
+  simState.paused = !simState.paused;
+  document.getElementById('recStatus').textContent = simState.paused ? '已暂停' : '录音中';
+  document.getElementById('recStatus').className = simState.paused ? 'tag tag-orange' : 'tag tag-red';
+  addLog('warn', simState.paused ? '录音暂停' : '录音恢复');
+}
+
+function stopRecording() {
+  if (!simState.recording) return;
+  simState.recording = false;
+  clearInterval(simState.timer);
+  clearInterval(simState.promptTimer);
+  clearInterval(simState.lineInterval);
+  
+  document.getElementById('recIndicator').style.display = 'none';
+  document.getElementById('recStatus').textContent = '已结束';
+  document.getElementById('recStatus').className = 'tag tag-green';
+  
+  addLog('success', `录音结束 — 时长 ${formatTime(simState.elapsed)}`);
+  addLog('info', '开始异步高精度 ASR 校正...');
+  setTimeout(() => addLog('info', '开始生成五件套（纪要/商机/待办/决策卡/复盘）...'), 800);
+  setTimeout(() => addLog('success', '结构化数据已写入经营外脑'), 1600);
+}
+
+function resetSim() {
+  stopRecording();
+  simState.elapsed = 0;
+  simState.prompts = [];
+  simState.words = 0;
+  document.getElementById('transcriptBox').innerHTML = '<div style="color:var(--text3);text-align:center;padding:40px 0;font-size:13px;">点击「开始录音」启动实时转写</div>';
+  document.getElementById('promptList').innerHTML = '<div style="color:var(--text3);text-align:center;padding:20px;font-size:12px;">等待提示触发...</div>';
+  document.getElementById('promptBox').innerHTML = '';
+  document.getElementById('recStatus').textContent = '待机';
+  document.getElementById('recStatus').className = 'tag tag-blue';
+  document.getElementById('promptCount').textContent = '0 条';
+  document.getElementById('statDuration').textContent = '00:00';
+  document.getElementById('statWords').textContent = '0';
+  document.getElementById('statPrompts').textContent = '0';
+  document.getElementById('statLatency').textContent = '0ms';
+  document.getElementById('logConsole').innerHTML = '<div class="log-line"><span class="log-time">--:--:--</span><span class="log-level info">INFO</span><span class="log-msg">系统就绪，等待开始录音...</span></div>';
+  document.getElementById('watchMock').style.opacity = '0.4';
+  document.getElementById('watchMock').innerHTML = '<div style="font-size:11px;color:var(--text3)">等待震动...</div>';
+  document.getElementById('emotionEvents').innerHTML = '';
+  document.getElementById('arousalBar').style.width = '30%';
+  document.getElementById('arousalVal').textContent = '0.30';
+  document.getElementById('valenceBar').style.width = '50%';
+  document.getElementById('valenceVal').textContent = '0.50';
+  document.getElementById('confidenceBar').style.width = '60%';
+  document.getElementById('confidenceVal').textContent = '0.60';
+}
+
+function updateTimer() {
+  document.getElementById('recTime').textContent = formatTime(simState.elapsed) + ' 录音中';
+  document.getElementById('statDuration').textContent = formatTime(simState.elapsed);
+}
+
+function formatTime(ms) {
+  const s = Math.floor(ms / 1000);
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+}
+
+function addTranscriptLine(line) {
+  const box = document.getElementById('transcriptBox');
+  if (box.querySelector('[style*="color:var(--text3)"]')) box.innerHTML = '';
+  
+  const div = document.createElement('div');
+  div.className = 'transcript-line ' + line.speaker;
+  const speakerName = line.speaker === 'owner' ? '李总（您）' : '王采购（对方）';
+  const time = formatTime(simState.elapsed);
+  div.innerHTML = `<span class="speaker-tag ${line.speaker}">${speakerName}</span>${line.text}<span class="time-tag">${time}</span>`;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+  
+  simState.words += line.text.length;
+  document.getElementById('statWords').textContent = simState.words;
+  
+  // Animate speaker
+  const spId = line.speaker === 'owner' ? 'spOwner' : 'spOpponent';
+  const sp = document.getElementById(spId);
+  sp.classList.add('talking');
+  setTimeout(() => sp.classList.remove('talking'), 2000);
+  
+  addLog('info', `${speakerName}: "${line.text.substring(0, 20)}..."`);
+}
+
+function triggerPrompt(p) {
+  simState.prompts.push(p);
+  
+  // Add to prompt list
+  const list = document.getElementById('promptList');
+  if (list.querySelector('[style*="color:var(--text3)"]')) list.innerHTML = '';
+  
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.style.cssText = 'padding:12px;margin-bottom:8px;border-left:4px solid ' + (p.type === 'danger' ? 'var(--danger)' : p.type === 'warn' ? 'var(--warn)' : 'var(--success)');
+  div.innerHTML = `<div style="font-size:13px;font-weight:600">${p.content}</div><div style="font-size:11px;color:var(--text3);margin-top:4px">证据: ${p.evidence}</div><div style="margin-top:6px"><span class="tag tag-blue">${p.channel}</span></div>`;
+  list.insertBefore(div, list.firstChild);
+  
+  document.getElementById('promptCount').textContent = simState.prompts.length + ' 条';
+  document.getElementById('statPrompts').textContent = simState.prompts.length;
+  
+  // Show on phone
+  const promptBox = document.getElementById('promptBox');
+  promptBox.innerHTML = `<div class="prompt-box ${p.type}"><div class="prompt-type">${p.type === 'danger' ? '⚠️ 风险预警' : p.type === 'warn' ? '⚡ 注意' : '💡 商机'}</div><div class="prompt-content">${p.content}</div><div class="prompt-evidence">📝 ${p.evidence}</div></div>`;
+  
+  // Watch vibration
+  const watch = document.getElementById('watchMock');
+  watch.style.opacity = '1';
+  watch.innerHTML = `<div class="watch-vibration"></div><div class="watch-text">${p.content.substring(0, 12)}</div><div class="watch-sub">${p.channel}</div>`;
+  setTimeout(() => { watch.style.opacity = '0.4'; }, 3000);
+  
+  // Latency
+  const latency = Math.floor(800 + Math.random() * 1200);
+  document.getElementById('statLatency').textContent = latency + 'ms';
+  
+  addLog(p.type === 'danger' ? 'error' : 'warn', `提示触发: ${p.content.substring(0, 30)}...`);
+}
+
+function updateEmotion() {
+  const t = simState.elapsed / 1000;
+  const arousal = 0.3 + 0.3 * Math.sin(t * 0.5) + Math.random() * 0.1;
+  const valence = 0.5 + 0.2 * Math.cos(t * 0.3) + Math.random() * 0.1;
+  const confidence = 0.6 + 0.2 * Math.sin(t * 0.2);
+  
+  document.getElementById('arousalBar').style.width = Math.min(100, arousal * 100) + '%';
+  document.getElementById('arousalVal').textContent = arousal.toFixed(2);
+  document.getElementById('valenceBar').style.width = Math.min(100, valence * 100) + '%';
+  document.getElementById('valenceVal').textContent = valence.toFixed(2);
+  document.getElementById('confidenceBar').style.width = Math.min(100, confidence * 100) + '%';
+  document.getElementById('confidenceVal').textContent = confidence.toFixed(2);
+  
+  // Random emotion events
+  if (Math.random() < 0.05) {
+    const events = ['语速加快', '音量升高', '长停顿', '语调上扬', '被打断'];
+    const ev = events[Math.floor(Math.random() * events.length)];
+    const container = document.getElementById('emotionEvents');
+    const div = document.createElement('div');
+    div.className = 'tag tag-orange';
+    div.style.cssText = 'display:inline-block;margin:2px;font-size:11px';
+    div.textContent = `🎭 ${ev} (${(0.6 + Math.random() * 0.3).toFixed(2)})`;
+    container.insertBefore(div, container.firstChild);
+    if (container.children.length > 5) container.removeChild(container.lastChild);
+  }
+}
+
+function addLog(level, msg) {
+  const console = document.getElementById('logConsole');
+  const time = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+  const div = document.createElement('div');
+  div.className = 'log-line';
+  div.innerHTML = `<span class="log-time">${time}</span><span class="log-level ${level}">${level.toUpperCase()}</span><span class="log-msg">${msg}</span>`;
+  console.appendChild(div);
+  console.scrollTop = console.scrollHeight;
+}
+
+// ===== Graph Visualization =====
+function drawGraph() {
+  const svg = document.getElementById('graphSvg');
+  svg.innerHTML = '';
+  
+  const nodes = [
+    { id: 'n1', label: '王采购', type: 'client', x: 400, y: 150, size: 30 },
+    { id: 'n2', label: '汽配谈判', type: 'negotiation', x: 250, y: 250, size: 25 },
+    { id: 'n3', label: '天津李总', type: 'client', x: 550, y: 150, size: 28 },
+    { id: 'n4', label: '50万商机', type: 'opportunity', x: 650, y: 250, size: 22 },
+    { id: 'n5', label: '账期风险', type: 'risk', x: 150, y: 350, size: 20 },
+    { id: 'n6', label: '决策卡#47', type: 'decision', x: 350, y: 350, size: 22 },
+    { id: 'n7', label: '签合同', type: 'todo', x: 500, y: 350, size: 18 },
+    { id: 'n8', label: '体品订货', type: 'negotiation', x: 200, y: 100, size: 20 },
+    { id: 'n9', label: '再生资源', type: 'negotiation', x: 600, y: 380, size: 20 },
+    { id: 'n10', label: '保定张总', type: 'client', x: 100, y: 200, size: 24 },
+    { id: 'n11', label: '窜货风险', type: 'risk', x: 50, y: 300, size: 18 },
+    { id: 'n12', label: '决策卡#48', type: 'decision', x: 450, y: 420, size: 20 }
+  ];
+  
+  const edges = [
+    { from: 'n1', to: 'n2', label: '参与' },
+    { from: 'n3', to: 'n4', label: '产生' },
+    { from: 'n2', to: 'n5', label: '标记' },
+    { from: 'n2', to: 'n6', label: '生成' },
+    { from: 'n2', to: 'n7', label: '待办' },
+    { from: 'n10', to: 'n8', label: '参与' },
+    { from: 'n10', to: 'n11', label: '涉及' },
+    { from: 'n6', to: 'n12', label: '关联' },
+    { from: 'n4', to: 'n7', label: '关联' }
+  ];
+  
+  const colors = {
+    client: '#3b82f6',
+    negotiation: '#f59e0b',
+    opportunity: '#10b981',
+    decision: '#8b5cf6',
+    risk: '#ef4444',
+    todo: '#06b6d4'
+  };
+  
+  // Draw edges
+  edges.forEach(e => {
+    const from = nodes.find(n => n.id === e.from);
+    const to = nodes.find(n => n.id === e.to);
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', from.x);
+    line.setAttribute('y1', from.y);
+    line.setAttribute('x2', to.x);
+    line.setAttribute('y2', to.y);
+    line.setAttribute('stroke', '#334155');
+    line.setAttribute('stroke-width', '1.5');
+    line.setAttribute('opacity', '0.6');
+    svg.appendChild(line);
+  });
+  
+  // Draw nodes
+  nodes.forEach(n => {
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.setAttribute('class', 'graph-node');
+    g.setAttribute('transform', `translate(${n.x},${n.y})`);
+    
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('r', n.size);
+    circle.setAttribute('fill', colors[n.type] + '30');
+    circle.setAttribute('stroke', colors[n.type]);
+    circle.setAttribute('stroke-width', '2');
+    
+    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('text-anchor', 'middle');
+    text.setAttribute('dy', '4');
+    text.setAttribute('fill', '#e2e8f0');
+    text.setAttribute('font-size', n.size > 24 ? '11' : '10');
+    text.setAttribute('font-weight', '600');
+    text.textContent = n.label;
+    
+    g.appendChild(circle);
+    g.appendChild(text);
+    
+    g.addEventListener('mouseenter', (e) => {
+      const tooltip = document.getElementById('graphTooltip');
+      tooltip.style.display = 'block';
+      tooltip.style.left = (n.x + 30) + 'px';
+      tooltip.style.top = (n.y - 10) + 'px';
+      tooltip.innerHTML = `<div style="font-weight:600;margin-bottom:4px">${n.label}</div><div style="color:var(--text3)">类型: ${n.type}</div><div style="color:var(--text3)">ID: ${n.id}</div>`;
+    });
+    g.addEventListener('mouseleave', () => {
+      document.getElementById('graphTooltip').style.display = 'none';
+    });
+    
+    svg.appendChild(g);
+  });
+}
+
+// ===== Init =====
+document.addEventListener('DOMContentLoaded', () => {
+  renderPipeline();
+  // Auto-start demo after 1s
+  setTimeout(() => {
+    addLog('info', '系统初始化完成，点击「开始录音」体验实时副驾');
+  }, 500);
+});
+</script>
+</body>
+</html>

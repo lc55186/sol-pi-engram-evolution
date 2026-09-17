@@ -1,0 +1,9 @@
+{
+  "category": "risk_alert",
+  "templates": [
+    "建议关注{topic}，因为{reason}",
+    "建议关注{topic}，因为{reason}\n\n详细说明：本建议基于您的历史数据和行业基准综合评估。",
+    "【重要】建议关注{topic}，因为{reason}"
+  ],
+  "updated_at": "2026-09-17T01:14:27.739336"
+}

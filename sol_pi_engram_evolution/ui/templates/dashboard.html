@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}主控台 — BOSS-AI-R{% endblock %}
+{% block content %}
+<div class="page-header"><h1>📊 主控台</h1><p class="page-desc">BOSS-AI-R v{{ version }} · {{ env }} 模式</p></div>
+<div class="panel-grid">
+  <div class="panel"><div class="panel-header"><h2>🎙️ 实时副驾</h2><span class="badge tag-red">核心</span></div><div class="panel-body">
+    <p style="margin-bottom:16px;color:var(--text-secondary)">会议/谈判现场实时转写、风险预警、耳语提示</p>
+    <a href="/realtime" class="btn btn-primary">进入实时副驾 →</a>
+  </div></div>
+  <div class="panel"><div class="panel-header"><h2>🧠 经营外脑</h2><span class="badge tag-purple">6 场景</span></div><div class="panel-body">
+    <p style="margin-bottom:16px;color:var(--text-secondary)">经营日报、财务体检、异常预警、决策追溯</p>
+    <a href="/brain" class="btn btn-primary">进入经营外脑 →</a>
+  </div></div>
+  <div class="panel"><div class="panel-header"><h2>🕸️ 知识图谱</h2><span class="badge tag-cyan">可视化</span></div><div class="panel-body">
+    <p style="margin-bottom:16px;color:var(--text-secondary)">谈判节点网络：客户/商机/决策卡/风险</p>
+    <a href="/graph" class="btn btn-primary">查看图谱 →</a>
+  </div></div>
+  <div class="panel"><div class="panel-header"><h2>⚖️ 合规中心</h2><span class="badge tag-green">PIPIA</span></div><div class="panel-body">
+    <p style="margin-bottom:16px;color:var(--text-secondary)">受托人架构、三重指示、权利响应</p>
+    <a href="/compliance" class="btn btn-primary">查看合规 →</a>
+  </div></div>
+  <div class="panel"><div class="panel-header"><h2>💳 定价</h2><span class="badge tag-orange">4 级</span></div><div class="panel-body">
+    <p style="margin-bottom:16px;color:var(--text-secondary)">L0 免费 / L1 基础 / L2 专业 / L3 陪跑</p>
+    <a href="/pricing" class="btn btn-primary">查看定价 →</a>
+  </div></div>
+  <div class="panel"><div class="panel-header"><h2>🗺️ 路线图</h2><span class="badge tag-blue">V0.1→V1.0</span></div><div class="panel-body">
+    <p style="margin-bottom:16px;color:var(--text-secondary)">18 个月四阶段路线</p>
+    <a href="/roadmap" class="btn btn-primary">查看路线图 →</a>
+  </div></div>
+</div>
+{% endblock %}
