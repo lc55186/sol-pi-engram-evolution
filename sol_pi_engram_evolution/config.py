@@ -66,18 +66,18 @@ class LLMConfig:
     fallback_api_key: str = ""
     fallback_api_base: str = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
-    # 分级模型（2026-09-17 更新：瑞芯微 Day-0 适配 Qwen3.8-27B + MiniCPM5-2B）
+    # 分级模型（2026-09-18 更新：DeepSeek V4.1 Flash 全面超越 Pro，$0.15/M input）
     l1_model: str = "qwen3.8-27b"      # 轻量分类（便宜档，瑞芯微适配）
-    l2_model: str = "deepseek-chat"    # 深度分析（均衡档）
-    post_session_model: str = "deepseek-chat"  # 会后纪要（强模型）
+    l2_model: str = "deepseek-flash"   # 深度分析（均衡档，V4.1 Flash = 原V4 Pro路由）
+    post_session_model: str = "deepseek-flash"  # 会后纪要（强模型，V4.1 Flash全面超越Pro）
     # 端侧模型（RK1860+）
     ondevice_model: str = "minicpm5-2b"  # 瑞芯微 Day-0 适配，轻量实时
 
-    # 定价（元/百万token）
+    # 定价（元/百万token，2026-09-18 更新：V4.1 Flash $0.15/$0.60 per M tokens）
     l1_input_price: float = 1.0
     l1_output_price: float = 2.0
-    l2_input_price: float = 1.0
-    l2_output_price: float = 2.0
+    l2_input_price: float = 1.08   # $0.15/M ≈ ¥1.08/M
+    l2_output_price: float = 4.32  # $0.60/M ≈ ¥4.32/M
 
     # 调用参数
     l1_max_tokens: int = 200
