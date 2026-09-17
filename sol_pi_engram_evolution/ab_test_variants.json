@@ -920,6 +920,60 @@
         "total_uses": 0,
         "positive_feedback": 0,
         "negative_feedback": 0
+      },
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-17T21:33:22.562387",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-17T21:33:22.566439",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-17T21:52:29.808856",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-17T21:52:29.811855",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-17T23:36:18.502839",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-17T23:36:18.505878",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
       }
     ],
     "negotiation_warning": [
