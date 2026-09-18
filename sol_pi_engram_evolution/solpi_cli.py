@@ -197,6 +197,58 @@ def cmd_csv_report(args):
     print(f"\n报告已保存: {output_path}")
 
 
+def cmd_adapters(args):
+    """谈判工具适配器管理"""
+    from negotiation_adapters import get_adapter_manager
+    manager = get_adapter_manager()
+    
+    if args.action:
+        # 执行动作
+        import asyncio
+        params = json.loads(args.params) if args.params else {}
+        result = asyncio.run(manager.execute(args.adapter, args.action, params))
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+    else:
+        # 列出所有适配器
+        schemas = manager.get_all_schemas()
+        print(json.dumps(schemas, ensure_ascii=False, indent=2))
+
+
+def cmd_sandbox(args):
+    """合规沙盒检查"""
+    from compliance_sandbox import get_sandbox
+    sandbox = get_sandbox()
+    result = sandbox.check(args.action, args.target)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+
+
+def cmd_tokenjuice(args):
+    """TokenJuice 压缩测试"""
+    from observation_pack import ObservationPack
+    pack = ObservationPack()
+    
+    if args.file:
+        with open(args.file, 'r', encoding='utf-8') as f:
+            text = f.read()
+    elif args.text:
+        text = args.text
+    else:
+        print("Error: --file or --text required")
+        return
+    
+    # 创建临时文件测试压缩
+    import tempfile
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8') as f:
+        f.write(text)
+        tmp_path = f.name
+    
+    result = pack.compress_with_tokenjuice(tmp_path, args.tier)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    
+    import os
+    os.unlink(tmp_path)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="SoL-Pi Engram Evolution System CLI",
@@ -265,6 +317,23 @@ def main():
     p_ghidra.add_argument("-p", "--project", help="Project name", default="analysis")
     p_ghidra.add_argument("--no-report", action="store_true", help="Skip report export")
 
+    # negotiation adapters
+    p_adapt = sub.add_parser("adapters", help="List negotiation tool adapters")
+    p_adapt.add_argument("--action", help="Action to execute")
+    p_adapt.add_argument("--adapter", help="Adapter name", default="crm")
+    p_adapt.add_argument("--params", help="Action params (JSON)")
+
+    # compliance sandbox
+    p_sandbox = sub.add_parser("sandbox", help="Test compliance sandbox")
+    p_sandbox.add_argument("--action", required=True, help="Action to check")
+    p_sandbox.add_argument("--target", required=True, help="Target path/URL")
+
+    # tokenjuice compression
+    p_tj = sub.add_parser("tokenjuice", help="Test TokenJuice compression")
+    p_tj.add_argument("--file", help="File to compress")
+    p_tj.add_argument("--text", help="Text to compress")
+    p_tj.add_argument("--tier", default="short_term", choices=["ephemeral", "short_term", "long_term"])
+
     args = parser.parse_args()
 
     if not args.command:
@@ -282,6 +351,9 @@ def main():
         "evaluate": cmd_value_evaluate,
         "ghidra": cmd_ghidra,
         "csv-report": cmd_csv_report,
+        "adapters": cmd_adapters,
+        "sandbox": cmd_sandbox,
+        "tokenjuice": cmd_tokenjuice,
     }
 
     func = commands.get(args.command)
