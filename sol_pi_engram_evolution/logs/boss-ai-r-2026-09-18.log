@@ -2019,3 +2019,7 @@
 2026-09-18 23:28:22 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
 2026-09-18 23:28:22 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
 2026-09-18 23:28:23 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-18 23:28:23 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-18 23:28:51 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-18 23:28:51 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-18 23:28:51 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
