@@ -377,6 +377,9 @@ class ABTestManager:
         if task_id not in self.variants:
             self.variants[task_id] = []
         variant_id = hashlib.md5(template.encode()).hexdigest()[:8]
+        # 去重：已存在相同 ID 的 variant 则跳过
+        if any(v.id == variant_id for v in self.variants[task_id]):
+            return next(v for v in self.variants[task_id] if v.id == variant_id)
         variant = PromptVariant(id=variant_id, template=template, description=description)
         self.variants[task_id].append(variant)
         self._save()
