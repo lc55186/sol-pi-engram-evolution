@@ -28,7 +28,8 @@ class ObservationPack:
     def __init__(self, archive_root: str = "./observations",
                  max_file_size_mb: int = 100,
                  compress_large_files: bool = True,
-                 default_chunk_size: int = 5000):
+                 default_chunk_size: int = 5000,
+                 tokenjuice_enabled: bool = True):
         """
         初始化 ObservationPack
         
@@ -42,6 +43,13 @@ class ObservationPack:
         self.max_file_size_bytes = max_file_size_mb * 1024 * 1024
         self.compress_large_files = compress_large_files
         self.default_chunk_size = default_chunk_size
+        self.tokenjuice_enabled = tokenjuice_enabled
+        # TokenJuice 3-tier compression config
+        self._tokenjuice_config = {
+            "ephemeral": {"max_age_hours": 6, "keep_ratio": 0.3},
+            "short_term": {"max_age_days": 7, "keep_ratio": 0.5},
+            "long_term": {"max_age_days": 365, "keep_ratio": 0.7},
+        }
         self._ensure_archive_root()
 
     def _ensure_archive_root(self):
@@ -357,3 +365,42 @@ def delete_content(handle: dict[str, Any]) -> bool:
     """删除内容的便捷函数"""
     pack = get_observation_pack()
     return pack.delete(handle)
+
+
+    def compress_with_tokenjuice(self, filepath: str, tier: str = "short_term") -> dict:
+        """Apply TokenJuice-style compression to archived file"""
+        if not self.tokenjuice_enabled:
+            return {"compressed": False, "reason": "disabled"}
+        
+        config = self._tokenjuice_config.get(tier, self._tokenjuice_config["short_term"])
+        
+        with open(filepath, "r", encoding="utf-8") as f:
+            content = f.read()
+        
+        if len(content) < 100:
+            return {"compressed": False, "reason": "too_short", "size": len(content)}
+        
+        # TokenJuice: keep key sentences (numbers, logic, short sentences)
+        sentences = content.replace("。", "。|").replace("！", "！|").replace("？", "？|").split("|")
+        sentences = [s.strip() for s in sentences if s.strip()]
+        
+        key_sentences = []
+        for sent in sentences:
+            if any(c.isdigit() for c in sent):
+                key_sentences.append(sent)
+            elif any(w in sent for w in ['因为', '所以', '如果', '但是', '因此', '必须', '需要']):
+                key_sentences.append(sent)
+            elif len(sent) < 25:
+                key_sentences.append(sent)
+        
+        compressed = '。'.join(key_sentences)
+        ratio = len(compressed) / max(len(content), 1)
+        
+        return {
+            "compressed": True,
+            "original_size": len(content),
+            "compressed_size": len(compressed),
+            "ratio": ratio,
+            "savings": 1 - ratio,
+            "tier": tier
+        }
