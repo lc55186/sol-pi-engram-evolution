@@ -1964,6 +1964,42 @@
         "total_uses": 0,
         "positive_feedback": 0,
         "negative_feedback": 0
+      },
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-18T19:46:04.999574",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-18T19:46:05.005085",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "f28f7b9d",
+        "template": "你好老板",
+        "description": "正式版",
+        "created_at": "2026-09-18T19:59:20.740671",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
+      },
+      {
+        "id": "db26113e",
+        "template": "老板好",
+        "description": "简洁版",
+        "created_at": "2026-09-18T19:59:20.747875",
+        "total_uses": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0
       }
     ],
     "negotiation_warning": [
