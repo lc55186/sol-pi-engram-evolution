@@ -4,6 +4,7 @@
 """
 
 import importlib.util
+import sys
 import os
 import tempfile
 
@@ -13,6 +14,7 @@ _GS_PATH = os.path.join(
 )
 _spec_gs = importlib.util.spec_from_file_location("graph_store", _GS_PATH)
 _graph_store = importlib.util.module_from_spec(_spec_gs)
+sys.modules["graph_store"] = _graph_store
 _spec_gs.loader.exec_module(_graph_store)
 
 # 加载 graph_retriever 模块
@@ -21,6 +23,7 @@ _GR_PATH = os.path.join(
 )
 _spec_gr = importlib.util.spec_from_file_location("graph_retriever", _GR_PATH)
 _graph_retriever = importlib.util.module_from_spec(_spec_gr)
+sys.modules["graph_retriever"] = _graph_retriever
 _spec_gr.loader.exec_module(_graph_retriever)
 
 

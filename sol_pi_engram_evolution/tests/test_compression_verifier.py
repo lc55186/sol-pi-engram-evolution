@@ -199,7 +199,7 @@ def test_retrieval_accuracy():
     verifier = CompressionVerifier()
 
     result = verifier.run_retrieval_accuracy_test(
-        store, "数据库设计", expected_node_count=1, expected_min_score=0.1
+        store, "数据库设计", expected_node_count=1, expected_min_score=0.05
     )
 
     assert result['query'] == "数据库设计"

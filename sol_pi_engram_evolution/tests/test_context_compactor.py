@@ -5,6 +5,7 @@
 
 import importlib.util
 import os
+import sys
 
 
 def _load_module(name, rel_path):
@@ -13,6 +14,7 @@ def _load_module(name, rel_path):
     )
     spec = importlib.util.spec_from_file_location(name, path)
     mod = importlib.util.module_from_spec(spec)
+    sys.modules[name] = mod
     spec.loader.exec_module(mod)
     return mod
 

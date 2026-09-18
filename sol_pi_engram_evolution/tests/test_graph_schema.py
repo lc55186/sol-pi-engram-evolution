@@ -4,6 +4,7 @@
 """
 
 import importlib.util
+import sys
 import os
 
 # 直接从文件路径加载 graph_schema 模块，避免 sys.path 问题
@@ -15,6 +16,7 @@ if not os.path.exists(_GRAPH_SCHEMA_PATH):
 
 _spec = importlib.util.spec_from_file_location("graph_schema", _GRAPH_SCHEMA_PATH)
 _graph_schema = importlib.util.module_from_spec(_spec)
+sys.modules["graph_schema"] = _graph_schema
 _spec.loader.exec_module(_graph_schema)
 
 TaskNode = _graph_schema.TaskNode
