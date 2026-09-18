@@ -1,0 +1,519 @@
+{
+  "analysis": {
+    "repository": "Tencent/WeKnora",
+    "version": "0.8.0",
+    "description": "Open-source LLM knowledge platform for document understanding, RAG, autonomous agents, and self-maintaining Wiki",
+    "license": "MIT",
+    "primary_language": "Go",
+    "modules": [
+      {
+        "id": "mcpserver",
+        "name": "MCP Server (internal/mcpserver/)",
+        "description": "Native Go MCP server using mcp-go library with Streamable HTTP transport. Exposes knowledge workspace tools to external MCP clients (Claude Desktop, Cursor, VS Code) with per-endpoint authentication, tool allowlisting, rate limiting, and knowledge-base scoping.",
+        "language": "Go",
+        "files": [
+          "internal/mcpserver/server.go",
+          "internal/mcpserver/handlers.go",
+          "internal/mcpserver/tools_registration.go",
+          "internal/mcpserver/grep_pattern_test.go"
+        ],
+        "interfaces": [
+          {
+            "name": "Server",
+            "type": "struct",
+            "fields": [
+              "kbService interfaces.KnowledgeBaseService",
+              "knowledgeService interfaces.KnowledgeService",
+              "chunkService interfaces.ChunkService",
+              "wikiService interfaces.WikiPageService",
+              "sessionService interfaces.SessionService",
+              "messageService interfaces.MessageService",
+              "agentService interfaces.CustomAgentService",
+              "kbShareService interfaces.KBShareService",
+              "tenantService interfaces.TenantService",
+              "endpointRepo interfaces.MCPEndpointRepository",
+              "db *gorm.DB",
+              "cfg *config.Config",
+              "limiter *ratelimit.Limiter",
+              "mcp *server.MCPServer",
+              "handler http.Handler"
+            ],
+            "methods": [
+              "NewServer(...) *Server - Builder with full DI",
+              "Handler() http.Handler - Returns mountable handler",
+              "filterTools(ctx, []mcp.Tool) []mcp.Tool - Per-endpoint tool visibility",
+              "guardTool(next) ToolHandlerFunc - Allowlist + rate limit enforcement",
+              "touchLastUsed(ctx, endpointID) - Activity tracking",
+              "toolCatalog() []server.ServerTool - Full tool registration"
+            ]
+          }
+        ],
+        "tools_exposed": [
+          "list_knowledge_bases - List accessible KBs",
+          "search_knowledge - Hybrid/semantic/keyword search",
+          "grep_chunks - Regex/literal keyword search",
+          "list_documents - Paginated document listing",
+          "read_document - Full document reading with context",
+          "ask - Synchronous agent execution with citations",
+          "wiki_search - Wiki page search",
+          "wiki_read_page - Read wiki page content",
+          "wiki_index - Get wiki index structure",
+          "add_document - Ingest new document (write)",
+          "update_document - Update document (write)",
+          "delete_document - Delete document (write)"
+        ],
+        "dependencies": [
+          "github.com/mark3labs/mcp-go - MCP protocol library",
+          "github.com/redis/go-redis/v9 - Rate limiting",
+          "gorm.io/gorm - Database ORM",
+          "github.com/Tencent/WeKnora/internal/config",
+          "github.com/Tencent/WeKnora/internal/logger",
+          "github.com/Tencent/WeKnora/internal/ratelimit",
+          "github.com/Tencent/WeKnora/internal/types",
+          "github.com/Tencent/WeKnora/internal/types/interfaces"
+        ],
+        "reusable_as": "Drop-in MCP server for any knowledge-backed LLM application. Extract the Server struct, wire your own service interfaces, and mount the handler at any HTTP path. The tool catalog pattern (registration + filter + guard) is transport-agnostic and reusable for stdio/SSE transports.",
+        "reuse_steps": [
+          "1. Copy internal/mcpserver/ package",
+          "2. Implement the 9 service interfaces from internal/types/interfaces/",
+          "3. Replace types.MCPEndpoint with your own auth principal",
+          "4. Call NewServer with your implementations",
+          "5. Mount s.Handler() at your endpoint path",
+          "6. Optionally register only the tools you need from toolCatalog()"
+        ]
+      },
+      {
+        "id": "agent_tools",
+        "name": "Agent Tool Orchestration (internal/agent/tools/)",
+        "description": "Reusable agentic tool implementations for knowledge retrieval, document reading, wiki search, and agent invocation. Uses a BaseTool pattern with JSON Schema definitions, dependency-injected services, and structured ToolResult outputs.",
+        "language": "Go",
+        "files": [
+          "internal/agent/tools/search_knowledge.go",
+          "internal/agent/tools/read_document.go",
+          "internal/agent/tools/list_documents.go",
+          "internal/agent/tools/wiki_search.go",
+          "internal/agent/tools/ask.go",
+          "internal/agent/tools/wiki_read_page.go",
+          "internal/agent/tools/knowledge_graph.go",
+          "internal/agent/tools/tool_images.go"
+        ],
+        "interfaces": [
+          {
+            "name": "BaseTool",
+            "type": "struct",
+            "fields": ["name string", "description string", "schema json.RawMessage"],
+            "description": "Base tool definition with JSON Schema for function calling"
+          },
+          {
+            "name": "SearchKnowledgeTool",
+            "type": "struct",
+            "fields": [
+              "knowledgeBaseService interfaces.KnowledgeBaseService",
+              "knowledgeService interfaces.KnowledgeService",
+              "chunkService interfaces.ChunkService",
+              "searchTargets types.SearchTargets",
+              "rerankModel rerank.Reranker",
+              "config *config.Config",
+              "patternFilter *regexp.Regexp"
+            ],
+            "key_methods": [
+              "NewSearchKnowledgeTool(...) *SearchKnowledgeTool",
+              "Execute(ctx, args) (*ToolResult, error)",
+              "WithPatternFilter(re) *SearchKnowledgeTool - For grep_chunks semantics"
+            ],
+            "input_schema": {
+              "query": "string (required)",
+              "mode": "enum[hybrid, semantic, keyword]",
+              "knowledge_base_ids": "array[string]",
+              "limit": "integer (1-30, default 10)"
+            },
+            "features": [
+              "Concurrent per-KB search",
+              "Mode fallback per KB (semantic↔keyword)",
+              "MMR deduplication (lambda=0.7)",
+              "Reranking integration",
+              "Image info enrichment",
+              "Pattern filter for grep semantics"
+            ]
+          },
+          {
+            "name": "ReadDocumentTool",
+            "type": "struct",
+            "fields": [
+              "knowledgeService interfaces.KnowledgeService",
+              "chunkService interfaces.ChunkService",
+              "searchTargets types.SearchTargets"
+            ],
+            "key_methods": [
+              "NewReadDocumentTool(...) *ReadDocumentTool",
+              "Execute(ctx, args) (*ToolResult, error)"
+            ],
+            "input_schema": {
+              "id": "string - dN document or cN chunk handle",
+              "offset": "integer - reading-order position",
+              "limit": "integer (1-100, default 20)",
+              "query": "string - in-document search",
+              "regex": "boolean - regex vs literal query",
+              "context": "integer - neighbour chunks (0-5)"
+            },
+            "features": [
+              "Document pagination with next_offset",
+              "Chunk context retrieval by chunk_index",
+              "In-document search (literal + regex)",
+              "Cross-tenant shared KB access",
+              "Image info enrichment"
+            ]
+          },
+          {
+            "name": "ListDocumentsTool",
+            "type": "struct",
+            "fields": [
+              "knowledgeService interfaces.KnowledgeService",
+              "searchTargets types.SearchTargets"
+            ],
+            "key_methods": [
+              "NewListDocumentsTool(...) *ListDocumentsTool",
+              "Execute(ctx, args) (*ToolResult, error)"
+            ],
+            "input_schema": {
+              "knowledge_base_id": "string (required)",
+              "keyword": "string - title/file filter",
+              "page": "integer",
+              "page_size": "integer (1-100)"
+            },
+            "features": [
+              "Pinned @tag/@file scope filtering",
+              "Tenant-aware (owner vs caller)",
+              "Keyword search on title + filename"
+            ]
+          }
+        ],
+        "dependencies": [
+          "github.com/Tencent/WeKnora/internal/types",
+          "github.com/Tencent/WeKnora/internal/types/interfaces",
+          "github.com/Tencent/WeKnora/internal/config",
+          "github.com/Tencent/WeKnora/internal/searchutil",
+          "github.com/Tencent/WeKnora/internal/models/rerank"
+        ],
+        "reusable_as": "Plug-and-play tool implementations for any LLM agent framework. Each tool is self-contained, takes interfaces as input, and returns standardized ToolResult. Compatible with any function-calling system by adapting the JSON Schema.",
+        "reuse_steps": [
+          "1. Copy internal/agent/tools/ files for tools you need",
+          "2. Implement interfaces.KnowledgeService, ChunkService, etc.",
+          "3. Define your own types.SearchTargets or replace with scope filter",
+          "4. Wire rerank.Reranker implementation (or nil for no rerank)",
+          "5. Call New*SearchTool() and register with your agent loop",
+          "6. Tools return *ToolResult with Success/Output/Data fields"
+        ]
+      },
+      {
+        "id": "docreader_parser",
+        "name": "Document Parser Engine (docreader/)",
+        "description": "gRPC-based document parsing service supporting 20+ file formats. Converts documents to markdown + image references. Supports MinerU, OpenDataLoader, PaddleOCR-VL engines. Separates parsing (Python) from chunking/storage (Go).",
+        "language": "Python",
+        "files": [
+          "docreader/parser/base_parser.py - BaseParser ABC",
+          "docreader/parser/parser.py - Parser facade with registry",
+          "docreader/parser/registry.py - Parser engine registry",
+          "docreader/parser/pdf_parser.py - PDF parsing",
+          "docreader/parser/docx_parser.py - DOCX parsing",
+          "docreader/parser/xlsx_parser.py - Excel parsing",
+          "docreader/parser/ppt_convert.py - PPT conversion",
+          "docreader/parser/html_parser.py - HTML parsing",
+          "docreader/parser/markdown_parser.py - Markdown parsing",
+          "docreader/parser/epub_parser.py - EPUB parsing",
+          "docreader/parser/image_parser.py - Image/OCR",
+          "docreader/parser/markitdown_parser.py - MarkItDown integration",
+          "docreader/parser/opendataloader_parser.py - OpenDataLoader engine",
+          "docreader/parser/web_parser.py - URL parsing",
+          "docreader/models/document.py - Document/Chunk Pydantic models",
+          "docreader/splitter/splitter.py - Text splitting",
+          "docreader/splitter/header_hook.py - Header tracking",
+          "docreader/client/client.go - Go gRPC client",
+          "docreader/proto/*.proto - gRPC service definitions"
+        ],
+        "interfaces": [
+          {
+            "name": "BaseParser",
+            "type": "ABC",
+            "methods": [
+              "parse_into_text(content: bytes) -> Document (abstract)",
+              "parse(content: bytes) -> Document"
+            ],
+            "fields": ["file_name: str", "file_type: Optional[str]"]
+          },
+          {
+            "name": "Parser",
+            "type": "class",
+            "methods": [
+              "parse_file(file_name, file_type, content, parser_engine, engine_overrides) -> Document",
+              "parse_url(url, title, parser_engine, engine_overrides) -> Document"
+            ],
+            "description": "Facade with engine registry, file magic detection, and format routing"
+          },
+          {
+            "name": "Document",
+            "type": "Pydantic BaseModel",
+            "fields": [
+              "content: str (markdown text)",
+              "images: Dict[str, str] (path -> base64)",
+              "chunks: List[Chunk]",
+              "metadata: Dict[str, Any]"
+            ]
+          },
+          {
+            "name": "Chunk",
+            "type": "Pydantic BaseModel",
+            "fields": ["content: str", "seq: int", "start: int", "end: int", "images: List[Dict]", "metadata: Dict[str, Any]"]
+          },
+          {
+            "name": "TextSplitter",
+            "type": "Pydantic BaseModel",
+            "fields": [
+              "chunk_size: int (default 512)",
+              "chunk_overlap: int (default 80)",
+              "separators: List[str]",
+              "protected_regex: List[str]",
+              "len_function: Callable",
+              "header_hook: HeaderTracker"
+            ],
+            "methods": [
+              "split_text(text) -> List[Tuple[int, int, str]]",
+              "restore_text(chunks) -> str"
+            ]
+          }
+        ],
+        "dependencies": [
+          "pydantic - Data models",
+          "grpcio - gRPC server/client",
+          "minio - Object storage",
+          "markitdown - Document conversion (optional)",
+          "pypdf / pdfplumber - PDF parsing",
+          "python-docx - DOCX parsing",
+          "openpyxl - XLSX parsing"
+        ],
+        "grpc_service": {
+          "name": "DocReader",
+          "port": 50051,
+          "methods": [
+            "Read(ReadRequest) -> ReadResponse - Unary parse",
+            "ReadStream(ReadRequest) -> stream ReadResponse - Streaming for large docs"
+          ],
+          "proto_files": ["docreader/proto/docreader.proto"]
+        },
+        "reusable_as": "Standalone document parsing microservice. The Parser facade + registry pattern allows adding new format parsers without modifying core logic. TextSplitter is usable as a standalone chunking library.",
+        "reuse_steps": [
+          "1. Deploy docreader as gRPC service (Docker image: wechatopenai/weknora-docreader)",
+          "2. Implement Go client using docreader/client/client.go",
+          "3. Or: import Parser class directly for in-process parsing",
+          "4. For chunking: use TextSplitter.split_text() -> restore_text() for lossless reconstruction",
+          "5. Configure storage backend via env vars (MinIO/S3/COS/OSS)",
+          "6. Enable TLS via GRPC_TLS_* and GRPC_AUTH_TOKEN env vars"
+        ]
+      },
+      {
+        "id": "knowledge_service",
+        "name": "Knowledge Management (internal/types/interfaces + internal/knowledge)",
+        "description": "Comprehensive knowledge base lifecycle management: CRUD operations, multi-tenant isolation, FAQ support, tagging, folder hierarchy, data source sync, search, and processing orchestration. Clean interface separation between repository (ChunkRepository) and service (KnowledgeService, ChunkService) layers.",
+        "language": "Go",
+        "interfaces": [
+          {
+            "name": "KnowledgeService",
+            "type": "interface",
+            "file": "internal/types/interfaces/knowledge.go",
+            "method_groups": {
+              "ingestion": [
+                "CreateKnowledgeFromFile(ctx, kbID, file, metadata, enableMultimodel, customFileName, tagIDs, channel, processOverrides)",
+                "CreateKnowledgeFromURL(ctx, kbID, url, fileName, fileType, enableMultimodel, title, tagIDs, channel, processOverrides)",
+                "CreateKnowledgeFromPassage(ctx, kbID, passage, channel)",
+                "CreateKnowledgeFromPassageSync(ctx, kbID, passage, channel)",
+                "CreateKnowledgeFromManual(ctx, kbID, payload, channel)"
+              ],
+              "retrieval": [
+                "GetKnowledgeByID(ctx, id)",
+                "GetKnowledgeByIDOnly(ctx, id)",
+                "GetKnowledgeBatch(ctx, tenantID, ids)",
+                "GetKnowledgeBatchWithSharedAccess(ctx, tenantID, ids)",
+                "ListKnowledgeByKnowledgeBaseID(ctx, kbID)",
+                "ListPagedKnowledgeByKnowledgeBaseID(ctx, kbID, page, filter)",
+                "ListKnowledgeFolderTree(ctx, kbID)",
+                "SearchKnowledge(ctx, tenantID, keyword, offset, limit, fileTypes)",
+                "SearchKnowledgeInScopes(ctx, scopes, keyword, offset, limit, fileTypes)"
+              ],
+              "mutation": [
+                "UpdateKnowledge(ctx, knowledge)",
+                "DeleteKnowledge(ctx, id)",
+                "DeleteKnowledgeList(ctx, ids)",
+                "MoveKnowledgeToFolder(ctx, kbID, ids, folderPath)",
+                "RenameKnowledgeFolder(ctx, kbID, from, to)",
+                "ReplaceKnowledgeFile(ctx, knowledgeID, file, customFileName, metadata)",
+                "ReparseKnowledge(ctx, knowledgeID, processOverrides)"
+              ],
+              "faq": [
+                "ListFAQEntries(ctx, kbID, page, tagUUIDs, legacyTagSeqID, keyword, searchField, sortOrder, isEnabled)",
+                "UpsertFAQEntries(ctx, kbID, payload)",
+                "CreateFAQEntry(ctx, kbID, payload)",
+                "GetFAQEntry(ctx, kbID, entrySeqID)",
+                "UpdateFAQEntry(ctx, kbID, entrySeqID, payload)",
+                "AddSimilarQuestions(ctx, kbID, entrySeqID, questions)",
+                "DeleteFAQEntries(ctx, kbID, entrySeqIDs)",
+                "SearchFAQEntries(ctx, kbID, req)",
+                "ExportFAQEntries(ctx, kbID)",
+                "ExportFAQEntriesJSON(ctx, kbID)"
+              ],
+              "tags": [
+                "SetKnowledgeTags(ctx, knowledgeID, tagIDs)",
+                "UpdateKnowledgeTagBatch(ctx, authorizedKBID, updates)",
+                "AddKnowledgeTagRelations(ctx, tenantID, kbID, knowledgeID, tagIDs)",
+                "DeleteKnowledgeTagRelations(ctx, knowledgeID)",
+                "GetKnowledgeTags(ctx, knowledgeIDs)"
+              ],
+              "sync_helpers": [
+                "FindByMetadataKey(ctx, tenantID, kbID, key, value)",
+                "FindByMetadataKeyPrefix(ctx, tenantID, kbID, key, prefix)",
+                "FindByDataSourceExternalID(ctx, tenantID, kbID, dataSourceID, externalID)"
+              ]
+            }
+          },
+          {
+            "name": "ChunkService",
+            "type": "interface",
+            "file": "internal/types/interfaces/chunk.go",
+            "methods": [
+              "CreateChunks(ctx, chunks)",
+              "GetChunkByID(ctx, id)",
+              "GetChunkByIDOnly(ctx, id)",
+              "ListChunksByKnowledgeID(ctx, knowledgeID)",
+              "ListPagedChunksByKnowledgeID(ctx, knowledgeID, page, chunkType)",
+              "UpdateChunk(ctx, chunk)",
+              "UpdateChunks(ctx, chunks)",
+              "DeleteChunk(ctx, id)",
+              "DeleteChunks(ctx, ids)",
+              "DeleteChunksByKnowledgeID(ctx, knowledgeID)",
+              "DeleteByKnowledgeList(ctx, ids)",
+              "ListChunkByParentID(ctx, tenantID, parentID)",
+              "GetRepository() ChunkRepository",
+              "DeleteGeneratedQuestion(ctx, chunkID, questionID)",
+              "UpdateDocumentChunk(ctx, chunkID, content, isEnabled, expectedRevision)",
+              "ListChunkRevisions(ctx, chunkID)",
+              "RevertDocumentChunk(ctx, chunkID, revision, expectedRevision)",
+              "UpsertGeneratedQuestion(ctx, chunkID, questionID, question)"
+            ]
+          },
+          {
+            "name": "ChunkRepository",
+            "type": "interface",
+            "file": "internal/types/interfaces/chunk.go",
+            "methods": [
+              "ListAllChunksByKnowledgeID(ctx, tenantID, knowledgeID)",
+              "CreateChunks(ctx, chunks)",
+              "GetChunkByID(ctx, tenantID, id)",
+              "GetChunkByIDOnly(ctx, id)",
+              "GetChunkBySeqID(ctx, tenantID, seqID)",
+              "ListChunksByID(ctx, tenantID, ids)",
+              "ListPagedChunksByKnowledgeID(ctx, tenantID, knowledgeID, page, chunkType, tagIDs, keyword, searchField, sortOrder, knowledgeType, isEnabled)",
+              "ListChunkNeighbors(ctx, tenantID, knowledgeID, chunkIndex, before, after, chunkTypes)",
+              "UpdateChunk(ctx, chunk)",
+              "SaveChunkRevision(ctx, chunk, revision, expectedRevision)",
+              "ListChunkRevisions(ctx, tenantID, chunkID)",
+              "DeleteChunk(ctx, tenantID, id)",
+              "DeleteChunks(ctx, tenantID, ids)",
+              "DeleteChunksByKnowledgeID(ctx, tenantID, knowledgeID)"
+            ]
+          }
+        ],
+        "dependencies": [
+          "gorm.io/gorm - ORM (PostgreSQL/SQLite)",
+          "github.com/hibiken/asynq - Async task queue (Redis)",
+          "github.com/Tencent/WeKnora/internal/types - Domain models",
+          "github.com/Tencent/WeKnora/internal/config - Configuration"
+        ],
+        "reusable_as": "Reference implementation for any knowledge/RAG system. The interface definitions are database-agnostic and can be implemented with any storage backend. The separation of KnowledgeService (orchestration) from ChunkRepository (persistence) allows independent scaling and testing.",
+        "reuse_steps": [
+          "1. Copy internal/types/interfaces/ for the interface contracts",
+          "2. Implement KnowledgeService with your preferred database",
+          "3. Implement ChunkRepository for your vector store + relational DB",
+          "4. Use asynq for async processing pipeline (parse → chunk → embed → index)",
+          "5. Adapt KnowledgeListFilter struct for your query patterns",
+          "6. Use the sync helpers (FindByMetadataKey*) for external data source integration"
+        ]
+      }
+    ],
+    "dependency_graph": {
+      "mcpserver": {
+        "depends_on": [
+          "interfaces.KnowledgeBaseService",
+          "interfaces.KnowledgeService",
+          "interfaces.ChunkService",
+          "interfaces.WikiPageService",
+          "interfaces.SessionService",
+          "interfaces.MessageService",
+          "interfaces.CustomAgentService",
+          "interfaces.KBShareService",
+          "interfaces.TenantService",
+          "interfaces.MCPEndpointRepository"
+        ],
+        "used_by": "HTTP router at /mcp/:endpoint_id"
+      },
+      "agent_tools": {
+        "depends_on": [
+          "interfaces.KnowledgeBaseService",
+          "interfaces.KnowledgeService",
+          "interfaces.ChunkService",
+          "types.SearchTargets",
+          "rerank.Reranker"
+        ],
+        "used_by": "MCP Server handlers, Agent conversation loop"
+      },
+      "docreader": {
+        "depends_on": [
+          "MinIO/S3/COS/OSS storage",
+          "MinerU (optional)",
+          "Redis (for async tasks)"
+        ],
+        "consumed_by": "Go App via gRPC client at localhost:50051"
+      },
+      "knowledge_service": {
+        "depends_on": [
+          "gorm.DB (PostgreSQL/SQLite)",
+          "asynq.RedisClient",
+          "docreader gRPC client"
+        ],
+        "used_by": "Agent tools, MCP server, REST handlers, Data source sync"
+      }
+    },
+    "reuse_patterns": [
+      {
+        "pattern": "Interface-Driven Design",
+        "description": "All modules communicate through Go interface definitions in internal/types/interfaces/. This allows swapping implementations without changing consumers."
+      },
+      {
+        "pattern": "Tool Registration + Filter + Guard",
+        "description": "MCP server registers full catalog, then filters per-endpoint and guards each call with auth + rate limit. Applicable to any multi-tenant tool exposure."
+      },
+      {
+        "pattern": "Registry Pattern (DocReader)",
+        "description": "Parser engines are registered by file type string, enabling open/closed principle for adding new formats."
+      },
+      {
+        "pattern": "Dual Tenant Resolution",
+        "description": "All KB operations resolve both caller tenant and owner tenant, supporting cross-tenant sharing while maintaining isolation."
+      },
+      {
+        "pattern": "Async Processing Pipeline",
+        "description": "Document ingestion uses asynq for parse → chunk → embed → index, with separate queues for different task types."
+      },
+      {
+        "pattern": "Revision-Checked Updates",
+        "description": "Chunk updates use optimistic concurrency (expectedRevision) to prevent lost edits in concurrent environments."
+      }
+    ],
+    "notes": [
+      "The 'knowledge' directory does not exist at root; knowledge management is implemented across internal/knowledge/ and internal/types/interfaces/",
+      "MCP server uses mark3labs/mcp-go v0.x with Streamable HTTP transport (stateless mode)",
+      "DocReader is a separate deployable service with its own Dockerfile and docker-compose config",
+      "The agent tools (search_knowledge, read_document, list_documents) are shared between the internal agent loop and the MCP server",
+      "All Go code follows a strict internal/ visibility rule; public API is in pkg/ or exposed via interfaces",
+      "The project supports both PostgreSQL and SQLite via GORM, with separate migration paths"
+    ]
+  }
+}

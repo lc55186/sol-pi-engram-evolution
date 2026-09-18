@@ -143,7 +143,7 @@ class WeKnoraMemoryClassifier:
         return [
             {"key": k, "content": v.content, "category": v.category,
              "importance": v.importance, "access_count": v.access_count,
-             "score": v.decoy_score(now)}
+             "score": v.decay_score(now)}
             for k, v in stm_entries[:limit]
         ]
 

@@ -40,7 +40,13 @@ class BM25Retriever:
         self._doc_freqs: dict[str, int] = Counter()
         self._doc_lengths: dict[str, int] = {}
         self._doc_tokens: dict[str, list[str]] = {}
-        self._build_index()
+        self._index_dirty = True  # 懒构建标记
+
+    def _ensure_index(self):
+        """确保索引已构建（懒构建）"""
+        if self._index_dirty:
+            self._build_index()
+            self._index_dirty = False
 
     def _build_index(self):
         """构建 BM25 索引（文档长度、词频统计）"""
@@ -50,7 +56,6 @@ class BM25Retriever:
             return
 
         total_len = 0
-        # 重新初始化（避免重复调用时数据残留）
         self._doc_freqs = Counter()
         self._doc_lengths = {}
         self._doc_tokens = {}
@@ -90,6 +95,7 @@ class BM25Retriever:
 
     def search(self, query: str, top_k: int = 10) -> list[tuple[dict, float]]:
         """BM25 检索"""
+        self._ensure_index()
         query_tokens = [w for w in re.split(r'[\s,.;:!?]+', query.lower()) if w]
         if not query_tokens:
             return []
@@ -134,26 +140,33 @@ class DenseRetriever:
     def __init__(self, store: GraphStore):
         self.store = store
         self._vectors: dict[str, Counter] = {}
-        self._build_index()
+        self._index_dirty = True  # 懒构建标记
+
+    def _ensure_index(self):
+        """确保索引已构建（懒构建）"""
+        if self._index_dirty:
+            self._build_index()
+            self._index_dirty = False
 
     def _build_index(self):
         """构建向量索引"""
         nodes = self.store.get_all_nodes()
+        self._vectors = {}
         for node in nodes:
             nid = node['node_id']
             text = " ".join([
-                (node.get('title', '') or '') * 3,  # title 权重 x3
-                (node.get('description', '') or '') * 2,  # description 权重 x2
+                (node.get('title', '') or '') * 3,
+                (node.get('description', '') or '') * 2,
                 node.get('outcome', '') or '',
-                ' '.join(node.get('entities', []) or []) * 2,  # entities 权重 x2
+                ' '.join(node.get('entities', []) or []) * 2,
             ])
             tokens = [w for w in re.split(r'[\s,.;:!?]+', text.lower()) if w]
-            # 使用 unigram + bigram 特征
             bigrams = [f"{tokens[i]}_{tokens[i+1]}" for i in range(len(tokens)-1)]
             self._vectors[nid] = Counter(tokens + bigrams)
 
     def search(self, query: str, top_k: int = 10) -> list[tuple[dict, float]]:
         """Dense 检索（加权 Jaccard 相似度）"""
+        self._ensure_index()
         tokens = [w for w in re.split(r'[\s,.;:!?]+', query.lower()) if w]
         if not tokens:
             return []
@@ -240,6 +253,15 @@ class HybridGraphRetriever:
         self.bm25 = BM25Retriever(store)
         self.dense = DenseRetriever(store)
         self.parent_child = ParentChildRetriever(store)
+        self._last_node_count = len(store.get_all_nodes())
+
+    def _maybe_rebuild_indexes(self):
+        """如果图谱有更新，重建索引"""
+        current_count = len(self.store.get_all_nodes())
+        if current_count != self._last_node_count:
+            self.bm25._index_dirty = True
+            self.dense._index_dirty = True
+            self._last_node_count = current_count
 
         # RRF 参数
         self.rrf_k = self.config.get('rrf_k', 60)
@@ -256,6 +278,9 @@ class HybridGraphRetriever:
     def retrieve(self, query: str, top_k: int = 5,
                  min_score: float = 0.0) -> list[tuple[dict, float]]:
         """混合检索主入口：BM25 + Dense + GraphRAG + Parent-Child + RRF 融合"""
+
+        # Step 0: 检查图谱是否有更新，重建索引
+        self._maybe_rebuild_indexes()
 
         # Step 1: Engram O(1) cache
         qhash = self._query_hash(query, min_score)
@@ -292,7 +317,7 @@ class HybridGraphRetriever:
 
     def _reciprocal_rank_fusion(self, channel_results: dict[str, list[tuple[dict, float]]]
                                 ) -> list[tuple[dict, float]]:
-        """Reciprocal Rank Fusion：融合多路检索结果"""
+        """Reciprocal Rank Fusion：融合多路检索结果，归一化到 [0, 1]"""
         fused_scores: dict[str, float] = {}
         node_map: dict[str, dict] = {}
 
@@ -306,8 +331,16 @@ class HybridGraphRetriever:
                 # RRF 公式: 1 / (k + rank)
                 fused_scores[nid] += weight * (1.0 / (self.rrf_k + rank + 1))
 
+        # 归一化：最高分 → 1.0，其余按比例
+        if not fused_scores:
+            return []
+
+        max_score = max(fused_scores.values())
+        if max_score == 0:
+            max_score = 1.0
+
         ranked = sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
-        return [(node_map[nid], score) for nid, score in ranked]
+        return [(node_map[nid], score / max_score) for nid, score in ranked]
 
     def _graph_search(self, query: str, top_k: int = 10) -> list[tuple[dict, float]]:
         """GraphRAG 检索：关键词匹配 + 关系遍历"""

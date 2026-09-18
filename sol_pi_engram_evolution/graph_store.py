@@ -93,13 +93,16 @@ class GraphStore:
 
         self.conn.commit()
 
+    _counter = 0
+
     def add_task_node(self, title: str = "", description: str = "",
                       status: str = "not_started", priority: int = 3,
                       source_pointer: str = "", confidence: float = 1.0,
                       importance_score: float = 0.5,
                       decay_rate: float = 0.95) -> dict:
         """添加任务节点"""
-        node_id = f"task-{datetime.now().isoformat()}-{id(self)}"
+        GraphStore._counter += 1
+        node_id = f"task-{datetime.now().strftime('%Y%m%d%H%M%S')}-{GraphStore._counter}"
         now = datetime.now().isoformat()
 
         cursor = self.conn.cursor()
@@ -130,7 +133,8 @@ class GraphStore:
                        importance_score: float = 0.5,
                        decay_rate: float = 0.95) -> dict:
         """添加事件节点"""
-        node_id = f"event-{datetime.now().isoformat()}-{id(self)}"
+        GraphStore._counter += 1
+        node_id = f"event-{datetime.now().strftime('%Y%m%d%H%M%S')}-{GraphStore._counter}"
         now = datetime.now().isoformat()
 
         cursor = self.conn.cursor()
@@ -163,7 +167,8 @@ class GraphStore:
                      importance_score: float = 0.5,
                      decay_rate: float = 0.95) -> dict:
         """添加关系"""
-        relation_id = f"rel-{source_node_id}-{target_node_id}-{datetime.now().isoformat()}"
+        GraphStore._counter += 1
+        relation_id = f"rel-{source_node_id}-{target_node_id}-{GraphStore._counter}"
         now = datetime.now().isoformat()
 
         cursor = self.conn.cursor()
