@@ -43,7 +43,7 @@ class EngramEntry:
 @dataclass
 class EngramConfig:
     """Engram 模块配置"""
-    db_path: str = "engram_memory.db"
+    db_path: str = ""  # 空则自动解析为模块同目录
     max_ngram_size: int = 3        # 最大 n-gram 大小
     hash_prime: int = 10007        # 哈希质数基数
     capacity: int = 100000         # 最大条目数
@@ -158,7 +158,13 @@ class EngramMemory:
 
     def __init__(self, config: EngramConfig = None):
         self.config = config or EngramConfig()
-        self.hasher = NgramHasher(config or EngramConfig())
+        # 自动解析 DB 路径：空则用模块同目录，相对路径则转为绝对路径
+        if not self.config.db_path:
+            module_dir = os.path.dirname(os.path.abspath(__file__))
+            self.config.db_path = os.path.join(module_dir, "engram_memory.db")
+        else:
+            self.config.db_path = os.path.abspath(self.config.db_path)
+        self.hasher = NgramHasher(self.config)
         self._init_db()
 
     def _init_db(self):
