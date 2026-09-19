@@ -13,6 +13,7 @@ import sys
 from datetime import datetime
 from typing import Dict, List, Any, Optional
 from dataclasses import dataclass, field
+from pathlib import Path
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("self_evolution")
@@ -39,6 +40,18 @@ class SelfEvolutionEngine:
         self.lessons_file = os.path.join(self.project_root, "LESSONS.md")
         self.metrics_file = os.path.join(self.project_root, ".evolution_metrics.json")
         self._load_metrics()
+        # 子组件
+        self.registry = HotSwapRegistry()
+        self.ab_manager = ABTestManager()
+        self.template_evolver = TemplateEvolver()
+        # 代理方法
+        self.register_module = self.registry.register
+        self.replace_module = self.registry.replace
+        self.ab_test_prompt = self.ab_manager.register_variant
+        self.get_best_prompt = self.ab_manager.get_prompt
+        self.evolve_templates = self.template_evolver.evolve_template
+        # 操作计数器
+        self._op_count = 0
 
     def _load_metrics(self):
         if os.path.exists(self.metrics_file):
@@ -158,6 +171,26 @@ class SelfEvolutionEngine:
             for lesson in lessons:
                 f.write(f"- {lesson}\n")
 
+
+
+
+
+    def get_status(self) -> Dict[str, Any]:
+        """获取引擎状态总览"""
+        total_ab_variants = sum(
+            len(v) for v in self.ab_manager.variants.values()
+        )
+        total_templates = sum(
+            len(v) for v in self.template_evolver._templates.values()
+        )
+        return {
+            "evolution_log_count": len(self.records) + len(self.registry.list_modules()) + total_ab_variants + total_templates,
+            "modules": self.registry.list_modules(),
+            "ab_tests": {k: len(v) for k, v in self.ab_manager.variants.items()},
+            "templates": {k: len(v) for k, v in self.template_evolver._templates.items()},
+            "metrics": self.metrics,
+        }
+
     def report(self) -> str:
         """阶段5: 生成进化报告"""
         logger.info("=== REPORT PHASE ===")
@@ -217,6 +250,215 @@ def run_evolution():
     report = engine.report()
     print(report)
     return report
+
+
+# ── 模块热替换注册表 ──────────────────────────────────────
+
+class HotSwapRegistry:
+    """模块热替换注册表 — 运行时替换模块无需重启"""
+
+    def __init__(self):
+        self._modules: Dict[str, Any] = {}
+        self._metadata: Dict[str, Dict] = {}
+
+    def register(self, name: str, module: Any, version: str = "1.0.0"):
+        self._modules[name] = module
+        self._metadata[name] = {"version": version, "registered_at": datetime.now().isoformat()}
+
+    def get(self, name: str) -> Optional[Any]:
+        return self._modules.get(name)
+
+    def replace(self, name: str, new_module: Any, version: str = None) -> bool:
+        if name not in self._modules:
+            return False
+        self._modules[name] = new_module
+        if version:
+            self._metadata[name]["version"] = version
+            self._metadata[name]["replaced_at"] = datetime.now().isoformat()
+        return True
+
+    def list_modules(self) -> List[Dict]:
+        return [{"name": k, "version": v["version"]} for k, v in self._metadata.items()]
+
+
+# ── A/B 测试管理器 ──────────────────────────────────────
+
+@dataclass
+class PromptVariant:
+    id: str
+    template: str
+    description: str
+    uses: int = 0
+    positive: int = 0
+    negative: int = 0
+
+    @property
+    def score(self) -> float:
+        if self.uses == 0:
+            return float("inf")
+        return self.positive / max(self.uses, 1)
+
+
+class ABTestManager:
+    """Prompt A/B 测试 — UCB1 算法选择最优变体"""
+
+    def __init__(self, storage_path: str = None):
+        self.storage_path = storage_path or os.path.join(
+            os.path.dirname(os.path.abspath(__file__)), "ab_test.json"
+        )
+        self.variants: Dict[str, List[PromptVariant]] = {}
+        self._load()
+
+    def _load(self):
+        if os.path.exists(self.storage_path):
+            with open(self.storage_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for group, variants in data.get("variants", {}).items():
+                self.variants[group] = [
+                    PromptVariant(**v) for v in variants
+                ]
+
+    def _save(self):
+        data = {
+            "variants": {
+                group: [
+                    {
+                        "id": v.id, "template": v.template,
+                        "description": v.description, "uses": v.uses,
+                        "positive": v.positive, "negative": v.negative
+                    }
+                    for v in variants
+                ]
+                for group, variants in self.variants.items()
+            }
+        }
+        with open(self.storage_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+    def register_variant(self, group: str, template: str, description: str) -> str:
+        import hashlib
+        vid = hashlib.md5(f"{group}:{template}".encode()).hexdigest()[:8]
+        if group not in self.variants:
+            self.variants[group] = []
+        # 去重
+        for v in self.variants[group]:
+            if v.id == vid:
+                return v.id
+        self.variants[group].append(PromptVariant(id=vid, template=template, description=description))
+        self._save()
+        return vid
+
+    def get_prompt(self, group: str) -> Optional[str]:
+        import math
+        variants = self.variants.get(group, [])
+        if not variants:
+            return None
+        # UCB1
+        total_uses = sum(v.uses for v in variants)
+        best = max(variants, key=lambda v: (
+            (v.positive / max(v.uses, 1)) + math.sqrt(2 * math.log(max(total_uses, 1)) / max(v.uses, 0.1))
+        ))
+        best.uses += 1
+        self._save()
+        return best.template
+
+    def record_feedback(self, group: str, variant_id: str, positive: bool):
+        for v in self.variants.get(group, []):
+            if v.id == variant_id:
+                if positive:
+                    v.positive += 1
+                else:
+                    v.negative += 1
+                self._save()
+                return True
+        return False
+
+    def get_leaderboard(self, group: str) -> List[Dict]:
+        variants = self.variants.get(group, [])
+        sorted_v = sorted(variants, key=lambda v: v.score, reverse=True)
+        return [
+            {
+                "id": v.id, "description": v.description,
+                "score": v.score, "uses": v.uses,
+                "positive": v.positive, "negative": v.negative
+            }
+            for v in sorted_v
+        ]
+
+
+# ── 模板进化器 ──────────────────────────────────────────
+
+class TemplateEvolver:
+    """模板进化器 — 基于反馈生成变体"""
+
+    def __init__(self, template_dir: str = None):
+        self.template_dir = template_dir or os.path.join(
+            os.path.dirname(os.path.abspath(__file__)), "templates"
+        )
+        os.makedirs(self.template_dir, exist_ok=True)
+        self._templates: Dict[str, List[str]] = {}
+        self._load_all()
+
+    def _load_all(self):
+        for f in Path(self.template_dir).glob("*.json"):
+            with open(f, "r", encoding="utf-8") as fh:
+                data = json.load(fh)
+            self._templates[data["name"]] = data["templates"]
+
+    def _save_group(self, name: str):
+        path = os.path.join(self.template_dir, f"{name}.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump({"name": name, "templates": self._templates.get(name, [])}, f, ensure_ascii=False, indent=2)
+
+    def add_template(self, name: str, template: str):
+        if name not in self._templates:
+            self._templates[name] = []
+        if template not in self._templates[name]:
+            self._templates[name].append(template)
+        self._save_group(name)
+
+    def get_templates(self, name: str) -> List[str]:
+        return self._templates.get(name, [])
+
+    def get_random_template(self, name: str) -> Optional[str]:
+        import random
+        templates = self._templates.get(name, [])
+        return random.choice(templates) if templates else None
+
+    def evolve_template(self, name: str, base: str, feedback: str = "") -> str:
+        """基于反馈生成变体"""
+        import random
+        variants = [
+            base,
+            base.replace("注意", "⚠️ 注意").replace("建议", "💡 建议"),
+            "【重要】" + base,
+            base + "（请及时处理）",
+            "📋 " + base,
+        ]
+        # 根据反馈调整
+        if "不够详细" in feedback:
+            variants.append(base + "，建议立即跟进并记录处理结果")
+        if "太长" in feedback:
+            # 截断
+            if len(base) > 20:
+                variants.append(base[:20] + "...")
+
+        chosen = random.choice(variants)
+        self.add_template(name, chosen)
+        return chosen
+
+
+# ── 全局单例引擎 ──────────────────────────────────────────
+
+_engine_singleton: Optional[SelfEvolutionEngine] = None
+
+
+def get_evolution_engine() -> SelfEvolutionEngine:
+    """获取全局单例进化引擎"""
+    global _engine_singleton
+    if _engine_singleton is None:
+        _engine_singleton = SelfEvolutionEngine()
+    return _engine_singleton
 
 
 if __name__ == "__main__":
