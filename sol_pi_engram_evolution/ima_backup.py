@@ -201,15 +201,15 @@ def upload_file(file_info, credentials):
             return False
 
         media_id = create_resp["data"]["media_id"]
-        cos_info = create_resp["data"]["cos_credentials"]
-        cos_key = create_resp["data"]["file_info"]["cos_key"]
+        cos_info = create_resp["data"]["cos_credential"]
+        cos_key = cos_info["cos_key"]
 
         # Step 2: COS 上传
         cos_upload_info = {
             "secret_id": cos_info["secret_id"],
             "secret_key": cos_info["secret_key"],
             "token": cos_info["token"],
-            "bucket": cos_info["bucket"],
+            "bucket": cos_info["bucket_name"],
             "region": cos_info["region"],
             "cos_key": cos_key,
             "content_type": "text/plain" if media_type == 13 else "text/markdown",
