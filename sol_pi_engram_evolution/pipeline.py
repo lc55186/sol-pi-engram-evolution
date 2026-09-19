@@ -441,6 +441,11 @@ class EvolutionPipeline:
         self.wiki_engine = WikiModeEngine()
         self.react_agent = ReACTAgentMode(self)
 
+        # V0.4: BM25 检索 + 会话工作区（对齐 WeKnora 0.8.0）
+        self.bm25_retriever = None
+        self.workspace_manager = None
+        self.default_session_id = "default"
+
         self._init_modules()
 
     def _init_modules(self):
@@ -553,6 +558,23 @@ class EvolutionPipeline:
             self.knowledge_isolation = None
             self.a2a_adapter = None
 
+        # V0.4: BM25 检索 + 会话工作区
+        try:
+            bm25_mod = _load_module('bm25_retriever', 'bm25_retriever.py')
+            bm25_db = self.config.get('bm25_db', 'bm25_index.db')
+            self.bm25_retriever = bm25_mod.HybridRetriever(db_path=bm25_db)
+        except Exception as e:
+            errors.append(f"bm25_retriever: {e}")
+            self.logger.error(f"BM25Retriever init failed: {e}")
+
+        try:
+            ws_mod = _load_module('session_workspace', 'session_workspace.py')
+            ws_root = self.config.get('workspace_root', './workspaces')
+            self.workspace_manager = ws_mod.get_workspace_manager(ws_root)
+        except Exception as e:
+            errors.append(f"session_workspace: {e}")
+            self.logger.error(f"SessionWorkspace init failed: {e}")
+
         if errors:
             self.logger.warning(f"Module init complete, {len(errors)} failed: {errors}")
         else:
@@ -587,6 +609,30 @@ class EvolutionPipeline:
         """使用 ReACT Agent 模式处理查询"""
         self.logger.info(f"ReACT Agent: {query}")
         return self.react_agent.execute(query, context)
+
+    # ========== BM25 混合检索入口 ==========
+
+    def bm25_index(self, content: str, doc_id: str, metadata: dict = None) -> dict:
+        """索引文档到 BM25 检索引擎"""
+        if not self.bm25_retriever:
+            return {"error": "BM25 retriever not available"}
+        count = self.bm25_retriever.index_document(content, doc_id, metadata)
+        return {"doc_id": doc_id, "chunks_indexed": count}
+
+    def bm25_search(self, query: str, limit: int = 10) -> list:
+        """使用 BM25 混合检索"""
+        if not self.bm25_retriever:
+            return []
+        return self.bm25_retriever.search(query, limit=limit)
+
+    # ========== 会话工作区入口 ==========
+
+    def get_workspace(self, session_id: str = None) -> object:
+        """获取或创建会话工作区"""
+        if not self.workspace_manager:
+            return None
+        sid = session_id or self.default_session_id
+        return self.workspace_manager.get_workspace(sid)
 
     # ========== 原有流程 ==========
 
@@ -711,8 +757,8 @@ class EvolutionPipeline:
 
     def get_stats(self) -> dict[str, Any]:
         stats = {
-            'graph': self.graph_store.get_node_stats(),
-            'evolution': self.evolution_interface.evaluate_evolution_progress(),
+            'graph': self.graph_store.get_node_stats() if self.graph_store else {},
+            'evolution': self.evolution_interface.evaluate_evolution_progress() if self.evolution_interface else {},
         }
         if self.engram:
             stats['engram'] = self.engram.stats()
@@ -721,9 +767,16 @@ class EvolutionPipeline:
                 'current_role': self.role_router.current_role.value,
                 'switch_count': self.role_router.switch_count,
             }
-        # 检索缓存统计
+        # V0.4: 新增模块状态
+        stats['bm25_retriever'] = 'initialized' if self.bm25_retriever else 'not_available'
+        stats['workspace_manager'] = 'initialized' if self.workspace_manager else 'not_available'
+        
+        # 检索缓存统计（兼容不同实现）
         if self.graph_retriever and hasattr(self.graph_retriever, 'get_cache_stats'):
-            stats['retriever_cache'] = self.graph_retriever.get_cache_stats()
+            try:
+                stats['retriever_cache'] = self.graph_retriever.get_cache_stats()
+            except AttributeError:
+                stats['retriever_cache'] = 'unavailable'
         # 压缩统计
         if self.context_compactor and hasattr(self.context_compactor, 'get_compression_stats'):
             stats['compression'] = self.context_compactor.get_compression_stats()
@@ -807,6 +860,25 @@ def main():
     react_p.add_argument('query', help='Query for ReACT agent')
     react_p.add_argument('--max-iter', type=int, default=10, help='Max iterations')
     react_p.add_argument('--output', default=None, help='Output file path')
+
+    # === V0.4: BM25 检索 ===
+    bm25_index_p = subparsers.add_parser('bm25-index', help='BM25 index document')
+    bm25_index_p.add_argument('file', help='File to index')
+    bm25_index_p.add_argument('--doc-id', default=None, help='Document ID')
+    bm25_search_p = subparsers.add_parser('bm25-search', help='BM25 search')
+    bm25_search_p.add_argument('query', help='Search query')
+    bm25_search_p.add_argument('--limit', type=int, default=10, help='Result limit')
+
+    # === V0.4: 会话工作区 ===
+    ws_p = subparsers.add_parser('workspace', help='Session workspace')
+    ws_p.add_argument('workspace_action', choices=['info', 'list', 'write', 'read', 'save-product'],
+                       help='Workspace action')
+    ws_p.add_argument('--session-id', default=None, help='Session ID')
+    ws_p.add_argument('--subdir', default='', help='Subdirectory')
+    ws_p.add_argument('--filename', default=None, help='Filename')
+    ws_p.add_argument('--content', default=None, help='Content to write')
+    ws_p.add_argument('--product-type', default='document', help='Product type')
+    ws_p.add_argument('--file', default=None, help='File to read from')
 
     args = parser.parse_args()
 
@@ -926,6 +998,48 @@ def main():
             consult = pipeline.a2a_adapter.multi_agent_consult(args.query) if pipeline.a2a_adapter else None
             print(json.dumps(consult, indent=2, ensure_ascii=False) if consult else
                   '{"error": "A2A adapter not available"}')
+
+    # --- V0.4: BM25 检索 ---
+    elif args.command == 'bm25-index':
+        with open(args.file, 'r', encoding='utf-8') as f:
+            content = f.read()
+        result = pipeline.bm25_index(content, args.doc_id or args.file)
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+
+    elif args.command == 'bm25-search':
+        results = pipeline.bm25_search(args.query, limit=args.limit)
+        print(json.dumps(results, indent=2, ensure_ascii=False))
+
+    # --- V0.4: 会话工作区 ---
+    elif args.command == 'workspace':
+        ws = pipeline.get_workspace(args.session_id)
+        if args.workspace_action == 'info':
+            print(json.dumps(ws.get_info(), indent=2, ensure_ascii=False))
+        elif args.workspace_action == 'list':
+            print(json.dumps(ws.list_files(args.subdir), indent=2, ensure_ascii=False))
+        elif args.workspace_action == 'write':
+            content = args.content
+            if args.file:
+                with open(args.file, 'r', encoding='utf-8') as f:
+                    content = f.read()
+            if content is None:
+                print(json.dumps({"error": "Provide --content or --file"}, ensure_ascii=False))
+            else:
+                path = ws.write_file(args.filename, content, subdir=args.subdir)
+                print(json.dumps({"written": path}, ensure_ascii=False))
+        elif args.workspace_action == 'read':
+            content = ws.read_file(args.filename, subdir=args.subdir)
+            print(content)
+        elif args.workspace_action == 'save-product':
+            content = args.content
+            if args.file:
+                with open(args.file, 'r', encoding='utf-8') as f:
+                    content = f.read()
+            if content is None:
+                print(json.dumps({"error": "Provide --content or --file"}, ensure_ascii=False))
+            else:
+                path = ws.save_product(args.filename, content, product_type=args.product_type)
+                print(json.dumps({"saved": path}, ensure_ascii=False))
 
     else:
         parser.print_help()

@@ -2422,3 +2422,5 @@
 2026-09-19 10:37:15 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp46_gggt2\session-8\test.txt
 2026-09-19 10:37:15 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp46_gggt2\session-7\test.txt
 2026-09-19 10:37:15 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp46_gggt2\session-9\test.txt
+2026-09-19 10:49:39 | INFO     | pipeline             | logger:info:95 | All modules initialized
+2026-09-19 10:50:40 | INFO     | pipeline             | logger:info:95 | All modules initialized
