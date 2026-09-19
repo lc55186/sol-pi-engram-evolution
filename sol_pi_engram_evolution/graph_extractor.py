@@ -296,7 +296,7 @@ class GraphExtractor:
         text = re.sub(r'\[.*?\]', '', text)
 
         # 移除多余的标点
-        text = re.sub(r'[\.\。\.\!\!\？\?]+$', '', text)
+        text = re.sub(r'[\.。！？\?!]+$', '', text)
 
         return text.strip()
 

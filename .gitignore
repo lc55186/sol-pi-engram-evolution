@@ -73,3 +73,4 @@ config/secrets.yaml
 
 # Hermes
 .hhermes/
+nul
