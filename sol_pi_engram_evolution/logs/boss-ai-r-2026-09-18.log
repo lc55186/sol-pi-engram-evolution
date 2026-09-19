@@ -2023,3 +2023,45 @@
 2026-09-18 23:28:51 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
 2026-09-18 23:28:51 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
 2026-09-18 23:28:51 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-18 23:48:16 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-18 23:48:16 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-18 23:48:16 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-18 23:48:16 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-18 23:48:16 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-18 23:48:16 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-18 23:48:16 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-18 23:48:16 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-18 23:48:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-18 23:48:19 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-18 23:48:19 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-18 23:48:19 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-18 23:48:20 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-18 23:48:22 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-18 23:48:22 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-18 23:48:22 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-18 23:48:22 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-18 23:48:22 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-18 23:48:22 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-18 23:48:22 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-18 23:48:22 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-18 23:48:22 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-18 23:48:22 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-18 23:48:22 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-18 23:48:22 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-18 23:48:22 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-18 23:48:22 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-18 23:48:22 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-18 23:48:23 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-18 23:48:23 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-18 23:48:50 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-18 23:48:50 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-18 23:48:50 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
