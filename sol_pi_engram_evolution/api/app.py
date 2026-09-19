@@ -622,6 +622,10 @@ async def get_tenant_costs(tenant_id: str):
 from api.graph_router import router as graph_router
 app.include_router(graph_router)
 
+# --- ASR Router ---
+from api.asr_router import router as asr_router
+app.include_router(asr_router)
+
 # --- 健康检查 ---
 @app.get("/health")
 async def health_check():

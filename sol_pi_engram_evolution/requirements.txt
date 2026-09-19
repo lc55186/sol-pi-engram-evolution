@@ -18,6 +18,10 @@ aiosqlite==0.20.0  # 异步 SQLite（可选）
 # HTTP 客户端（调用 ASR/LLM API）
 httpx==0.27.2
 
+# 腾讯云 ASR SDK（tencentcloud-sdk-python-asr v3.1.177）
+tencentcloud-sdk-python-asr
+tencentcloud-sdk-python-common
+
 # 音频处理（端侧，V0.2 集成）
 # numpy==1.26.4
 # scipy==1.13.0

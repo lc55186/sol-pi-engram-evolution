@@ -13,10 +13,142 @@ import tempfile
 import os
 import asyncio
 import logging
+import time
+import struct
 from typing import Optional
 from enum import Enum
 
 logger = logging.getLogger("asr_router")
+
+
+class TencentASRClient:
+    """腾讯云 ASR 客户端（异步识别）
+
+    使用 CreateRecTask + DescribeTaskStatus 轮询模式。
+    每次 process_audio 调用创建一个新任务（不支持流式，适合短音频块）。
+    """
+
+    def __init__(self, secret_id: str = "", secret_key: str = "", app_id: str = ""):
+        self.secret_id = secret_id or os.getenv("TENCENTCLOUD_SECRET_ID", "")
+        self.secret_key = secret_key or os.getenv("TENCENTCLOUD_SECRET_KEY", "")
+        self.app_id = app_id or os.getenv("TENCENTCLOUD_ASR_APP_ID", "")
+        self._client = None
+
+    def _get_client(self):
+        """延迟初始化 SDK 客户端（线程安全）"""
+        if self._client is None:
+            from tencentcloud.common import credential
+            from tencentcloud.asr.v20190614 import asr_client
+            from tencentcloud.common.profile.client_profile import ClientProfile
+            from tencentcloud.common.profile.http_profile import HttpProfile
+
+            cred = credential.Credential(self.secret_id, self.secret_key)
+            http_profile = HttpProfile()
+            http_profile.timeout = 60
+
+            client_profile = ClientProfile()
+            client_profile.httpProfile = http_profile
+
+            self._client = asr_client.AsrClient(
+                cred, "ap-guangzhou", client_profile
+            )
+        return self._client
+
+    async def transcribe(self, audio_data: bytes) -> dict:
+        """提交音频并等待识别结果
+
+        Args:
+            audio_data: 原始 PCM 16-bit 数据
+
+        Returns:
+            dict: {"text": str, "confidence": float, "is_final": bool, "task_id": str}
+        """
+        import asyncio
+        from tencentcloud.asr.v20190614 import models
+
+        client = self._get_client()
+
+        # 构建请求
+        req = models.CreateRecTaskRequest()
+        req.EngineModelType = "16k_zh"
+        req.ChannelNum = 1
+        req.ResTextFormat = 2  # 词时间戳 + 标点
+        req.SourceType = 1     # 音频数据（base64）
+
+        # 添加 WAV 头
+        wav_data = self._wrap_wav(audio_data, sample_rate=16000, channels=1, bits_per_sample=16)
+        audio_base64 = base64.b64encode(wav_data).decode("utf-8")
+        req.Data = audio_base64
+        req.DataLen = len(audio_data)  # 注意是 PCM 原始长度
+
+        # 在线程池中执行同步 SDK 调用
+        loop = asyncio.get_event_loop()
+        resp = await loop.run_in_executor(
+            None, lambda: client.CreateRecTask(req)
+        )
+        task_id = resp.Data.TaskId
+        logger.info(f"Tencent ASR task created: {task_id}")
+
+        # 轮询任务状态
+        result_text = ""
+        result_confidence = 0.0
+        is_final = False
+
+        for _ in range(60):  # 最多等待 60s
+            await asyncio.sleep(1)
+
+            status_req = models.DescribeTaskStatusRequest()
+            status_req.TaskId = task_id
+
+            status_resp = await loop.run_in_executor(
+                None, lambda: client.DescribeTaskStatus(status_req)
+            )
+            status = status_resp.Data.Status
+
+            if status == 2:  # 完成
+                # 优先使用 Result 字符串
+                result_text = status_resp.Data.Result or ""
+                # 从 ResultDetail 提取置信度（SentenceDetail 无 Confidence 字段，使用默认值）
+                details = status_resp.Data.ResultDetail or []
+                if details:
+                    # 拼接 FinalSentence
+                    parts = [d.FinalSentence for d in details if d.FinalSentence]
+                    if parts:
+                        result_text = "".join(parts)
+                result_confidence = 0.9  # SDK 不返回置信度，使用默认值
+                is_final = True
+                break
+            elif status == 3:  # 失败
+                raise RuntimeError(f"Tencent ASR task {task_id} failed")
+
+        return {
+            "text": result_text,
+            "confidence": result_confidence,
+            "is_final": is_final,
+            "task_id": task_id,
+            "engine": "tencent",
+        }
+
+    @staticmethod
+    def _wrap_wav(pcm_data: bytes, sample_rate: int, channels: int, bits_per_sample: int) -> bytes:
+        """PCM 裸数据 → WAV 文件"""
+        byte_rate = sample_rate * channels * (bits_per_sample // 8)
+        block_align = channels * (bits_per_sample // 8)
+
+        header = (
+            b"RIFF"
+            + struct.pack("<I", 36 + len(pcm_data))
+            + b"WAVE"
+            + b"fmt "
+            + struct.pack("<IHHIIHH", 16, 1, channels, sample_rate, byte_rate, block_align, bits_per_sample)
+            + b"data"
+            + struct.pack("<I", len(pcm_data))
+        )
+        return header + pcm_data
+
+    def health_check(self) -> bool:
+        """检查凭证是否配置"""
+        return bool(self.secret_id and self.secret_key)
 
 
 class ASREngine(Enum):
@@ -35,8 +167,9 @@ class ASRConfig:
         self.iflytek_app_id = os.getenv("IFLYTEK_APP_ID", "")
         self.iflytek_api_key = os.getenv("IFLYTEK_API_KEY", "")
         self.iflytek_api_secret = os.getenv("IFLYTEK_API_SECRET", "")
-        self.tencent_secret_id = os.getenv("TENCENT_SECRET_ID", "")
-        self.tencent_secret_key = os.getenv("TENCENT_SECRET_KEY", "")
+        self.tencent_secret_id = os.getenv("TENCENTCLOUD_SECRET_ID", "")
+        self.tencent_secret_key = os.getenv("TENCENTCLOUD_SECRET_KEY", "")
+        self.tencent_app_id = os.getenv("TENCENTCLOUD_ASR_APP_ID", "")
         self.whisper_model = os.getenv("WHISPER_MODEL", "large-v3")
         self.hot_words = []  # 热词列表
 
@@ -82,6 +215,18 @@ class ASRManager:
         self.config = ASRConfig()
         self.sessions: dict[str, ASRSession] = {}
         self._engine_health: dict[ASREngine, bool] = {}
+        self._tencent_client: Optional[TencentASRClient] = None
+
+    @property
+    def tencent_client(self) -> TencentASRClient:
+        """延迟初始化腾讯云客户端"""
+        if self._tencent_client is None:
+            self._tencent_client = TencentASRClient(
+                secret_id=self.config.tencent_secret_id,
+                secret_key=self.config.tencent_secret_key,
+                app_id=self.config.tencent_app_id,
+            )
+        return self._tencent_client
 
     async def create_session(self, session_id: str, preferred_engine: Optional[str] = None) -> ASRSession:
         """创建 ASR 会话"""
@@ -156,9 +301,25 @@ class ASRManager:
         return await self._process_whisper(session, audio_data)
 
     async def _process_tencent(self, session: ASRSession, audio_data: bytes) -> dict:
-        """腾讯云 ASR 处理（预留接口）"""
-        # TODO: 实现腾讯云 SDK 集成
-        return await self._process_whisper(session, audio_data)
+        """腾讯云 ASR 处理（CreateRecTask + DescribeTaskStatus 轮询）"""
+        try:
+            client = self.tencent_client
+            if not client.health_check():
+                logger.warning("Tencent ASR credentials not configured, falling back to Whisper")
+                return await self._process_whisper(session, audio_data)
+
+            result = await client.transcribe(audio_data)
+            return {
+                "text": result["text"],
+                "is_final": result["is_final"],
+                "engine": "tencent",
+                "confidence": result["confidence"],
+                "task_id": result["task_id"],
+            }
+        except Exception as e:
+            logger.error(f"Tencent ASR error: {e}")
+            # 降级到 Whisper
+            return await self._process_whisper(session, audio_data)
 
     async def close_session(self, session_id: str):
         """关闭会话"""
