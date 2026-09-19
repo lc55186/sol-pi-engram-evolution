@@ -5382,3 +5382,1431 @@
 2026-09-19 18:27:43 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp1y7ovsg5\session-5\test.txt
 2026-09-19 18:27:43 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp1y7ovsg5\session-8\test.txt
 2026-09-19 18:27:43 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp1y7ovsg5\session-9\test.txt
+2026-09-19 18:50:22 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 18:50:22 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 18:50:22 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 18:50:22 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 18:50:22 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 18:50:22 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 18:50:22 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 18:50:22 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 18:50:24 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 18:50:24 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 18:50:24 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 18:50:24 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 18:50:25 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 18:50:27 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 18:50:27 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 18:50:27 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 18:50:27 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 18:50:27 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 18:50:27 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 18:50:27 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 18:50:27 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 18:50:27 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 18:50:27 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 18:50:27 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 18:50:27 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 18:50:27 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 18:50:27 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 18:50:27 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 18:50:29 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 18:50:29 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 18:50:59 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:50:59 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:51:00 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:51:00 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:51:01 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 50.7ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 101.1ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.0ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.1ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.7ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.2ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.8ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.6ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.4ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.5ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.9ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.1ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.5ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.1ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.3ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.2ms
+2026-09-19 18:51:01 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.1ms
+2026-09-19 18:51:01 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 18:51:01 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 18:51:01 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpbn7z1oi0\test-session-001\documents\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmpbn7z1oi0\test-session-001\products\report.md
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9s4mvf9h\test-session\passwd
+2026-09-19 18:51:02 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 18:51:02 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 18:51:02 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 18:51:02 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-1\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-0\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-2\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-3\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-6\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-4\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-5\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-7\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-8\test.txt
+2026-09-19 18:51:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6jwquz5m\session-9\test.txt
+2026-09-19 19:12:13 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 19:12:13 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 19:12:13 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 19:12:13 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 19:12:13 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 19:12:13 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 19:12:13 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 19:12:13 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 19:12:15 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:12:15 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 19:12:15 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 19:12:15 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 19:12:16 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 19:12:18 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 19:12:18 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:12:18 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 19:12:18 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:12:18 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:12:18 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 19:12:18 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:12:18 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 19:12:18 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 19:12:18 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 19:12:18 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:12:18 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 19:12:18 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:12:18 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:12:18 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:12:20 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:12:20 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:12:50 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:50 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:51 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:51 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:53 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 52.5ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 100.4ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.1ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.2ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.6ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.5ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.9ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.3ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.6ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.8ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.6ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.6ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.1ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.3ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.9ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.7ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.8ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.6ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.0ms
+2026-09-19 19:12:53 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.4ms
+2026-09-19 19:12:53 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 19:12:53 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 19:12:53 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 19:12:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpql5rw5e4\test-session-001\documents\test.txt
+2026-09-19 19:12:53 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmpql5rw5e4\test-session-001\products\report.md
+2026-09-19 19:12:53 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 19:12:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpj6jm2hiy\test-session\passwd
+2026-09-19 19:12:53 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:12:53 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 19:12:54 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 19:12:54 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-1\test.txt
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-0\test.txt
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-2\test.txt
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-8\test.txt
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-4\test.txt
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-9\test.txt
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-5\test.txt
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-3\test.txt
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-6\test.txt
+2026-09-19 19:12:54 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_2tc6aq2\session-7\test.txt
+2026-09-19 19:27:17 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 19:27:17 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 19:27:17 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 19:27:17 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 19:27:17 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 19:27:17 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 19:27:17 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 19:27:17 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 19:27:19 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:27:19 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 19:27:19 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 19:27:19 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 19:27:20 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 19:27:22 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 19:27:22 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:27:22 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 19:27:22 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:27:22 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:27:22 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 19:27:22 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:27:23 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 19:27:23 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 19:27:23 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 19:27:23 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:27:23 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 19:27:23 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:27:23 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:27:23 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:27:24 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:27:24 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:27:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:56 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:56 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:58 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 50.8ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 101.4ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.0ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.6ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.9ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.2ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.4ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.6ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.1ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.0ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.9ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.3ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.6ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.9ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.1ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.1ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.8ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 11.4ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.0ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.4ms
+2026-09-19 19:27:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 19:27:58 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 19:27:58 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 19:27:58 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 19:27:58 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn2sibwka\test-session-001\documents\test.txt
+2026-09-19 19:27:58 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmpn2sibwka\test-session-001\products\report.md
+2026-09-19 19:27:58 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 19:27:58 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp62y2_oi6\test-session\passwd
+2026-09-19 19:27:58 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:27:59 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 19:27:59 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 19:27:59 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-0\test.txt
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-2\test.txt
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-1\test.txt
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-3\test.txt
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-5\test.txt
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-6\test.txt
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-7\test.txt
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-8\test.txt
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-4\test.txt
+2026-09-19 19:27:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppifms1h7\session-9\test.txt
+2026-09-19 19:42:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 19:42:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 19:42:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 19:42:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 19:42:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 19:42:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 19:42:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 19:42:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 19:42:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:42:30 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 19:42:30 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 19:42:30 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 19:42:31 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 19:42:33 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 19:42:33 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:42:33 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 19:42:33 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:42:33 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:42:33 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 19:42:33 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:42:33 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 19:42:33 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 19:42:33 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 19:42:33 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:42:33 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 19:42:33 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:42:33 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:42:33 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:42:35 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:42:35 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:43:05 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:05 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:08 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 51.1ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 101.4ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.5ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.2ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.1ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.9ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.3ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.9ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.4ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.4ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.3ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.1ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.5ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.9ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.1ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.5ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.8ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.0ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.4ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.8ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.2ms
+2026-09-19 19:43:08 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.8ms
+2026-09-19 19:43:08 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 19:43:08 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 19:43:08 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 19:43:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr79zahhk\test-session-001\documents\test.txt
+2026-09-19 19:43:08 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmpr79zahhk\test-session-001\products\report.md
+2026-09-19 19:43:08 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 19:43:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp6mm5fo_v\test-session\passwd
+2026-09-19 19:43:08 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:43:08 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 19:43:08 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 19:43:09 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-0\test.txt
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-1\test.txt
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-3\test.txt
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-2\test.txt
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-6\test.txt
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-5\test.txt
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-9\test.txt
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-4\test.txt
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-8\test.txt
+2026-09-19 19:43:09 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp_12kma8g\session-7\test.txt
+2026-09-19 19:50:11 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 19:50:11 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 19:50:11 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 19:50:11 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 19:50:11 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 19:50:11 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 19:50:11 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 19:50:11 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 19:50:14 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:50:14 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 19:50:14 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 19:50:14 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 19:50:15 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 19:50:17 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 19:50:17 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:50:17 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 19:50:17 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:50:17 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:50:17 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 19:50:17 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:50:17 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 19:50:17 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 19:50:17 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 19:50:17 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:50:17 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 19:50:17 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:50:17 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:50:17 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:50:18 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:50:18 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:50:49 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:49 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:50 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:50 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:52 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 51.4ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 100.8ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.5ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.6ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.6ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.1ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.6ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.2ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.2ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.7ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.6ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.8ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.1ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.8ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.3ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.2ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.9ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.7ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.7ms
+2026-09-19 19:50:52 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.8ms
+2026-09-19 19:50:52 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 19:50:52 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 19:50:52 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpsvhxvkf8\test-session-001\documents\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmpsvhxvkf8\test-session-001\products\report.md
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp7bzqpw6v\test-session\passwd
+2026-09-19 19:50:53 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:50:53 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 19:50:53 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 19:50:53 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-0\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-1\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-4\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-3\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-2\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-6\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-5\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-7\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-8\test.txt
+2026-09-19 19:50:53 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpussqilxz\session-9\test.txt
+2026-09-19 19:57:18 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 19:57:18 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 19:57:18 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 19:57:18 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 19:57:18 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 19:57:18 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 19:57:18 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 19:57:18 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 19:57:21 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:57:21 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 19:57:21 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 19:57:21 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 19:57:22 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 19:57:24 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 19:57:24 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:57:24 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 19:57:24 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:57:24 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:57:24 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 19:57:24 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:57:24 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 19:57:24 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 19:57:24 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 19:57:24 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 19:57:24 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 19:57:24 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 19:57:24 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 19:57:24 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 19:57:25 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:57:25 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 19:57:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:56 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:56 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:58 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 51.0ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 100.3ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.2ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.7ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.2ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.8ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.1ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.7ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.4ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.0ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.6ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.4ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.3ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.3ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.7ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.4ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.0ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.4ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.3ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.8ms
+2026-09-19 19:57:58 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.3ms
+2026-09-19 19:57:58 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 19:57:58 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 19:57:58 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 19:57:58 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpspdglfbv\test-session-001\documents\test.txt
+2026-09-19 19:57:58 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmpspdglfbv\test-session-001\products\report.md
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmprr3ie3or\test-session\passwd
+2026-09-19 19:57:59 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:57:59 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 19:57:59 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 19:57:59 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-0\test.txt
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-2\test.txt
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-1\test.txt
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-4\test.txt
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-6\test.txt
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-5\test.txt
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-3\test.txt
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-9\test.txt
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-7\test.txt
+2026-09-19 19:57:59 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp2r8zgepy\session-8\test.txt
+2026-09-19 20:13:15 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 20:13:15 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 20:13:15 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 20:13:15 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 20:13:15 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 20:13:15 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 20:13:15 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 20:13:15 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 20:13:18 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 20:13:18 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 20:13:18 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 20:13:18 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 20:13:19 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 20:13:21 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 20:13:21 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 20:13:21 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 20:13:21 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 20:13:21 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 20:13:21 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 20:13:21 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 20:13:21 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 20:13:21 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 20:13:21 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 20:13:21 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 20:13:21 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 20:13:21 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 20:13:21 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 20:13:21 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 20:13:22 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 20:13:22 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 20:13:52 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:52 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:53 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:53 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:55 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 50.5ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 100.2ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.0ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.1ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.1ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.7ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.2ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.9ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.2ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.4ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.9ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.4ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.4ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.4ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.7ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.9ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 20:13:55 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.1ms
+2026-09-19 20:13:55 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 20:13:55 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 20:13:55 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp5q2e1k2v\test-session-001\documents\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmp5q2e1k2v\test-session-001\products\report.md
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuz2wcvt\test-session\passwd
+2026-09-19 20:13:55 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 20:13:55 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 20:13:55 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 20:13:55 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-1\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-0\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-2\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-3\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-5\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-6\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-4\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-8\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-7\test.txt
+2026-09-19 20:13:55 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpn1d_ssuu\session-9\test.txt
+2026-09-19 20:28:00 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 20:28:00 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 20:28:00 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 20:28:00 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 20:28:00 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 20:28:00 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 20:28:00 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 20:28:00 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 20:28:03 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 20:28:03 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 20:28:03 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 20:28:03 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 20:28:04 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 20:28:06 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 20:28:06 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 20:28:06 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 20:28:06 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 20:28:06 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 20:28:06 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 20:28:06 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 20:28:06 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 20:28:06 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 20:28:06 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 20:28:06 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 20:28:06 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 20:28:06 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 20:28:06 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 20:28:06 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 20:28:07 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 20:28:07 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 20:28:38 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:38 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:39 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:39 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:41 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 50.8ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 101.5ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.5ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.1ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.8ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.9ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.4ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.5ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.8ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.5ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.5ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.5ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.7ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.4ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.2ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.2ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.0ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.2ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.3ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 20:28:41 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.5ms
+2026-09-19 20:28:41 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 20:28:41 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 20:28:41 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp1oryks3q\test-session-001\documents\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmp1oryks3q\test-session-001\products\report.md
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpeba3qung\test-session\passwd
+2026-09-19 20:28:41 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 20:28:41 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 20:28:41 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 20:28:41 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-0\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-1\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-2\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-3\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-6\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-8\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-5\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-7\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-9\test.txt
+2026-09-19 20:28:41 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpr14sj6v1\session-4\test.txt
+2026-09-19 20:43:21 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 20:43:21 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 20:43:21 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 20:43:21 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 20:43:21 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 20:43:21 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 20:43:21 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 20:43:21 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 20:43:23 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 20:43:23 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 20:43:23 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 20:43:23 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 20:43:24 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 20:43:26 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 20:43:26 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 20:43:26 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 20:43:26 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 20:43:26 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 20:43:26 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 20:43:26 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 20:43:26 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 20:43:26 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 20:43:26 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 20:43:26 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 20:43:26 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 20:43:26 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 20:43:26 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 20:43:26 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 20:43:27 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 20:43:27 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 20:43:59 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:43:59 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:44:00 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:44:00 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:44:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:44:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:44:01 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 20:44:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:44:01 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 20:44:01 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 20:44:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:44:01 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 51.2ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 100.5ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.8ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.9ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.2ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.2ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.3ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.8ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.8ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.1ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.6ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.2ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.2ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.3ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.2ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.3ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.4ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.3ms
+2026-09-19 20:44:02 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.8ms
+2026-09-19 20:44:02 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 20:44:02 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 20:44:02 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpceb160ni\test-session-001\documents\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmpceb160ni\test-session-001\products\report.md
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpl4qebas9\test-session\passwd
+2026-09-19 20:44:02 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 20:44:02 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 20:44:02 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 20:44:02 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-1\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-0\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-3\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-5\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-2\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-7\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-8\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-4\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-9\test.txt
+2026-09-19 20:44:02 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmi2cjv1g\session-6\test.txt
+2026-09-19 21:02:39 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 21:02:39 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 21:02:39 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 21:02:39 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 21:02:39 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 21:02:39 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 21:02:39 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 21:02:39 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 21:02:41 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:02:41 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 21:02:41 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 21:02:41 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 21:02:42 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 21:02:44 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 21:02:44 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:02:44 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 21:02:44 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 21:02:44 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 21:02:44 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 21:02:44 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:02:44 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 21:02:44 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 21:02:44 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 21:02:44 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:02:44 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 21:02:44 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 21:02:44 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 21:02:44 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:02:46 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 21:02:46 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 21:03:16 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:16 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:17 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:17 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:19 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 50.7ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 100.8ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.4ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.8ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.0ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.6ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.6ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.8ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.6ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.6ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.0ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.0ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.1ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.4ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.9ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.7ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.2ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.8ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 11.2ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.1ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.6ms
+2026-09-19 21:03:19 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.5ms
+2026-09-19 21:03:19 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 21:03:19 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 21:03:19 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 21:03:19 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpgckhuta8\test-session-001\documents\test.txt
+2026-09-19 21:03:19 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmpgckhuta8\test-session-001\products\report.md
+2026-09-19 21:03:19 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 21:03:19 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpnuykd9ha\test-session\passwd
+2026-09-19 21:03:19 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 21:03:19 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 21:03:19 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 21:03:19 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-0\test.txt
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-1\test.txt
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-2\test.txt
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-3\test.txt
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-7\test.txt
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-5\test.txt
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-4\test.txt
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-6\test.txt
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-8\test.txt
+2026-09-19 21:03:20 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp91i2ul3t\session-9\test.txt
+2026-09-19 21:18:23 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 21:18:23 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 21:18:23 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 21:18:23 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 21:18:23 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 21:18:23 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 21:18:23 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 21:18:23 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 21:18:25 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 21:18:25 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 21:18:25 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 21:18:25 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 21:18:26 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 21:18:26 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:18:26 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 21:18:26 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 21:18:26 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 21:18:26 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:18:26 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 21:18:26 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 21:18:26 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 21:18:27 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 21:18:29 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 21:18:29 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:18:29 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 21:18:29 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 21:18:29 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 21:18:29 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 21:18:29 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:18:29 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 21:18:29 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 21:18:29 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 21:18:29 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:18:29 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 21:18:29 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 21:18:29 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 21:18:29 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:18:30 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 21:18:30 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 21:19:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:01 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:02 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:02 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:03 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 50.7ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 100.3ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.0ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.8ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.8ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.3ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.5ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.4ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.4ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.4ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.6ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.1ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.1ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.6ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.2ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.2ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.4ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.4ms
+2026-09-19 21:19:03 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.5ms
+2026-09-19 21:19:03 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 21:19:03 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 21:19:03 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpnswp3vba\test-session-001\documents\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmpnswp3vba\test-session-001\products\report.md
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpm4um2v82\test-session\passwd
+2026-09-19 21:19:04 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 21:19:04 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 21:19:04 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 21:19:04 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-2\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-0\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-1\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-3\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-4\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-7\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-8\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-6\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-9\test.txt
+2026-09-19 21:19:04 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp11n2k0uc\session-5\test.txt
+2026-09-19 21:34:41 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 21:34:41 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 21:34:41 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 21:34:41 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 21:34:41 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 21:34:41 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 21:34:41 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 21:34:41 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 21:34:44 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:34:44 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 21:34:44 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 21:34:44 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 21:34:45 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 21:34:47 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 21:34:47 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:34:47 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 21:34:47 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 21:34:47 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 21:34:47 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 21:34:47 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:34:47 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 21:34:47 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 21:34:47 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 21:34:47 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:34:47 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 21:34:47 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 21:34:47 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 21:34:47 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:34:48 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 21:34:48 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 21:35:18 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:18 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:19 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:19 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:21 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 51.1ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 101.0ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.8ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.4ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.4ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.6ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.6ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.8ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.6ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.6ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.2ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.5ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.0ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.7ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.0ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.3ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 11.0ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.3ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.3ms
+2026-09-19 21:35:21 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.8ms
+2026-09-19 21:35:21 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 21:35:21 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 21:35:21 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 21:35:21 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppu9fmr2m\test-session-001\documents\test.txt
+2026-09-19 21:35:21 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmppu9fmr2m\test-session-001\products\report.md
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmph8ozkl6f\test-session\passwd
+2026-09-19 21:35:22 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 21:35:22 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 21:35:22 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 21:35:22 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-1\test.txt
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-0\test.txt
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-2\test.txt
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-3\test.txt
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-6\test.txt
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-7\test.txt
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-4\test.txt
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-5\test.txt
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-9\test.txt
+2026-09-19 21:35:22 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp10rbguv1\session-8\test.txt
+2026-09-19 21:51:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 21:51:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 21:51:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 21:51:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 21:51:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 21:51:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 21:51:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 21:51:28 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 21:51:30 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:51:30 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 21:51:30 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 21:51:30 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 21:51:31 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 21:51:33 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 21:51:33 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:51:33 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 21:51:33 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 21:51:33 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 21:51:33 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 21:51:33 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:51:33 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 21:51:33 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 21:51:33 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 21:51:33 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 21:51:33 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 21:51:33 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 21:51:33 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 21:51:33 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 21:51:35 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 21:51:35 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 21:52:05 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:05 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:07 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 51.0ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 100.8ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.8ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.1ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.1ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.9ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.8ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.1ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.7ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.2ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.2ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.4ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.3ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.7ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 9.5ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.7ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.2ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.9ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.1ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.0ms
+2026-09-19 21:52:07 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.5ms
+2026-09-19 21:52:07 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 21:52:07 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 21:52:07 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp8klyded8\test-session-001\documents\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmp8klyded8\test-session-001\products\report.md
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmphr7_ccfn\test-session\passwd
+2026-09-19 21:52:08 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 21:52:08 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 21:52:08 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 21:52:08 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-0\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-1\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-2\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-3\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-6\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-7\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-4\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-9\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-5\test.txt
+2026-09-19 21:52:08 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpjuivctr8\session-8\test.txt
+2026-09-19 22:07:25 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_0.txt: True
+2026-09-19 22:07:25 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_1.txt: True
+2026-09-19 22:07:25 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_2.txt: True
+2026-09-19 22:07:25 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_3.txt: True
+2026-09-19 22:07:25 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_4.txt: True
+2026-09-19 22:07:25 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.delete -> /BOSS-AI-R/temp/file_5.txt: True
+2026-09-19 22:07:25 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.read -> /test/file.txt: True
+2026-09-19 22:07:25 | INFO     | compliance_sandbox   | compliance_sandbox:log:241 | [AUDIT] file.write -> /BOSS-AI-R/test.txt: True
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:run:70 | 管道 'test_pipeline' 开始执行，共 2 步
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 1/2: 步骤1
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤1 完成 (0.0s)
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:_execute_step:107 | 步骤 2/2: 步骤2
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:_execute_step:120 |   ✓ 步骤2 完成 (0.0s)
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:_log_summary:145 | 管道 'test_pipeline' 执行完毕
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:_log_summary:146 |   成功: 2/2
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:_log_summary:149 |   失败: 0/2
+2026-09-19 22:07:28 | INFO     | test_pipeline        | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 22:07:28 | INFO     | test_retry           | pipeline_tool:run:70 | 管道 'test_retry' 开始执行，共 1 步
+2026-09-19 22:07:28 | INFO     | test_retry           | pipeline_tool:_execute_step:107 | 步骤 1/1: 重试步骤
+2026-09-19 22:07:28 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 1/4): 临时错误
+2026-09-19 22:07:29 | WARNING  | test_retry           | pipeline_tool:_execute_step:131 |   ⚠ 重试步骤 失败 (尝试 2/4): 临时错误
+2026-09-19 22:07:31 | INFO     | test_retry           | pipeline_tool:_execute_step:120 |   ✓ 重试步骤 完成 (0.0s)
+2026-09-19 22:07:31 | INFO     | test_retry           | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 22:07:31 | INFO     | test_retry           | pipeline_tool:_log_summary:145 | 管道 'test_retry' 执行完毕
+2026-09-19 22:07:31 | INFO     | test_retry           | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 22:07:31 | INFO     | test_retry           | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 22:07:31 | INFO     | test_retry           | pipeline_tool:_log_summary:153 |   重试: 2 次
+2026-09-19 22:07:31 | INFO     | test_retry           | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 22:07:31 | INFO     | test_report          | pipeline_tool:run:70 | 管道 'test_report' 开始执行，共 1 步
+2026-09-19 22:07:31 | INFO     | test_report          | pipeline_tool:_execute_step:107 | 步骤 1/1: 步骤
+2026-09-19 22:07:31 | INFO     | test_report          | pipeline_tool:_execute_step:120 |   ✓ 步骤 完成 (0.0s)
+2026-09-19 22:07:31 | INFO     | test_report          | pipeline_tool:_log_summary:144 | ==================================================
+2026-09-19 22:07:31 | INFO     | test_report          | pipeline_tool:_log_summary:145 | 管道 'test_report' 执行完毕
+2026-09-19 22:07:31 | INFO     | test_report          | pipeline_tool:_log_summary:146 |   成功: 1/1
+2026-09-19 22:07:31 | INFO     | test_report          | pipeline_tool:_log_summary:149 |   失败: 0/1
+2026-09-19 22:07:31 | INFO     | test_report          | pipeline_tool:_log_summary:154 | ==================================================
+2026-09-19 22:07:32 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 22:07:32 | DEBUG    | asyncio              | proactor_events:__init__:633 | Using proactor: IocpProactor
+2026-09-19 22:08:03 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:03 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:04 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:04 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: mock_engine
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:06 | ERROR    | search_manager       | search_manager:search:332 | Search failed on primary: Search failed
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:_failover_search:349 | Failover: primary -> fallback
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via b: 1 results in 51.5ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via a: 1 results in 101.3ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: nous_meituan
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: bing_api
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: google_api
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: serpapi
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: meilisearch_local
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:register_backend:211 | Registered backend: typesense_local
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:_load_config:149 | Loaded engine: custom_engine (priority=1)
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:_load_config:129 | Config not found: ./search_engines.yaml, using defaults
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.0ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 1.8ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 3.6ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.3ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 4.7ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.8ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.3ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.3ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.6ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.8ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 5.8ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 2.7ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 6.9ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 10.0ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.4ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 11.0ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 8.0ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 22:08:06 | INFO     | search_manager       | search_manager:search:326 | Search via engine_0: 1 results in 7.9ms
+2026-09-19 22:08:06 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 强硬派 contributed: 开场报价 -> d063bc55
+2026-09-19 22:08:06 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 温和派 contributed: 关系维护 -> f9a1578d
+2026-09-19 22:08:06 | INFO     | agora_collaboration  | agora_collaboration:contribute:51 | Agent 分析师 contributed: 竞品调研 -> 725b4c8c
+2026-09-19 22:08:06 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmppsxo3jf5\test-session-001\documents\test.txt
+2026-09-19 22:08:06 | INFO     | session_workspace    | session_workspace:save_product:195 | Product saved: C:\Users\liuchao\AppData\Local\Temp\tmppsxo3jf5\test-session-001\products\report.md
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:cleanup:220 | Workspace cleaned: session-001
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmpmcdd_cd1\test-session\passwd
+2026-09-19 22:08:07 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 22:08:07 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 5 chunks
+2026-09-19 22:08:07 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 2 chunks
+2026-09-19 22:08:07 | INFO     | bm25_retriever       | bm25_retriever:index_chunks:159 | Indexed 3 chunks
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-0\test.txt
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-1\test.txt
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-3\test.txt
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-2\test.txt
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-6\test.txt
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-4\test.txt
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-5\test.txt
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-7\test.txt
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-9\test.txt
+2026-09-19 22:08:07 | INFO     | session_workspace    | session_workspace:write_file:143 | Written: C:\Users\liuchao\AppData\Local\Temp\tmp9wawu0h9\session-8\test.txt

@@ -1,140 +1,175 @@
-{% extends "base.html" %}
-{% block title %}知识图谱 — BOSS-AI-R{% endblock %}
-{% block content %}
-<div class="page-header"><h1>🕸️ 知识图谱</h1><p class="page-desc">谈判知识网络 · 6 种节点类型 · 实时注入</p></div>
-
-<!-- 模块 A: 图谱可视化 -->
-<div class="panel">
-  <div class="panel-header"><h2>📊 图谱可视化</h2><span class="badge tag-cyan">SVG</span></div>
-  <div class="panel-body">
-    <div class="graph-container" id="graph-container">
-      <svg id="graph-svg" width="100%" height="500" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
-        <!-- Edges -->
-        <line x1="150" y1="120" x2="350" y2="200" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="550" y1="120" x2="450" y2="200" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="400" y1="230" x2="550" y2="300" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="400" y1="230" x2="250" y2="300" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="400" y1="230" x2="400" y2="350" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="120" x2="150" y2="250" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="250" x2="300" y2="350" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="150" y1="250" x2="50" y2="350" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-        <line x1="700" y1="200" x2="700" y2="300" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
-
-        <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#666"/></marker></defs>
-
-        <!-- Nodes -->
-        <g class="graph-node" data-type="customer" data-name="王采购">
-          <circle cx="150" cy="120" r="35" fill="#4A90D9" class="node-customer"/><text x="150" y="125" text-anchor="middle" fill="white" font-size="12">王采购</text>
-        </g>
-        <g class="graph-node" data-type="negotiation" data-name="汽配谈判">
-          <circle cx="400" cy="200" r="40" fill="#E8A838" class="node-negotiation"/><text x="400" y="205" text-anchor="middle" fill="white" font-size="12">汽配谈判</text>
-        </g>
-        <g class="graph-node" data-type="customer" data-name="天津李总">
-          <circle cx="650" cy="120" r="35" fill="#4A90D9" class="node-customer"/><text x="650" y="125" text-anchor="middle" fill="white" font-size="12">天津李总</text>
-        </g>
-        <g class="graph-node" data-type="opportunity" data-name="50万商机">
-          <circle cx="550" cy="300" r="35" fill="#50B86C" class="node-opportunity"/><text x="550" y="305" text-anchor="middle" fill="white" font-size="12">50万商机</text>
-        </g>
-        <g class="graph-node" data-type="risk" data-name="账期风险">
-          <circle cx="250" cy="300" r="35" fill="#E74C3C" class="node-risk"/><text x="250" y="305" text-anchor="middle" fill="white" font-size="12">账期风险</text>
-        </g>
-        <g class="graph-node" data-type="decision" data-name="决策卡#47">
-          <circle cx="400" cy="380" r="35" fill="#9B59B6" class="node-decision"/><text x="400" y="385" text-anchor="middle" fill="white" font-size="12">决策卡#47</text>
-        </g>
-        <g class="graph-node" data-type="todo" data-name="签合同">
-          <circle cx="550" cy="380" r="35" fill="#1ABC9C" class="node-todo"/><text x="550" y="385" text-anchor="middle" fill="white" font-size="12">签合同</text>
-        </g>
-        <g class="graph-node" data-type="customer" data-name="保定张总">
-          <circle cx="150" cy="350" r="35" fill="#4A90D9" class="node-customer"/><text x="150" y="355" text-anchor="middle" fill="white" font-size="12">保定张总</text>
-        </g>
-        <g class="graph-node" data-type="negotiation" data-name="体品订货">
-          <circle cx="700" cy="200" r="35" fill="#E8A838" class="node-negotiation"/><text x="700" y="205" text-anchor="middle" fill="white" font-size="12">体品订货</text>
-        </g>
-        <g class="graph-node" data-type="risk" data-name="窜货风险">
-          <circle cx="700" cy="320" r="35" fill="#E74C3C" class="node-risk"/><text x="700" y="325" text-anchor="middle" fill="white" font-size="12">窜货风险</text>
-        </g>
-        <g class="graph-node" data-type="decision" data-name="决策卡#48">
-          <circle cx="300" cy="430" r="35" fill="#9B59B6" class="node-decision"/><text x="300" y="435" text-anchor="middle" fill="white" font-size="12">决策卡#48</text>
-        </g>
-        <g class="graph-node" data-type="negotiation" data-name="再生资源">
-          <circle cx="50" cy="380" r="35" fill="#E8A838" class="node-negotiation"/><text x="50" y="385" text-anchor="middle" fill="white" font-size="12">再生资源</text>
-        </g>
-      </svg>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSS-AI-R 知识图谱</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { font-family: 'Microsoft YaHei', sans-serif; margin: 0; background: #1a1a2e; color: #eee; }
+        #graph { width: 100vw; height: 100vh; }
+        .node { cursor: pointer; }
+        .node circle { stroke: #fff; stroke-width: 2px; }
+        .node text { font-size: 12px; fill: #fff; pointer-events: none; }
+        .link { stroke-opacity: 0.6; }
+        .link-label { font-size: 10px; fill: #aaa; }
+        #info-panel {
+            position: fixed; top: 20px; right: 20px; width: 300px;
+            background: rgba(0,0,0,0.8); padding: 20px; border-radius: 10px;
+            border: 1px solid #444; display: none;
+        }
+        #info-panel h3 { margin-top: 0; color: #4CAF50; }
+        #info-panel .label { color: #888; font-size: 12px; }
+        #info-panel .value { color: #fff; margin-bottom: 10px; }
+        #stats {
+            position: fixed; bottom: 20px; left: 20px;
+            background: rgba(0,0,0,0.8); padding: 15px; border-radius: 10px;
+            border: 1px solid #444;
+        }
+        #stats h4 { margin: 0 0 10px 0; color: #2196F3; }
+        #stats .stat { display: flex; justify-content: space-between; margin-bottom: 5px; }
+        #stats .stat-label { color: #888; }
+        #stats .stat-value { color: #4CAF50; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="graph"></div>
+    <div id="info-panel">
+        <h3 id="node-title">节点详情</h3>
+        <div class="label">类型</div>
+        <div class="value" id="node-type">-</div>
+        <div class="label">描述</div>
+        <div class="value" id="node-desc">-</div>
+        <div class="label">置信度</div>
+        <div class="value" id="node-confidence">-</div>
+        <div class="label">来源</div>
+        <div class="value" id="node-source">-</div>
     </div>
-    <div id="node-detail" class="node-detail" style="display:none;margin-top:12px;padding:12px;background:var(--bg-tertiary);border-radius:8px;">
-      <p class="text-muted">点击节点查看详情</p>
+    <div id="stats">
+        <h4>📊 图谱统计</h4>
+        <div class="stat"><span class="stat-label">节点总数</span><span class="stat-value" id="total-nodes">0</span></div>
+        <div class="stat"><span class="stat-label">关系总数</span><span class="stat-value" id="total-relations">0</span></div>
+        <div class="stat"><span class="stat-label">任务节点</span><span class="stat-value" id="task-nodes">0</span></div>
+        <div class="stat"><span class="stat-label">事件节点</span><span class="stat-value" id="event-nodes">0</span></div>
     </div>
-  </div>
-</div>
+    <script>
+        const graphData = {"nodes": [{"node_id": "customer-001", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.9, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "王采购", "description": "定州市汽械配件有限公司采购经理"}, {"node_id": "customer-002", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.9, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "李总", "description": "天津鑫达再生资源回收有限公司总经理"}, {"node_id": "customer-003", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.9, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "张总", "description": "保定瑞华体育器材有限公司销售总监"}, {"node_id": "customer-004", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.9, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "赵总", "description": "定州市恒通汽车零部件有限公司技术总监"}, {"node_id": "negotiation-001", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "定州汽配账期谈判", "description": "2026年9月15日谈判，对方要求60天账期"}, {"node_id": "negotiation-002", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "天津再生资源看货定价", "description": "2026年9月16日现场看货定价"}, {"node_id": "negotiation-003", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "体品订货会合同谈判", "description": "2026年9月18日订货会合同谈判"}, {"node_id": "opportunity-001", "node_type": "task", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.8, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "王采购500万零部件需求", "description": "天津李总询500万配件需求，预计毛利35%"}, {"node_id": "opportunity-002", "node_type": "task", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.8, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "赵总出口订单谈判", "description": "中东出口订单，金额待定"}, {"node_id": "opportunity-003", "node_type": "task", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.8, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "张总排他代理谈判", "description": "河北省排他代理，需保证金50万"}, {"node_id": "decision-001", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.95, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "接受5%降价换30天账期", "description": "2026-09-15决策：接受5%降价换取30天账期"}, {"node_id": "decision-002", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.95, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "拒绝60天账期", "description": "2026-09-16决策：拒绝60天账期，坚持30天标准"}, {"node_id": "decision-003", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.95, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "给予河北省排他代理权", "description": "2026-09-18决策：给予排他代理权，保证金降至30万"}, {"node_id": "risk-001", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.9, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "历史欠款63万", "description": "定州汽械历史欠款63万，需关注"}, {"node_id": "risk-002", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.9, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "跨区域窜货风险", "description": "保定张总存在跨区域窜货历史"}, {"node_id": "risk-003", "node_type": "event", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.9, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "质量扣款争议", "description": "体品质量扣款达12万，需协商"}, {"node_id": "todo-001", "node_type": "task", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "王总账期合同签署", "description": "对方口头承诺30天账期尚未签合同"}, {"node_id": "todo-002", "node_type": "task", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "定州汽械催单200件", "description": "经销商催单200件库存仅150"}, {"node_id": "todo-003", "node_type": "task", "created_at": "2026-09-19 14:08:27", "updated_at": "2026-09-19 14:08:27", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95, "confidence": 1.0, "source_pointer": "seed_data", "title": "河北张总排他代理签约", "description": "排他代理条款已谈妥需签约"}], "relations": [{"relation_id": "rel-001", "source_node_id": "negotiation-001", "target_node_id": "customer-001", "relation_type": "related_to", "weight": 0.9, "description": "王采购-汽配谈判", "confidence": 1.0, "source_pointer": "seed_data", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95}, {"relation_id": "rel-002", "source_node_id": "negotiation-002", "target_node_id": "customer-002", "relation_type": "related_to", "weight": 0.9, "description": "李总-再生资源谈判", "confidence": 1.0, "source_pointer": "seed_data", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95}, {"relation_id": "rel-003", "source_node_id": "negotiation-003", "target_node_id": "customer-003", "relation_type": "related_to", "weight": 0.9, "description": "张总-体品谈判", "confidence": 1.0, "source_pointer": "seed_data", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95}, {"relation_id": "rel-004", "source_node_id": "opportunity-001", "target_node_id": "customer-001", "relation_type": "related_to", "weight": 0.85, "description": "王采购-500万商机", "confidence": 1.0, "source_pointer": "seed_data", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95}, {"relation_id": "rel-005", "source_node_id": "decision-001", "target_node_id": "negotiation-001", "relation_type": "causes", "weight": 0.8, "description": "降价决策-谈判结果", "confidence": 1.0, "source_pointer": "seed_data", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95}, {"relation_id": "rel-006", "source_node_id": "risk-001", "target_node_id": "customer-001", "relation_type": "blocks", "weight": 0.9, "description": "欠款风险-客户信用", "confidence": 1.0, "source_pointer": "seed_data", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95}, {"relation_id": "rel-007", "source_node_id": "todo-001", "target_node_id": "decision-001", "relation_type": "depends_on", "weight": 0.9, "description": "合同签署-依赖决策", "confidence": 1.0, "source_pointer": "seed_data", "access_count": 0, "last_accessed": null, "importance_score": 0.85, "decay_rate": 0.95}], "generated_at": "2026-09-19T22:09:38.706337"};
 
-<!-- 模块 B: 图谱统计 -->
-<div class="panel">
-  <div class="panel-header"><h2>📈 图谱统计</h2></div>
-  <div class="panel-body">
-    <div class="stats-grid">
-      <div class="stat-item"><span class="stat-value" style="color:var(--accent-blue)">1,247</span><span class="stat-label">总节点</span></div>
-      <div class="stat-item"><span class="stat-value" style="color:var(--accent-orange)">156</span><span class="stat-label">谈判节点</span></div>
-      <div class="stat-item"><span class="stat-value" style="color:var(--accent-green)">43</span><span class="stat-label">商机节点</span></div>
-      <div class="stat-item"><span class="stat-value" style="color:var(--accent-purple)">89</span><span class="stat-label">决策卡</span></div>
-      <div class="stat-item"><span class="stat-value">3,891</span><span class="stat-label">关系边</span></div>
-    </div>
-  </div>
-</div>
+        const width = window.innerWidth;
+        const height = window.innerHeight;
 
-<!-- 模块 C: 决策追溯 -->
-<div class="panel">
-  <div class="panel-header"><h2>🔍 决策追溯示例</h2></div>
-  <div class="panel-body">
-    <div class="decision-trace">
-      <div class="trace-item"><span class="trace-label">决策结论</span><span>接受 5% 降价</span></div>
-      <div class="trace-item"><span class="trace-label">时间</span><span>2026-09-16 15:32</span></div>
-      <div class="trace-item"><span class="trace-label">依据原话</span><span>"王总说了，只要降 5% 马上签"</span></div>
-      <div class="trace-item"><span class="trace-label">当时建议</span><span>可接受</span></div>
-      <div class="trace-item"><span class="trace-label">关联风险</span><span style="color:var(--accent-red)">历史欠款 63 万（已提示）</span></div>
-    </div>
-  </div>
-</div>
+        const svg = d3.select("#graph").append("svg")
+            .attr("width", width)
+            .attr("height", height);
 
-<!-- 模块 D: 实时注入说明 -->
-<div class="panel">
-  <div class="panel-header"><h2>⚡ 实时节点注入说明</h2></div>
-  <div class="panel-body">
-    <ul style="list-style:none;padding:0">
-      <li style="padding:8px 0;border-bottom:1px solid var(--border)">✅ 每次谈判自动提取 5 类节点：客户、商机、风险、决策卡、待办</li>
-      <li style="padding:8px 0;border-bottom:1px solid var(--border)">✅ 老板会后确认才写入经营库（PLAUD 式主动澄清）</li>
-      <li style="padding:8px 0;border-bottom:1px solid var(--border)">✅ 新谈判结束后 10 分钟内节点出现在图谱</li>
-      <li style="padding:8px 0">✅ 悬停节点 300ms 内显示详情卡片</li>
-    </ul>
-  </div>
-</div>
-{% endblock %}
+        const g = svg.append("g");
 
-{% block extra_scripts %}
-<script>
-const nodeData = {
-  '王采购': { type:'客户', color:'蓝色', connections:['汽配谈判'] },
-  '汽配谈判': { type:'谈判', color:'橙色', connections:['账期风险','决策卡#47','签合同'] },
-  '天津李总': { type:'客户', color:'蓝色', connections:['50万商机'] },
-  '50万商机': { type:'商机', color:'绿色', connections:['签合同'] },
-  '账期风险': { type:'风险', color:'红色', connections:[] },
-  '决策卡#47': { type:'决策卡', color:'紫色', connections:['决策卡#48'] },
-  '签合同': { type:'待办', color:'青色', connections:[] },
-  '体品订货': { type:'谈判', color:'橙色', connections:[] },
-  '再生资源': { type:'谈判', color:'橙色', connections:[] },
-  '保定张总': { type:'客户', color:'蓝色', connections:['体品订货','窜货风险'] },
-  '窜货风险': { type:'风险', color:'红色', connections:[] },
-  '决策卡#48': { type:'决策卡', color:'紫色', connections:[] }
-};
+        // 缩放
+        svg.call(d3.zoom().on("zoom", (event) => {
+            g.attr("transform", event.transform);
+        }));
 
-document.querySelectorAll('.graph-node').forEach(node => {
-  node.addEventListener('click', function() {
-    const name = this.getAttribute('data-name');
-    const d = nodeData[name];
-    const detail = document.getElementById('node-detail');
-    detail.style.display = 'block';
-    detail.innerHTML = `<h3>${name}</h3><p><strong>类型：</strong>${d.type} (${d.color})</p><p><strong>连接：</strong>${d.connections.length > 0 ? d.connections.join(', ') : '无'}</p>`;
-  });
-  node.style.cursor = 'pointer';
-});
-</script>
-{% endblock %}
+        // 力导向图
+        const simulation = d3.forceSimulation(graphData.nodes)
+            .force("link", d3.forceLink(graphData.relations).id(d => d.node_id).distance(150))
+            .force("charge", d3.forceManyBody().strength(-500))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("collision", d3.forceCollide().radius(50));
+
+        // 连线
+        const link = g.append("g")
+            .selectAll("line")
+            .data(graphData.relations)
+            .enter().append("line")
+            .attr("class", "link")
+            .attr("stroke", d => d.weight > 0.8 ? "#F44336" : d.weight > 0.5 ? "#FF9800" : "#4CAF50")
+            .attr("stroke-width", d => d.weight * 3);
+
+        // 连线标签
+        const linkLabel = g.append("g")
+            .selectAll("text")
+            .data(graphData.relations)
+            .enter().append("text")
+            .attr("class", "link-label")
+            .attr("text-anchor", "middle")
+            .text(d => d.relation_type);
+
+        // 节点
+        const node = g.append("g")
+            .selectAll("g")
+            .data(graphData.nodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
+
+        // 节点圆圈
+        node.append("circle")
+            .attr("r", d => d.node_type === 'task' ? 25 : 20)
+            .attr("fill", d => {
+                if (d.node_type === 'task') return '#4CAF50';
+                if (d.title.includes('风险')) return '#F44336';
+                if (d.title.includes('商机')) return '#8BC34A';
+                if (d.title.includes('决策')) return '#9C27B0';
+                return '#2196F3';
+            });
+
+        // 节点标签
+        node.append("text")
+            .attr("dy", 35)
+            .attr("text-anchor", "middle")
+            .text(d => d.title.length > 10 ? d.title.substring(0, 10) + '...' : d.title);
+
+        // 点击事件
+        node.on("click", (event, d) => {
+            const panel = document.getElementById('info-panel');
+            panel.style.display = 'block';
+            document.getElementById('node-title').textContent = d.title;
+            document.getElementById('node-type').textContent = d.node_type;
+            document.getElementById('node-desc').textContent = d.description || '无描述';
+            document.getElementById('node-confidence').textContent = (d.confidence * 100).toFixed(0) + '%';
+            document.getElementById('node-source').textContent = d.source_pointer || '未知';
+        });
+
+        // 更新统计
+        document.getElementById('total-nodes').textContent = graphData.nodes.length;
+        document.getElementById('total-relations').textContent = graphData.relations.length;
+        document.getElementById('task-nodes').textContent = graphData.nodes.filter(n => n.node_type === 'task').length;
+        document.getElementById('event-nodes').textContent = graphData.nodes.filter(n => n.node_type === 'event').length;
+
+        // 仿真
+        simulation.on("tick", () => {
+            link
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            linkLabel
+                .attr("x", d => (d.source.x + d.target.x) / 2)
+                .attr("y", d => (d.source.y + d.target.y) / 2);
+
+            node.attr("transform", d => `translate(${d.x},${d.y})`);
+        });
+
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+    </script>
+</body>
+</html>

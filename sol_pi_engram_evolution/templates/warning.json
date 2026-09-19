@@ -1,0 +1,7 @@
+{
+  "name": "warning",
+  "templates": [
+    "【重要】注意{topic}，因为{reason}",
+    "注意{topic}，因为{reason}"
+  ]
+}

@@ -618,6 +618,10 @@ async def get_tenant_costs(tenant_id: str):
     }
 
 
+# --- Graph Knowledge Base ---
+from api.graph_router import router as graph_router
+app.include_router(graph_router)
+
 # --- 健康检查 ---
 @app.get("/health")
 async def health_check():

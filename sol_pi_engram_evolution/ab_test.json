@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "greeting": [
+      {
+        "id": "5b784edc",
+        "template": "你好老板",
+        "description": "正式版",
+        "uses": 8,
+        "positive": 0,
+        "negative": 0
+      },
+      {
+        "id": "9dfae2b2",
+        "template": "老板好",
+        "description": "简洁版",
+        "uses": 8,
+        "positive": 0,
+        "negative": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOSS-AI-R 知识图谱</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { font-family: 'Microsoft YaHei', sans-serif; margin: 0; background: #1a1a2e; color: #eee; }
+        #container { display: flex; height: 100vh; }
+        #sidebar { width: 350px; background: #16213e; padding: 20px; overflow-y: auto; border-right: 1px solid #0f3460; }
+        #main { flex: 1; position: relative; overflow: hidden; }
+        #graph { width: 100%; height: 100%; }
+        .node { cursor: pointer; }
+        .node circle { stroke: #fff; stroke-width: 2px; }
+        .node text { font-size: 12px; fill: #fff; pointer-events: none; text-anchor: middle; }
+        .link { stroke-opacity: 0.6; }
+        .link-label { font-size: 10px; fill: #aaa; }
+        h2 { color: #e94560; margin-top: 0; }
+        h3 { color: #4CAF50; margin-bottom: 5px; }
+        .stat { display: flex; justify-content: space-between; margin-bottom: 8px; padding: 5px 0; border-bottom: 1px solid #0f3460; }
+        .stat-label { color: #888; }
+        .stat-value { color: #4CAF50; font-weight: bold; }
+        .section { margin-bottom: 30px; }
+        #info-panel {
+            position: fixed; top: 20px; right: 20px; width: 300px;
+            background: rgba(0,0,0,0.9); padding: 20px; border-radius: 10px;
+            border: 1px solid #e94560; display: none; z-index: 100;
+        }
+        #info-panel h3 { margin-top: 0; color: #e94560; }
+        #info-panel .label { color: #888; font-size: 12px; margin-top: 10px; }
+        #info-panel .value { color: #fff; }
+        .legend-item { display: flex; align-items: center; margin-bottom: 5px; }
+        .legend-color { width: 15px; height: 15px; border-radius: 50%; margin-right: 8px; }
+        svg { width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <h2>📊 知识图谱</h2>
+            
+            <div class="section">
+                <h3>统计信息</h3>
+                <div class="stat"><span class="stat-label">节点总数</span><span class="stat-value" id="total-nodes">0</span></div>
+                <div class="stat"><span class="stat-label">关系总数</span><span class="stat-value" id="total-relations">0</span></div>
+                <div class="stat"><span class="stat-label">任务节点</span><span class="stat-value" id="task-nodes">0</span></div>
+                <div class="stat"><span class="stat-label">事件节点</span><span class="stat-value" id="event-nodes">0</span></div>
+                <div class="stat"><span class="stat-label">平均置信度</span><span class="stat-value" id="avg-confidence">0%</span></div>
+            </div>
+
+            <div class="section">
+                <h3>图例</h3>
+                <div class="legend-item"><div class="legend-color" style="background:#4CAF50"></div>任务/待办</div>
+                <div class="legend-item"><div class="legend-color" style="background:#2196F3"></div>事件/谈判</div>
+                <div class="legend-item"><div class="legend-color" style="background:#FF9800"></div>客户</div>
+                <div class="legend-item"><div class="legend-color" style="background:#F44336"></div>风险</div>
+                <div class="legend-item"><div class="legend-color" style="background:#9C27B0"></div>决策</div>
+            </div>
+
+            <div class="section">
+                <h3>连接度最高节点</h3>
+                <div id="top-connected"></div>
+            </div>
+        </div>
+        
+        <div id="main">
+            <div id="graph"></div>
+        </div>
+    </div>
+
+    <div id="info-panel">
+        <h3 id="node-title">节点详情</h3>
+        <div class="label">类型</div>
+        <div class="value" id="node-type">-</div>
+        <div class="label">描述</div>
+        <div class="value" id="node-desc">-</div>
+        <div class="label">置信度</div>
+        <div class="value" id="node-confidence">-</div>
+        <div class="label">来源</div>
+        <div class="value" id="node-source">-</div>
+        <div class="label">创建时间</div>
+        <div class="value" id="node-created">-</div>
+    </div>
+
+    <script>
+        // Fetch graph data
+        fetch('/api/v1/graph/visualization')
+            .then(r => r.json())
+            .then(data => {
+                renderGraph(data);
+                updateStats(data);
+            });
+
+        function updateStats(data) {
+            const nodes = data.nodes;
+            const relations = data.relations;
+            const tasks = nodes.filter(n => n.node_type === 'task').length;
+            const events = nodes.filter(n => n.node_type === 'event').length;
+            const avgConf = nodes.length > 0 
+                ? (nodes.reduce((a,b) => a + (b.confidence || 0), 0) / nodes.length * 100).toFixed(0)
+                : 0;
+
+            document.getElementById('total-nodes').textContent = nodes.length;
+            document.getElementById('total-relations').textContent = relations.length;
+            document.getElementById('task-nodes').textContent = tasks;
+            document.getElementById('event-nodes').textContent = events;
+            document.getElementById('avg-confidence').textContent = avgConf + '%';
+        }
+
+        function renderGraph(data) {
+            const nodes = data.nodes;
+            const relations = data.relations;
+
+            const width = window.innerWidth - 350;
+            const height = window.innerHeight;
+
+            const svg = d3.select("#graph").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            const g = svg.append("g");
+
+            // 缩放
+            svg.call(d3.zoom().on("zoom", (event) => {
+                g.attr("transform", event.transform);
+            }));
+
+            // 力导向图
+            const simulation = d3.forceSimulation(nodes)
+                .force("link", d3.forceLink(relations).id(d => d.node_id).distance(150))
+                .force("charge", d3.forceManyBody().strength(-500))
+                .force("center", d3.forceCenter(width / 2, height / 2))
+                .force("collision", d3.forceCollide().radius(50));
+
+            // 连线
+            const link = g.append("g")
+                .selectAll("line")
+                .data(relations)
+                .enter().append("line")
+                .attr("stroke", d => d.weight > 0.8 ? "#F44336" : d.weight > 0.5 ? "#FF9800" : "#4CAF50")
+                .attr("stroke-width", d => Math.max(1, d.weight * 3));
+
+            // 连线标签
+            const linkLabel = g.append("g")
+                .selectAll("text")
+                .data(relations)
+                .enter().append("text")
+                .attr("class", "link-label")
+                .attr("text-anchor", "middle")
+                .text(d => d.relation_type.replace(/_/g, ' '));
+
+            // 节点
+            const node = g.append("g")
+                .selectAll("g")
+                .data(nodes)
+                .enter().append("g")
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended));
+
+            // 节点圆圈
+            node.append("circle")
+                .attr("r", d => d.node_type === 'task' ? 25 : 20)
+                .attr("fill", d => {
+                    if (d.node_type === 'task') return '#4CAF50';
+                    if (d.title && d.title.includes('风险')) return '#F44336';
+                    if (d.title && d.title.includes('商机')) return '#8BC34A';
+                    if (d.title && d.title.includes('决策')) return '#9C27B0';
+                    if (d.title && d.title.includes('客户')) return '#FF9800';
+                    return '#2196F3';
+                });
+
+            // 节点标签
+            node.append("text")
+                .attr("dy", 35)
+                .text(d => d.title.length > 12 ? d.title.substring(0, 12) + '...' : d.title);
+
+            // 点击事件
+            node.on("click", (event, d) => {
+                const panel = document.getElementById('info-panel');
+                panel.style.display = 'block';
+                document.getElementById('node-title').textContent = d.title;
+                document.getElementById('node-type').textContent = d.node_type;
+                document.getElementById('node-desc').textContent = d.description || '无描述';
+                document.getElementById('node-confidence').textContent = (d.confidence * 100).toFixed(0) + '%';
+                document.getElementById('node-source').textContent = d.source_pointer || '未知';
+                document.getElementById('node-created').textContent = d.created_at || '未知';
+            });
+
+            // 仿真
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+
+                linkLabel
+                    .attr("x", d => (d.source.x + d.target.x) / 2)
+                    .attr("y", d => (d.source.y + d.target.y) / 2);
+
+                node.attr("transform", d => `translate(${d.x},${d.y})`);
+            });
+
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+        }
+    </script>
+</body>
+</html>
