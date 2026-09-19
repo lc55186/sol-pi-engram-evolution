@@ -1,0 +1,124 @@
+标题: 别再迷信 MEMORY.md，把 Hermes 的记忆接到外部硬盘
+Article ID: 7637048912628417074
+
+前两篇文章我们解决的是“别把内置记忆用坏”。
+今天我们重点讲讲外部记忆。
+如果你经常让 Hermes 做长期项目，光靠 MEMORY.md 一定不够。
+不是因为它设计差，而是因为它本来就不是知识库。
+它只有两千多字符的常驻空间，适合放稳定规则，不适合放长期知识、复杂项目上下文、历史决策链。
+所以第三层之后，必须引入外部 Memory Provider。
+一句话：把脆弱的小记忆，换成可检索、可治理、可扩展的外部硬盘。
+一、先澄清：外挂记忆不是替代 built-in memory
+Hermes 的外部 Provider 是增强层。
+内置的 MEMORY.md / USER.md 仍然存在。
+官方机制里，外部 Provider 会和内置记忆一起工作：
+内置记忆负责少量常驻事实。
+Provider 负责更深的长期记忆、语义检索、实体关系、知识树或事实库。
+这点很关键。
+不要以为装了 Provider，就可以把 MEMORY.md 彻底丢掉。
+更准确的分工是：
+USER.md：你是谁，你喜欢什么MEMORY.md：长期稳定项目事实Provider：大量知识、历史事实、跨会话检索Session Search：过去聊天档案二、当前可选 Provider 先按“部署成本”分组
+Hermes 文档里已经列了多个 Provider。
+常见的有：Honcho、OpenViking、Mem0、Hindsight、Holographic、RetainDB、ByteRover、Supermemory。
+但普通用户不需要一口气研究完。
+先按部署成本分：
+第一类：最省事，本地轻量
+代表：Holographic。
+它是本地 SQLite 事实库，带 FTS5、信任评分和结构化查询能力。
+适合：
+不想申请 API Key。
+不想部署服务端。
+只想先把记忆从 MEMORY.md 搬出来。
+对企业内网或个人隐私比较敏感。
+启动路径：
+hermes memory setup# 选择 holographichermes memory status或者手动配置：
+memory:  provider: holographic第二类：关系更强，适合长期理解
+代表：Hindsight。
+它的特点是知识图谱、实体解析、多策略检索，并提供 reflect 类能力，用于跨记忆综合。
+适合：
+长期项目很多。
+人、项目、决策之间关系复杂。
+需要让 Agent 从多段历史记忆里综合判断。
+它支持云和本地模式。
+本地模式通常还要配置本地或兼容模型，不是零成本，但上限更高。
+第三类：开发者友好，知识树可读
+代表：ByteRover。
+它通过 brv CLI 做知识树和分层检索。
+适合：
+开发团队。
+希望记忆以较可读方式沉淀。
+希望在压缩前保存关键 insight。
+安装一般先装 CLI：
+curl -fsSL https://byterover.dev/install.sh | shhermes memory setup# 选择 byterover第四类：文件系统范式，自托管知识管理
+代表：OpenViking。
+它是文件系统式知识层级，支持分层读取和语义检索。
+适合：
+有服务端部署能力。
+希望记忆以目录、URI、资源库方式组织。
+团队要做私有化上下文数据库。
+配置一般类似：
+pip install openvikingopenviking-serverhermes memory setup# 选择 openviking再配置 endpoint：
+echo "OPENVIKING_ENDPOINT=http://localhost:1933" >> ~/.hermes/.env三、Mem0 能不能本地化？要分清“Mem0 项目”和“Hermes 当前集成”
+
+这里必须讲清楚一个容易误导的点。
+Mem0 这个项目本身有开源形态，也有托管平台。
+但在 Hermes 当前内置的 mem0 Provider 代码与文档里，默认接的是 Mem0 Platform API，需要 MEM0_API_KEY。
+也就是说：
+不能简单写成“Hermes 选择 mem0 就是纯本地”。
+更稳妥的表达是：
+Mem0 生态有自托管/开源使用路径，后续可以单独实测。
+Hermes 当前内置 mem0 Provider 默认按平台 API 配置。
+如果要写“Mem0 纯本地”，必须在实战篇单独核验 Docker Compose、模型、embedding 和 Hermes 接入方式。
+这样写更负责任。
+四、选择 Provider 的标准，不是“谁最强”，而是谁最适合
+我建议用四个问题来选。
+1. 你能不能接受外部服务？
+不能接受，就优先：
+Holographic / ByteRover 本地模式 / OpenViking 自托管 / Hindsight 本地模式能接受云服务，再看 Honcho、Mem0、Supermemory、RetainDB 等。
+2. 你是否需要自动提取？
+如果只是偶尔存关键事实，Holographic 足够。
+如果你希望会话自动沉淀、自动召回，就要选支持自动同步、session-end 提取或 pre-compression 提取的 Provider。
+3. 你是否需要“关系理解”？
+如果只是查事实：本地 SQLite 够用。
+如果要理解人、项目、决策之间的关系，Hindsight 这类知识图谱更合适。
+4. 你是否需要可审查？
+企业场景要特别看这一点。
+可审查意味着：
+记了什么能看见。
+为什么召回能追踪。
+错误记忆能删除或降权。
+项目之间能隔离。
+五、推荐三条路线
+
+路线 A：个人用户，先上 Holographic
+适合大多数人。
+配置简单，本地 SQLite，不依赖外部服务。
+hermes memory setup# 选择 holographichermes memory status优点：快、轻、可控。
+缺点：自动化和综合能力不一定最强。
+路线 B：长期项目，考虑 Hindsight
+适合长期写作、产品研发、多项目协作。
+它更像记忆图谱，不只是事实列表。
+但本地模式配置成本更高，建议单独做实战验证。
+路线 C：开发团队，考虑 ByteRover 或 OpenViking
+如果你希望记忆能像知识树、目录、资源库一样组织，ByteRover 和 OpenViking 更合适。
+特别是多项目、多 Agent、多文档的场景，单纯的 MEMORY.md 已经不够用了。
+六、不要一次装一堆 Provider
+Hermes 当前设计里，一个外部 Provider 同时激活一个。
+这是好事。
+否则工具 schema 会膨胀，记忆来源会冲突，模型也会不知道该信谁。
+推荐做法：
+memory:  provider: holographic先跑一周。
+看三个指标：
+是否能记住关键事实。
+是否能准确召回历史约束。
+是否出现旧记忆污染新任务。
+不行再换。
+不要今天 Holographic，明天 Hindsight，后天 ByteRover，还没建立清理规则就全打开。
+七、结论
+外挂记忆不是为了让 Hermes 记更多废话。
+是为了让不同类型的信息归位：
+常驻规则留在温记忆。
+历史过程留在会话库。
+长期知识交给 Provider。
+项目规范放项目文件。
+`

@@ -1,0 +1,120 @@
+标题: 让 Hermes 自动完成一个软件需求：从 Issue 到 PR 的 AI 开发流水线
+
+前一篇，我们让 Hermes 每天凌晨自动巡检服务器。
+这一篇换一个场景：
+让 Hermes 自动接住一个软件需求，从 Issue 开始，一路完成分析、开发、测试和 PR。
+这次不再讨论“哪个 AI 写代码最好”。
+我们直接看一条完整的 AI 开发流水线：
+
+真正有价值的地方，是中间每一步都留下了可以继续交接的结果。
+一、先看一个真实需求
+假设 GitHub Issue 里有这样一条需求：
+登录失败后增加重试机制。要求：1. 最多重试 3 次；2. 不修改现有 API；3. 不改变数据库结构；4. 增加单元测试；5. 原有登录流程不能产生回归。如果交给一个普通聊天 Agent，它可能直接开始改代码。
+但 Hermes 不应该这么做。
+它首先应该把 Issue 变成一项正式任务：
+Issue ↓读取需求 ↓分析代码 ↓制定方案 ↓实现 ↓测试 ↓Review ↓PR这才是一条工程流水线。
+二、第一步：Hermes 接住 Issue
+Issue 可以通过 Webhook 进入 Hermes。
+例如：
+
+Hermes 不需要马上写代码。
+第一步只做任务初始化：
+标题：实现登录失败重试来源：GitHub Issue #128负责人：researcher状态：ready然后由 Researcher 开始工作。
+
+三、第二步：先研究，再写代码
+Researcher 的任务不是改代码。
+它需要回答：
+现在的登录流程是什么？相关代码在哪里？失败逻辑在哪里？有没有已有重试机制？哪些测试覆盖了这个流程？有没有历史 Issue 或 Commit 可以参考？它最终应该交付一份：
+research.md内容类似：
+问题定位：认证入口：auth/login.ts失败处理：auth/service.ts当前行为：失败后立即返回错误。相关测试：tests/auth/login.test.ts风险：不能直接修改 API 返回结构。建议：在 service 层增加有限次数重试，并补充失败场景测试。注意：
+Researcher 不改代码。
+它的任务是把问题搞清楚。
+四、第三步：Claude Code 做方案设计
+接下来，把研究结果交给 Claude Code。
+这时候 Claude Code 不需要重新从头猜。
+它拿到：
+Issue+research.md+项目代码然后负责：
+
+最终形成：
+design.md例如：
+修改：auth/service.tsauth/retry.ts新增：tests/auth/retry.test.ts不修改：API 接口数据库结构测试：npm test -- authnpm run lint这里有一个非常重要的设计：
+方案和执行分开。
+Claude Code 可以负责复杂的代码理解和技术判断。
+但它不一定需要亲自完成所有重复修改。
+五、第四步：Codex 开始真正改代码
+现在才进入执行阶段。
+Codex 拿到：
+Issueresearch.mddesign.md然后开始：
+
+它最终需要交付：
+代码变更+测试结果+变更摘要例如：
+修改文件：auth/service.tsauth/retry.tstests/auth/retry.test.ts测试：42 passedLint：passed数据库：未修改API：未修改这时候任务才能进入下一阶段。
+六、第五步：Reviewer 不负责“顺手改代码”
+代码完成以后，再交给 Reviewer。
+Reviewer 的职责非常简单：
+找问题，而不是抢活。
+它需要检查：
+需求是否全部满足？是否修改了禁止修改的内容？重试次数是否正确？异常情况下是否存在死循环？原有测试是否通过？新增测试是否覆盖核心场景？是否存在明显性能或安全风险？最终输出：
+review.md例如：
+结论：Approve需求：5/5 满足测试：通过发现问题：无阻塞问题风险：暂未发现如果发现问题：
+结论：Changes Requested问题：retry_count 在异常路径没有正确递增。位置：auth/retry.ts:42要求：补充异常路径测试。任务重新进入 Codex。
+
+直到通过。
+这就是 Kanban 真正发挥作用的地方。
+
+七、Hermes 在整个过程中到底做什么？
+这里最容易理解错。
+Hermes 不是“第四个程序员”。
+它更像项目经理 + 调度系统。
+它负责：
+
+而真正执行的是：
+ResearcherClaude CodeCodexReviewer所以整体结构变成：
+                  GitHub Issue                       │                       ▼                Hermes Gateway                       │                       ▼                 Kanban Board                       │        ┌──────────────┼──────────────┐        ▼              ▼              ▼   Research        Design         Implementation   Gemini CLI     Claude Code        Codex        │              │              │        └──────────────┼──────────────┘                       ▼                    Reviewer                       │                       ▼                  Human Approval                       │                       ▼                    GitHub PRHermes 管流程，Worker 管执行。
+八、什么时候需要人？
+真正可用的 AI 开发流水线，不应该追求 100% 无人。
+我反而建议把人工卡在最后一个关键节点：
+AI：分析 → 设计 → 编码 → 测试 → Review          ↓       人工确认          ↓         PR甚至可以进一步：
+
+这样做的好处是：
+AI 可以连续工作。
+但生产环境的最终责任仍然在人。
+九、真正有价值的是“失败以后怎么办”
+这也是 Hermes 和普通 AI Coding Agent 很大的区别。
+假设 Codex 测试失败。
+不是：
+失败 → 从头再来而是：
+
+如果发现：
+缺少数据库测试环境则：
+blocked等待环境准备好。
+如果发现：
+需求描述存在冲突则：
+blocked等待人工确认。
+Agent 不应该在不知道答案的时候继续猜。
+这条原则比“让 AI 更聪明”重要得多。
+十、最后，Issue 真的变成了 PR
+完整链路最终变成：
+
+而每一步都有自己的产物：
+Issueresearch.mddesign.md代码 difftest resultreview.mdPR这意味着：
+即使某个 Agent 中途退出，
+下一个 Agent 也不需要重新理解整个项目。
+它只需要读取上一阶段留下的结果。
+这就是可恢复的 AI 开发流水线。
+
+写在最后：真正的 AI Coding，不是让一个 Agent 写到底
+很多人理解 AI 编程，还是：
+需求 ↓AI ↓代码但真正复杂的软件开发并不是这样。
+它更接近：
+需求理解 ↓代码研究 ↓方案设计 ↓实现 ↓测试 ↓审查 ↓交付所以 Hermes 的价值，也不是再造一个 Claude Code 或 Codex。
+它真正应该做的是：
+把这些执行能力组织起来。
+
+当这条链路真正跑起来以后，AI 就不再只是：
+
+> “帮我写一段代码。”
+而变成：
+
+> “这是一个 Issue，你自己把它推进到可以提交 PR 的状态。”
+这才是 AI 开发工作流真正值得尝试的地方。

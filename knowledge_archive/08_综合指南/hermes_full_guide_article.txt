@@ -1,0 +1,619 @@
+标题: 全网最细Hermes满配指南：12层架构+2个完整实战+踩坑总结
+
+> Hermes Agent 满配实战（3万字）：从 Memory、Skill 到多 Agent 协同（上手指南）
+前言：别再被"满配"骗了
+很多人对 AI Agent 的"满配"有一个致命误解：装尽可能多的插件、接尽可能多的 MCP、开尽可能多的工具、配尽可能复杂的多 Agent 架构，让终端界面看起来像一个酷炫的航天飞机控制台。
+但真正用一个月你就会发现：
+工具太多，Agent 不知道什么时候该用
+Skill 太多，选择成本比自己做还高
+Memory 太乱，长期偏好被临时信息污染
+MCP 太多，Token 和权限风险都变大
+Profile 太多，自己都不知道哪个 Agent 记住了什么
+Gateway 开了，但安全边界没想清楚
+Cron 跑了，但它到底做了什么你看不见
+我理解的 Hermes 满配不是"装满"，而是围绕你的真实工作模式，把输入、记忆、技能、工具、自动化、可视化、Token 成本和多 Agent 协同这些能力，组合成一个可长期维护、可持续进化的个人 Agent 系统。
+这篇文章是我用 Hermes 半年多的完整实战总结。从最基础的安装、模型配置，到输入系统设计、Memory 管理、Skill 开发，再到 MCP 接入、飞书 Gateway、Cron 自动化，最后搭一个完整的 24h 多 Agent 团队。全文没有玄学，所有命令和配置都经过实测，你可以跟着一步步抄作业。
+第一部分：系统总览与基础地基
+第1章：先给结论：Hermes 满配是 12 层架构
+一个裸装的 Hermes 只能对话、能调用工具、能执行命令。但一个真正能长期跑起来的"满配"Hermes，应该至少考虑下面 12 层：
+层级
+模块
+解决的核心问题
+推荐程度
+L1
+安装与模型 Provider
+先让 Hermes 稳定跑起来
+必配
+L2
+输入系统：SOUL/USER/AGENTS.md
+让 Hermes 真正理解你和项目
+必配
+L3
+Memory 长期记忆
+跨会话记住偏好、目标、环境和经验
+必配
+L4
+Skills 技能系统
+把稳定流程沉淀成可复用能力
+必配
+L5
+Tools/Toolsets
+精确控制 Hermes 能调用哪些本地能力
+必配
+L6
+MCP 外部工具连接
+接入 GitHub、文件系统、搜索、数据库
+进阶必配
+L7
+Gateway 消息入口
+让 Hermes 出现在飞书/ Telegram / Discord
+按需配置
+L8
+Cron 自动化
+定时做日报、雷达、巡检、周报
+强烈推荐
+L9
+Profiles 多实例隔离
+为不同场景创建完全独立的 Agent
+强烈推荐
+L10
+可视化与可观测
+看见它做了什么、哪里失败、花了多少 Token
+进阶必配
+L11
+Token 精简与上下文管理
+降成本、提速度、减少上下文污染
+进阶必配
+L12
+多 Agent / 24h 团队
+让多个角色长期协作完成复杂任务
+高阶玩法
+
+重要提醒：这 12 层不是让你一天全部装完。我的建议路线是： 先跑通 → 再记住你 → 再沉淀技能 → 再接工具 → 再定时运行 → 再多入口触达 → 最后再多 Agent 协同。
+不要一开始就搭 24h Agent 团队。那样很酷，但如果基础的 Memory、Skill、MCP、权限和可观测都没做好，最后只是制造一个更复杂的失控系统。
+第2章：安装基线：先保证 Hermes 本体干净可用
+新手最容易犯的错误：刚装完 Hermes，第一件事就是搜插件、装 Skill、接 Gateway、建 Cron。但官方 Quickstart 里有一个被 90% 人忽略的黄金原则：
+
+> 如果 Hermes 连一个普通聊天都不能稳定完成，就不要继续叠加任何东西。
+满配的第一步不是满配，而是"干净可用"。
+2.1 推荐安装方式
+方式 A：PyPI 稳定版（绝大多数人首选）
+pip install hermes-agenthermes setup          # 交互式配置模型和密钥hermes model          # 选择默认模型hermes doctor         # 检查环境完整性hermes status         # 确认所有服务正常方式 B：官方安装脚本（想跟进主分支）
+curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash# 安装完成后刷新环境变量source ~/.bashrc  # 或 source ~/.zshrcWindows 用户注意：原生 Windows 支持有限，强烈建议使用 WSL2（Ubuntu 22.04）。如果必须用原生 Windows，参考社区指南：
+# PowerShell 中执行python -m venv venvvenv\Scripts\activatepip install hermes-agenthermes setup2.2 最小验证流程
+安装完成后，必须先跑通这三步，再继续后面的配置：
+基础对话验证
+hermes# 输入：你好，请用一句话说明你现在能正常工作。环境健康检查
+hermes doctor如果 hermes doctor 还有任何红色错误，先修环境，不要继续装插件。常见错误：
+Python 版本低于 3.10 → 升级 Python
+缺少系统依赖 → 按提示安装 brew install portaudio ffmpeg 或 sudo apt install portaudio19-dev ffmpeg
+API Key 无效 → 重新运行 hermes setup
+工具可用性验证
+# 在 Hermes 交互界面输入帮我列出当前所有可用的工具，按类别分组。2.3 常用排查命令速查
+当你遇到问题时，按这个顺序排查：
+hermes status          # 快速概览系统状态hermes doctor          # 深度诊断并自动修复可修复问题hermes config show     # 查看当前所有配置hermes logs --follow   # 实时查看运行日志hermes sessions list   # 查看会话列表hermes --continue      # 恢复上次中断的会话一句话总结：满配前先学会回到"已知可用状态"。否则后面装得越多，越不知道哪里坏了。
+第3章：输入系统：让 Hermes 真正懂你
+很多人觉得 Agent 不聪明，其实不是模型不聪明，而是输入系统太差。Hermes 的输入系统像一个分层协议栈，每个文件解决一个层面的问题：
+
+这六层不是随便分的。SOUL.md 定义 Agent 的工作方式，USER.md 定义你是谁，MEMORY.md 定义你在做什么，AGENTS.md 定义当前项目的规则，SKILL.md 定义怎么做事，当前对话是临时任务。
+3.1 SOUL.md：不要写玄学人格，要写工作协议
+先看一个反面教材：
+
+> 你是一个聪明、强大、无所不能的 AI 助手。
+这种写法的问题不是语气不对，而是它没有给 Agent 任何可以执行的规则。Agent 不知道什么时候该主动、什么时候该刹车、什么时候可以不同意你。
+一个好的 SOUL.md 应该回答的不是"你是什么性格"，而是"你应该怎么和我协作"。下面是一个可以直接改的模板：
+# SOUL你是我的个人 Agent。你的职责是优化我的工作流，保护我的注意力，推进最有价值的工作，把意图转化为有组织的执行。---## 立场保持直接、务实、有判断力、高主动性。当我表达模糊、不现实、分心或正在制造混乱时，你要提出反对。有用比顺耳重要。锋利比润色重要。诚实比显得厉害重要。说重点，然后停止。---## 职责你不要等待完美指令。主动发现机会、指出问题、识别停滞循环，推动事情向前。当直接执行最快时，直接执行。当拆分任务、专家视角或并行推进能带来更好结果时，进行委派。你的职责不是生产一堆最后进坟场的材料。你的职责是制造推进。---## 自主性边界你拥有较大的自主决策空间，但有一条硬边界：以下事项没有我的明确批准绝不能执行：- 公开发布内容或对外上线- 购买东西、注册付费服务- 向真实的人发送消息- 删除重要工作或做不可逆修改- 暴露私人信息、修改凭证或安全设置除此之外，如果你对判断有信心，就推进。不要为低风险工作反复请求许可。---## 反对与纠偏你可以直接不同意我，但需要先赢得反对的资格。每一个反对意见都需要：数据、例子、推理，或一个更好的替代方案。不要为了保护我的自尊而隐瞒有用的真相。当你提出反对时，说明：- 弱点在哪里- 哪个假设尚未被证明- 你会怎么做---## 沟通风格任务简单时，简短回答。任务复杂时，结构化回答。任务有风险时，明确写出权衡。优先使用朴素语言。避免企业黑话、虚假兴奋和"在当今快节奏的世界里"这类表达。面向公众的内容应该像一个真实的人写出来的：有品味、有伤痕、有观点。---## 自我改进当我纠正你时，把纠正保存到合适的位置。当某个工作流重复出现时，考虑它是否应该变成检查清单、模板、脚本或可复用 Skill。不要让重复摩擦保持隐形。关键设计思路：
+立场：告诉 Agent 可以主动、可以反对，不需要事事请示
+自主性边界：明确哪些事可以自己做、哪些必须确认，减少无效确认
+反对与纠偏：让 Agent 知道什么时候该说"不"，以及怎么说
+自我改进：把重复出现的流程自动沉淀下来
+SOUL.md 是 Agent 的"工作协议"，不是人设卡。好的 SOUL.md 不是让 Agent 听起来更像人，而是让它做事更像一个靠谱的搭档。
+3.2 USER.md + MEMORY.md：你是谁 vs 你在做什么
+很多人把所有东西都往 Memory 里塞，结果 Agent 记住了一堆临时想法，反而记不住你真正稳定的工作偏好。Hermes 的内置记忆分成两个文件是有原因的：
+文件
+定位
+建议容量
+适合写什么
+USER.md
+你的长期画像
+~1375 字符
+身份、偏好、沟通风格、期望
+MEMORY.md
+Agent 的工作笔记
+~2200 字符
+项目、环境、踩坑、工作流、决策原则
+USER.md 模板：
+# USER## Profile- 职业：AI 产品工程师- 技术背景：Python/Go 全栈，熟悉大模型应用开发- 当前最关注：Agent 架构、Memory 系统、MCP 协议、自进化能力## Communication Preferences- 默认使用中文- 喜欢结构化回答，关键信息加粗- 接受直接反驳，但需要有理由- 讨厌空泛概念堆砌和过度解释基础概念## Output Preferences- 技术方案：目标 → 架构 → 模块 → MVP → 风险 → 验收标准- 业务方案：业务价值 → 资源需求 → 预期结果 → 风险- 写作任务：标题 → 核心观点 → 读者 → 结构 → 案例 → 配图建议## Collaboration Style- 我经常在多个想法之间切换，需要你帮我收敛优先级- 当我持续开新任务不关旧任务时，提醒我聚焦- 更看重真实判断而不是情绪安慰MEMORY.md 模板：
+# MEMORY## Active Context- 当前正在探索个人 Agent 系统的满配方案- 重点不是功能多少，而是可维护性和长期进化能力- 当前重点不是：企业级部署、多用户支持## Current Priorities1. 完成 Hermes 满配实战文章2. 搭建 AI 工具雷达 Agent3. 测试多 Agent 团队协作模式## Active Projects### Hermes 满配实战- 目标：写一篇 3 万字的完整上手指南- 当前进展：完成大纲和前 5 章- 最大阻塞：缺少真实的多 Agent 协作案例- 下一步：完成 AI 工具雷达和头脑风暴两个实战### AI 工具雷达- 目标：每天自动搜集 AI 生态新项目并生成分析报告- 当前进展：完成基础 Profile 和 SOUL.md- 最大阻塞：GitHub 搜索结果不稳定- 下一步：接入 GitHub CLI 做更稳定的数据来源## Decision Principles- 遇到复杂问题，优先拆成：目标、现状、问题、方案、MVP、风险、下一步- 遇到 Agent 类任务，优先用：Memory → Skill → Eval → Tools → Human-in-the-loop- 遇到工程任务，先查看文件和项目结构，不要臆测## Known Pitfalls- 不要把临时想法写成长期承诺- 不要在没有验证时编造命令、路径或工具能力- 不要让项目无限发散## Environment Notes- 常用工具：Hermes、Claude Code、VS Code- 所有实验都在 ~/hermes-lab/ 目录下进行- 生产环境和实验环境严格分离3.3 记忆初始化：让 Hermes 通过访谈帮你写
+上面的模板看着不难，但很多人不知道该往里填什么。一个实用的做法是：直接让 Hermes 通过访谈帮你生成。
+在 Hermes 里输入：
+请帮我初始化 Memory。先通过访谈了解我，然后自动生成 USER.md 和 MEMORY.md。访谈问题请覆盖以下 6 个方面，每个方面问 2-3 个问题：1. 用户画像：职业身份、技术背景、当前最关注的方向2. 沟通偏好：默认语言、回答风格、是否接受反驳、讨厌什么回答3. 当前项目：最重要的 1-3 个项目、目标、进展、阻塞4. 工作流：有哪些重复性任务、哪些适合沉淀成 Skill5. 决策原则：做决策时最看重什么、容易犯什么错误、什么情况需要提醒6. 工具环境：常用什么 Agent 工具、有什么环境特殊性访谈结束后，输出两份内容：- USER.md：只放我的长期画像和偏好- MEMORY.md：只放项目、环境、工作流、经验和注意事项注意：- 不要写入 API Key、密码、隐私信息、临时情绪和一次性任务- 如果某条信息更适合做成 Skill，单独列出，不要塞进 Memory- 内容要压缩，不要超过 Hermes 内置 memory 的字符限制Hermes 会依次问你问题，然后自动生成两个文件的内容。你审核一遍、改改措辞、确认没有敏感信息，就可以写入对应的文件。
+3.4 记忆写入原则
+不是所有信息都应该写进 Memory。
+✅ 适合写入：
+长期项目背景
+稳定偏好
+本地环境事实
+常用路径和工具配置
+反复踩过的坑
+当前活跃目标
+已验证有效的决策原则
+工作流经验
+❌ 不适合写入：
+人设口号（已经写在 SOUL.md 了）
+临时任务（放在当前对话就够）
+大段资料和文章全文（放文件系统）
+API Key / Token / 密码（永远不要写）
+过期计划、临时情绪、一次性聊天内容
+信息分层原则：
+USER.md 记录"我是谁"（长期稳定）
+MEMORY.md 记录"我在做什么"（定期更新）
+Skill 记录"我怎么做事"（可复用流程）
+Session 记录"这次发生了什么"（临时上下文）
+文件系统保存"大量原始资料"（按需检索）
+3.5 AGENTS.md：让它理解当前目录
+SOUL.md、USER.md、MEMORY.md 解决的是"你是谁"和"你在做什么"。但 Hermes 还需要知道"当前这个目录是干什么的"。
+比如你准备做一个 Hermes 实验目录：
+mkdir -p ~/hermes-labcd ~/hermes-lab放一个 AGENTS.md：
+# AGENTS.md## 项目目标这是我的个人 Agent 实验目录，用于测试 Hermes 的 Memory、Skill、MCP、Cron、Profiles 和多 Agent 能力。## 目录结构- ai-radar/：AI 工具雷达- brainstorm-room/：头脑风暴聊天室- reports/：所有输出报告- skills/：自定义 Skill 草稿- shared/：多 Agent 共享目录## 工作规则- 所有报告输出为 Markdown；- 所有测试数据使用虚构数据；- 不读取公司文件；- 不上传密钥、真实聊天记录和隐私数据；- 安装工具前必须先生成风险说明；- 删除文件、安装依赖、发送外部消息都需要人工确认。这类文件可以让 Hermes 进入某个目录后，快速理解当前工作空间的目标和边界。如果你同时在多个项目间切换，每个项目放一个 AGENTS.md 比把所有项目信息都塞进 MEMORY.md 更有效。因为 MEMORY.md 每次都会加载，而 AGENTS.md 只在你进入那个目录时才加载。
+第4章：Memory：记忆系统选型与最佳实践
+上一章讲了 USER.md 和 MEMORY.md 怎么写。这章讲记忆系统本身的选型和高级用法。
+4.1 常用命令
+hermes memory status    # 查看当前记忆后端和状态hermes memory setup     # 配置记忆系统hermes memory off       # 临时关闭记忆hermes memory clear     # 清空当前会话记忆4.2 内置记忆的优点与局限
+优点：
+零配置，开箱即用
+和 Hermes 原生流程深度集成
+适合轻量使用
+不需要额外云服务
+局限：
+容量有限（USER.md ~1375 字符，MEMORY.md ~2200 字符）
+对大规模个人知识库不够
+语义召回、冲突更新、时间衰减的表现一般
+不适合把大量文章、日志、历史记录都塞进去
+建议：新手先用原生 Memory，重度用户再评估外部 Memory Provider。不要一开始就搞复杂的向量数据库，90% 的个人用户用原生 Memory 足够了。
+4.3 记忆维护最佳实践
+定期清理：每月花 10 分钟清理 MEMORY.md，删除过期项目和临时信息
+压缩原则：把具体事件压缩成原则和经验。比如不要写"2026-05-20 测试了 MCP 接入，发现 allowed_tools 不写会全开权限"，而要写"MCP Server 必须显式配置 allowed_tools，否则会暴露所有工具"
+版本控制：把 ~/.hermes/ 目录加入 Git，定期提交配置和记忆文件
+备份策略：每周备份一次 state.db 和配置文件
+第二部分：核心能力模块逐个上手
+第5章：Skills Hub：Hermes 的"程序化记忆"
+Skill 是什么？Skill 不是插件，也不是普通 Prompt。更准确地说：Skill 是一种程序化记忆：当你反复用同一种方式完成任务时，可以把这套流程写成文档，让 Hermes 以后自动复用。
+很多人分不清 Skill 和 Memory、MCP Tool、普通 Prompt 的区别：
+概念
+解决什么问题
+例子
+Memory
+记住"你是谁"和"你在做什么"
+你的偏好、项目背景、踩坑经验
+Skill
+记住"你怎么做事"
+分析工具是否值得装的固定流程
+MCP Tool
+连接"你能用什么外部工具"
+GitHub 搜索、网页读取、数据库查询
+Prompt
+这次对话的临时指令
+"帮我看看这个链接"
+简单说：Memory 是你的知识，Skill 是你的方法论，MCP Tool 是你的工具箱，Prompt 是你这次说的话。
+5.1 常用命令
+hermes skills list              # 查看已安装的 Skillhermes skills search <keyword>  # 搜索社区 Skillhermes skills inspect <skill-id> # 查看 Skill 内容（安装前必看）hermes skills install <skill-id> # 安装 Skillhermes skills browse            # 浏览技能市场hermes skills check             # 检查更新hermes skills update            # 更新所有 Skillhermes skills disable <skill-id> # 禁用 Skillhermes skills remove <skill-id>  # 删除 Skill重要提醒：安装前一定要先 hermes skills inspect 看内容。社区 Skill 是纯文本，没有沙箱，恶意 Skill 可以执行任意命令。
+5.2 从零写一个 Skill：手把手实操
+这是本章最核心的部分。我们用一个最简单的 Skill 来走一遍完整流程。
+Step 1：创建 Skill 文件 Skill 文件就是一个 .md 文件，放在 Hermes 的 skills 目录下：
+mkdir -p ~/.hermes/skillsStep 2：写 Skill 文件 一个 Skill 文件分两部分：frontmatter（元信息）和 body（流程说明）。
+---name: article-summarizerdescription: 把长文章压缩成结构化摘要卡片。---# Article Summarizer## 什么时候使用当用户提供一篇长文章、论文、博客或 md 文件，需要生成结构化摘要时使用。## 输出格式请输出以下结构：### 一句话总结（50 字以内）### 核心观点（3-5 个要点，每个一句话）### 和我的关系（结合 USER.md 中的长期目标，判断这篇文章对我的价值）### 下一步（是否值得深入读？是否沉淀为 Memory？是否触发某个 Skill？）这就是一个完整的 Skill。总共 20 多行，结构清晰，Hermes 能直接理解。
+Step 3：安装到 Hermes
+hermes skills install ~/.hermes/skills/article-summarizer.md或者如果 Hermes 支持自动发现 skills 目录，重启后自动加载。
+Step 4：验证生效 在 Hermes 中输入：
+请使用 article-summarizer 技能，帮我总结这篇文章：~/hermes-lab/inputs/xxx.md如果 Hermes 正确输出了"一句话总结 / 核心观点 / 和我的关系 / 下一步"这个结构，说明 Skill 生效了。
+Step 5：迭代 如果输出不对，改 .md 文件，重新安装。Skill 是纯文本，改起来很快。
+5.3 完整 Skill 文件结构
+上面那个例子用了最简单的结构。如果你想让 Skill 更精确，可以加更多维度：
+---name: <skill-id>          # 必填，英文短名，用于命令调用description: <一句话描述>   # 必填，说明这个 Skill 做什么version: 1.0.0tags: [tag1, tag2]---# <Skill 名称>## 什么时候使用（触发条件：什么场景下该用这个 Skill）## 分析维度（判断逻辑：按什么维度分析）## 输出格式（结构化输出：用什么格式呈现结果）## 约束（可选：边界条件、禁止事项、特殊情况处理）5.4 五大王牌社区 Skill
+Hermes 社区已有数千个 Skill，但真正经过大规模验证、适合大多数用户的，是下面五个：
+Skill
+Star
+一句话定位
+解决什么问题
+gstack
+85K
+高效的工作流与技能栈
+把 AI 拆成产品、工程、设计、评审、QA 等不同工作视角
+gbrain
+11K
+Agent 的共享外部大脑
+把项目文档、代码、笔记沉淀成可检索的长期上下文
+hermes-webui
+4.6K
+轻量化可视化控制台
+给 Hermes 加一个 Web 界面，降低使用门槛
+self-evolution
+2.4K
+自进化核心模块
+让 AI 持续自主迭代，越用越聪明
+awesome-hermes
+1.9K
+全生态项目合集导航
+快速查找 Hermes 生态的工具、教程、最佳实践
+安装方式：
+# 先 inspect 看看内容，确认安全后再 installhermes skills inspect gstackhermes skills install gstack# 或者一次性安装多个hermes skills install gstack gbrain awesome-hermes重要提醒：不要一次全装。先装 1-2 个你当前最需要的，跑通一个再装下一个。每个 Skill 都会占用 system prompt 空间，装太多反而会降低 Agent 的注意力。
+5.5 Skill 生命周期管理
+很多人装了一堆 Skill 就再也不管了。但 Skill 和代码一样，需要维护。
+更新：
+hermes skills check             # 检查是否有更新hermes skills update            # 更新全部hermes skills update <skill-id> # 更新单个禁用和删除：
+hermes skills disable <skill-id> # 禁用（不删除文件，但不再加载）hermes skills remove <skill-id>  # 删除每周清理三问：
+过去 7 天我实际用了哪些 Skill？——没用的，考虑禁用
+有没有两个 Skill 做的事重叠？——合并成一个
+有没有 Skill 的输出质量下降了？——更新或重写
+整理原则：常驻 Skill 不超过 5 个。如果超过 5 个，说明你在用 Skill 数量代替 Skill 质量。
+一个好的信号是：你不需要刻意记自己有哪些 Skill，因为在日常工作中它们会自然地被触发。如果你经常需要翻 hermes skills list 才能想起来"我还有这个 Skill"，说明它可能该禁用了。
+第6章：Tools 与 Toolsets：控制 Hermes 的手
+上一章讲了 Skill——Agent "怎么做事"的流程。这章讲 Tool——Agent "能做什么"的原子能力。
+一个类比：Tool 是锤子、螺丝刀，每个只做一件事。Skill 是组装书架的工序，编排多个工具的调用顺序。
+Hermes 内置了 47 个工具。你不需要全部记住，只需要知道三件事：哪几类工具、哪些是高频的、哪些需要谨慎。
+6.1 常用命令
+hermes tools list              # 查看所有工具（名称 + 类别 + 是否需要审批）hermes tools info <tool_name>  # 查看某个工具的参数和用法hermes tools enable <name>     # 启用工具hermes tools disable <name>    # 禁用工具什么时候用什么命令：
+刚装好 Hermes → hermes tools list 扫一眼
+Agent 执行了你不想要的操作 → hermes tools disable <name> 关掉它
+6.2 工具分类速查
+47 个工具分成 7 类。下面只列每类最高频的 2-3 个：
+类别
+高频工具
+做什么
+风险等级
+文件系统
+read_file / edit_file / list_directory
+读写文件、目录列表
+安全 ~ 低风险
+代码执行
+execute_python / execute_shell
+运行代码或命令
+中 ~ 高风险
+Web
+web_search / web_extract
+搜索和抓取网页
+安全
+终端
+run_command / system_info
+执行系统命令
+高风险
+记忆管理
+memory_read / memory_write
+读写记忆
+安全 ~ 低风险
+技能管理
+skill_create / skill_install
+管理 Skill
+低风险
+多 Agent
+delegate_task / agent_spawn
+子任务委托
+中风险
+几个实用原则：
+改文件优先用 edit_file（差异替换），不要动不动 write_file（全量覆盖）
+数据分析用 execute_python，不要用 execute_shell——前者更安全
+信息获取用 web_search + web_extract 组合，覆盖大部分场景
+6.3 安全审批：不是想干什么就干什么
+每个工具按风险分为四级：
+等级
+典型工具
+审批方式
+安全
+read_file、web_search、list_directory
+无需审批
+低风险
+write_file、edit_file、memory_write
+首次审批，可记住
+中风险
+execute_python、delegate_task
+每次审批
+高风险
+execute_shell、kill_process
+强制审批，无法跳过
+当 Agent 调用需要审批的工具时，你会看到确认提示，选择 Y（允许）、N（拒绝）或 A（始终允许，高风险不可选）。
+如果默认策略不合适，可以在 ~/.hermes/config.yaml 自定义：
+tools:  approval:    per_tool:      write_file:        strategy: "remember"    # 首次确认，后续记住      execute_shell:        strategy: "prompt"      # 每次都确认    command_blacklist:      - "rm -rf /"      - "sudo rm"      - "format"如果不小心点了"始终允许"，用 hermes approval reset 撤销所有已记住的审批决策。
+6.4 跟做：验证你的工具箱
+在 Hermes 里跑一次快速验证，确认工具系统正常工作。
+Step 1：查看工具列表
+帮我列出当前所有可用的工具，按类别分组。检查返回结果是否和你的预期一致。
+Step 2：测试安全工具
+帮我读取 ~/hermes-lab/AGENTS.md 的内容。read_file 是安全工具，不需要审批，应该直接返回内容。
+Step 3：测试需要审批的工具
+帮我在 ~/hermes-lab 下创建 test.md，内容写"工具测试成功"。write_file 是低风险工具，你会看到审批提示。选 Y 允许，确认文件创建成功。
+Step 4：关掉不需要的高风险工具
+hermes tools disable execute_shellhermes tools disable kill_process一句话总结：工具系统的核心不是"全开"，而是"按需开放、分级审批"。先用安全工具跑通，再逐步放开写入和外部操作。
+第7章：MCP：连接外部工具，但要控制边界
+上一章讲了 Hermes 内置的 47 个工具。但 Agent 不可能把所有能力都内置——你需要连 GitHub、读 Notion、查数据库、发 Slack 消息。
+过去每接一个外部服务，都要写一套专门的对接代码。MCP（Model Context Protocol）就是来解决这个问题的——Anthropic 提出的开放协议，给 Agent 和外部工具之间建立统一的通信标准。
+一句话：MCP 让 Agent 接入外部服务，像插 USB-C 一样简单。
+7.1 概念类比
+MCP 概念
+生活类比
+说明
+MCP Client
+笔记本电脑
+Agent 内负责连接外部工具的组件
+MCP Server
+USB 外设
+提供具体功能的服务端（如 GitHub MCP Server）
+Tool
+外设功能
+Server 暴露给 Agent 可调用的功能（如"创建 Issue"）
+allowed_tools
+USB 口限流器
+控制哪些功能可以给 Agent 用
+7.2 常用命令
+hermes mcp list              # 查看当前已配置的 MCP Serverhermes mcp test <name>       # 测试某个 MCP Server 是否能正常连接hermes mcp configure <name>  # 查看某个 Server 暴露了哪些工具/reload-mcp                  # 重载 MCP 配置（修改 config.yaml 后不用重启）添加 MCP Server 推荐直接编辑 ~/.hermes/config.yaml，比 hermes mcp add 命令更直观可靠。
+7.3 实战：接入 GitHub
+GitHub 是 MCP 生态中最成熟的 Server。我们从它开始跟做。
+Step 1：获取 GitHub Token
+登录 GitHub → 右上角头像 → Settings
+左侧菜单拉到底 → Developer settings
+选 "Tokens (classic)"
+Generate new token，权限勾选：✅ repo（访问仓库，如需私有仓库）✅ read:org（读取组织信息）✅ read:user（读取用户信息）
+复制 Token（页面关了就看不到了），保存到环境变量：
+# 写入 ~/.zshrc 或 ~/.bashrcexport GITHUB_TOKEN="ghp_xxxxxxxxxxxxxxxxxxxx"Step 2：写入配置 编辑 ~/.hermes/config.yaml：
+mcp_servers:  github:    command: "npx"    args: ["-y", "@modelcontextprotocol/server-github"]    env:      GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_TOKEN}"    allowed_tools:      - "search_repositories"      - "get_file_contents"      - "search_issues"      - "create_issue"      - "search_code"配置项说明：
+command：要执行的命令，一般用 npx
+args：-y 确认安装 + MCP Server 包名
+env：环境变量，放 Token，用 ${变量名} 引用
+allowed_tools：工具白名单，不写 = 允许所有（不推荐）
+Step 3：验证并使用
+hermes mcp test github返回工具列表说明连接成功。然后在 Hermes 里直接用自然语言：
+搜索 GitHub 上 Hermes 项目里关于 memory 的实现如果 Agent 报"没有权限"，检查 allowed_tools 里有没有这个工具，以及 GitHub Token 有没有对应权限。
+7.4 工具过滤：allowed_tools 是你的安全生命线
+MCP Server 可能暴露几十个工具，allowed_tools 让你只开需要的那几扇门。
+白名单模式（强烈推荐）——只列出允许的工具，其余屏蔽：
+allowed_tools:  - "search_repositories"  - "get_file_contents"不写或留空 = 允许所有（不推荐，Server 可能暴露删除仓库等高危工具）。
+读写分离最佳实践——同一个服务配两个实例，只读版日常用，读写版按需开启：
+mcp_servers:  github-read:    command: "npx"    args: ["-y", "@modelcontextprotocol/server-github"]    env:      GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_TOKEN}"    allowed_tools:      - "search_repositories"      - "get_file_contents"      - "search_code"  github-write:    command: "npx"    args: ["-y", "@modelcontextprotocol/server-github"]    env:      GITHUB_PERSONAL_ACCESS_TOKEN: "${GITHUB_TOKEN}"    allowed_tools:      - "create_issue"      - "create_pull_request"    enabled: false    # 默认禁用，需要时手动开启7.5 安装前的六个问题
+不要看到一个 MCP Server 就装。装之前过一遍：
+它是否真的补足内置工具做不到的事？是才装
+它是否需要高权限（删除、发送、支付）？高权限谨慎，用 allowed_tools 收窄
+它是否会暴露隐私数据？会就先不上，或用只读副本
+它是否能限定目录或只读模式？优先选择有限定的
+它是否会显著增加 Token 开销？会就用 allowed_tools 过滤
+它是否只在某个场景需要？只装到对应 Profile（第十三章）
+7.6 高频 MCP Server 速查
+MCP 社区已有 6000+ 个 Server，安装格式统一：
+command: "npx"args: ["-y", "@scope/server-name"]分类
+Server
+用途
+代码协作
+server-github
+搜仓库、看 PR、管 Issue
+文件系统
+server-filesystem
+访问指定目录（零配置）
+数据库
+server-postgres
+查数据库
+知识管理
+server-notion
+读写 Notion
+浏览器
+server-puppeteer
+网页自动化和截图
+安全提醒：MCP Server 运行在本地，可以访问你的文件系统、环境变量和网络。建议只用官方（@modelcontextprotocol）或社区广泛验证的 Server。
+一句话总结：MCP 的关键不是多，而是窄。只暴露当前任务真正需要的工具。先接一个跑通，再逐步加。
+第8章：Gateway：把 Hermes 接到飞书里
+前面几章我们主要在终端里使用 Hermes。但日常使用时，你不一定总想打开终端。更自然的方式是：把 Hermes 接到飞书里，像和一个普通同事聊天一样使用它。
+本章只做一件事：让你把 Hermes 接入飞书，并知道日常怎么用。
+8.1 Gateway 是什么？
+Gateway 可以理解成 Hermes 的"消息入口"。你在飞书里发消息，Gateway 负责把消息转给 Hermes；Hermes 生成回复后，Gateway 再把回复发回飞书。
+
+Gateway 的价值不是"炫技"，而是让 Hermes 变成一个随时可用的助手：
+手机上可以随时问它问题
+可以把临时想法发给它整理
+可以把日常报告、定时任务结果推送到飞书
+可以在群里 @ 它，让它帮忙总结、分析、拆解任务
+8.2 先确认 Hermes 可用
+配置飞书之前，先确认你本地 Hermes 已经能正常运行：
+hermes --versionhermes chat# 输入：你好，帮我用一句话介绍你自己。如果 Hermes 本身还不能正常对话，先不要配置飞书。因为飞书只是入口，真正回答问题的还是 Hermes 本体。
+8.3 推荐方式：用hermes gateway setup接入飞书
+现在最推荐的方式是直接使用官方的交互式配置向导：
+hermes gateway setup进入向导后，选择：Feishu / Lark
+如果你的版本支持扫码创建，终端会出现二维码。用飞书手机 App 扫码后，Hermes 会自动帮你创建 Bot 应用并保存凭证。这是最适合普通读者的方式，因为不需要手动去飞书开放平台配置一堆权限。
+连接模式建议：优先选 WebSocket 配置过程中，如果让你选择连接模式，建议优先选择：WebSocket
+原因很简单：WebSocket 不需要公网服务器，也不需要 ngrok。这对大多数个人用户最友好。你只要在自己的电脑上运行 Hermes，Hermes 会主动连接飞书服务端，然后等待消息。
+可以在 ~/.hermes/.env 里看到或手动设置：
+FEISHU_CONNECTION_MODE=websocket模式
+是否推荐
+适合谁
+WebSocket
+推荐
+本地电脑、个人用户、刚开始配置
+Webhook
+不优先推荐
+已经有公网服务器、熟悉回调地址配置的人
+8.4 如果扫码不可用：手动配置飞书应用
+如果你的 Hermes 版本不支持扫码创建，或者扫码失败，可以走手动配置。
+Step 1：创建飞书自建应用
+打开飞书开放平台：https://open.feishu.cn/
+进入开发者后台，创建一个企业自建应用
+应用名称：Hermes 助手
+应用描述：用于在飞书中使用 Hermes Agent
+创建完成后，进入应用详情页，找到"凭证与基础信息"
+复制：App ID 和 App Secret
+Step 2：开启机器人能力 在应用后台找到"添加应用能力"，开启：机器人 否则你在飞书里找不到这个 Bot，也无法和它聊天。
+Step 3：写入 Hermes 环境变量 打开或创建文件：
+nano ~/.hermes/.env写入：
+FEISHU_APP_ID=cli_xxxxxxxxxxxxxxxxFEISHU_APP_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxFEISHU_DOMAIN=feishuFEISHU_CONNECTION_MODE=websocket说明：
+FEISHU_DOMAIN：国内飞书写 feishu，海外 Lark 写 lark
+保存后，再运行：
+hermes gateway setup选择 Feishu / Lark，并按提示完成配置。
+8.5 启动 Gateway
+配置完成后，可以先用前台方式启动，方便看报错：
+hermes gateway有些版本也支持：
+hermes gateway run如果启动正常，你就可以打开飞书，找到刚刚创建的 Bot，发一条消息：
+你好，帮我用一句话介绍你自己如果 Bot 能回复，说明飞书接入成功。
+8.6 后台运行 Gateway
+前台运行适合调试，但关闭终端后 Gateway 就停了。如果你希望 Gateway 常驻，可以先安装为系统服务：
+hermes gateway install然后启动服务：
+hermes gateway start常用 Gateway 命令速查： | 目的 | 命令 | |------|------| | 配置飞书等消息平台 | hermes gateway setup | | 前台运行，方便调试 | hermes gateway 或 hermes gateway run | | 安装为后台服务 | hermes gateway install | | 启动后台服务 | hermes gateway start | | 查看状态 | hermes gateway status | | 停止服务 | hermes gateway stop | | 重启服务 | hermes gateway restart |
+8.7 飞书里怎么用 Hermes？
+配置完成后，你就可以像和同事聊天一样使用 Hermes。
+1. 私聊 Bot（最常用） 适合个人使用。你可以直接发：
+帮我总结一下今天要做的三件事或者：
+把下面这段想法整理成公众号文章大纲：……2. 群里 @ Bot 适合团队协作。比如在群里发：
+@Hermes 助手 帮我总结一下上面这段讨论，提炼成待办事项群聊里建议用 @ 的方式唤起 Bot，避免它对所有消息都响应。
+3. 常用指令 在飞书聊天里，你也可以使用一些 Hermes 指令：
+指令
+用途
+/new
+
+或
+
+/reset
+开启一段新对话
+/status
+查看当前会话状态
+/model
+查看或切换当前模型
+/retry
+让 Hermes 重新回答上一条
+/undo
+撤销上一轮对话
+/sethome
+把当前飞书聊天设为默认推送位置
+/help
+查看可用指令
+日常最常用的是：/reset 当你觉得 Hermes 上下文混乱、答非所问时，可以先重置会话。
+8.8 最实用的 5 个日常场景
+场景一：随手记录想法 你在路上突然想到一个选题，可以直接发给飞书 Bot：
+记录一个想法：个人 Agent 的关键不是工作流，而是 Memory、Skill、Eval 三件事。然后让它继续整理：
+把刚才这个想法整理成 3 个公众号标题场景二：文章大纲助手
+我想写一篇关于 Hermes 飞书接入的文章，请帮我整理一个适合新手的教程大纲。场景三：会议纪要整理 把会议记录粘给它：
+帮我把下面的会议记录整理成：背景、结论、待办、风险。……场景四：日报 / 周报草稿
+根据下面这些工作内容，帮我整理成一份周报：……场景五：定时推送结果 后面如果配置了 Cron，你可以让 Hermes 把每日总结、AI 新闻、工具雷达等内容推送到飞书。这时可以先在目标飞书聊天里发送：
+/sethome这样 Hermes 就知道以后把默认通知推送到哪里。
+8.9 安全设置：至少配置允许用户
+飞书接入成功后，不要忽略安全问题。因为一旦 Bot 能访问你的 Hermes，就意味着别人可能通过 Bot 间接使用你的本地 Agent。
+建议至少设置允许用户列表。在飞书里可以先问：
+/whoami查看自己的身份信息。然后在 ~/.hermes/.env 里配置允许访问的用户：
+FEISHU_ALLOWED_USERS=ou_xxxxxxxxxxxxxxxx多个用户用英文逗号分隔：
+FEISHU_ALLOWED_USERS=ou_xxx,ou_yyy最低限度安全建议：
+不要把 App Secret 发给别人
+配置 FEISHU_ALLOWED_USERS 避免陌生人使用你的 Bot
+群聊里尽量 @ Bot 使用，避免 Bot 被无关消息频繁触发
+高危操作要人工确认，不要让消息入口直接执行危险命令
+本章小结：这一章你只需要完成三个动作：
+hermes gateway setup
+选择：Feishu / Lark
+然后启动：hermes gateway
+能在飞书里收到 Hermes 的回复，就说明配置成功。对个人用户来说，Gateway 最重要的价值不是复杂部署，而是让 Hermes 进入你的日常消息入口。先把飞书私聊跑通，再慢慢尝试群聊、定时推送和更复杂的自动化。
+第9章：Cron：让 Hermes 从被动工具变成主动系统
+前面八章，Hermes 都是在你提问后才工作——你发一条消息，它响应一次。这是"被动模式"。
+Cron 让 Hermes 变成"主动模式"：在固定时间自动执行任务，不需要你盯着。
+适合 Cron 的场景：
+每天：搜集 AI 新闻生成日报、检查 GitHub 关注项目有无 release
+每周：检查 Skill / MCP 是否需要清理、生成本周知识卡片汇总
+每月：整理 Memory 是否有过期信息、测评报告汇总
+按需：监控磁盘空间、检测某个 API 是否正常
+9.1 常用命令
+# 创建定时任务hermes cron create "0 9 * * *" "搜索今日 AI 新闻并生成摘要报告"# 查看所有定时任务hermes cron list# 手动触发一次（不等定时）hermes cron run <job-id># 暂停 / 恢复hermes cron pause <job-id>hermes cron resume <job-id># 编辑已有任务hermes cron edit <job-id># 删除任务hermes cron remove <job-id># 查看调度器状态hermes cron status什么时候用什么命令：
+想定时执行某个任务 → hermes cron create
+忘了自己建了哪些任务 → hermes cron list
+任务到期了但想提前跑一次 → hermes cron run <job-id>
+某个任务暂时不需要但不想删 → hermes cron pause
+想改某个任务的执行时间或内容 → hermes cron edit
+9.2 Cron 表达式速查
+hermes cron create 支持两种格式：Cron 表达式和自然语言。
+Cron 表达式格式：分 时 日 月 周
+表达式
+含义
+0 9 * * *
+每天 9:00
+0 9 * * 1
+每周一 9:00
+0 9 1 * *
+每月 1 日 9:00
+*/15 * * * *
+每 15 分钟
+0 9-17 * * 1-5
+工作日 9:00-17:00 每小时
+30 8 * * 1-5
+工作日 8:30
+自然语言写法： | 自然语言 | 含义 | |----------|------| | every 2 hours | 每 2 小时 | | every day 9am | 每天 9 点 | | 30m | 每 30 分钟 |
+Cron 表达式更精确，自然语言更直观。复杂的定时用 Cron 表达式，简单的可以用自然语言。
+9.3create命令详解
+hermes cron create 是最核心的命令，参数比想象中丰富：
+hermes cron create <schedule> [prompt] [选项]参数
+说明
+schedule
+Cron 表达式或自然语言（必填）
+prompt
+任务指令，告诉 Agent 要做什么
+--name
+给任务起个名字，方便管理
+--deliver
+结果推送到哪里：origin（当前平台）/ telegram / discord / lark 等
+--skill
+绑定一个 Skill，任务执行时自动加载
+--script
+绑定一个脚本，脚本输出作为 Agent 的输入
+--no-agent
+不经过 LLM，直接执行脚本并推送输出
+--workdir
+指定工作目录（会加载该目录的 AGENTS.md）
+--profile
+指定用哪个 Profile 执行
+--repeat
+重复次数（比如只跑 3 次就自动删除）
+这节先掌握最基本的用法，高级参数后面实战中用到再讲。
+9.4 实战一：每天早上推送 AI 新闻日报
+这是 Cron 最经典的使用场景——每天 9 点，Hermes 自动搜集 AI 新闻，生成一份摘要报告，推送到飞书。
+Step 1：确认前提条件
+飞书 Gateway 已配置并运行（第八章）
+Hermes 的搜索工具可用
+Step 2：创建定时任务
+hermes cron create "0 9 * * *" \  "搜索最近 24 小时内最重要的 AI 新闻。只读取最多 5 个高质量来源，优先选择官方博客、arXiv、OpenAI、Anthropic、Google DeepMind、Meta AI、Hugging Face、The Decoder、TechCrunch、The Verge。不要打开明显需要登录、反爬、广告墙或加载很慢的网站；如果某个网页超过 20 秒无法读取，跳过它，不要重试。每条新闻输出：标题、来源、发布时间、3 句话摘要、对 AI 产品/算法/行业的影响。最后给出今日最值得关注的 3 个趋势。总字数控制在 1200 中文字以内。请额外将完整报告保存为 Markdown 文件到 ~/hermes-lab/reports/ 目录，文件名格式为 ai-daily-report-YYYY-MM-DD.md。最终回复只输出报告正文。" \  --name "ai-daily-report" \  --deliver "lark" \  --workdir "~/hermes-lab/reports"参数解读：
+"0 9 * * *" → 每天 9:00 触发
+--name "ai-daily-report" → 任务名，方便识别
+--deliver "lark" → 结果推送到飞书
+--workdir "~/hermes-lab/reports" → 指定工作目录
+Step 3：验证任务已创建
+hermes cron list输出类似：
+ID    Name               Schedule    Status    Next Run────────────────────────────────────────────────────────c001  ai-daily-report    0 9 * * *   active    2026-05-25 09:00Step 4：手动跑一次测试 不等明天 9 点，现在就跑一次看效果：
+hermes cron run c001Hermes 会立刻执行这个任务：搜索 AI 新闻 → 生成报告 → 保存到文件 → 推送到飞书。
+检查报告是否生成：
+ls ~/hermes-lab/reports/检查飞书是否收到推送。如果都正常，说明配置成功。
+Step 5：调整（可选） 如果 9 点太早，改成 10 点：
+hermes cron edit c001 --schedule "0 10 * * *"如果周末不想收报告，改成只在工作日：
+hermes cron edit c001 --schedule "0 9 * * 1-5"9.5 实战二：每周检查 MCP / Skill 是否需要清理
+随着使用时间增长，你可能会装很多 MCP Server 和 Skill，有些已经不用了。定期清理是好习惯。
+hermes cron create "0 10 * * 1" \  "检查我的 MCP Server 列表和 Skill 列表，分析以下内容：  1. 哪些 MCP Server 过去 30 天没有被调用过  2. 哪些 Skill 已经和当前工作流不相关  3. 哪些 MCP Server 的 allowed_tools 设置过于宽松  给出清理建议，但不要自动删除任何东西。" \  --name "weekly-cleanup-review" \  --deliver "lark" \  --workdir "~/hermes-lab/reports""0 10 * * 1" → 每周一 10:00
+--deliver "lark" → 推到飞书，周一上班就能看到
+注意命令里说了"不要自动删除任何东西"。Cron 任务应该只做"发现和建议"，不做"擅自改变系统"。这是下面 9.6 节要讲的原则。
+9.6 自动执行 vs 人工确认
+Cron 上线后，Hermes 可以在你不在的时候自动做事。但不是所有事情都应该自动执行。
+✅ 可以自动执行：
+搜集公开信息生成报告并保存到本地
+发送通知到自己的飞书 / Telegram
+做只读检查（磁盘空间、GitHub release、API 状态）
+❌ 必须人工确认：
+安装 / 卸载工具
+修改 Memory 或配置文件
+提交代码或部署服务
+发送对外消息（给客户、给群组）
+删除任何文件
+一条铁则：Cron 只负责"发现和建议"，不负责"擅自改变系统"。如果某个 Cron 任务需要执行写操作，在 prompt 里明确加上"列出建议，等我确认后再执行"。
+9.7 注意事项
+系统睡眠：如果 Mac 在任务触发时处于睡眠状态，唤醒后任务会补执行
+任务重叠：如果一个任务执行时间超过间隔，下一次会等当前执行完再开始
+任务持久化：任务保存在 ~/.hermes/scheduled_tasks/，Hermes 重启后不会丢失
+时区：默认用系统时区。如果你的 Mac 时区不对，Cron 执行时间也会偏
+推送失败：如果 Gateway 没启动，--deliver 会静默失败。报告仍然保存在本地
+建议第一次设置 Cron 时，先用 hermes cron run 手动跑一次，确认效果没问题再让它自动跑。
+9.8 Cron + Gateway + Skill 的黄金组合
+Cron 真正强大的地方在于和其他模块组合：
+Cron（定时触发）  → Skill（标准化的任务流程）    → Tool / MCP（执行具体操作）      → Gateway（推送到飞书/Telegram）举个具体例子：
+# 用第五章的 ai-tool-update-advisor Skill 做每周工具雷达hermes cron create "0 9 * * 1" \  "执行 AI 工具雷达扫描，生成本周值得关注的新工具报告。 " \  --name "tool-radar" \  --skill "ai-tool-update-advisor" \  --deliver "lark" \  --workdir "~/hermes-lab/reports"Cron 负责每周一 9 点触发
+Skill 定义了"工具雷达"的标准流程（搜什么、怎么分析、输出格式）
+MCP 的搜索工具负责实际搜索
+Gateway 把结果推到飞书
+workdir 把结果保存到本地目录
+你周一上班打开飞书，就有一份工具雷达等着你。
+一句话总结：Cron 解决的是"什么时候做"，Skill 解决的是"怎么做"，MCP 解决的是"用什么做"，Gateway 解决的是"结果送到哪"。四个模块组合起来，就是一个自动运转的 Agent 系统。
