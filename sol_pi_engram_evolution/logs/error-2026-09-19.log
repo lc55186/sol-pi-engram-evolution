@@ -30,3 +30,5 @@
 {"timestamp": "2026-09-19T09:11:40.543029+00:00", "level": "ERROR", "logger": "search_manager", "module": "search_manager", "function": "search", "line": 332, "message": "Search failed on primary: Search failed", "levelno": 40}
 {"timestamp": "2026-09-19T09:26:47.836092+00:00", "level": "ERROR", "logger": "search_manager", "module": "search_manager", "function": "search", "line": 332, "message": "Search failed on primary: Search failed", "levelno": 40}
 {"timestamp": "2026-09-19T09:47:55.016232+00:00", "level": "ERROR", "logger": "search_manager", "module": "search_manager", "function": "search", "line": 332, "message": "Search failed on primary: Search failed", "levelno": 40}
+{"timestamp": "2026-09-19T10:11:01.788272+00:00", "level": "ERROR", "logger": "search_manager", "module": "search_manager", "function": "search", "line": 332, "message": "Search failed on primary: Search failed", "levelno": 40}
+{"timestamp": "2026-09-19T10:27:42.269817+00:00", "level": "ERROR", "logger": "search_manager", "module": "search_manager", "function": "search", "line": 332, "message": "Search failed on primary: Search failed", "levelno": 40}
