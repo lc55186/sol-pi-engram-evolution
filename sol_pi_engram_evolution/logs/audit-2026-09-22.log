@@ -1,0 +1,1 @@
+{"timestamp": "2026-09-22T14:01:22.999184+00:00", "level": "INFO", "logger": "audit", "module": "logger", "function": "log_tenant_action", "line": 274, "message": "[test-tenant-001] user= action=session_cleanup session=test-ses", "levelno": 20}

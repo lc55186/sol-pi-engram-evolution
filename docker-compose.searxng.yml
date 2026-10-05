@@ -1,0 +1,36 @@
+# SearXNG 自托管搜索引擎聚合
+# 聚合百度/搜狗/必应国内/Google 等，完全免费无限次
+# 启动: docker compose up -d
+
+version: '3.8'
+
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    volumes:
+      - searxng-data:/etc/searxng
+    environment:
+      - INSTANCE_NAME=my-searxng
+      - BASE_URL=http://localhost:8888/
+      - PRIVACY_POLICY_URL=
+      - DONATION_URL=
+      - CONTACT_URL=
+      - ISSUE_URL=
+    # 国内搜索引擎配置
+    # 启动后访问 http://localhost:8888 可查看引擎状态
+    
+  # 可选：Redis 缓存（提升搜索速度）
+  redis:
+    image: redis:7-alpine
+    container_name: searxng-redis
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+
+volumes:
+  searxng-data:
+  redis-data:

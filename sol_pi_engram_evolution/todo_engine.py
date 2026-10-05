@@ -214,7 +214,7 @@ class TodoEngine:
                 event_id = json.loads(task.get("related_event_ids", "[]"))
                 if event_id:
                     self.cursor.execute(
-                        "SELECT COUNT(*) FROM nodes WHERE node_id LIKE 'decision%' AND updated_at > ?",
+                        "SELECT COUNT(*) FROM nodes WHERE node_id LIKE 'decision%' AND updated_at >= ?",
                         (task.get("created_at"),)
                     )
                     has_decision = self.cursor.fetchone()[0] > 0
