@@ -74,3 +74,8 @@ config/secrets.yaml
 # Hermes
 .hhermes/
 nul
+
+# 测试/日志临时产物
+sol_pi_engram_evolution/tests/graph.db
+sol_pi_engram_evolution/logs/
+*.db
