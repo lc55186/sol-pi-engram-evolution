@@ -880,6 +880,13 @@ def main():
     ws_p.add_argument('--product-type', default='document', help='Product type')
     ws_p.add_argument('--file', default=None, help='File to read from')
 
+    # === V0.5: 扇出落图（借鉴 Flowsint「结果落回同图」）===
+    fanout_p = subparsers.add_parser('fanout', help='Fanout graph writer (结果落回同图)')
+    fanout_p.add_argument('seed_ids', nargs='+', help='Seed node ID(s) to fan out from')
+    fanout_p.add_argument('--rounds', type=int, default=3, help='Max fanout rounds')
+    fanout_p.add_argument('--audit', action='store_true', help='Print [fanout] evidence-chain nodes only')
+    fanout_p.add_argument('--output', default=None, help='Output file path (JSON)')
+
     args = parser.parse_args()
 
     pipeline = EvolutionPipeline(config={
@@ -1040,6 +1047,22 @@ def main():
             else:
                 path = ws.save_product(args.filename, content, product_type=args.product_type)
                 print(json.dumps({"saved": path}, ensure_ascii=False))
+
+    # --- fanout (V0.5 扇出落图) ---
+    elif args.command == 'fanout':
+        if not pipeline.graph_store:
+            print(json.dumps({"error": "graph store not initialized"}, ensure_ascii=False))
+        else:
+            fanout_mod = _load_module('fanout_writer', 'fanout_writer.py')
+            writer = fanout_mod.FanoutGraphWriter(pipeline.graph_store, enrichers=[])
+            if getattr(args, 'audit', False):
+                print(json.dumps(writer.audit_fanout_nodes(), indent=2, ensure_ascii=False))
+            else:
+                report = writer.fanout_from(args.seed_ids, max_rounds=args.rounds)
+                if args.output:
+                    with open(args.output, 'w', encoding='utf-8') as f:
+                        json.dump(report, f, indent=2, ensure_ascii=False, default=str)
+                print(json.dumps(report, indent=2, ensure_ascii=False, default=str))
 
     else:
         parser.print_help()

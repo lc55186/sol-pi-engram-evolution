@@ -1,0 +1,1 @@
+Hermes 配置摘要Hermes Agent 配置摘要核心信息工作目录: /root主力模型: agnes-2.5-flashFallback 模型: agnes-2.0-flash代理: 127.0.0.1:10809已集成技能类别Agent 核心: 5 个浏览器/Automation: 6 个内容创作: 8 个数据分析: 4 个安全/运维: 12 个项目维护: 8 个Cron 任务总计: 28 个定时任务Python 脚本: 73 个Shell 脚本: 3 个知识库名称: 无妄生欢的知识库KB ID: lxBGEMzQrOTxvxaHnppb1wEyYDu4dx2MlUqh73cmmWY=内容数: 157+ 条（本次上传后）

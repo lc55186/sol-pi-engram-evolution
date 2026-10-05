@@ -1,0 +1,20 @@
+# WeKnora 0.8.0 本地部署（知识库系统）
+# 可选部署，提供 MCP Server 29 个工具
+
+version: '3.8'
+
+services:
+  weknora:
+    image: weknora/weknora:latest
+    container_name: weknora
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - weknora-data:/app/data
+    environment:
+      - WEKNORA_HOST=0.0.0.0
+      - WEKNORA_PORT=8080
+
+volumes:
+  weknora-data:

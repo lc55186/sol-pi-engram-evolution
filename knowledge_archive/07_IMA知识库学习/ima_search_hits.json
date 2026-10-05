@@ -1,0 +1,5426 @@
+[
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_167b5739ba6f09d03b1a13989e49f63e7307200439519008",
+    "title": "智能体自我记忆",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_3c4bbf8f065e2d60785dabfe5c1c63d17307200439519008",
+    "title": "IMA让WorkBuddy拥有记忆",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_73253ba5974ea33acf81fb8eac9632c87307200439519008",
+    "title": "MemSkill：让智能体“学会如何记忆”，并且不断进化自己的记忆能力",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_319e994c9a8a3ecdf5f77722bd84276d7307200439519008",
+    "title": "大模型Agent的“记忆革命”：长记忆机制学术研究解读（2024-2025）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_cdba3bd804be04713590049675e0b91d7307200439519008",
+    "title": "AI的记忆问题解决了！最强记忆基准99%的准确率",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_3e3fcb257b239e6dc8974407cb60e1267307200439519008",
+    "title": "智能体架构 —— 情景记忆与语义记忆栈，让智能体真正“长脑子”",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_75e8041e9b197bd475df805098fa82897307200439519008",
+    "title": "Tair 短期记忆架构实践：淘宝闪购 AI Agent 的秒级响应记忆系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d37ac256a53c6d8ef67a49ca98aeff7a7307200439519008",
+    "title": "微软M*：自进化的记忆Harness",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_25face4aa0a13bc26655a4f6fe37a4067307200439519008",
+    "title": "WorkBuddy 自动化 + 记忆系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_67cc3923f539dbab07f2a2a5fb7d708e7307200439519008",
+    "title": "深度解析AI的记忆机制，Hermes的自我进化机制和Skill是记忆的延伸。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_655e39cb3d827c7f50e6fef8638e33d17307200439519008",
+    "title": "WorkBuddy记忆完全指南：3层记忆+5个配置文件，让AI真正成为\"你的助手",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_11dc44a8739275964df271e7cbb690137307200439519008",
+    "title": "让AI智能体拥有像人类的持久记忆：基于LangGraph的长短期记忆管理实践指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1b370065678df83a0caf0d91099d39427307200439519008",
+    "title": "WorkBuddy 的记忆和工作空间全解析",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_892e7c86cb416add0f12fb5e30b2c74c7307200439519008",
+    "title": "OpenClaw长期记忆：优秀管线与玄学效果",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_6e3e44867fc631fa7c1b4c744ca1d2af7307200439519008",
+    "title": "Engram：AI 编程代理的持久化记忆",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_28ac2e278cd9b8ba273f07770bfed5827307200439519008",
+    "title": "智能体记忆：破解大模型遗忘症",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_0996edbf0269c07641131ffc1bdfa9e47307200439519008",
+    "title": "Agentic AI 时代的记忆系统演进之路",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c06788485d7ba238e02e6a57c8afb5777307200439519008",
+    "title": "迈向高效智能体：记忆、工具学习与规划",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_ca0a4ff144cd7589ed3ca5298481ecc57307200439519008",
+    "title": "构建具有类人记忆功能的智能体",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_558e0e59da73d654acac26181129ac387307200439519008",
+    "title": "一文读懂 Hermes Agent 的记忆系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_359e7c9a1f75ac612aefc12852c9b9d97307200439519008",
+    "title": "WorkBuddy自动化+记忆功能从零到实战",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "weburl_8063fdd1b44b6b1cc34019dc46a067c0_8195bcdc0c3e423fd3438e0265379cd47307200439519008",
+    "title": "Agent 真正的护城河，正在从工具转向记忆资产",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_63ef3115989310b13d315c4a099e273a7307200439519008",
+    "title": "OpenViking x OpenClaw：开箱即用 解决 Agent 的长期记忆困局",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2ff9c2426de09c94893913b6648157717307200439519008",
+    "title": "从经历到知识：UIUC、清华PlugMem如何重构Agent记忆",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_974d8817d9375aa8c89f2db011066f6f7307200439519008",
+    "title": "让AI真正“懂”你：揭秘智能Agent的记忆系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74450552540441847307200439519008",
+    "title": "MemOS Local Skill：本地化长期记忆系统的功能...",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_df5d0397afd0a58cfcc27e398390efd67307200439519008",
+    "title": "Hermes Agent 高阶工具配置清单：从身份记忆到生态导航",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f513d6698a3136259dc715ab4bb7d30c7307200439519008",
+    "title": "为AI Agent增加超长记忆，开源创新框架超30000颗星",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_33452de2d71878c6381447c989a8696b7307200439519008",
+    "title": "智能体需要怎样的记忆？MemOS 给出的系统化答案",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_3bed491afae6f82b174c838bdfd17dec7307200439519008",
+    "title": "AI记忆革命爆发！Clawdbot如何像大脑般记住一切",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4f6bde36859b979b5a3cdf81eec28d5d7307200439519008",
+    "title": "给 Agent 装记忆：一份架构师的决策指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_319d19b1273976d9a92d43e752c5b6887307200439519008",
+    "title": "Memory Intelligence Agent：强化学习驱动的自进化记忆智能体",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_285111d8ddb7dee9096783657bdc73d27307200439519008",
+    "title": "WorkBuddy记忆功能： 让AI记住你的偏好和上下文",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_bc9803f19d3c55f85cf0650328e15ab27307200439519008",
+    "title": "智能体Agent记忆系统：分类、可靠性与未来前沿分析",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_83fdd87d4aa9ba6aca6d6777cb72d74e7307200439519008",
+    "title": "AI Agent 记忆系统：从短期到长期的技术架构与实践",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_238c6f5fe8dcd55f14b4fb92576a9acb7307200439519008",
+    "title": "从架构到代码：深入理解 OpenClaw 的双源记忆系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_fbf1fe401d2017465157a58630bcf9c37307200439519008",
+    "title": "不想再无节制地烧 Token？OpenClaw 记忆插件详细安装指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_7f304a395427cb20ceb7006514f15bd67307200439519008",
+    "title": "长文总结：近半年长期记忆的四大主流研究方向",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_47f1efd26e59ce0b5b9eb98b58309b597307200439519008",
+    "title": "WorkBuddy 长记忆优化：越用越聪明，记住你的习惯和知识",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b00a79daa426153977b58cdead4534727307200439519008",
+    "title": "Agent记忆正式迈入3.0时代：从记住事实，到自我进化",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_14f6a04acb321ab985e6ab953b99ef9e7307200439519008",
+    "title": "Agent 的下一块拼图：记忆不该只是外挂数据库",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_ef4099ee26c35c17796d8538b5fa36237307200439519008",
+    "title": "首次全面复盘AI Agents记忆系统：3大类，6种操作！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_97dc4566db696f414eeda051a77d03a87307200439519008",
+    "title": "阿里云 Tablestore 基于 Mem0 为 OpenClaw 构建记忆系统最佳实践",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_fa229017bda2b03197c37bb2aa7029737307200439519008",
+    "title": "记忆即状态：Hermes Agent如何让智能体真正“记住”你（长文解读）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_044ef592840daeb6c2925dc6444c80167307200439519008",
+    "title": "你的AI Agent越用越蠢？港中大、浙大戳破「记忆」的谎言",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_247c3887c74387a1728ee589c23957d37307200439519008",
+    "title": "AI Agent 新范式：会记忆、会调度、会进化的 Hermes Agent 全解析",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_cf800eb9736223014a9f02783344f9167307200439519008",
+    "title": "WorkBuddy资料库接入IMA和乐享，AI终于有了真正的记忆",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_ae457b6ead1224c43f74185762e993ed7307200439519008",
+    "title": "Agent 如何形成肌肉记忆？从工具调用到本能沉淀的持续学习闭环",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_e21d57e50dbb79fb6f951803970a4cd67307200439519008",
+    "title": "一篇讲透Agent自进化飞轮怎么搭：评测→记忆→落地→控制",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2ea8b219e88b0e49a10cc7b7e9686abf7307200439519008",
+    "title": "RSIAgent：不训练模型也能变强，把「经验」冻成了可复用的记忆",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_96cb6a5d36be611648b490dcb4d1bab47307200439519008",
+    "title": "为什么记忆成为下一代 AI 的「核心变量」 | GAIR Live 20",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_84edcbd29afb39cfa5f4b57cda9a9eab7307200439519008",
+    "title": "智能体的记忆：人工智能走向类人智能的关键一步",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4d1067faad12ef667e139797b26a52c87307200439519008",
+    "title": "硅基大脑记忆觉醒！会遗忘、会反思、会成长的AI正在到来",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b10fb282a19f75ab6dcb21a8ccc41f567307200439519008",
+    "title": "Meta-learning Agentic Memory Designs：让 AI Agent 自己学会「记忆」的元学习框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f41e3c7ce5390b709e56af5c09871e687307200439519008",
+    "title": "OpenClaw实战：记忆架构升级——给AI Agent Teams建一个集体大脑",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1d455e664384e580b289127a7698b6a37307200439519008",
+    "title": "大模型Agent长期记忆优化：8种上下文对话获取方式详解",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b62d93473f000c2e3324ce82a27b07db7307200439519008",
+    "title": "Agent 记忆系统设计：四种类型、三大策略、完整代码实现",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a18ed536bc1c03be8d0dc64157cca3b97307200439519008",
+    "title": "WorkBuddy 连接 IMA 全教程：4步配置好，让 AI 助手从此有了记忆",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_8de72800f9568ad9d2d028ed8e7a19dd7307200439519008",
+    "title": "LLM Agent 记忆进化论：一场从\"存\"到\"悟\"的技术变革",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_0caf8730a15303ab820a50824164fd597307200439519008",
+    "title": "我试遍了 AI Agent 的记忆方案，最后选择了零费用本地硬盘",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_ad3f5fb8a01a237a1b45991dca0afca07307200439519008",
+    "title": "WorkBuddy变更聪明的秘密，藏在这段记忆分层提示词里，太赞了！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_e9034e1c8a1221cd9634f06e0169e9f47307200439519008",
+    "title": "给 WorkBuddy 装上\"记忆操作系统\" 它开始自己写 Skill、自己进化了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1670b2eb30ac15b0cb306ffc35cd6c5e7307200439519008",
+    "title": "LangGraph实战：构建会思考、能记忆、可人工干预的多智能体AI系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c4f70461707755acf90871017ad901cc7307200439519008",
+    "title": "AgentFly：重塑Agent，无需微调LLM，如我们一样的记忆和经验持续学习",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_bd70a455d8f4f94387f526ce4e8e26bc7307200439519008",
+    "title": "AI的“认知革命”：Agent记忆机制进化解读-从“记流水”到“悟规律”",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_90466b2a78a957b6d35de4232da45a0b7307200439519008",
+    "title": "阿里QoderWake上岗：有身份、有记忆、有红线，先给它一版“职业行为指南“",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_7ac8814262e8acc701bb731952aad8c87307200439519008",
+    "title": "工具、技能、记忆连成网，北大等提出自进化程序图PG，越用越聪明",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_9c81aab8dfdc96ef4680e740732b17347307200439519008",
+    "title": "从硅谷杀出来一个彻底开源的AI记忆系统，是真的优雅！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_282ec8d34aaf5eaf104f931dce19431b7307200439519008",
+    "title": "从O'Reilly最新报告看分布式SQL缘何成为AI智能体的\"记忆中枢\"",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_32fedd40baa7d974898100a947cc7ec87307200439519008",
+    "title": "近期Agent技术的三个总结工作：推理、规划、记忆、工具使用及效率优化",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2757b99f6ac279f42cc38c8eb3378cd07307200439519008",
+    "title": "Harness Memory：AI Agent 长期记忆的三层架构与四个关键设计决策",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_97139ede43405d344cbf393df055ed197307200439519008",
+    "title": "WorkBuddy 接入 IMA 知识库保姆级教程：AI 助手直接拥有 “过目不忘” 超级记忆",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_12ea812c13509681ff272d4dad0250057307200439519008",
+    "title": "告别天价账单：端云协同与记忆革命，让 Agent 告别「烧钱时代」丨 GAIR Live 029",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_170e737e8d0e207f8f90e7d294ae92057307200439519008",
+    "title": "一夜之间，AI终获「永久记忆」！最难考试99%刷爆SOTA，全网直呼疯狂",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_0eaa783f9197ba845a3ecc7174e5b9207307200439519008",
+    "title": "万字长文读懂 Context Engineering：谷歌如何设计生产级 Agent 的记忆流水线？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c24984b918ec12a5f3255e60d3be93b37307200439519008",
+    "title": "每周技术加速器：智能体记忆-不只是向量库，更是“可自我演化的认知状态”",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d011bdeec0589df5c259d3aa16d786327307200439519008",
+    "title": "从零设计生产级 Multi-Agent Harness：架构、评估、记忆、成本与 MCP 工具接入全拆解",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1b913c587b60479887e22857fdc0f5057307200439519008",
+    "title": "Everything is Context:Agentic 文件系统来了，让 智能体像管理文件一样管理记忆和工具",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a91f4de4b003be103f7a947a49b5dfc57307200439519008",
+    "title": "让你的 AI Agent 拥有“永不遗忘”的超能力：LangGraph 与 PostgreSQL 实现长期记忆的深度实践",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c638ebc63c54fcd6bd979335f139b1507307200439519008",
+    "title": "不用API，为你的OpenClaw装上“超级记忆大脑”，自动防错、多技能协同工作，SkillHub一行命令安装",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_53cc3b2d868cd4d2001de5d23933e7977307200439519008",
+    "title": "YC CEO把自己第二大脑系统开源了：专供OpenClaw与Hermes，全息记忆打造迷你AGI",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_71c54e77a7630c15a854a69c035f65b87307200439519008",
+    "title": "Hermes Agent 进阶指南：自进化技能、三层记忆、GEPA优化，从1个到10个Agent为你打工",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_6df463f07ad92e0ccabe49f23a634ee57307200439519008",
+    "title": "WorkBuddy深度配置手册：自动化任务、模型选择、记忆系统——三个功能的完整拆解与避坑",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_142ea1ec536d78a45ccacf36ef4dae987307200439519008",
+    "title": "Hermes v0.18.0 升级指南：从MoA可视化到记忆时间线，6大核心变化一文看懂",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "记忆",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a2744bbae08635d3a7eba5da09ad0d247307200439519008",
+    "title": "全球27 家AI 研究机构联合发布系统性综述：基础智能体下半场的真正战场不是推理，而是记忆",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "folder_7459632448562642",
+    "title": "Hermes Agent",
+    "media_type": 99,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_084a7f9066a4a25d6757ac6666c57c977307200439519008",
+    "title": "Hermes Desktop：Hermes终于有自己的桌面端了！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a829231ca06b6260018dad71b1493bc37307200439519008",
+    "title": "Hermes 高阶玩法完全指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_634d6787e73dffd9d07f241ef321fd457307200439519008",
+    "title": "Hermes Desktop支持远程连接了！本地轻松管理远程Hermes Agent（保姆级教程）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d91d240484bb34f7826a2e2ff8aded867307200439519008",
+    "title": "Hermes Agent部署7天，7步给Hermes Agent装上灵魂：从人工智障到全能助理",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c0e5abe358e4ba4cbbe19d328a7c54347307200439519008",
+    "title": "带你的Hermes、OpenClaw看世界",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_dbc2507fbf40db2ac0a7f86dbc36b64e7307200439519008",
+    "title": "全方位对比：Hermes VS OpenClaw",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_7c6af777e9edfc9473461a1a14b705bc7307200439519008",
+    "title": "Hermes 是如何自动总结经验的",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "pdf_8063fdd1b44b6b1cc34019dc46a067c0_d129b6266661b1d689e92fd2d698e1137307200439519008",
+    "title": "Hermes Agent 深度研究报告.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "pdf_8063fdd1b44b6b1cc34019dc46a067c0_cbb878478adf802f15e0e8b2f01d87a27307200439519008",
+    "title": "Hermes Agent从入门到精通.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1638199e29865bfda62396f35e7408117307200439519008",
+    "title": "Hermes Agent 多角色团队搭建指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_445c90c9c8cc01348fe4d51267d1d72a7307200439519008",
+    "title": "Hermes 分身乏术？学会这招 Hermes Profile 分身术，一人顶一个团队，效率直接翻倍",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a7b985d4bb86dc965b312c8c7999ba0d7307200439519008",
+    "title": "Hermes为什么是最好的学习助手",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_51074f3980a96249d0c2bf33ae18e2757307200439519008",
+    "title": "Hermes agent又要遥遥领先了吗",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_246fc14c7a045b9518720c02899b5d007307200439519008",
+    "title": "12个集成，让Hermes秒变超级代理！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_88cff03fbfb34619ac7e54e11723f88a7307200439519008",
+    "title": "Hermes Agent 从中级到高级进阶指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b052902441fdd0f87e0be911251b17847307200439519008",
+    "title": "Hermes Agent技术架构源码研读报告",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_3a9abaeb4e963eb8c2e273bbc78c22c67307200439519008",
+    "title": "为什么我没从 OpenClaw 转到 Hermes",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b206736facb79ecdc8bfb07d4a9edfbd7307200439519008",
+    "title": "Oh My Hermes：让 AI 替你当 CTO",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d397cd6cb1697563c9ae4bde2b4c6a167307200439519008",
+    "title": "Hermes 凭什么两个月接棒 OpenClaw？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_558e0e59da73d654acac26181129ac387307200439519008",
+    "title": "一文读懂 Hermes Agent 的记忆系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_e9f791de176e419fd4394cd00f602b997307200439519008",
+    "title": "步步为营：Hermes进阶应用三步曲",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c35c430fe025e5605b9a6b63886fafe37307200439519008",
+    "title": "不用研究Hermes！AutoClaw开启自进化",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74486453643583667307200439519008",
+    "title": "Hermes Agent vs. OpenClaw：侧重于应...",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_fd1d910e172d367cc0331793dd197a9b7307200439519008",
+    "title": "Hermes Agent技术原理探究，越用越聪明？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f0dc005983c574747bae316aca51c4e87307200439519008",
+    "title": "Hermes Agent 从入门到精通 · 小白认知篇",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_11a71b33bd9a02bd5432e6dbcb6b85167307200439519008",
+    "title": "基于 Hermes Agent 构建企业智能数据分析",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_53a72de92d1dc9ca22abf0c077b042d87307200439519008",
+    "title": "Hermes Skill 入门：从装技能到造技能",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c230433d8010bff1683c8970f84fc0537307200439519008",
+    "title": "Hermes Agent终极指南：从入门到真正会用",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_78769470cc774aac6c4b91555ba437b57307200439519008",
+    "title": "Hermes Agent 正式推出 Windows原生版本",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d55fddadc26214bae91f948d63556b947307200439519008",
+    "title": "用了一个月 Hermes，我的经验教训",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b356d523a8cd1e7f3a89ff74082ff3fa7307200439519008",
+    "title": "使用Hermes开发多智能体的实践及流程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a598cbbc2e4d3cc36d6c9ed06c4028d37307200439519008",
+    "title": "Hermes满配指南：让Agent真正替你干活",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_64c7d5f59d1268c25ea6d6465b3f9c047307200439519008",
+    "title": "10个神操作，让Hermes全天候主动干活",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74549066591381437307200439519008",
+    "title": "WorkBuddy与Hermes Agent：基础架构、技术...",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_8a6e49c3c1ec9f8f88d2b708d14bb00d7307200439519008",
+    "title": "智能进化：Hermes Agent v0.8.0 升级全解读",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c0961f78ce3b1921158ba3c4e6b8fc737307200439519008",
+    "title": "Hermes Agent 自主进化与技能体系实战教程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_aa5d9d44641cb5c66522186daeffdedc7307200439519008",
+    "title": "Hermes Agent 架构解读与二次开发指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_5903a4c8f1c5c210142c7bf13dcfe8b97307200439519008",
+    "title": "装完就会自己变强：Hermes Agent完整上手指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f150677449ae84dd3ec03c75c5efd37e7307200439519008",
+    "title": "Hermes Agent 精装指南：从毛坯房到数字分身",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a59022e4146ce2af385be340ac4886b07307200439519008",
+    "title": "Hermes Agent：史上最全入门指南（2026年4月版）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_85ab369b8673e6cd4e461740e690d2cc7307200439519008",
+    "title": "7步给Hermes Agent装上灵魂，效率飙升10倍",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_da28ea262e6e117a4cb1b6b7bc657c1b7307200439519008",
+    "title": "Hermes Agent 的仪表盘终于有人做出来了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_95c679cfbf9a2bd079cbc2bbc7b1c56a7307200439519008",
+    "title": "Hermes Agent 深度解析：为什么它能“越用越懂你”？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_be47efaaa2230fc73bd7670761453b6b7307200439519008",
+    "title": "Hermes agent如何把公众号变成你的私人技能",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_7e66b1797eace5f4794cd17056ba6df07307200439519008",
+    "title": "装完Hermes Agent玩了一圈，我觉得龙虾已死！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b17ebfa7fab1e56acfac8a5277a9cc2c7307200439519008",
+    "title": "7步让能力提升10倍！Hermes Agent满配指南！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_dca9fbcf99da7137fcdce151374a7bc77307200439519008",
+    "title": "老黄也来养马了！英伟达版Hermes Agent发布",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1e8680d8470221bbe6bc3162bb57db917307200439519008",
+    "title": "你装 Hermes AGENT的方式，从一开始就错了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_53cd8e91fb78a184f93b503f1f67ca037307200439519008",
+    "title": "养马手册：OpenClaw 用户的 Hermes Agent 实战教程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a74011d3b67bf4a6264a10403e75dbb17307200439519008",
+    "title": "一文看懂：Hermes Agent与OpenClaw全维度对比",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_9295684cd1b7d74631cdd3475fc70d687307200439519008",
+    "title": "一文看懂：Hermes Agent 与 OpenClaw 全维度对比",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_8ac42747066cf647109df0e3a4b15dc67307200439519008",
+    "title": "5个神级Skill！Hermes管理与优化完全指南！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_762da7e3215e028fedc5ca85e3d1da927307200439519008",
+    "title": "Hermes(爱马仕)：如何增加微信读书技能(Skill)",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_af07dff92414ab2ab1a161278cee6bf37307200439519008",
+    "title": "[译] 99% 的 Hermes Agent 用户从未碰过这 15 个功能",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c2d32c285f40775479f405716c0163717307200439519008",
+    "title": "Hermes Agent：第一个会自己长大的 AI Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_deaff4cc0d06c8f015624bc3046c157d7307200439519008",
+    "title": "Hermes Agent 10 个超实用功能，99% 的人没用全",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_153099b45dc448f3fbe15465cb9c8b8a7307200439519008",
+    "title": "17 个让 Hermes 在你睡觉时自动运行的提示词",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_bf6a217077a007fff2531bf440854fda7307200439519008",
+    "title": "终于等到！Windows系统Hermes Agent安装全流程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b9aecbf7bf32cf8cd44ed92d1b142add7307200439519008",
+    "title": "HERMES AGENT 终极指南【强烈建议收藏】",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_ccf30c835cf03bdad0a4f542a0fa96947307200439519008",
+    "title": "Hermes 装好后，想让它真能干活，我先做了这些",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_05a658a8096d4431b2c4e78a9bc76e207307200439519008",
+    "title": "99% 的 Hermes Agent 用户从未接触过这 15 项功能",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_38f52b07cfef3c697fea769dd4c5f1117307200439519008",
+    "title": "我把Hermes挂到微信上，现在每周少加10小时班",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f0c2e24bfab5f5250313372ec5d3ce1b7307200439519008",
+    "title": "交易 VOC 自动排查：基于 Hermes 的多 Agent 架构实践",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_9ca2ce22e8256ae1d8b429999dc6fb7a7307200439519008",
+    "title": "上手 Hermes Agent 后，建议你先尝试这十件事",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_90a288dab490b1bdb69e74431c7fafc57307200439519008",
+    "title": "深入源码：Hermes Agent 如何实现 \"Self-Improving\"",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74476754021987807307200439519008",
+    "title": "Hermes Agent：自我进化智能体的核心技术架构、对比...",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_67ffa17ad7437df08cb11fd40aeb96197307200439519008",
+    "title": "Hermes Agent 最佳实践：从入门到精通的完整指南（2026）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_08e42c3f6013e336dbcd7fc2366461237307200439519008",
+    "title": "我用 hermes 搭了一个「个人共享大脑」",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_5c135e0c929c7c678cce9702987a53bd7307200439519008",
+    "title": "Hermes Agent 入门必看：如何通过 SOUL.md 定制 AI 人格",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_fc69e5146dfc33541c1085756653ad387307200439519008",
+    "title": "Hermes新功能上线！比Opus 4.8和GPT-5.5还猛",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_fdc445f394cb94f5deb3db9e4be0ee9e7307200439519008",
+    "title": "装完 Hermes Agent 就完事了？这8个配置不改，白装了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4ee464b25e962f15b51f46d63fc02bd27307200439519008",
+    "title": "用 Hermes 搭建 AI 团队：一个人变成一支队伍",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_df5d0397afd0a58cfcc27e398390efd67307200439519008",
+    "title": "Hermes Agent 高阶工具配置清单：从身份记忆到生态导航",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2a0618c1f43a35fc1da718081d2f4eac7307200439519008",
+    "title": "OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_491beaa6489cf42f96a8777e7b8322ca7307200439519008",
+    "title": "手把手：给 Hermes Agent 装一个六面板控制中心",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_5dbe06e1ecccc7beeee58af2572b5fd57307200439519008",
+    "title": "告别裸奔！搞定 Hermes Agent 后强烈建议尝试的 10 件事",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_26dc122ad99c4af3bf5c1aa8fce54eaf7307200439519008",
+    "title": "Hermes 生态爆发：5 个开源项目把 Agent 推向天花板",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d5fb1aa9716e264398f6f838a43098e07307200439519008",
+    "title": "AI Agent觉醒！Hermes Curator横空出世，竟会自我进化？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c900ca95bd6a9f2bd5f77c061ab37dc77307200439519008",
+    "title": "Hermes Kanban 实战：我是怎样让多个 Agent 真正协作起来的！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_7d1a72ca9abd5e3d2a3716e4b84aad3f7307200439519008",
+    "title": "Hermes 教育实战之用 Kanban 搭建跨学科 PBL 项目生成器",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_50be566d07035a2f4c50dddc50771d6e7307200439519008",
+    "title": "Hermes 玩家都在卷的五件套：少一个都不算“满配”",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_965abada957ca19680929f3a44348d097307200439519008",
+    "title": "Hermes Agent v0.17 发布：这次它不只是在电脑里跑了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_37f1966659fcf46e7e55784ca11e12177307200439519008",
+    "title": "13k stars！Hermes Agent：会自我成长的开源 AI 智能体！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_e7ffbf7a307d92d978e05f53fd18fc4a7307200439519008",
+    "title": "Hermes Agent 如何自组织进化：从工具、技能到 RL 后训练",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a273655715ccac5bef3dd6da6e9910ab7307200439519008",
+    "title": "一文搞懂Hermes：新顶流Agent如何从经验中自我进化",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1dcbf72c8abf6a2e8972291b22769a487307200439519008",
+    "title": "Hermes Skill 官方排行榜2026.06（114个Skill的真实排名）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c5a6d1a6926ebe9e06350e6c702640957307200439519008",
+    "title": "深度解析 Hermes Agent：会自我进化的 AI 智能体，到底强在哪？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74560105160631057307200439519008",
+    "title": "Hermes智能体应用开发指南：核心功能、自进化与集成实践",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_9ea5e3ce70363f1789416f0bcef299ce7307200439519008",
+    "title": "别乱装 Skill：Hermes Agent 新手的第一套能力闭环",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_5f9b191ed207581f59b1c39c3f29b5b17307200439519008",
+    "title": "Hermes Agent抄袭中国团队代码实锤！被锤后回应：你删号",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_37535d2ff2fb48be415701dc2e3a20967307200439519008",
+    "title": "Hermes Agent 完整中文教程：让 AI 助手真正学会你的习惯",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a62d66682877a280a01bd532f881cd327307200439519008",
+    "title": "OpenClaw/Hermes/WorkBuddy三国杀：AI Agent赛道终局预测",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_09cacb5cf5b4726ef05c3d9f4016d6117307200439519008",
+    "title": "Hermes Agent 完全指南：从 OpenClaw 转投的自我进化 AI Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_72e0e43dd1cf044d7409aea4d111b87e7307200439519008",
+    "title": "AI操作系统争霸战：Hermes、OpenClaw、WorkBuddy谁主沉浮？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f22eea99848c1c1fa1758a71ad88ca347307200439519008",
+    "title": "Hermes Agent + Home Assistant：用自然语言控制你的整个家",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_91d47925e47a9c07551aec243dc38aba7307200439519008",
+    "title": "Hermes Agent 保姆级教程：一句话组建你的 AI 打工团队",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_133fa0b4ca2b74c97772604372d27d2c7307200439519008",
+    "title": "Hermes Agent 内部的 8 个 Loop，以及它们为什么会形成复利?",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_7f1f22c481f83504ddecea449a2479877307200439519008",
+    "title": "Hermes Atlas AI工具链选型指南（2026）：93个开源项目全景图",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_93fbdb062035ad6d280f0eeb29a48d917307200439519008",
+    "title": "Hermes Agent v0.14.0 发布：AI Agent 开始进入“基础设施化”阶段",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "Hermes",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_92f43022e1e1630d764872277b3cecfc7307200439519008",
+    "title": "Hermes Agent 变身 Codex，下一代 Agent 拼的是多端续航",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f3fba17740a0f5878df311086f30bb377307200439519008",
+    "title": "如何构建多智能体研究系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_5ea445a9a528df1069a4b4339760c96b7307200439519008",
+    "title": "A2A：多智能体的协作总线",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_bed713871214d6b6cf3d2e8d228c5ec07307200439519008",
+    "title": "《面向边缘设备的多智能体医疗助手》",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b356d523a8cd1e7f3a89ff74082ff3fa7307200439519008",
+    "title": "使用Hermes开发多智能体的实践及流程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_eefc3165dd9996073d2f8cef377a43e27307200439519008",
+    "title": "云原生 - AI Native 多智能体数字人架构实践",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_eaac8dc3313464bcbd081e0b561cd9c87307200439519008",
+    "title": "10个主流多智能体框架丨茶思AI Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_04f64633676ea06042d1d00f63dc2d6f7307200439519008",
+    "title": "Genspark启示录：多智能体混合的超级工程｜甲子光年",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4a0f7548980ec99854a6c6136427a6477307200439519008",
+    "title": "主动推理的心智理论：一个多智能体合作框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a3f416c3bad77213c259fbacee94876a7307200439519008",
+    "title": "主动推理的心智理论：一个多智能体合作框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b39adf0a1640b0921a42f9f5d185dffc7307200439519008",
+    "title": "M3W：基于MoE的多任务多智能体世界模型.",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2e55e0ecd75740bd4854898fba2642bc7307200439519008",
+    "title": "对话李笛：异构多智能体，让 AI 学会真正的「群体思考」",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_395ee893a0605dfdbb74c433c4d3ab717307200439519008",
+    "title": "当AI学会分工协作：多智能体时代正在到来",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_951c8e71e2cced56978e438c23bfba777307200439519008",
+    "title": "AI Agent：多智能体架构设计规范，是协作，不是魔法",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1670b2eb30ac15b0cb306ffc35cd6c5e7307200439519008",
+    "title": "LangGraph实战：构建会思考、能记忆、可人工干预的多智能体AI系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_cfbece31fce26d67f6cac429003060a37307200439519008",
+    "title": "智能体团队的“指挥官”，OSC赋能多智能体LLM的高效协作",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1127e87315e47ce2a5193c4c9c3a9c3a7307200439519008",
+    "title": "Agent智能体的“未卜先知”：当数字孪生遇上多智能体强化学习",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1004f0d96fe6deafd6c8f2b39a59e61f7307200439519008",
+    "title": "Multi-Agent全面爆发！一文详解多智能体核心架构及LangGraph框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f05345804b7dd9fe422685172a5eced07307200439519008",
+    "title": "Multi-Agent全面爆发！一文详解多智能体核心架构及LangGraph框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_07014adb476f200de7d36fa97a8a986f7307200439519008",
+    "title": "Anthropic多智能体研究系统实战：架构设计、提示工程与生产化经验",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_dd1e1dc7eba09265c4417d9e4463227a7307200439519008",
+    "title": "详解3种行之有效的多智能体编排模式丨茶思 AI Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_7358ebbf990fee36149f047a817354cf7307200439519008",
+    "title": "UCSD等提出RSIAgent：免训练多智能体，新环境自主探索与递归自我改进",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4e6511bb33acda0faf8295d3a360217a7307200439519008",
+    "title": "顶尖AI巨头AI Agent架构探索：单智能体与多智能体的争议与取舍",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_3a7478d9b2bcf784a1ec2d2c351977277307200439519008",
+    "title": "多智能体工作流常常会失败，如何工程化构建不会失败的系统？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_50eeaf4a66fa43a933fe1ddf8c43d0137307200439519008",
+    "title": "How we built our multi-agent research system 我们是如何构建多智能体研究系统的",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_98fafddb7b1e1081e9ca9ca406be57aa7307200439519008",
+    "title": "微软发布多智能体 Web 操作系统！让 AI 成为真正“可控、协同、透明”的网页执行助手！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_5f3ce6a619fc785ad12d701608c9da817307200439519008",
+    "title": "复杂B端场景下，多智能体架构如何实现意图理解、规划与工具调用的解耦",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_92a4a585df7ffbb083d02ba6f82da38a7307200439519008",
+    "title": "别再让一个 Agent 硬干了：Hermes Kanban 才是多智能体的正确打开方式",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_de1cf760e89e1248b7f1810bbbfceecb7307200439519008",
+    "title": "手把手教你从0玩转多智能体模式，搞个数据大师，从此解放大脑（超详细）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4494f425d0f42e058f1def05b04aa1b77307200439519008",
+    "title": "让Hermes Agent自己维护知识库，一套可落地的多智能体自动化方案",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_57db64a18d9eb3e9f4e4798a53aec8cf7307200439519008",
+    "title": "百度伐谋智能体（FM Agent）：基于大语言模型与进化搜索的通用多智能体研究框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4feaba8e00e36cf0f38d31fca20c49fb7307200439519008",
+    "title": "如何让Agent更符合预期？基于上下文工程和多智能体构建云小二Aivis的十大实战经验",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c26cb0569449730f589e74c266f3bbba7307200439519008",
+    "title": "当新质生产力遇上新型生产关系，人工智能与区块链交汇处的多智能体经济雏形显现",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_449e6167256f64a93ab109745fe8afd67307200439519008",
+    "title": "黄昌勤 等 | 从单智能体到多智能体：大模型智能体支持下的激励型学习活动设计与实证研究",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_8c4360162c4d71a778fd6f30467940427307200439519008",
+    "title": "百度副总裁带领FM Agent团队重磅突破！横扫 AI 科研四大领域，刷新 3 大权威基准，多智能体时代已来",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_af99d5869022329b1f4b7a59a065f0167307200439519008",
+    "title": "AI智能体常用五大范式：反思、工具、推理、规划与多智能体协作",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a52f4a0978dcde808838548e420965dc7307200439519008",
+    "title": "微软Build 2025：Copilot Studio升级，引领多智能体协作时代",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_87f8669c90e43800d273e97b4caa27fc7307200439519008",
+    "title": "Anthropic谈如何构建生产级多智能体系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a0f13be67afb4a861da1cc5635e2a3e07307200439519008",
+    "title": "Office Agent —— 打造“品味驱动”的多智能体系统，全面增强 Microsoft 365 Copilot",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_af1a2a75a72e39805712895a4d4b90827307200439519008",
+    "title": "没有模型也能协作？自注意力打开多智能体协作系统的新大门",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c92a5d96ab8ebd48739c6a430e544f3b7307200439519008",
+    "title": "多智能体系统大多只是表演！做了25+个Agent的开发老鸟警告：成本爆炸，延迟增加，Agent不是越多越好！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b299182f4061746b1215929deb9fceea7307200439519008",
+    "title": "DR. WELL：利用世界模型实现多智能体协作规划！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_0322532958c6033dac866f9fc476b7bb7307200439519008",
+    "title": "群智协作：大语言模型驱动下的多智能体协同",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_004e9747ffe1fad3b1ff2f8b6718d9867307200439519008",
+    "title": "从“会回答问题”到“能做系统性研究”：Deep Research多智能体系统的技术范式与工程启示",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_9f26ccb3244f88efdd8a0dc144560b567307200439519008",
+    "title": "别只盯着大模型参数了！多智能体系统才是下一代AI的“组织革命”",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2202ea9f1a2bc32b9b6233105f73162a7307200439519008",
+    "title": "多智能体系统架构选择指南，4种模式多维对比",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74150904961534717307200439519008",
+    "title": "多智能体系统架构、协作与演化：从技术实现到自主进化",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_8726955d8feedbaa397699c8e0e4285f7307200439519008",
+    "title": "2026 AI Agent 架构演进：从多智能体协作到单体技能库的“编译”革命",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74212128462270107307200439519008",
+    "title": "智能体工程进阶培养：开发部署与多智能体协同实战方案",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74364617710709137307200439519008",
+    "title": "基于多智能体协同的主动式健康伙伴：从无感监测到闭环干预",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74404340328090387307200439519008",
+    "title": "多智能体协作重塑高阶PBL教学模式研究：理论与实践框架",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74422605683391437307200439519008",
+    "title": "多智能体系统技术架构：演进、挑战与未来展望",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_45fc7cef7295d393d52c38d2857446e67307200439519008",
+    "title": "从\"生成-评估\"对抗到多智能体协作：Anthropic 长时运行 AI 应用的 Harness 工程实践深度解读",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_04bc506682f13127babaa74097a17b297307200439519008",
+    "title": "CoPaw 1.0 发布：定制小模型、安全机制与多智能体全面进化",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74487551964277737307200439519008",
+    "title": "多智能体协作框架的技术架构、商业价值及行业解决方案解析",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_76dfb84864606b2dd34ad78dd021f88c7307200439519008",
+    "title": "多智能体协作机制",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d7879ad3f6e68bb845f82fedb9f4e2c37307200439519008",
+    "title": "超越个体智能：基于LLM的多智能体系统中的协作、故障归因与自演化综述",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f564c90a285a687666e9588e7bbaebf27307200439519008",
+    "title": "多智能体系统的协作、归因与自我演化综述",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_953146e2750efa9cc859ec77a76a53327307200439519008",
+    "title": "OpenClaw 技术架构解析：一个多智能体平台是如何设计的？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4109f843257e6c361f903361edd6fc197307200439519008",
+    "title": "别再只堆Agent了：清华团队把Session重新做成了多智能体系统的核心",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_0a43b25ab4bae82c793a8730566a30757307200439519008",
+    "title": "多智能体协作：一份来自系统内部的观察",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "多智能体",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4dff831ca106286037ae2064f164042f7307200439519008",
+    "title": "多智能体协同任务系统搭建的技术原理和实战",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b0fed68ef5ed2b48bde0a3b15927bad77307200439519008",
+    "title": "MCP已死，CLI当立！Perplexity首先放弃使用MCP，全网赞成",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_8198cd7556e3b4786252deabe589ebb97307200439519008",
+    "title": "大模型开发实战从入门到入坑：动手写一个MCP Server去理解MCP背后的技术原理",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4f3d16dc2b63cec1265247902f8767707307200439519008",
+    "title": "Skills 取代MCP？是agent落地最大的误解",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_9630b6271e73c34870833624a87829847307200439519008",
+    "title": "MCP时代已经过去，Team of Agents时代要来了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f485b0ccbb03b7ed81207699c049e1ab7307200439519008",
+    "title": "Skills定义AI行为，MCP让AI连接全世界",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f931372872a854565d9ff109970793077307200439519008",
+    "title": "Anthropic最新博客：MCP没有死，我们又救活了。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_106f8ea3599e8b74d85b1897d433a0c17307200439519008",
+    "title": "技术速递｜Agent 模式：对所有用户开放，并支持 MCP",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_73314987095118677307200439519008",
+    "title": "智能体时代，员工将变身“经理”，MCP、A2A成新基础协议？",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2c891bf0c53e43fdd68476995cdbc6257307200439519008",
+    "title": "MCP 走向何方：一场关于 AI Agent 基础设施的路线之争",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_baa58329a086756cd54ad8e48adc180f7307200439519008",
+    "title": "MCP、Skills、CLI：顶级AI Agent，为何“螺旋式”回归命令行？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d38656378385fab33000e30ed9cb929e7307200439519008",
+    "title": "Agent Skills为何迅速成为继MCP 后的LLM系统新标准？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_42d0613f39f75a3175b9ee1a3d41373b7307200439519008",
+    "title": "企业 Agent 为什么难？看懂 Skill Routing、Registry 与 MCP 全链路",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a6dc6821e22069781069171df837556e7307200439519008",
+    "title": "AI Agent 协议框架综述：MCP、A2A、ACP、Agora丨茶思AI Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2bac1f9a6d777eac22d8d6754c99dfb07307200439519008",
+    "title": "从 Function Calling 到 MCP 再到 Skills：AI 工具调用的三次进化",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_94fcfd8dc1eb474b1bcf0ffd2e22d75c7307200439519008",
+    "title": "未来 AI 应用怎么做？一文讲透 Prompt、Memory、Tool、Agent 与 MCP",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_9adb6f05bab6d0235ff4657b57e55c897307200439519008",
+    "title": "以 Token 经济学驱动的架构：混合模型、AI Runway、AKS Kata MicroVM 与 MCP",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_8cd65e03c5969984e05f5759e7db5b737307200439519008",
+    "title": "商业模式难变、MCP失灵，万亿企业级AI Agent市场真是好生意吗？｜甲子光年",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d011bdeec0589df5c259d3aa16d786327307200439519008",
+    "title": "从零设计生产级 Multi-Agent Harness：架构、评估、记忆、成本与 MCP 工具接入全拆解",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_6766dd99e569b027e03121b5e5ab19dd7307200439519008",
+    "title": "Anthropic 研究员亲述：用代码、MCP、Skills 构建高效 Claude 智能体的方法论 ｜Anthropic 播客",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2c2fe9475436914bcb07c8850eb8c9bc7307200439519008",
+    "title": "万字长文解密智能体互联之路：MCP、ACP、A2A与ANP标准协议通览与跨平台互操作性探究",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_9045ad5a4f16f2cf740433e78fba84877307200439519008",
+    "title": "你还在手动写周报？WorkBuddy自动化任务加MCP连接器：搭建企微到腾讯文档的无人值守日报链路",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "MCP",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_74275996848943157307200439519008",
+    "title": "从WebMCP到AgentOS：架构、通信与资源调度的系统性演进",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_30995fe135cba2b416fa841f414005547307200439519008",
+    "title": "LangChain 系列 | 上下文工程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_62d3c10d0774723d4f9d7da362b075cc7307200439519008",
+    "title": "智能体的上下文工程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "note_8063fdd1b44b6b1cc34019dc46a067c0_73826303874222417307200439519008",
+    "title": "Agent的“灵魂”在于上下文工程",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d2a971cac2b25744e165750166a6216e7307200439519008",
+    "title": "Anthropic 发布 AI Agent 上下文工程指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a7b35866c98dd022de76743d483d18477307200439519008",
+    "title": "史上最详细的上下文工程实战指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_5e4300f9eefdc02592a44d1521e4e2fb7307200439519008",
+    "title": "Agent开发痛点：长上下文与“滚动摘要”",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_bfc55aeb59c7604b5ab00da5ff1267be7307200439519008",
+    "title": "Anthropic重磅发布：AI代理的上下文工程革命！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_be1da72580cc5df2ee437861001d56847307200439519008",
+    "title": "告别微调！斯坦福提出Agentic上下文工程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a57b6d59e503e424db30e51a8d17ef827307200439519008",
+    "title": "Anthropic 揭秘：上下文工程如何让 Agent 专注核心任务",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_92e4afa9c863d3614292238008e71b9c7307200439519008",
+    "title": "AI 的本质不是算力，而是「上下文革命」",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_201554cbeea85863fa373c8404482dae7307200439519008",
+    "title": "Langchain：智能体利用文件系统做上下文工程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4828f50063f1407321006a03f8f97d667307200439519008",
+    "title": "Anthropic工程实践：为AI Agent进行高效上下文工程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d3b3f611309a70b1ec4298abf8cf7d107307200439519008",
+    "title": "Agent全面爆发！万字长文详解上下文工程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_285111d8ddb7dee9096783657bdc73d27307200439519008",
+    "title": "WorkBuddy记忆功能： 让AI记住你的偏好和上下文",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_7fc6a40046dd1b4a9af55c7da7bf52797307200439519008",
+    "title": "如何正确构建上下文工程：让智能体更强大更可靠",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_df67a172708020e7e47c1f2c890add537307200439519008",
+    "title": "AI智能体的上下文工程：构建Manus的经验教训",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_e15e64fbdb8bf9b2a872244a9105afcf7307200439519008",
+    "title": "Agent的命门是上下文：关键不在少给，而在给对",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_ae101a76dd41322e1115571aab17ad727307200439519008",
+    "title": "阿里云 AgentBridge：为生产级 Agent 构建多源实时上下文",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1e43a75a01a1efbd9c7e39d604c996f37307200439519008",
+    "title": "AgentFold 解读：如何通过“上下文折叠”解决 Agent 的长任务难题",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_ac6d6eb081e1716ef6255449d3132c727307200439519008",
+    "title": "智能体设计模式 - 一场关于上下文管理的艺术",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_511a12608fedb1ab6c513f7d53e96deb7307200439519008",
+    "title": "Agentic 上下文工程（上）：无需微调，让智能体自我学习与进化",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d9841b51a93c5c0aa49ede7005fc54d97307200439519008",
+    "title": "上下文智能体：从搜索到导航｜Context Agent: Navigation over RAG Search",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4180e8e9db59ba136de8e5c06f5b73247307200439519008",
+    "title": "OpenAI：为了不被杀死，Agent 竟学会了靠上下文「转世重生」",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1d455e664384e580b289127a7698b6a37307200439519008",
+    "title": "大模型Agent长期记忆优化：8种上下文对话获取方式详解",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_40f3490aab686bd01210cc12e86e1a167307200439519008",
+    "title": "Agent 开发范式演进：从环境工程出发，“简化”多源实时上下文",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1dc720209540df4adf411006852cf4827307200439519008",
+    "title": "OpenAI 极限 Harness Engineering：从上下文工程到智能体研发基础设施",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a9e16108e35d5592a5ca6718c23162767307200439519008",
+    "title": "Agentic 上下文工程（下）：实现一个可自我学习与进化的智能体原型",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f35daa839712c8865312d95d97e9d64d7307200439519008",
+    "title": "AI 下一场竞争：谁能成为 Agent 的「上下文操作系统」",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_91818b5518d5d3c08e7ac279d49eff5c7307200439519008",
+    "title": "智能体从原型到生产：用上下文工程与评测把智能体做稳做久",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_a6b148c4df34e3057564c157c2d2360a7307200439519008",
+    "title": "阿里通义 AgentSwing 拆解：长程 Web Agent 的瓶颈，不只是上下文不够，而是策略太死",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_7255f24679fce05aa0f401162262530f7307200439519008",
+    "title": "腾讯云Agent Memory节省61% Token提升52%成功率的诀窍：Mermaid无限画布×上下文卸载",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_af7bd66fffa2818953999147b50590a77307200439519008",
+    "title": "横向拆解Claude Code、Codex等六大Agent上下文压缩策略后，我们做了第 7 个",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_5093886db8e388a1e12d8cb3d3d8072d7307200439519008",
+    "title": "11天暴涨5k Star！智能体上下文工程Skills工具集开源，Claude code等多个平台即插即用",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4feaba8e00e36cf0f38d31fca20c49fb7307200439519008",
+    "title": "如何让Agent更符合预期？基于上下文工程和多智能体构建云小二Aivis的十大实战经验",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "上下文",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_01f1826fd47c70e82b6ff091d361ad1b7307200439519008",
+    "title": "从上下文压缩到文件级持久化：彻底解决 AI Agent 的健忘症（全流程解析）（Agent架构实操九）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "工具调用",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_dfe184f70325318b5280548d64dadc0a7307200439519008",
+    "title": "OpenAI 和 Anthropic 同时押注：Tool Search 正在重定义 Agent 工具调用",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "工具调用",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_4eca3db167ad8b6e4d53fe766f2a0bba7307200439519008",
+    "title": "智能体技能：从\"工具调用\"到\"能力沉淀\"的革命性范式",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "工具调用",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2bac1f9a6d777eac22d8d6754c99dfb07307200439519008",
+    "title": "从 Function Calling 到 MCP 再到 Skills：AI 工具调用的三次进化",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "工具调用",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_ae457b6ead1224c43f74185762e993ed7307200439519008",
+    "title": "Agent 如何形成肌肉记忆？从工具调用到本能沉淀的持续学习闭环",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "工具调用",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_1773c112312ff63e274114fb36559f897307200439519008",
+    "title": "把 RAG、Prompt、工具调用沉淀成通用能力：你的 Agent 才能拼装式交付",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "工具调用",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_fb4ad3e6c33f74864e8a0eb22bdaacb27307200439519008",
+    "title": "重新定义Agent开发：agno如何用3.75KiB内存实现多模态工具调用？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "工具调用",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_5f3ce6a619fc785ad12d701608c9da817307200439519008",
+    "title": "复杂B端场景下，多智能体架构如何实现意图理解、规划与工具调用的解耦",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "工具调用",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_92de268bef06b52053137035a895d9f87307200439519008",
+    "title": "AI智能体工具调用革命！AnyTool一行代码搞定全域自动化，解决90%开发者痛点",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "评测",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_2177120dfe9cae654adaf91d8dc650047307200439519008",
+    "title": "AI Agent 应用精细化评测：评测体系设计与工程实践",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "评测",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_c812526275fd420496531b42058cc9d97307200439519008",
+    "title": "阿里开源 skill-up：让 Agent Skill 可评测可回归",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "评测",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_28c6d5adfb1311f4832b854bd663173f7307200439519008",
+    "title": "Agent评测的下半场：为什么需要一个「活的」Benchmark？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "评测",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_d5ee2ce70f1ef418152e8274e72cf2e67307200439519008",
+    "title": "Agent 越改越乱之后，我用评测和轨迹把它拉回来了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "评测",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_e21d57e50dbb79fb6f951803970a4cd67307200439519008",
+    "title": "一篇讲透Agent自进化飞轮怎么搭：评测→记忆→落地→控制",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "评测",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_b3194c03d447a12d8d5fd74c3203de8a7307200439519008",
+    "title": "让Skill自己训练自己：8阶段Loop、3层评测、5维AND门控，从此实现自进化",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "评测",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_91818b5518d5d3c08e7ac279d49eff5c7307200439519008",
+    "title": "智能体从原型到生产：用上下文工程与评测把智能体做稳做久",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "评测",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_f240c0dbf1544aaf14d2123e410cdeb57307200439519008",
+    "title": "腾讯这个新AI能直接操控你的电脑，一天还送1000万Token——Marvis首发评测",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI Agent",
+    "query": "评测",
+    "media_id": "wechatarticle_8063fdd1b44b6b1cc34019dc46a067c0_53f9af80e45d424b21c3cdf053d7f4f37307200439519008",
+    "title": "智能体的“大脑”终于被讲透了！LLM Agent内存系统：从架构、评测到落地的全体系指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_21ecdb07fff75abf08001c254244b5847309037133652424",
+    "title": "小白学RAG：RAG进阶思路与研究综述",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_68122672f4bae3201bc21b4e44d570807309037133652424",
+    "title": "为什么说Agentic RAG是RAG领域的王者？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_0cfb80d90c569b2788fc95fc232014757309037133652424",
+    "title": "RAG 2.0 深入解读",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_6ed43ece8586351eef92c0b0b3913ea47309037133652424",
+    "title": "记忆增强RAG",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_45b3bdf36c477af44c0263b883ff81427309037133652424",
+    "title": "24-大模型（LLMs）RAG 优化策略 —— RAG-Fusion篇.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_5954ad560bf00cbc96b9c15efc336ad27309037133652424",
+    "title": "怎么短平快地把RAG做好：厦门国际银行RAG初赛方案分享",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_58814e8af71178b33d25a35b40aa4c547309037133652424",
+    "title": "【RAG优化】一文整理20多种目前常用的 RAG 创新方法",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_63771afdd96e7e37040fb4ac69c54f6a7309037133652424",
+    "title": "图像也能通过 RAG 加入知识库啦",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_1fefd549fcaadc33dc2ca2736bba9f8b7309037133652424",
+    "title": "24-大模型（LLMs）RAG+优化策略+——+RAG-Fusion篇1740903971.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_53d0001e38559d6dee79fd9873419c9a7309037133652424",
+    "title": "E²GraphRAG：图结构 RAG 的效率 “加速器”",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_0d13682e9ae3e03d62fe34330172ed5d7309037133652424",
+    "title": "低代码 RAG 只是信息搬运工，Graph RAG 让 AI 具备垂直深度推理能力！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_a8d2ef55e2fc3d656291df7823eac9867309037133652424",
+    "title": "大模型 RAG 经验面.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_8f674ac135519a9fe98a316629f68e5e7309037133652424",
+    "title": "RAG技巧与底层代码剖析",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_533da3f25d70cee9a3e38b946210fe1a7309037133652424",
+    "title": "RAG技巧与底层代码剖析",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_15d21c74d72602c31c22872e787373037309037133652424",
+    "title": "从检索到生成：RAG 技术综述",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_6c739e5c39e9becfafa4ca263f4411c77309037133652424",
+    "title": "为什么 RAG 一定需要 Rerank？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_4d39e689b2ade294104f8b5386134ca27309037133652424",
+    "title": "15-大模型 RAG 经验面.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_22315a44fe87d34e1c6039ebc4a009d27309037133652424",
+    "title": "大模型+RAG+经验面1740897827.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_8777a06153876b5239a193cfd7c34f747309037133652424",
+    "title": "Cloudflare AutoRAG：把RAG应用变得和安装微信一样简单",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_96b2692ed7f3f83d4b6f331897d77c407309037133652424",
+    "title": "RAG越来越不准？你可能忽略了“元数据”的力量",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_b49e1888cee623a53c1e91c4b38366ca7309037133652424",
+    "title": "RAG检索增强之ReRank(重新排序)模型",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_8e92878183a36e95c0ff60e4068a54e67309037133652424",
+    "title": "RAG已死？听听Anthropic怎么说！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_e504f2cac4d47d2496883aad29f84d1b7309037133652424",
+    "title": "15-大模型+RAG+经验面1740903944.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_f1a0dd3e3d7af506d8b213749ff4a4037309037133652424",
+    "title": "Agent-RAG + GraphRAG 双框架，让个性化治疗方案准确率高达 100%",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_288fcf7021b3afe5e24e386bd21daf907309037133652424",
+    "title": "13-基于langchain RAG问答应用实战.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_24f8390cf29998dd5f3223ed095cb79c7309037133652424",
+    "title": "Ragas：专为RAG系统打造的高效评估工具",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_af2ae4ec0da104a08bccb964596264597309037133652424",
+    "title": "RAG系统中的向量数据库怎么选？很多人都忽视了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_492c2801233c7139e8e225436504b5d37309037133652424",
+    "title": "22-检索增强生成(RAG) 优化策略篇.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_767d2baba4ac01411e89ad8ac2f544107309037133652424",
+    "title": "Alibaba首创：多模态混合检索+多智能体RAG",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_546f6c3fa38a94c14c4e894779b26e937309037133652424",
+    "title": "RAG Flow源代码研究：Windows 11源码启动",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_362ee0d4edac51721c9c0f7d2ed1f1bd7309037133652424",
+    "title": "一文掌握21种RAG分块策略（含进阶技巧）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_117ee91bf6c3e149cb2bde8ef924ad027309037133652424",
+    "title": "RAG常见13种分块策略大总结（一览表）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_c91f1391d78dd75060ad16eab9229a6f7309037133652424",
+    "title": "汪晟杰-探索工程智能体和RAG建设[1].pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_871b89615e9fcb5da5f79ed4ee0b2b127309037133652424",
+    "title": "OlmOCR如何成为搭建RAG 知识库的\"智能中枢\"？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_fa5bfe1e3d6f333a82808d743052f4107309037133652424",
+    "title": "22-检索增强生成(RAG)+优化策略篇1740903966.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_32e83bdc619ce74bc53a00ff0e31dda67309037133652424",
+    "title": "13-基于langchain+RAG问答应用实战1740903940.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_c9bba7b33e7f840f18441933f715fde57309037133652424",
+    "title": "RAG+QWQ 私有化知识库检索模型组合对比",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_2ca7c8cbaa3dee1cd1a2de80abe8bf5e7309037133652424",
+    "title": "为什么你的RAG效果差？可能PDF没准备好！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_98f2459349be1fa186b26f67e678ba4e7309037133652424",
+    "title": "RAG优化策略通过BGE实现Text embedding 和Rerank",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_1706c2ae96df69be6c35c8421afc5a087309037133652424",
+    "title": "Agentic Chunking：RAG 准确率飙升 40% 的秘密武器",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_e13658a8b133e1ef5fd6cd4796985af57309037133652424",
+    "title": "21-RAG（Retrieval-Augmented Generation）评测面.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_9d48cd8d64528cbd63ddd1deed287aeb7309037133652424",
+    "title": "18-大模型（LLMs）RAG 版面分析——文本分块面.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_1c441dc87e5cffa5f1c612eaed78c5507309037133652424",
+    "title": "让RAG结果更精准！手把手教你部署BAAI Rerank模型",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_47f35bd935d08bb1487b646dd2bb0bdb7309037133652424",
+    "title": "让RAG结果更精准！手把手教你部署BAAI Rerank模型",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_75b623f87480ab9d78b5e0c5d96d81e57309037133652424",
+    "title": "RAG检索全攻略：Embedding与Rerank模型的终极指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_aa8816b15536a71cde6873e682c359817309037133652424",
+    "title": "IBM RAG挑战赛冠军方案全流程复盘 (附源码地址)",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_be686ced87496adecbb0705b876a7a787309037133652424",
+    "title": "17-大模型（LLMs）RAG 版面分析——表格识别方法篇.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_35e96e55f508dbee005942d41cfdcda57309037133652424",
+    "title": "抛弃 OCR，抛弃文本提取，抛弃分块！提升RAG性能的新方法！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_02e386e0c1d85a0f4d01ca8978be88067309037133652424",
+    "title": "21-RAG（Retrieval-Augmented+Generation）评测面1740903964.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_69c9d563fb49a1c75a0761c85e49a8ef7309037133652424",
+    "title": "23-大模型（LLMs）RAG —— 关键痛点及对应解决方案.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_ad7146224919fdac3678e5cbd5e9d9e17309037133652424",
+    "title": "18种RAG技术大比拼：谁才是检索增强生成的最佳选择？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_6fc5f2b331de6cce9cf29dd338669d887309037133652424",
+    "title": "我的RAG开源项目300+star了，十分适合新手入门（日志级详细拆解）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_daccf04a2eb18121b345a0ad125296837309037133652424",
+    "title": "为什么 RAG 会失败以及如何解决？揭秘背后三大致命缺陷！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_36f17fd25026889e493e84ea997a9b9f7309037133652424",
+    "title": "小白学RAG：Sentence Transformers v4 微调 Rerank 重排序模型",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_eca68c702cf263dbfafc5b09067496617309037133652424",
+    "title": "制造业如何打造企业知识库？DeepSeek + RAG 真的适合你吗？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_ca221675f538efbe202e150d53b26dcd7309037133652424",
+    "title": "Embedding模型选型思路：决定知识库与RAG的准确率上限！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_0146905811659c1855f4d7c8a8846d407309037133652424",
+    "title": "18-大模型（LLMs）RAG+版面分析——文本分块面_20250302_1630221740904238.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_137d99eb821c4c81c29a27422883b6a07309037133652424",
+    "title": "DeepSeek QwQ32B：解锁RAG知识库问答准确率提升秘籍！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_8153b042ba009c5dcd059e1487f4c0017309037133652424",
+    "title": "2025最强开源RAG横评！五大知识库引擎+Agent平台实战测评：Dify、RAGFlow、FastGPT谁是你的AI外挂大脑",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_b95f6afa2482a65b76d8512e43f52c6f7309037133652424",
+    "title": "在笔记本电脑上，10行代码！实现本地大模型RAG智能问答（2）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_cd5ac6a2bb8115ef236150c5cf6cac047309037133652424",
+    "title": "17-大模型（LLMs）RAG+版面分析——表格识别方法篇_20250302_1630181740904236.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_fc9d509cbf2d08717524367a2a25a5377309037133652424",
+    "title": "23-大模型（LLMs）RAG+——+关键痛点及对应解决方案1740903968.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_25cf24de2ba022ce23d36b6908e7855b7309037133652424",
+    "title": "RAG回答不全？上下文扩展+二次重排让召回率从42%提升到89%",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_5762dc0d93a53de65cd0e1f60975f9167309037133652424",
+    "title": "FastAPI项目实战之RAG 问答系统（七）：二阶段检索（Embedding+Reranker）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_4a6c670e81b204c9c6a889ff963d1f0e7309037133652424",
+    "title": "MCP、RAG、Agent之间的概念和关系，被我和AI协作的12张图总结了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_ea2034f3c1ab61f828913027331034f17309037133652424",
+    "title": "使用 RAG、LangChain、FastAPI 与 Streamlit 构建 Text-to-SQL 聊天机器人",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_4ec9ac64785c82ddd8f7b25ac0c6dd317309037133652424",
+    "title": "让RAG更进一步的利器：教你使用两种出色的Rerank排序模型",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_c9f84045e091a5f53a91f8d95a2129607309037133652424",
+    "title": "企业RAG落地避坑指南：自主开发 vs 三大框架，核心配置与选型全解析",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_3f6afbe4f3f5e0598b1c3aed75997a157309037133652424",
+    "title": "三种RAG部署方案：自购GPU硬件 vs 大模型一体机 vs 云端GPU",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_1889480bfdcdbe825cb99a67677756bb7309037133652424",
+    "title": "仅150M参数！Reason-ModernColBERT推动RAG检索能力直达第三阶段！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_c8530e94a95a81603611090d25eb24207309037133652424",
+    "title": "25-Graph RAG 面 — 一种 基于知识图谱的大模型检索增强实现策略.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_8b1e200c622a7702501db50b876aada27309037133652424",
+    "title": "Cursor也会犯错？Milvus如何用MCP+RAG解决AI Coding生成过时代码的问题",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_83474b4df37ac615a740e91fbc4120347309037133652424",
+    "title": "RAG 挑战赛冠军方案解析：从数据解析到多路由器检索的工程实践，推荐阅读！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_34b440afef6d037fb5af5953c5f014cb7309037133652424",
+    "title": "25-Graph+RAG+面+—+一种+基于知识图谱的大模型检索增强实现策略1740903972.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_de118237beedc0e58cd6bff99373cf307309037133652424",
+    "title": "搭建RAG系统，主流向量数据库如何选择？如Milvus、Qdrant、Weaviate、FAISS、RediSearch等",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_0795d89496ee105711add2b29bf0c7b37309037133652424",
+    "title": "这个国产开源RAG项目ChatWiki厉害了，可以搭建企业级AI知识库和微信机器人",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_b905357e6cbda6472b4bb2f4e495d2847309037133652424",
+    "title": "Dify v1.1.0新版杀器，用元数据过滤给知识库加权限管理，RAG 检索效率翻倍，含保姆级操作教程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_d4f71edf0ca25bec8b13a3b69f5ffd527309037133652424",
+    "title": "MCP不像想象的那么简单，MCP+数据库，rag之外的另一种解决方案",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_0125f2e6db86d8309c33aa6777861d4f7309037133652424",
+    "title": "RAGFlow 实践：电商客服",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_06f36fa0985c20f0067efaaeb6f933e87309037133652424",
+    "title": "RAGflow分片策略与文档解析器",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_99c833680232602292381443f933b8a27309037133652424",
+    "title": "【Ragflow】20.Ragflow-Plus项目简介与操作指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_a27058c2e9d06fac7e9584dbd6d26ed97309037133652424",
+    "title": "最新12种GraphRAG技术全面评测",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_f2d1e1a560e3b317fc82de5250875dec7309037133652424",
+    "title": "RAGFlow+DeepSeek搭建私人Ai助理",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_a714c4dea232f81bcd8b55f8fa77364e7309037133652424",
+    "title": "解剖RAGFlow！全网最硬核源码架构解析",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_b50dd22cca15020e8ace2e2f752ff1a57309037133652424",
+    "title": "深度拆解RAGFlow分片引擎之切片实现",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_0b49ad19b1ed5e759463b3f67bf24c337309037133652424",
+    "title": "【Ragflow】6. Ragflow-plus重磅更新：增加用户后台管理系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_bca967469a3c426298e7600d4201d3987309037133652424",
+    "title": "Docker 网络隔离：DiFy & RAGFlow 部署",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_9fbe5ee47c590ba789e0ab9c6dba34ba7309037133652424",
+    "title": "RAGFlow 0.20.0 : Multi-Agent Deep Research",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_edb47ad2c7eaef9c89ac74cc701483287309037133652424",
+    "title": "【Ragflow】19.RagflowPlus(v0.2.0)：完善MinerU解析/支持图文关联输出",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_039bc6525911a79701943414d698ed8f7309037133652424",
+    "title": "RAGFlow v0.19图文混排：详细拆解+预处理增强案例",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_73964161a3e7a6df0755f915db6c12cc7309037133652424",
+    "title": "【Ragflow】25.Ragflow-plus开发日志：excel文件解析新思路/公式解析适配",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_084fc7e50b939a3f4363c1a2ead9e0067309037133652424",
+    "title": "NLTK三重降噪内幕！RAGFlow检索强悍竟是靠这三板斧",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_0630073acc4b1bd9526cc2884b6121407309037133652424",
+    "title": "从代码逆向RAGFlow架构：藏在18张表里的AI知识库设计哲学",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_68246129c8152ee038f11cad60f7eafd7309037133652424",
+    "title": "从代码逆向RAGFlow架构：藏在18张表里的AI知识库设计哲学",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_784926e1d9d8b67cef3fa629fb589e8c7309037133652424",
+    "title": "基于RAGFlow实现「乱序」协议差异对比：Diff算法+向量相似度",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_b613115308870fd296f19a1d76ae4f4a7309037133652424",
+    "title": "【Ragflow】30.离线环境迁移方案",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_c6bb8ddad461c6629c7e8d08c570b2c07309037133652424",
+    "title": "Agentic GraphRAG在商业合同中的应用，附源码及源码解析",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_b759a5ba760ebfb3dc92323b123669e07309037133652424",
+    "title": "用自定义脚本，解锁RAGFlow中Word复杂表格的终极图文问答",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_01153e0fb912852c123a92fe71a1483f7309037133652424",
+    "title": "用自定义脚本，解锁RAGFlow中Word复杂表格的终极图文问答",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "RAG",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_a9de982f9b02dc1c38ded16ad05127b57309037133652424",
+    "title": "RAGas + RAGFlow 评测实战：5组配置对比 + 揭秘高精度失效原因",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_a2f9003650b6cfe8c9b4170233d019f87309037133652424",
+    "title": "91-向量检索常见面试篇.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_29e6013f8e764785e08595874aac0eee7309037133652424",
+    "title": "大模型下向量数据对比和选型: Milvus、pgvector、Pinecone、云VectorDB？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_af2ae4ec0da104a08bccb964596264597309037133652424",
+    "title": "RAG系统中的向量数据库怎么选？很多人都忽视了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_784926e1d9d8b67cef3fa629fb589e8c7309037133652424",
+    "title": "基于RAGFlow实现「乱序」协议差异对比：Diff算法+向量相似度",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_e77428d6defbf9612a4f6c0f2c8e30f97309037133652424",
+    "title": "14-基于LLM+向量库的文档对话 经验面.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_8cc5057df3cee0adc150f35c28d0e8817309037133652424",
+    "title": "14-基于LLM+向量库的文档对话+经验面1740903942.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_5f5b23968d832e2fc51e6a65bb3328d17309037133652424",
+    "title": "一条SQL管理向量全生命周期，让AI应用开发更简单",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_de118237beedc0e58cd6bff99373cf307309037133652424",
+    "title": "搭建RAG系统，主流向量数据库如何选择？如Milvus、Qdrant、Weaviate、FAISS、RediSearch等",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_cab4b57b3c8a0865b09a7b73287c06fe7309037133652424",
+    "title": "1W2000字 一文读懂向量数据库：原理、索引技术与选型指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "向量",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_09b2dee67224531dcba67743ce4b17bb7309037133652424",
+    "title": "颠覆传统向量数据库，直接将文本数据编码成视频文件，轻量级革命性的大规模AI记忆解决方案Memvid",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_15d21c74d72602c31c22872e787373037309037133652424",
+    "title": "从检索到生成：RAG 技术综述",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_b49e1888cee623a53c1e91c4b38366ca7309037133652424",
+    "title": "RAG检索增强之ReRank(重新排序)模型",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_a2f9003650b6cfe8c9b4170233d019f87309037133652424",
+    "title": "91-向量检索常见面试篇.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_767d2baba4ac01411e89ad8ac2f544107309037133652424",
+    "title": "Alibaba首创：多模态混合检索+多智能体RAG",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_492c2801233c7139e8e225436504b5d37309037133652424",
+    "title": "22-检索增强生成(RAG) 优化策略篇.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_a089f6b91c1b055cb44900869e3d5be67309037133652424",
+    "title": "售前报价Agent落地案例拆解：检索优先 vs 生成优先",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_75b623f87480ab9d78b5e0c5d96d81e57309037133652424",
+    "title": "RAG检索全攻略：Embedding与Rerank模型的终极指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_fa5bfe1e3d6f333a82808d743052f4107309037133652424",
+    "title": "22-检索增强生成(RAG)+优化策略篇1740903966.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_c9bba7b33e7f840f18441933f715fde57309037133652424",
+    "title": "RAG+QWQ 私有化知识库检索模型组合对比",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_ad7146224919fdac3678e5cbd5e9d9e17309037133652424",
+    "title": "18种RAG技术大比拼：谁才是检索增强生成的最佳选择？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_5762dc0d93a53de65cd0e1f60975f9167309037133652424",
+    "title": "FastAPI项目实战之RAG 问答系统（七）：二阶段检索（Embedding+Reranker）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_084fc7e50b939a3f4363c1a2ead9e0067309037133652424",
+    "title": "NLTK三重降噪内幕！RAGFlow检索强悍竟是靠这三板斧",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_1889480bfdcdbe825cb99a67677756bb7309037133652424",
+    "title": "仅150M参数！Reason-ModernColBERT推动RAG检索能力直达第三阶段！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_c8530e94a95a81603611090d25eb24207309037133652424",
+    "title": "25-Graph RAG 面 — 一种 基于知识图谱的大模型检索增强实现策略.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_34b440afef6d037fb5af5953c5f014cb7309037133652424",
+    "title": "25-Graph+RAG+面+—+一种+基于知识图谱的大模型检索增强实现策略1740903972.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_83474b4df37ac615a740e91fbc4120347309037133652424",
+    "title": "RAG 挑战赛冠军方案解析：从数据解析到多路由器检索的工程实践，推荐阅读！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "检索",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_b905357e6cbda6472b4bb2f4e495d2847309037133652424",
+    "title": "Dify v1.1.0新版杀器，用元数据过滤给知识库加权限管理，RAG 检索效率翻倍，含保姆级操作教程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "分块",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_362ee0d4edac51721c9c0f7d2ed1f1bd7309037133652424",
+    "title": "一文掌握21种RAG分块策略（含进阶技巧）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "分块",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_117ee91bf6c3e149cb2bde8ef924ad027309037133652424",
+    "title": "RAG常见13种分块策略大总结（一览表）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "分块",
+    "media_id": "pdf_0965810169bffd8606dec4fbe528269d_9d48cd8d64528cbd63ddd1deed287aeb7309037133652424",
+    "title": "18-大模型（LLMs）RAG 版面分析——文本分块面.pdf",
+    "media_type": 1,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "分块",
+    "media_id": "wechatarticle_0965810169bffd8606dec4fbe528269d_35e96e55f508dbee005942d41cfdcda57309037133652424",
+    "title": "抛弃 OCR，抛弃文本提取，抛弃分块！提升RAG性能的新方法！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "AI知识库RAG & LLM（持续更新）",
+    "query": "分块",
+    "media_id": "word_0965810169bffd8606dec4fbe528269d_0146905811659c1855f4d7c8a8846d407309037133652424",
+    "title": "18-大模型（LLMs）RAG+版面分析——文本分块面_20250302_1630221740904238.docx",
+    "media_type": 3,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "记忆",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_291c8caf23c1997409a679f548b627457303803699219393",
+    "title": "也谈Agent的记忆问题及Dify的知识库分段及召回逻辑细节",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_b914d7d7e5a033b53ed550a762a45c587303803699219393",
+    "title": "选择AI代理框架？Dify、LangChain还是AutoGen？9大框架独家解析！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_ca0c582b4625110e4a808201984cb1677303803699219393",
+    "title": "打工人救星，中科院推出PPTAgent框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_23433a3b27fa400da174633160050e897303803699219393",
+    "title": "剖析DeepSearcher，可本地部署的深度研究框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_4939a0ddd71e6410e327047951783c0b7303803699219393",
+    "title": "AI Agents全栈技术框架综述与未来！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_740266d9dd725e53d9867455525796807303803699219393",
+    "title": "FinRL：深度强化学习驱动的量化交易框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_8fa2fcd7c361ec68b2d5b1776a1299487303803699219393",
+    "title": "Manus开源复刻框架OWL，测评和使用教程来了！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_a86c55a9719ac08456af3482b29256597303803699219393",
+    "title": "FinRobot：基于大语言模型的股票研究与估值框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_e27d75b75456ce9b1e9de950e133e59e7303803699219393",
+    "title": "一文深剖Microsoft AutoGen，带你跑通多智能体AI框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_602b49d394dc862ee1c766140a6db6bf7303803699219393",
+    "title": "多智能体框架：让业务报告和分析效率翻倍的秘密武器！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_42d966d6e0cb38f47d27289a7acbe0ca7303803699219393",
+    "title": "魔搭社区推出ModelScope-Agent开发框架，打造属于你的智能体",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_b0f6af59aba5bc1b11962920d13179a67303803699219393",
+    "title": "利用本地DeepSeek R1和n8n框架，创建AI智能体",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_8131039dd25b60557c53374a70c0c0dc7303803699219393",
+    "title": "从0到1开发AI Agent（智能体）（一）| 基于大模型的AI Agent技术框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_fd4f9d96c4d11b57291e0eb00993c5a27303803699219393",
+    "title": "Manus的开源替代者之一：OpenManus通用AI智能体框架解析及产品试用",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_5687810d04588a3c576372502cfdecbc7303803699219393",
+    "title": "18.7K Star！快速构建多模态智能体的轻量级框架，运行速度比LangGraph快5000倍！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_a1c4e8d9378242faa237370d7b01d0157303803699219393",
+    "title": "GPT-4提示词大赛冠军Sheila Teo推荐的提示词框架，教你写出优秀的提示词（KIMI、豆包适用）",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_30b5a708dcfc9173ce6a80250eb67f0d7303803699219393",
+    "title": "超酷的AI多智能体框架！阿里开源，AI搜索能力再升级，像人类一样理解和获取深度信息！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_b309910b46d5311148521111cdf19d1c7303803699219393",
+    "title": "无需编程！接入DeepSeek用自然语言创建和部署AI智能体！港大开源框架让AI智能体开发变成填空题",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "框架",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_b56b3a48ddb47d5e9b572b5fcf37a2c77303803699219393",
+    "title": "轻松将大模型接入QQ、微信等消息平台，打造多功能AI聊天机器人的开发框架，附详细教程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Agent最全知识库",
+    "query": "规划",
+    "media_id": "wechatarticle_4b2ae37a3949f663795b046bacbc413a_ebed909cf70b418218b0334460e00ee77303803699219393",
+    "title": "40.7K Star！一句话让AI完全接管浏览器！自动规划完成任务，多标签页同时管理",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "腾讯ima实用技巧（持续更新中）",
+    "query": "技巧",
+    "media_id": "wechatarticle_9e1a7f936551a56763086366d356a173_074b147ae5a7aaf6a3495b9897b669ba7311737409784837",
+    "title": "新传AI知识库与使用技巧大全",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "腾讯ima实用技巧（持续更新中）",
+    "query": "技巧",
+    "media_id": "wechatarticle_9e1a7f936551a56763086366d356a173_59a9457547b8b5ccca84ae3e3c823da87311737409784837",
+    "title": "ima小技巧：如何把ima设置为公众号客服",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "腾讯ima实用技巧（持续更新中）",
+    "query": "技巧",
+    "media_id": "note_9e1a7f936551a56763086366d356a173_73373280035166927311737409784837",
+    "title": "IMA知识库大白话介绍+技巧",
+    "media_type": 11,
+    "highlight": ""
+  },
+  {
+    "kb": "腾讯ima实用技巧（持续更新中）",
+    "query": "技巧",
+    "media_id": "wechatarticle_9e1a7f936551a56763086366d356a173_44c8b9241ff92e90f119ccac49970e397311737409784837",
+    "title": "别让你的ima积灰，10个小技巧让它越用越聪明",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "腾讯ima实用技巧（持续更新中）",
+    "query": "技巧",
+    "media_id": "wechatarticle_9e1a7f936551a56763086366d356a173_52713af68748a862af55489bc09b52197311737409784837",
+    "title": "IMA更新的这5个技巧，我只用第5个，就搭起了自己的「AI第二大脑」",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_67531630778eae7f7c5c90cc562103577316991496957393",
+    "title": "Hermes Agent动态",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_a58aa8388526d45d92f74638ee0b0e3b7316991496957393",
+    "title": "Hermes Agent动态",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_71030ebbf3365053563f32807a8a239b7316991496957393",
+    "title": "Hermes Agent动态",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_f26b9fb8711da0a544e723c6860b77fd7316991496957393",
+    "title": "Hermes Agent动态",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_3bfe03ab1dff5b081cb3dcbf5b47281d7316991496957393",
+    "title": "我给 Hermes装了个外挂大脑：Hermes Memory 2.0 实测与原理拆解",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_7b3af2335686b52ab820d9f84c5b9b317316991496957393",
+    "title": "MaxHermes：全球首个云端沙箱 Hermes，一键养“马”",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_c9ec6fa1519990006bf88cbb47cfd8117316991496957393",
+    "title": "Hermes Agent动态",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_831421140a4d9bb9d403820bf93e45247316991496957393",
+    "title": "Hermes Agent动态",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_9b5baf45c5fbfd679b1a549c012b04d57316991496957393",
+    "title": "Hermes Agent vs Claude Code: Which AI Agent Should You Use?-Hermes Atlas",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_1a8e7b4078a3ee455c7fb04c7764c33a7316991496957393",
+    "title": "Hermes Agent相关资源汇总",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_aca1afb4764045b3b3e859c1b356410b7316991496957393",
+    "title": "Hermes 入门到实操中文文档",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_927cfc79811f3e2b6339871a23e704d97316991496957393",
+    "title": "Claude Code、Cursor 、Hermes背后那个“中转”到底在干什么_cursor hermes-CSDN博客",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_0fc56944baa7353e718946bf7071a3a37316991496957393",
+    "title": "Hermes Agent — AI Agent Framework",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_0f91c791cfe2f29ba4decfa5d4a9d1977316991496957393",
+    "title": "Hermes Agent动态",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_1d1bf4c119556faa9a35afaa49eda6d17316991496957393",
+    "title": "v0.16.0 發佈說明 | Hermes Agent 中文社區",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_08ada6a3428470b79746a53254a0ed177316991496957393",
+    "title": "断舍离OpenClaw🦞，全面切换至Hermes Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_1ce42a1001088d888087e708ab8a12857316991496957393",
+    "title": "Release Hermes Agent v0.20.0 (2026.8.3) · NousResearch/hermes-agent-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_7e66b1797eace5f4794cd17056ba6df07316991496957393",
+    "title": "装完Hermes Agent玩了一圈，我觉得龙虾已死！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_0c9eec74e1701b0a4d1aa608e4403f847316991496957393",
+    "title": "老黄也来养马了！英伟达版Hermes Agent发布",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_01d6eae6d7a0baa6b91e7bc5894066d67316991496957393",
+    "title": "一文看懂：Hermes Agent 与 OpenClaw 全维度对比",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_7cdeb5b7ba57634dc755b516c99205a17316991496957393",
+    "title": "一句话安装Hermes Agent，从此享有全能秘书",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_c1ef679a20d6ae29a8c5733c14c59cd67316991496957393",
+    "title": "Release Hermes Agent v0.17.0 (v2026.6.19) · NousResearch/hermes-agent-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_d17e9ff0dd6adab89b170372b232e72e7316991496957393",
+    "title": "Hermes、OpenClaw、WorkBuddy、Codex 轻度使用对比-ikun",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_b3d5f3b7850aadb38b85f239a274e3417316991496957393",
+    "title": "就在刚刚，腾讯版 Hermes Agent 来了！快速部署，安装即用！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_6970139d8f7ca10b8ec72001f27a109b7316991496957393",
+    "title": "【教程】Hermes Agent在win系统本地部署保姆级教程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_805ff5c08d7bc5fdff65652bae83b6397316991496957393",
+    "title": "DeepSeek加上暴躁的Hermes Agent真是太好用了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_e946a2227e572b5edc3cc875bf169fd17316991496957393",
+    "title": "Hermes Agent ☤ - MiniMax API Docs-MiniMax API Docs",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_532bd3b554eeb20241345c3feb2dcb5d7316991496957393",
+    "title": "Codex × Claude Code × Hermes 進階混合用法",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_15dde977ae7b26ca701e3997c4cb1c2f7316991496957393",
+    "title": "OpenClaw vs Hermes两大AI Agent巨头的巅峰对决",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_524236d5dc0c398a490c43caf268728c7316991496957393",
+    "title": "我花了两天,把那个会自学的 Hermes Agent 跑通了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_3da08ee92d0a4f7ff9bfc5c5af47c0b97316991496957393",
+    "title": "Autonomous AI Coding Agents 2026: OpenClaw, Hermes, Devin",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_11cd1cbd687467861b6d18130075630b7316991496957393",
+    "title": "开源智能体Hermes接入iMessage，无需Mac中转_腾讯新闻",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_7c586fdde51d7c507d58429ddea129a27316991496957393",
+    "title": "我用Hermes 跑了30天，总结出这4个反直觉的用法",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_f7befe1b58a32e9c8b9dbc8e1ace89507316991496957393",
+    "title": "告别生图 API，我用 Hermes Skill 免费出图无限次",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_845452f309540da72e5010e9ead297257316991496957393",
+    "title": "英伟达发布 Hermes Agent 企业级智能体框架",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_3aea1bf6c39f954b66e8c6c0a94e276b7316991496957393",
+    "title": "Hermes Agent 14项大更新，从「能跑起来」到「能住下来」",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_41bf539a4e3f124183401e279526f82d7316991496957393",
+    "title": "Hermes推出Curator功能：自动清理Skill 仓库",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_7e179fd2bf84fe17b80171489e4716807316991496957393",
+    "title": "老黄也来养马了！英伟达版Hermes Agent发布 - 今日头条",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "markdown_ebb086402d1ff60de1a131db7218d1de_f7fdab36f4cee1b50cf6094082129d297316991496957393",
+    "title": "🔍 2026-06-21 · 今日工具深度评测：Hermes Agent.md",
+    "media_type": 7,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_dfbd774c7297b3eb55e39ca01b8aa8fb7316991496957393",
+    "title": "极空间上线官方 Hermes，年轻人必备的“第一个 AI 助手”",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_d81b631fcdcb6b46f2ad9668125e89187316991496957393",
+    "title": "Hermes 接上 NotebookLM 之后，我的知识库开始自己滚了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_1744458975ea123c31fdb509b29f04aa7316991496957393",
+    "title": "MiniMax M2.7 × Hermes Agent：开启自我进化的 Agent 工作流",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_b016987793af53e6b9b203dba926f6827316991496957393",
+    "title": "10个神操作，让Hermes全天候主动干活_腾讯新闻",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_0f0e1adcc41422197fed326edf20de6c7316991496957393",
+    "title": "万字详解：OpenClaw龙虾“高替” Hermes Agent的Skills系统",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_3788ca7d9305bff9bd9696e2ac6ab1877316991496957393",
+    "title": "25.3k Star，能自我进化的AI Agent！Hermes Agent 到底凭什么？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_933e5ad05da9d1549231fbeafc5ffbe47316991496957393",
+    "title": "Anthropic 封杀 OpenClaw，Hermes Agent 会是下一个平替吗？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_b236b1ed5254397160d795c857a1583f7316991496957393",
+    "title": "OpenClaw对手来了！Hermes Agent狂飙90.2k Star，附保姆级教程。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_a2a5ae7b8485b5f5121d5cd33410e3c67316991496957393",
+    "title": "英伟达版Hermes Agent上线，越用越聪明、数据不出门 - 今日头条",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_b987d10994ad5e75b08630cebdbd3e0f7316991496957393",
+    "title": "什么赛博 NTR，这个项目专吸 openclaw 的血，威联通部署 Hermes",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_488d9e5ebd89d8cd13dd24edca8958537316991496957393",
+    "title": "真·吊打官方！这个开源 Hermes-Web-UI 神了，极空间 docker 部署",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_10d5f557926a7c6439a0a7b237b698ad7316991496957393",
+    "title": "Hermes v0.18.0/v2026.7.1发布，12天清零700个高危漏洞",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_26b5f04564fb6332db4959649ebbdeb77316991496957393",
+    "title": "用Hermes替代了3个工具，直接打通Mac日历+微信+飞书客户档案",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_d3ed4ef0174bf986378267a6de7f1d967316991496957393",
+    "title": "养虾人动了心——为什么我认真考虑从 OpenClaw 换到 Hermes Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_b8d983f73bb6897cc2c150fadd0a19977316991496957393",
+    "title": "Hermes Agent上线Profile Builder，5步配置AI智能体",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_2db8224fb110905b0b7f05c1063c24997316991496957393",
+    "title": "速递｜开源Agent Hermes超车OpenClaw：Agent进入自学技能竞争_腾讯新闻",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_0f281b54f525994b47663fcdf25278f27316991496957393",
+    "title": "Hermes Agent v0.20.0 Herald Release: Voice, A2A & More (August 2026)",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_3812d9535cb0167a2f3cf36c6af729417316991496957393",
+    "title": "Hermes还没学明白，Generic Agent又来了本地部署完整教程",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_b83db8310c50690954bd4f3d5a811ecb7316991496957393",
+    "title": "B站爆了！Hermes首度直播回应「抄袭」，MiniMax提前杀入Harness赛点",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_691870ededc515c8ccb5c5e7de1505e47316991496957393",
+    "title": "Hermes 零配置指南 ｜3 分钟安装 + 面板启动，极空间 docker 一件部署",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_377265c1b77dce3638042d739e64c5bc7316991496957393",
+    "title": "万字保姆级教程：Hermes+Kimi K2.6 打造7x24h Agent军团",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_3d364d71bcdcab05c2cd2ae2eb5367e27316991496957393",
+    "title": "🤖 打造你的私人 AI 团队：Hermes Agent + 飞书 + 多模型配置实战",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_bb1e3b7b0a2a2e0c1f3ef20e53f26fc87316991496957393",
+    "title": "Hermes Agent推出异步子代理与Stripe支付技能_腾讯新闻",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_1bc64041c1f7b34a47cfdf71eccb34487316991496957393",
+    "title": "Hermes 16.0 更新：Token 省了 14%，桌面端终于更适合普通人用了 - 今日头条",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_c45189ebb072a46adb9c0afd0ff8c9777316991496957393",
+    "title": "Hermes 出了个叫 Bundle 的东西，我的 7 步发文流程直接压成了 1 步",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_2c5422398838f4ea68f9b5a9bf115db67316991496957393",
+    "title": "我把 OpenClaw 的 Agent 无缝迁移到了 Hermes——就靠这一份 Skill",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_93d132b77267d9b3c78a2f9fd96907877316991496957393",
+    "title": "Hermes v0.16炸裂更新！5个功能让AI Agent终于能桌面用了 - 今日头条",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_021ab32de98ad68079e0a952a4f902f97316991496957393",
+    "title": "对话Hermes核心成员Tommy Eastman：我们想让 AI 更像「人」，而不是机器",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_96889edbeb745cc312651c6fd8eec4f27316991496957393",
+    "title": "Hermes Agent 0.16 发布：从终端到桌面，开源 AI Agent 终于有“脸”了 - 今日头条",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_22181853e6ed588f5e0fc9da61eb8cf07316991496957393",
+    "title": "Hermes Agent登顶OpenRouter榜首：AI智能体步入多路线竞争时代 - B2B",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_850cdd3ec1f0ad5e7061e95018ef33f17316991496957393",
+    "title": "三款热门工具我全测了！WorkBuddy、OpenClaw、Hermes，只留它 - 今日头条",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_f7054cb8699966fce0de8c47fb3226357316991496957393",
+    "title": "Hermes / Claude Code / OpenClaw 从入门到精通全教程（2026 完整版） - 今日头条",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_a773e5e0739b450aadf01c9139fcc86d7316991496957393",
+    "title": "用过 Hermes 和 OpenClaw 后,我还是选择了 WorkBuddy-夜雨聆风",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_408a3486066da1526739d2456b2e74747316991496957393",
+    "title": "一键开启 Hermes Agent 可观测：成本归因、性能拆解与稳定性治理",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_1f1a9e81f031a07931e4ec54eb0daefa7316991496957393",
+    "title": "Hermes Agent：60秒本地部署的开源自进化AI助手，轻量级多平台机器人",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_623f6e2e18e80319b3b519a2699702497316991496957393",
+    "title": "取代龙虾的是爱马仕？狂揽4万星的Hermes Agent，不只是OpenClaw平替",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_7343d20231ea77d326a00e345866b8847316991496957393",
+    "title": "Hermes Agent推出自动化蓝图：定时任务转交互工作流_腾讯新闻",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_f30e2d402c61cae7026d32e550c1f1f57316991496957393",
+    "title": "Hermes Agent桌面版发布：24/7自进化的AI助手现在有了原生界面",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_ae925a0b972ffbc36e024d41bc1f9a3d7316991496957393",
+    "title": "告别一次性对话，Hermes Agent + 火山方舟 Coding Plan 打造会持续成长的 AI Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "markdown_ebb086402d1ff60de1a131db7218d1de_43717ca7f926456df46b82369c710d9c7316991496957393",
+    "title": "⚖️ 2026-06-21 · Agent工具横评：OpenClaw vs Hermes vs Dify vs CrewAI.md",
+    "media_type": 7,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_899ffeb8fa5ee87306ce05d34adff2cf7316991496957393",
+    "title": "用Hermes封装并开源一个重要skill：从飞书文档一键发布到微信公众号",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_d15f58e8b6498b66c681812f6fbadb447316991496957393",
+    "title": "Claude Models for Hermes Agent — Best Workflows and Use Cases | Remote OpenClaw-Remote OpenClaw",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_d05fa11ef35d9dae2bd0b38fe4361aae7316991496957393",
+    "title": "🚀Hermes Agent 爆火真相：19k Star 背后的自学习 Agent 系统 - 文章 - 开发者社区",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_5ffede00e81735db9dddde35a19251a57316991496957393",
+    "title": "2026 年 AI 助手到底怎么选?四款主流工具横评(OpenClaw/Hermes/Codex/Claude Code)",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_4ef5a2ffa02a07c6ddb8c6c643117fbb7316991496957393",
+    "title": "YC总裁开源个人AI记忆系统GBrain：让你的OpenClaw/Hermes长脑子",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_9e10c074fe3fbb7e216f978dc6628a357316991496957393",
+    "title": "我挖到了Kimi K2.6+Hermes的六个神技巧，这下多Agent 24h组队干活真成了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_99064482367e0a114c3182260465799a7316991496957393",
+    "title": "同样是 AI Agent,OpenClaw、WorkBuddy、Codex、Hermes 到底该选谁?-夜雨聆风",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_f668131e96d85abaf0b5ce7fd72ee9ee7316991496957393",
+    "title": "很多人突然不玩小龙虾而用Hermes Agent了。我替你试了，跟小龙虾到底有啥不同？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_137a57ec45ca2c24dc5c6a6aa4f9a5e37316991496957393",
+    "title": "Hermes Agent 进阶教程：技能自进化、MoA 模型委员会与多后端部署实战-阿里云开发者社区",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_53cc3b2d868cd4d2001de5d23933e7977316991496957393",
+    "title": "YC CEO把自己第二大脑系统开源了：专供OpenClaw与Hermes，全息记忆打造迷你AGI",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_8b714b9e6b276d8f5370edd5f52149007316991496957393",
+    "title": "今天开始除了养龙虾（OpenClaw）还要养\"爱马仕\"（Hermes Agent）！记性好，Skills还能自我进化！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_5783b96fa310f68ab90f2c0178c908ad7316991496957393",
+    "title": "2026 年上半年 3 大热门 AI 桌面智能体：Codex vs Hermes vs WorkBuddy 深度横评-AI铺子",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_c080612dca939e026415d4c872c0bb607316991496957393",
+    "title": "Codex、OpenClaw、Hermes应该如何选择？_江上清风山间明月的技术博客_51CTO博客",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_9972ff9d3d7f28417cb0cc7743a9642e7316991496957393",
+    "title": "DeepSeek Harness vs Codex, Claude Code, Hermes Agent & OpenCode | DeepSeek Agent-DeepSeek Agent",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_7d8ded6cfe58fad4030268e362e7d6c47316991496957393",
+    "title": "Hermes Agent crosses 214,000 GitHub stars as developers abandon commercial AI agent frameworks | نيوز هانت",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "wechatarticle_ebb086402d1ff60de1a131db7218d1de_7c98bdaace8944547878e48c8ef4dd3f7316991496957393",
+    "title": "GitHub狂揽58k星的Hermes Agent：技术优势拆解+4个真实可复制变现案例，AI创业者必看",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_b991a98b38d7ded82d1b37e64e267aff7316991496957393",
+    "title": "DeepSeek Harness 对比 Codex、Claude Code、Hermes Agent 与 OpenCode | DeepSeek Agent-DeepSeek Agent",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_0271660c00dd3695d8c6d930311d20967316991496957393",
+    "title": "“养龙虾”还是“驯爱马仕”？从OpenClaw到Hermes再到Codex，2026 AI智能体全民大乱斗，普通人到底该怎么选？",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_7c41d32b56a764ede9d1cf2f3c4e68cd7316991496957393",
+    "title": "ZCode、Codex、OpenCode、Claude Code、Hermes、WorkBuddy 深度横评：六款 AI Agent 工具，你该用哪个？-七牛云",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_926fabfb3b69b98fe25324ff3cccf8ca7316991496957393",
+    "title": "Hermes Agent v0.20: Voice, A2A Protocol, and 1.8s Startup | byteiota-byteiota | From Bits to Bytes",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "Openclaw Codex WorkBuddy",
+    "query": "Hermes",
+    "media_id": "weburl_ebb086402d1ff60de1a131db7218d1de_c413ca3361052e7f6286429388662c1c7316991496957393",
+    "title": "Best AI Agents in 2026: What Actually Fits OpenClaw, Hermes, Codex, and Claude Code | Remote OpenClaw-Remote OpenClaw",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_eed703bd4b1dfa4d03df9a1ce97215df7318169286891828",
+    "title": "拆解 Pi 01｜一个功能越来越多的 Agent，为什么还叫“极简”？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_c2f4cce08f408ce82b04ccc8cb863a647318169286891828",
+    "title": "THU-MAIC/OpenMAIC: Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_c70991f68030c1b3a32a37eff2a265827318169286891828",
+    "title": "Comfy Agent：为创意而生的 Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_c258ce41c1f6e95d9001e8b3552051f27318169286891828",
+    "title": "我发现了一个 Pi 插件：让 Agent 真正拥有可靠的后台任务",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_0fbfabaeebcd296dc58c9ca9c12dd1b87318169286891828",
+    "title": "WorkBuddy - AI Agent 办公新范式-WorkBuddy",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_3ccccc32aed6131758418b91f88f00a07318169286891828",
+    "title": "Pi终于发布1.0：MCP、Codemode、长期运行Agent全来了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_8ae2e98d8f59c54730549360c72a65be7318169286891828",
+    "title": "11万星浏览器Agent公开自测：DeepSeek V4.1 Flash成本仅为Opus 5的1/50！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_8ff2a0cd2ae116fdc597c21357ffcc5f7318169286891828",
+    "title": "可能是第一个开源 Managed Agent：agentd",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_b845d0f9480782a18ebd7c0854354d667318169286891828",
+    "title": "OpenRouter 三天发了六篇教程，讲的全是让 Agent 少烧钱的那几个开关",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_3397d44d5df5dbc4ff1a75467b2cc12e7318169286891828",
+    "title": "【Context Mode】核心架构与设计原理深度解析：让 AI Coding Agent 不再被 context window 撑爆的 MCP 工具集-程序员的自我修养",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_2ee15684e602966c61d14cb069261a707318169286891828",
+    "title": "GitHub狂揽1万Star！飞书lark-cli杀疯了：200+命令让AI Agent直接操控你的工作台",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_e375b50d32321682dadac451a97128ad7318169286891828",
+    "title": "skill-doctor：给你的 Agent 技能做一次体检",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_eef6ecb5b609a990c9ed4668a0e05a7f7318169286891828",
+    "title": "Pi 1.0 正式发布：一个更硬核、更极简、真正可扩展的 AI Agent 底座",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_3bde290c53ae593c65150225c3afb9c87318169286891828",
+    "title": "开源五天斩获 4K Star！冲进 GitHub 周榜前三，AI 编码 Agent 的模型调度台！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_18f8e8745469b8b44de827104df5f18e7318169286891828",
+    "title": "OpenSquilla：自带本地模型路由，让 Agent 更高效的利用 token",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_d7efc5f3f5171c28b5aaed51494c28827318169286891828",
+    "title": "41.1K Star！一款爆火的 Agent 记忆系统：让你的 Agent 有一颗会学习的大脑",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_b85cccb4b09bbe932997630e42c17c497318169286891828",
+    "title": "AgentHop：让你的 AI 和别人的 AI，直接开聊！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_d31d0b87a773e5f05aa8d59c89b2f3b57318169286891828",
+    "title": "每个 Agent 一台“电脑”还不够：Cloudflare Computer 真正要统一的是 Workspace",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_21bcbb5037f069fb2ce33b67d515bfca7318169286891828",
+    "title": "6K Star！把所有组件塞进同一个容器的 Agent 沙箱",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_d17f29b4230471fad27cdda16061b4fb7318169286891828",
+    "title": "Chord 会让 Pi Agent 成为下一个 DeepSeek Harness 吗？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_484058c0876685009c09c83aa6f2757e7318169286891828",
+    "title": "90K Star！爆火的多 Agent 神器：一条命令搭起一家 AI 公司",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_6e8de6f2bea4a58e1a26c22b5a16e3227318169286891828",
+    "title": "GitHub开源视频读取和剪辑利器video-use：用代码Agent自动剪视频",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_982be44be21fc055a294aed09188f4437318169286891828",
+    "title": "让Claude Code和Codex作为\"一个系统\"一起跑的多Agent harness！OpenRig 让两个编码Agent真正协同！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_ae787b7a81627127be27cc98235c64fe7318169286891828",
+    "title": "codexhost：一个 Codex Desktop 窗口跑 Claude Code、Pi、Grok 等 7 个 Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_4b01606b0af66b3a5d09f536821ee0277318169286891828",
+    "title": "又一款英伟达开源 Agent 项目，已经狂揽1w+ star！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_7e25ed360f15ba9b440378156d7669317318169286891828",
+    "title": "国外Agent 扎堆来了，国内也的真需要吗？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_f380071813c58579ff5500c0ab1693717318169286891828",
+    "title": "国庆假期过后，国内大厂要排队出 Personal Agent 了",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_5ce9df8ba19c087f6453488e67bf8b9e7318169286891828",
+    "title": "从 Pi 到 DSH：Agent Harness 如何从「可扩展」走向「自生长」",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_70e1ea9917ae2a71e965591dfea95ef37318169286891828",
+    "title": "2.8K+ Star 腾讯开源神器霸榜！Git 驱动团队 AI Agent 协作，一套配置同步 20+AI 编程工具",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_68fcea69f3ca031d4f7cd380cb97e93c7318169286891828",
+    "title": "Personal Agent 时代来了，腾讯 LightVela 上线，豆包 Spell 突袭：国产 Muse 开打！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_8f9903bfb6fe1c7a4f7d8a755bfc13cc7318169286891828",
+    "title": "Pi Agent 必备插件推荐：装上这几个，编码 Agent 直接满配",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_7252bcda2d96833440375ae4647cd8ba7318169286891828",
+    "title": "使用 Pi agent 的三个技巧",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_e881f72e293e14a70b9bb8160428645a7318169286891828",
+    "title": "全程自动化，下一代运维Agent来了！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_35eb06265f37540b150fb8ef9fe905837318169286891828",
+    "title": "Paseo：让 Pi 跑在手机上的开源编排器，14k Star 的 Agent 控制台",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_2ff49669c404576451c8a6f6ee0be0627318169286891828",
+    "title": "eternityspring/shuohao-skills: AI 短剧制作的 skill 集合：拆角色、排大纲、出场景与道具设定、写剧本、切分镜 | Agent skills for AI short-drama production — character bibles, adaptation outlines, art bibles, screenplays, storyboards. Runs in Claude Code & codex.-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_db8225f4f2bac404defe1f7cb32aa91a7318169286891828",
+    "title": "1600 人收藏的 DeepSeek Harness 插件！这个插件让 AI Agent 的上下文透明可见！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_8665020f19123844e462b5c42bba7ad27318169286891828",
+    "title": "cheney-plus/happy-friday-lite: 一个私人专属的集笔记、日程、Agent、对话于一体的智能体桌面应用端-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_b461b6cb085992b887fd91e33b9fcc627318169286891828",
+    "title": "4.8K Star！腾讯开源的团队级 AI Agent 中间层，让全团队共享同一套规范",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_39ade7bbd7c7582c360297a73c56ff3c7318169286891828",
+    "title": "AIDE²：AI Research Agent 首次跑通 RSI 闭环了吗？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_51d0376e560b32dce6dfb7d35ec74dd67318169286891828",
+    "title": "MyContext：把个人工作数据变成 Agent 真正可用的长期上下文",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_d0d49055205d6dd16eff74c221e415077318169286891828",
+    "title": "自进化的开源Agent记忆系统：OpenViking与MemOS",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_7700377604d17f72f0f93601e7790bc77318169286891828",
+    "title": "Pi Agent 完整上手：极简架构、插件扩展与高效工作流",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_3ed6369f97374b032ff4ea541295e7567318169286891828",
+    "title": "为什么Agent需要Ontology？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_6256d3a770e4104ad7c9b11c764e01d77318169286891828",
+    "title": "十个判断工具塞给 Agent：jev-mcp 把 Jev 变成 MCP",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_424ceffbdf286a3ad7d3efc854e092387318169286891828",
+    "title": "为什么 Agent 的运行框架，比模型本身更重要？丨Y Combinator",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_e4f547360b107d239904c5073f5063e27318169286891828",
+    "title": "diagram-design：给 Coding Agent 加一套视觉审稿标准",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_335981d69dfb846e60aa64dc533ad6b17318169286891828",
+    "title": "GitHub 9万 Star，一款爆火的多 Agent 管理神器",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_ecbcdbfb5c68e0f596ff65a90890825a7318169286891828",
+    "title": "人人都能学会的自进化 Agent 搭建指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_90d5a73dcf91ad71eb0bfc0e56adbd2e7318169286891828",
+    "title": "Teamily：长在群聊里的 Agent Team。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_f68ad8f9ba168eac7ccb7282d282fd367318169286891828",
+    "title": "Pi Agent：用 418 行 Agent Loop 挑战千行级 AI Coding 框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_33e76fcf5a94e6e538db41712bad15d77318169286891828",
+    "title": "AI4S 实践路径：Agent Plan 接入 OpenAI4S， 让 Agent 替你做科研 ！",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_ff3c1422b59496e110fd5a24c231289e7318169286891828",
+    "title": "Hi3D Agent: 一句指令完成3D人物从建模、绑定、动作、到面部表情的制作",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_98560e2f55e2e4677b5ab4145e1b72aa7318169286891828",
+    "title": "我给 Pi Coding Agent 做了一个桌面控制台：Pi-Harness",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_b906b688a2b3879c7dd02661b98203617318169286891828",
+    "title": "一款免费、开源、本地跑的 Agent 上下文优化器,把工具输出Token 砍掉 98%!,Star 21K+ !",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_f117809d69564fe9260c64b1eaf0b6df7318169286891828",
+    "title": "手机远程指挥 Pi Agent 在电脑上干活",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_52df78ec4489d093c1c7f9ff8b15179b7318169286891828",
+    "title": "Qoder × Jev：重新思考 Agent 如何判断和行动",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_387f949dbb7c3f7207722a42d777c5457318169286891828",
+    "title": "基于 DeepSeek Harness，这个开源项目搭了一套可私有化的企业 Agent 平台",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_f518301d5313d5f0463aaabddb0d9fc97318169286891828",
+    "title": "lhlGitHub/threejs-architecture-effects: An Agent Skill for building interactive, self-assembling 3D architecture with Three.js.  一个用 Three.js 生成可交互、可动态建造 3D 建筑的 Agent Skill。-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_b2e751317a500c788dc645bcb3b362f67318169286891828",
+    "title": "shuohao-skills：把小说变成 AI 短剧生产素材的 Agent Skills 工作流",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_94a4a29018ba6d6f4eaed9543a431bb27318169286891828",
+    "title": "你还在一个聊天框里问AI，同事已经在ADE里面管一屋子AI了：Orca / T3 Code / Paseo 三款开源 Agent 开发环境横评",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_186da34a1f37c40761e745ed4b7fb0a47318169286891828",
+    "title": "Jev with coding agents - TypeSafe AI-TypeSafe AI",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_e5ecec68f1e7289767f25380e09b46647318169286891828",
+    "title": "AI Agent Harness Engineering 开源项目推荐：15 个值得关注的 GitHub 仓库_AI大模型应用之禅-亚马逊云科技技术品牌专区",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_632fc301c349882695e2f523ca5f100c7318169286891828",
+    "title": "HarnessRouter：单容器自托管多 AI 编码 Agent，UHP 统一协议让 Claude Code / Codex / Hermes 共用一套 API",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_22fa8e1bc7f6bc64adc2896ca5fb65647318169286891828",
+    "title": "Agent Skills 与 MCP：智能体能力扩展的两种范式",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_6350f209f2171313a4006acb402a99a87318169286891828",
+    "title": "一个 Agent 额度用完，怎么让别的接着干？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_bc8044559cc987258042edf7bd8c8cd47318169286891828",
+    "title": "Agent Skills for Claude Code, Codex & Cursor | Skillry-Skillry",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_3786eff96a94d36c14e499165c068bc67318169286891828",
+    "title": "Pi Agent 生态盘点：从 8 万星的 pi 到 2 万星的 omp，必装的 skills 和扩展都在这",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_f79c303dfdfaff3ef923c08f3117bbc27318169286891828",
+    "title": "论文汇总丨Agent Harness新进展：阿里/Meta/谷歌等探索长程执行、自演化与评估",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_a83755beda6468785ba81772c1fccc337318169286891828",
+    "title": "ffmpeg-skill：让 AI Agent 直接调用本地 FFmpeg 完成视频剪辑",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_7d7e6196f1609b5c18af797bad01db9f7318169286891828",
+    "title": "配套CLI与Skills，浙大开源可插拔Agent评测底座",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_68a717aefc9f1bc7f31d01676b7bb3d07318169286891828",
+    "title": "Cue 上手保姆级教程：从建第一个 Agent 到派出第一个任务",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_64ea4c34346e44eafc6da0e6c6e09f947318169286891828",
+    "title": "千问办公 × AgentBridge：连接企业数据，让智能分析触手可及",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_3f28c073a76163ffe4912fcb9d6369317318169286891828",
+    "title": "今天推荐一本开源Agent神书",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_090b5bfffa52e408d4253bcc3ec1696b7318169286891828",
+    "title": "10 万星，巨省 Token，极简 Agent Pi 上手指南",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_23ed043e6d63dc47d2c679d5f25394b77318169286891828",
+    "title": "Pi Harness：Agent 界的 VIM",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_75cd9b09f50ca4414459cb771f5beb827318169286891828",
+    "title": "AAAI 2026｜Jev 爆火之后，Agent 真的需要每一步都调用大模型吗？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_46ea2f24b335d3afc4517ddcd4dc75887318169286891828",
+    "title": "Fantasy：用 Go 构建你的第一个 AI Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_58f7a5c0defbb30252b9ed2e6baee7327318169286891828",
+    "title": "2.1K Star！OpenMuse：会自己开浏览器干活的私人 Agent，你不爽随时夺回鼠标",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_a91e4397b91e9d92e8a7255e460bc48b7318169286891828",
+    "title": "从“用 Pi”到“造产品”：藏在CLI里的Pi SDK，才是Agent时代的浏览器引擎",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_63a5fdf05f4b74b87708ea47c3dc1ac97318169286891828",
+    "title": "我玩了几天 Muse：这可能是第一个\"长得对\"的AI Agent",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_34cf49ed9c27a5aa1939aefb96c4cc047318169286891828",
+    "title": "【AI Agent】Memory进化实战",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_8bf09ca6d2000a77aef8823033ce92917318169286891828",
+    "title": "CopilotKit/openmuse: A personal agent with a browser, terminal, files, and work that keeps going built with CopilotKit and AG-UI.-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_f139b6a8f1501ea359685ee493fc024b7318169286891828",
+    "title": "Meta Muse 的神级 Agent，GitHub 已经有人复刻了。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_72bea31e3056f45065978ed0f75ad21a7318169286891828",
+    "title": "yzfly/awesome-jev-zh: Jev / TypeSafe System One 中文精选列表：官方资料、SDK、爆款应用、Agent 工具、开源复现与独立评测，附中文上手指南，每日自动收录 GitHub 热门项目。-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_29fbc0d7bfe4375d27f54689b66aa5ff7318169286891828",
+    "title": "xzf-thu/VoiceMem: Infrastructure for the next generation of voice agents, designed to provide universal memory. It is divided into a left brain and a right brain, storing information and emotions respectively, while a fully streaming architecture eliminates latency at the fundamental level.-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_81829f48fb8b427c99485b29ff7235687318169286891828",
+    "title": "Manus 独立后首次大更新，发布 2.0 版本，推出 Personal Agent 应用 Cue",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_43c304893f23fb8154df2c093d308b707318169286891828",
+    "title": "GitHub 又一个神级 Agent 工具，CC Switch 又多了个新对手。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_fbc2d49add1ad65099864994640f57cd7318169286891828",
+    "title": "Agent 自己的浏览器终于来了。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_2539b45889462db63e4fe116eec345f17318169286891828",
+    "title": "skill-up：让 Agent Skill 的评测与进化形成闭环",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_62a101c2f4657778683e1f00a25be5447318169286891828",
+    "title": "实时语音Agent从此拥有长期记忆！颜水成团队开源零延迟双脑记忆框架",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_0c5e37a10baedf1941496272c6ba4e777318169286891828",
+    "title": "拆解爆火的 JEV（下）：在 Agent 系统中的 8 类典型应用场景。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_aa35a4d9a938ec432e3d83180606316e7318169286891828",
+    "title": "给Agent一台可控的「云上计算机」：揭秘阿里云Agent Sandbox",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_d018c56e5ca5cbcd9fc57367926fd29d7318169286891828",
+    "title": "Agent 已经进入工作流，文件还要靠人传来传去？",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "weburl_2319e9c8079afcfd59a76e3a49c672e1_6d1003b1a9e2dc6f8403b97544e639bf7318169286891828",
+    "title": "larashero3-dotcom/lieflat-charts: Data visualization Skill for AI Agents, turning data into polished, interactive HTML charts. 面向 AI Agents 的数据可视化 Skill，将数据快速生成精致、可交互的 HTML 图表。-GitHub",
+    "media_type": 2,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_4431e09776ab3761f2fb5aee9ee61c4e7318169286891828",
+    "title": "Browser Use 又出了一个神器，浏览器 Agent 终于更快了。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_99668d981143014ff1feb0083e7f10947318169286891828",
+    "title": "本周AI项目推荐：Ling、AirJelly、HanaAgent……Muse之外的Personal Agent路线",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_4443645617d6e549caf2530e49fb519c7318169286891828",
+    "title": "又一个 Agent Skill 火了，内置 268 种手绘风。",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_c29b9189bdba8f0847468412be35f2397318169286891828",
+    "title": "训练免费、不更一行参数：RSIAgent 让开源 Kimi-K3 反超 GPT-6 Astra",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_e21d57e50dbb79fb6f951803970a4cd67318169286891828",
+    "title": "一篇讲透Agent自进化飞轮怎么搭：评测→记忆→落地→控制",
+    "media_type": 6,
+    "highlight": ""
+  },
+  {
+    "kb": "ai编程以及龙虾学习库（持续更新）",
+    "query": "Agent",
+    "media_id": "wechatarticle_2319e9c8079afcfd59a76e3a49c672e1_3f91b06dff1522af67bcbb8bac41664d7318169286891828",
+    "title": "让 Agent 读懂视频再下刀：video-use 的视频剪辑流水线",
+    "media_type": 6,
+    "highlight": ""
+  }
+]

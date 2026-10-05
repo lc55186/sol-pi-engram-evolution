@@ -1,0 +1,1 @@
+Hermes CloudHermes 配套服务（API/存储/配置管理）路径: /opt/hermes-cloud📋 README无 README🗂️ 目录结构  📄 FINAL_TASK_SUMMARY.md  📁 api/    📦 hermes_cloud.db    📄 main.py    📦 main.py.bak  📄 complete-login-solution.md  📁 config/  📁 scripts/  📁 storage/    📁 backups/      ...    📁 documents/      ...    📁 temp/      ...    📁 uploads/      ...  📄 test_endpoints.py🔧 关键配置文件

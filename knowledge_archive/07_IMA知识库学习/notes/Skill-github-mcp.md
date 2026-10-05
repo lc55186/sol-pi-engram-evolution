@@ -1,0 +1,11 @@
+Skill-github-mcpname: github-mcp
+description: "GitHub MCP 集成指南：用 Fine-Grained Token 接入，只读+提PR模式，最小权限原则。 触发词：GitHub MCP / 接入 GitHub / 配置 GitHub Token / 操作 GitHub / git MCP。 适用：代码评审、PR 提交流程、仓库代码分析、Issue 管理。 反例：不要触发于简单 git 命令（用 terminal 即可）。"
+version: 1.0.0
+author: Hermes
+license: MIT
+platforms: [linux, macos]
+metadata:
+hermes:
+tags: [github, mcp, git, pr, code-review]
+category: devops
+requires_toolsets: [terminal, git]GitHub MCP 集成指南最小权限原则： 只给需要的权限，不给 repo 级全权限。接入步骤0. 已知问题：CLI --args 解析失败hermes mcp add github --command npx --args "-y @modelcontextprotocol/server-github" 在复杂 args 场景下 exit code 2。正确做法：直接编辑 config.yaml，详见 references/github-mcp-stdio-setup.md1. 创建 GitHub Personal Access Token方案 A：Classic PAT（推荐，简单）访问：https://github.com/settings/tokens/newToken 名称：Hermes-MCP过期时间：选 7-30 天Scope：勾选 repo（完整仓库访问）+ read:orgToken 格式：github_pat_...方案 B：Fine-Grained Token（最小权限）访问：https://github.com/settings/personal-access-tokens/newRepository access：选 only select repositoriesPermissions：Contents: Read-only, Pull requests: Read & Write, Issues: Read & Write限制：不支持搜索仓库、不支持 org 级操作2026-06-13 实战：Classic PAT 成功接入，26 tools 全功能正常。Fine-Grained Token 限制较多，除非有明确安全需求，否则推荐 Classic PAT。2. 接入 Hermes MCPhermes mcp add github --command npx --args -y @modelcontextprotocol/server-github# 当提示输入 Token 时，粘贴你刚才创建的 Fine-Grained Token3. 验证接入hermes mcp list  # 应显示 github 已启用hermes mcp test github  # 应返回 Success使用示例"读 src/auth/ 下的逻辑，找那个硬编码超时，给修复方案，提 PR 别 merge，我审 diff。"Hermes 会：读仓库代码（Contents: Read）分析超时问题生成修复方案提 PR（Pull requests: Write）不会 merge PR（Merge 权限没给）Pitfalls坑症状Fix给全 repo 权限能修改整个仓库选 only select repositories给 workflow 权限能修改 GitHub Actions完全不选 workflow 权限给 admin 权限能删除仓库/用户完全不选 admin 权限Token 过期401 错误选足够长的过期时间，及时续签repo 选错能访问不该访问的仓库只勾选需要的仓库Verification接入后测试：# 测试 GitHub MCPhermes mcp test github# 如果成功，查看可用工具# GitHub MCP 提供以下工具：# - search_repositories# - get_file_contents# - create_pull_request# - list_pull_requests# - get_issue核心安全原则"MCP 的诅咒是：接上太容易，收回太难。"每次使用 GitHub MCP，只做需要的操作，做完后断开（用 hermes mcp remove github 移除，需要时再装）Token 只存本地，不提交到代码不要永久 Token，选 7-30 天过期用 repo 级的最小权限，不是 org 级定期审查已接入的 MCP 服务器（每月一次）步骤准备输入 — 确认输入数据和参数完整执行处理 — 调用工具完成核心逻辑输出结果 — 生成目标产物（文件/报告/状态）异常处理 — 失败时返回错误信息，不静默验证输出文件/报告已生成处理逻辑覆盖主要场景错误情况有明确提示输出格式符合预期

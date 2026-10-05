@@ -1,0 +1,124 @@
+# Skill-agnes-video-Part1
+
+***
+
+name: agnes-video
+description: AI 视频生成工具。通过 Agnes-Video-V2.0 模型生成视频。支持文本转视频、图片转视频、多图合成、关键帧动画。适用于：短剧分镜、广告试拍、社交媒体内容、产品演示。
+-----------------------------------------------------------------------------------------------------
+
+# Agnes 视频生成 Skill
+
+## 触发条件
+
+用户请求生成视频、分镜、动画、短片时使用。
+
+## 工具
+
+### create\_video\_task
+
+提交异步视频生成任务。
+
+```bash
+curl -s -X POST 'https://apihub.agnes-ai.com/v1/videos' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer sk-3TJ3PzAqsIjstcjBeMcPsm51F22jp2VCdMz08RJopE2PqzAM' \
+  -d '{
+    "model": "agnes-video-v2.0",
+    "prompt": "<英文描述>",
+    "height": 768,
+    "width": 1152,
+    "num_frames": 41,
+    "frame_rate": 24
+  }'
+```
+
+### get\_video\_result
+
+查询任务状态和结果。
+
+```bash
+curl -s 'https://apihub.agnes-ai.com/v1/videos/<task_id>' \
+  -H 'Authorization: Bearer sk-3TJ3PzAqsIjstcjBeMcPsm51F22jp2VCdMz08RJopE2PqzAM'
+```
+
+### 参数说明
+
+| **参数**            | **默认值** | **说明**              |
+| ----------------- | ------- | ------------------- |
+| `prompt`          | (必填)    | 英文提示词               |
+| `height`          | 768     | 视频高度                |
+| `width`           | 1152    | 视频宽度                |
+| `num_frames`      | 41      | 帧数，必须满足 8n+1，最大 441 |
+| `frame_rate`      | 24      | FPS，1-60            |
+| `image`           | -       | 图片 URL（图生视频时使用）     |
+| `negative_prompt` | -       | 负面提示词               |
+
+### 帧数与时长对照表
+
+| **num\_frames** | **时长(24fps)** | **适用场景** |
+| --------------- | ------------- | -------- |
+| 41              | \~1.7秒        | 短片段/GIF  |
+| 81              | \~3.4秒        | 短视频      |
+| 121             | \~5秒          | 标准广告     |
+| 241             | \~10秒         | 长片段      |
+
+### 输出处理
+
+1. 创建任务返回 `task_id`
+2. 轮询状态直到 `status: "completed"`
+3. 结果中包含视频 URL
+4. 下载视频到 `/tmp/agnes-videos/`
+5. 用 `MEDIA:<path>` 发送给用户
+
+## 工作流
+
+```
+1. 接收用户描述（中文翻译为英文）
+2. 构建高质量 prompt（添加 cinematic, dramatic lighting 等）
+3. 提交任务，获取 task_id
+4. 告知用户任务已提交
+5. 每 10-15 秒轮询一次状态
+6. 完成后下载视频并发送
+```
+
+## 提示词工程规则
+
+1. **英文优先**：英文出视频效果更好
+2. **分镜描述**：按时间段描述场景变化
+3. **运镜关键词**：`pan left/right`, `zoom in/out`, `tracking shot`, `aerial view`
+4. **质量后缀**：`cinematic quality, dramatic lighting, slow motion, 4K, photorealistic`
+5. **竖版广告分镜**：9:16 竖版视频需明确 `height:1152, width:648`；prompt 用 `low angle tracking`、`shallow depth of field`、`spotlight` 等电影级镜头语言；**禁止**分镜框、字幕、海报排版等廉价短视频元素
+
+## 注意事项
+
+* 异步 API，**实际等待时间 3-15 分钟**（免费版排队严重，不是 30 秒）
+* 结果字段是 `remixed_from_video_id`（不是 `result`/`outputs`/`url`）
+* 免费 API，可大胆测试
+* URL 有时效性，需立即下载
+* **下载必须用 curl**：视频 CDN 域名是 `platform-outputs.agnes-ai.space`，`wget` 会返回空文件，`curl -L` 才能正确下载（实测 2.7MB 文件）
+* **排队策略**：同时提交多个任务可提高命中率，先完成的先下载
+
+## ⚠️ 避坑指南（2026-06-21 实战总结）
+
+### 1. Prompt 长度限制 → 500 错误
+
+* **现象**：复杂长 prompt（>300字符多场景描述）提交后进度到 30% 就报 `500 Internal generation failed`
+* **根因**：免费版模型对长时序场景理解有限，生成中途崩溃
+* **修复**：**精简 prompt**，聚焦单一场景/产品，控制在 150 字以内
+  * ❌ 错误：多场景拼接（"Scene 1... Scene 2... Scene 3..."）
+  * ✅ 正确：单一镜头描述（"A small white device on desk, glowing blue waves, person in background"）
+* **降级方案**：如果精简 prompt 仍失败，进一步减少 `num_frames`（81→41）
+
+### 2. 下载方式 & 代理绕过
+
+* **CDN 域名** `platform-outputs.agnes-ai.space` 走代理（`$http_proxy` / `$https_proxy`）必被重置（curl exit code 35）
+
+**必须直连**：`curl -L --noproxy '*'` — 实测 1.2\~2.2 MB 文件秒完成
+
+```bash
+# ✅ 正确 — 直连（--noproxy），实测 1.2~2.2MB 秒完成
+curl -L --noproxy '*' -o /tmp/video.mp4 "https://platform-outputs.agnes-ai.space/videos/..." \
+  -H "User-Agent: Mozilla/5.0" --connect-timeout 15 --max-time 120
+
+# ❌ 错误 — 走代理 → 连接重置（curl exit code 35 /
+```

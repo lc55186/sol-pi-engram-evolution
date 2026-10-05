@@ -1,0 +1,401 @@
+[
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\agent-reach.md",
+    "name": "agent-reach",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\agnes-image.md",
+    "name": "agnes-image",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\agnes-video.md",
+    "name": "agnes-video",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\api-provider-integration.md",
+    "name": "api-provider-integration",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\auto-hermes.md",
+    "name": "auto-hermes",
+    "cat": "autonomous",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\bb-browser.md",
+    "name": "bb-browser",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\beautiful-article.md",
+    "name": "beautiful-article",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\book-to-skill.md",
+    "name": "book-to-skill",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\code-review-and-quality.md",
+    "name": "code-review-and-quality",
+    "cat": "software-development",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\competitive-analysis.md",
+    "name": "competitive-analysis",
+    "cat": "software-development",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\content-authentication.md",
+    "name": "content-authentication",
+    "cat": "security",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\continuous-learning.md",
+    "name": "continuous-learning",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\cron-troubleshooting.md",
+    "name": "cron-troubleshooting",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\databuff-watch.md",
+    "name": "databuff-watch",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\deepseek-harness-research.md",
+    "name": "deepseek-harness-research",
+    "cat": "research",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\deployment-troubleshooting.md",
+    "name": "deployment-troubleshooting",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\devops.md",
+    "name": "devops",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\diagnose.md",
+    "name": "diagnose",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\diagramming.md",
+    "name": "diagramming",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\dogfood.md",
+    "name": "dogfood",
+    "cat": "imported",
+    "conflict": "True",
+    "existing": "C:\\Users\\liuchao\\AppData\\Local\\hermes\\skills\\software-development\\dogfood"
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\dream-verification-pattern.md",
+    "name": "dream-verification-pattern",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\flutter-core.md",
+    "name": "flutter-core",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\github-mcp.md",
+    "name": "github-mcp",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\hc-project-maintenance.md",
+    "name": "hc-project-maintenance",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\hermes-auto-maintenance.md",
+    "name": "hermes-auto-maintenance",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\hermes-dreaming.md",
+    "name": "hermes-dreaming",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\hermes-maintenance.md",
+    "name": "hermes-maintenance",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\hermes-webui.md",
+    "name": "hermes-webui",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\high-risk-ai-design.md",
+    "name": "high-risk-ai-design",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\idle-conservation-workflow.md",
+    "name": "idle-conservation-workflow",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\index-browser-agent.md",
+    "name": "index-browser-agent",
+    "cat": "automation",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\investment-recommendation-enrichment.md",
+    "name": "investment-recommendation-enrichment",
+    "cat": "research",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\java-build-troubleshooting.md",
+    "name": "java-build-troubleshooting",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\kitesurf-research.md",
+    "name": "kitesurf-research",
+    "cat": "research",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\llm-wiki.md",
+    "name": "llm-wiki",
+    "cat": "imported",
+    "conflict": "True",
+    "existing": "C:\\Users\\liuchao\\AppData\\Local\\hermes\\skills\\research\\llm-wiki"
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\marketing-article-analysis.md",
+    "name": "marketing-article-analysis",
+    "cat": "research",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\markitdown.md",
+    "name": "markitdown",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\mcp-troubleshooting.md",
+    "name": "mcp-troubleshooting",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\mcp.md",
+    "name": "mcp",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\nihaixia-tcm.md",
+    "name": "nihaixia-tcm",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\patent-disclosure-skill.md",
+    "name": "patent-disclosure-skill",
+    "cat": "legal",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\prompt-injection-defense.md",
+    "name": "prompt-injection-defense",
+    "cat": "security",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\provider-config.md",
+    "name": "provider-config",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\security-toolkit.md",
+    "name": "security-toolkit",
+    "cat": "security",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\self-evolution.md",
+    "name": "self-evolution",
+    "cat": "imported",
+    "conflict": "True",
+    "existing": "C:\\Users\\liuchao\\AppData\\Local\\hermes\\skills\\autonomous\\self-evolution"
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\self-heal.md",
+    "name": "self-heal",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\session-maintenance.md",
+    "name": "session-maintenance",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\skill-library-maintenance.md",
+    "name": "skill-library-maintenance",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\spec-driven-development.md",
+    "name": "spec-driven-development",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\stock-analyst.md",
+    "name": "stock-analyst",
+    "cat": "research",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\sysops-toolkit.md",
+    "name": "sysops-toolkit",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\system-health-dashboard.md",
+    "name": "system-health-dashboard",
+    "cat": "devops",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\threat-intelligence-analysis.md",
+    "name": "threat-intelligence-analysis",
+    "cat": "security",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\tts-voice-synthesis.md",
+    "name": "tts-voice-synthesis",
+    "cat": "media",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\turbovec-integration.md",
+    "name": "turbovec-integration",
+    "cat": "research",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\vless-uri-config.md",
+    "name": "vless-uri-config",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  },
+  {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\skills_converted\\weiyun-backup.md",
+    "name": "weiyun-backup",
+    "cat": "imported",
+    "conflict": "False",
+    "existing": ""
+  }
+]

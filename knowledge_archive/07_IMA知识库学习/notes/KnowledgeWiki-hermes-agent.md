@@ -1,0 +1,1 @@
+KnowledgeWiki-hermes-agentHermes Agent 架构与配置知识图谱概念页面 — 自动从归档会话中提取 — 2026-07-01概述基于 151 个归档会话的分析，该主题共产生 8723 条消息，消耗 85891.5K tokens。关键发现涉及多个技术栈和工具包含大量实践经验和解决方案形成了可复用的知识资产相关会话[2026-05-05] AI Agent 技术栈咨询 (7 msgs)[2026-05-05] AI Agent 功能确认与项目支持 (63 msgs)[2026-05-06] Hermes Agent重构进度报告 (207 msgs)[2026-05-06] Hermes Agent重构进度报告 #2 (0 msgs)[2026-05-06] Hermes Agent重构进度报告 #3 (174 msgs)

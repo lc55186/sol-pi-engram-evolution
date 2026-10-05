@@ -1,0 +1,127 @@
+# Skill-security-toolkit-Part2
+
+LL\_PROCESS, SEND\_ALERT]
+
+PRIVILEGE\_ESCALATION → \[KILL\_PROCESS, ISOLATE\_CONTAINER, SEND\_ALERT]
+
+# 响应动作:
+
+isolate\_container(name)  → docker network disconnect bridge \<name>
+
+block\_ip(ip)             → iptables -A INPUT -s \<ip> -j DROP
+
+kill\_process(pid)        → os.kill(pid, 9)
+
+snapshot\_quarantine()    → 快照保存到 quarantine/\<timestamp>/
+
+send\_alert(event)        → 写入 alerts.json + 日志
+
+````
+
+**完整实现参考**: `references/soar_orchestrator.md`
+
+### Bash 安全脚本：grep -c 在 set -e 下静默终止
+`grep -c "pattern"` 在无匹配时返回 exit code 1，`set -euo pipefail` 下脚本静默退出，无错误输出。
+**影响范围**: 安全检测脚本中"统计失败次数"类逻辑（SSH暴力破解计数、恶意IP检测等）。
+**修复方案 A**（pipe 模式，兼容所有场景）: 用 `grep ... | wc -l` 替代 `grep -c`。
+```bash
+# ❌ 静默终止（双行输出 + exit 1）
+ssh_fail=$(grep -c "Failed password" /var/log/secure 2>/dev/null || echo 0)
+
+# ✅ 正确（wc -l 总是 exit 0，单行输出）
+ssh_fail=$(grep "Failed password" /var/log/secure 2>/dev/null | wc -l)
+````
+
+**修复方案 B**（`|| var=0` 模式，更简洁，适用于 `local` 赋值）:
+
+```bash
+# ❌ 错误：`|| echo 0` 产生双行输出 "0\n0"，导致算术表达式语法错误
+ssh_root=$(grep -ci "PermitRootLogin yes" /etc/ssh/sshd_config 2>/dev/null || echo 0)
+
+# ✅ 正确：`|| var=0` 在子命令失败时设置默认值
+ssh_root=$(grep -ci "PermitRootLogin yes" /etc/ssh/sshd_config 2>/dev/null) || ssh_root=0
+```
+
+**根因详解**: `grep -ci` 在无匹配时，命令本身输出 `0` 并以 exit 1 退出。`|| echo 0` 又输出第二个 `0`。`$()` 捕获的是 `"0\n0"`。后续 `$(( ssh_root * 20 ))` 报 "表达式语法错误"。
+
+**选择建议**:
+
+* 方案 A 适合非 `local` 场景（如直接 `echo`）
+* 方案 B 适合 `local var=$(cmd)` 场景（更简洁，不影响 `$()` 捕获）
+
+### jq 安全构建 JSON（避免 shell 拼接）
+
+安全脚本输出 JSON 报告时，用 `jq` 而非 shell 字符串拼接：
+
+```bash
+jq -n --arg ts "$(date -Iseconds)" --argjson score "$score" \
+  --argjson data "$RAW_JSON" \
+  '{generated_at:$ts,security_score:$score,system_health:$data}' > report.json
+```
+
+**注意**: `--argjson` 要求输入必须是合法 JSON；不确定格式时用 `--arg`（字符串化）。
+
+### SOAR 平台设计要点
+
+1. **事件数据库**: SQLite 存储所有安全事件 + 响应日志（可追溯）
+2. **事件→动作映射**: 每种事件类型对应一组自动化动作，按序执行
+3. **模拟测试**: 事件模拟器生成各类预置事件，验证响应链路
+4. **合规审计**: CIS Benchmark 自动检查 + 报告（Docker/SSH 配置）
+5. **闭环验证**: 所有动作结果记录到 response\_log，可审计
+
+## 防御性操作
+
+### 混合请求处理原则
+
+当用户请求同时包含合法防御和非法操作时：
+
+1. **识别混合性** — 判断哪些部分合法、哪些非法
+2. **明确拒绝非法部分** — 引用具体法律条文（《网络安全法》第27条等）
+3. **提取合法核心** — 找出可执行的防御性操作
+4. **分步执行** — 先说明边界，再执行合法部分
+
+常见非法请求模式：
+
+* "渗透/攻击/反制" → 拒绝，改为被动防御
+* "种植/植入/后门" → 拒绝，改为记录取证
+* "删除痕迹/对抗调查" → 拒绝，改为保留证据链
+* "反向控制/远程执行" → 拒绝，改为本地分析
+
+### 用户沟通策略（防杠模式）
+
+当用户表达不满（如"别瞎歪歪了""不是拿安全边界当理由不干活"）时：
+
+1. **立即停止解释法律条文** — 用户已知道风险，不需要二次确认
+2. **直接列出合法替代方案** — 用表格呈现，每条一行，不超过 5 条
+3. **不复述被拒原因** — 如果之前已说明过，这次不再提
+4. **给出行动选项** — "现在要开始做哪个？还是三个全上？"
+
+**错误示范**：
+
+* "根据《网络安全法》第XX条..."（用户不想听）
+* "我理解你的感受，但是..."（废话）
+* 列出 10+ 条注意事项（过度解释）
+
+**正确示范**：
+
+* "好，不歪歪了。直接说能做什么。"
+* 表格：行动 | 效果
+* "现在要开始做哪个？"
+
+### AS级全量封禁
+
+适用于已知恶意ASN的批量封禁：
+
+```bash
+# 查找ASN归属
+whois <IP> | grep origin
+whois -h whois.apnic.net "a<IP段>" | grep net-range
+
+# iptables DROP（立即生效）
+iptables -I INPUT -s 45.148.10.0/24 -j DROP -m comment --comment "AS48090 Techoff"
+
+# firewalld zone（持久化+reload后生效）
+firewall-cmd --permanent --new-zone=block-as48090
+firewall-cmd --permanent --zone=block-as48090 --add-source=45.148.10.0/24
+firewall-cmd --permanent --zone=block-as4
+```

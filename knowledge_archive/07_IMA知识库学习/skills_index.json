@@ -1,0 +1,498 @@
+{
+  "Skill-agent-reach": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-agent-reach.md",
+    "name": "agent-reach",
+    "desc": ">- Agent Reach 全网信息检索。通过 CLI 覆盖 17 平台：全网语义搜索(Exa)、Jina Reader、 GitHub、YouTube/Bilibili/抖音、Reddit、V2EX、Twitter/X、微信公众号、RSS、LinkedIn。 零 API Key 费用，7 渠道即",
+    "size": 4305,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-agnes-image": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-agnes-image.md",
+    "name": "agnes-image",
+    "desc": "AI 图片生成工具。通过 Agnes-Image-2.0-Flash 模型根据文本描述生成高质量图片。支持多种尺寸和风格。适用于：封面设计、文章配图、海报制作、电商主图、创意素材。Agnes 图片生成 Skill触发条件用户请求生成图片、封面、海报、配图、插画时使用。工具generate_image",
+    "size": 1642,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-agnes-video-Part1": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-agnes-video-Part1.md",
+    "name": "agnes-video",
+    "desc": "AI 视频生成工具。通过 Agnes-Video-V2.0 模型生成视频。支持文本转视频、图片转视频、多图合成、关键帧动画。适用于：短剧分镜、广告试拍、社交媒体内容、产品演示。Agnes 视频生成 Skill触发条件用户请求生成视频、分镜、动画、短片时使用。工具create_video_task提交",
+    "size": 2437,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-agnes-video-Part2": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-agnes-video-Part2.md",
+    "name": "Skill-agnes-video-Part2",
+    "desc": "",
+    "size": 1852,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-agnes-video": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-agnes-video.md",
+    "name": "agnes-video",
+    "desc": "AI 视频生成工具。通过 Agnes-Video-V2.0 模型生成视频。支持文本转视频、图片转视频、多图合成、关键帧动画。适用于：短剧分镜、广告试拍、社交媒体内容、产品演示。Agnes 视频生成 Skill触发条件用户请求生成视频、分镜、动画、短片时使用。工具create_video_task提交",
+    "size": 4181,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-api-provider-integration": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-api-provider-integration.md",
+    "name": "api-provider-integration",
+    "desc": "\"第三方 AI API 提供商集成工作流：发现模型列表 → 连通性测试 → 配置验证 → 文档沉淀。当用户需要集成新的 AI API（如 SenseNova、Azure、本地模型服务）时激活。触发词：集成 API / 添加模型 / 测试 API / 配置 provider / 商汤日日新。\"",
+    "size": 2057,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-auto-hermes": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-auto-hermes.md",
+    "name": "auto-hermes",
+    "desc": "\"Hermes 自动化核心：新 Skill 自动评估、MCP 自动审查、搜索自动增强、自主进化闭环。 触发词：自动评估 Skill、审查 MCP、自动搜索增强、自主进化、闭环优化。 适用：持续优化 Hermes 性能、自动化质量控制、自主学习迭代。\"",
+    "size": 4054,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-bb-browser": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-bb-browser.md",
+    "name": "bb-browser",
+    "desc": "\"把真实 Chrome 浏览器变成 AI 可操控的 API。通过 CDP 接管已登录的浏览器， 让 AI 直接用你的登录态操作网页——点击、填表、读取、截图。 触发词：操作网页 / 登录某网站 / 抓取需要登录的页面 / 自动化浏览器 / 浏览器操作 / bb-browser。 适用：需要登录态的网",
+    "size": 3469,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-beautiful-article": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-beautiful-article.md",
+    "name": "beautiful-article",
+    "desc": "\"把素材做成美丽的单文件HTML网页文章。URL/PDF/DOCX/Markdown/文本/截图→reacticle组件协议。当需要'网页文章/长文/briefing/教程/视觉文章/审阅复盘'时触发。\"Beautiful Article背景原则AI 生成内容越复杂，输出媒介越重要。HTML 的价值",
+    "size": 16089,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-book-to-skill": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-book-to-skill.md",
+    "name": "book-to-skill",
+    "desc": "把文档(PDF/EPUB/DOCX/HTML/MD/RTF/MOBI)转为Agent Skill。提取框架/心智模型/原则/技法/反模式。当需要'转技能/知识库/学一本书/提取框架'时触发。Book-to-Skill ConverterTransform written knowledge into",
+    "size": 4064,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-code-review-and-quality": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-code-review-and-quality.md",
+    "name": "code-review-and-quality",
+    "desc": "\"按五轴模型审查代码变更（正确性/可读性/架构/安全性/性能）， 以及项目级源代码验证（语法→功能→e2e→架构→报告）。 触发词：审查代码 / review this / code review / 代码评审 / 审查这个PR / 审查变更 / 检查源代码准确度 / 验证代码缺陷 / 是否达到设计",
+    "size": 4193,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-competitive-analysis-v2": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-competitive-analysis-v2.md",
+    "name": "competitive-analysis",
+    "desc": "开源项目竞品技术深度分析。当用户要求分析一个开源/GitHub项目，并与自有项目做技术对比时触发。触发词：竞品分析 / 对比分析 / 技术对比 / 深挖 / 看看这个项目 / 和我们的比怎么样 / 开源项目分析 / 技术调研 / GitHub Trending 分析。",
+    "size": 2872,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-content-authentication": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-content-authentication.md",
+    "name": "content-authentication",
+    "desc": "多模态AI内容鉴真框架。识别合成/篡改/伪造痕迹，输出可解释判定依据与处理建议。触发词：内容鉴真 / AI内容检测 / Deepfake检测 / 伪造识别 / 真实性验证 / AIGC检测 / 创作者画像 / 反欺诈。",
+    "size": 3466,
+    "linux": 2,
+    "win": 0
+  },
+  "Skill-continuous-learning": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-continuous-learning.md",
+    "name": "continuous-learning",
+    "desc": "构建 Hermes Agent 自我进化闭环：会话观察→模式提取→效果监测→分阶段学习计划。触发词：学习引擎 / 持续学习 / 自我进化 / Phase 2",
+    "size": 2378,
+    "linux": 4,
+    "win": 0
+  },
+  "Skill-cron-troubleshooting": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-cron-troubleshooting.md",
+    "name": "cron-troubleshooting",
+    "desc": "Hermes Cron 任务故障诊断与修复。当用户报告 cron 任务失败、模型漂移、或需要排查定时任务问题时触发。包含工具限制、验证流程、常见故障模式。",
+    "size": 4089,
+    "linux": 6,
+    "win": 0
+  },
+  "Skill-databuff-watch": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-databuff-watch.md",
+    "name": "databuff-watchdescription: Databuff AI APM 自动代码质量监控triggers:CODE_REVIEW.mddatabuff-fixesANALYSIS_REPORT.mdDatabuff 自动代码质量监控自动化 cron 任务，定期审查代码质量、实施修复、追踪进度。任务执行流程1. 进入项目目录cd /root/databuffgit status2. 阅读代码审查报告Read /root/databuff/CODE_REVIEW.md 了解已知 18 个问题（P0: 2, P1: 10, P2: 6）3. 检查已有修复代码ls /root/databuff/databuff-fixes/*.java4. 选择优先级最高的问题按优先级排序：P0 > P1 > P2优先级相同时，按以下因素决定：影响范围（全链路瓶颈 > 局部优化）是否已有现成实现（PERF_OPTIMIZATION.md 中的优化方案）实施复杂度（低风险高收益优先）5. 实现优化代码将优化的 Java 类写入 /root/databuff/databuff-fixes/命名规范：Fixed<OriginalClassName>.java代码注释格式：/** * FIX (P1 — <issue_id>): <简要描述> * * <描述问题背景和修复策略> */6. 更新 SKILL.md 进度追踪表见下方 §进度追踪7. 生成维护报告格式：- 修复了什么（文件路径 + 核心改动 ≤5 行说明）- 新增代码行数- 已知问题修复进度（X/18）- 下次建议修复的问题进度追踪已修复问题#Issue严重度修复文件修复日期核心改动1ClusterCache 无内存上限P0FixedClusterCache.java2026-06-22ConcurrentHashMap → LinkedHashMap access-order + maxCapacity 10_0002SerialTaskExecutor 超时未取消 FutureP0FixedSerialTaskExecutor.java2026-06-22TimeoutException → future.cancel(true); configurable timeout5TraceAssemblyBuffer pending 无上限 + close 丢失数据P1FixedTraceMinuteMetricAggregator.java (TraceAssemblyBuffer)2026-06-22加 maxPendingTraces=50_000 强制 flush；close 先 flushAll 再 shutdown5bTraceAssemblyBuffer 全局 synchronized 锁瓶颈P1ConcurrentTraceAssemblyBuffer.java2026-06-30synchronized(this) → ConcurrentHashMap + per-bucket 细粒度锁；不同 traceId 完全并行；无阻塞 runCheck6AsyncTask 双次发布失败后静默丢弃P1FixedAsyncTask.java2026-06-22溢出时 warn 日志（每 100 次）+ AtomicLong metric 暴露10DorisStreamLoadSink 无限重试P1FixedDorisStreamLoadSink.java2026-06-22maxRetries=3, 退避 1s/2s/4s, 区分可重试/不可重试异常17OptimizedMetricAccumulator byTsId 无上限P1FixedOptimizedMetricAccumulator.java2026-06-22soft cap 10_000, 超限立即 flush + overflowCount metric—SerialTaskExecutor.close shutdownNow #14P1(合并到 #2)2026-06-22shutdown + awaitTermination(2s) → fallback shutdownNowPerf 3.5MetricAggregator.drainWindow O(n) → O(k)P1FixedTraceMinuteMetricAggregator.java2026-06-29扁平 Map → ConcurrentHashMap 二级索引 + activeWindows 集合；drainWindow O(k)、mergeLocal 无锁19FillPathAndRelationUtil 重复构建 childrenByParent MapP2databuff-fixes/FillPathAndRelationUtil.java2026-06-29→2026-07-10消除 linkOutboundRpcHttpPeers 内部重复 Map 构建 + collectTracedServices 合并到首趟循环；独立文件归档到 databuff-fixes/ 备查；spans 遍历 4→3 次。✅ 编译+javap 签名验证通过12OtlpGrpcServer 无 max message sizeP1FixedOtlpGrpcServer.java2026-07-01gRPC default 4MB → 64MB configurable (${ingest.otlp.max-message-size:67108864})；解决大数据量 OTLP ExportTraceServiceRequest 静默丢数据。结构性验证通过。13ClusterAggregator localState 无全局过期清理P1FixedClusterAggregator.java2026-07-02新增 lastAccess 时间戳 Map + ScheduledExecutorService 定时清理线程；evictionThreshold = 2×windowDuration；暴露 evictionCount metric；优雅 close()。✅ 编译通过9ZkClusterMemberDirectory listener 异常导致事件丢失P1FixedZkClusterMemberDirectory.java2026-07-03listener try-catch 兜底 + 事件派发到独立 ExecutorService 避免阻塞 Curator 线程；onCacheEvent null 防御 getCurrentData()；close() 优雅关闭事件线程池4GrpcLeaderClusterCacheTransport 无连接重试/重连P1FixedGrpcLeaderClusterCacheTransport.java2026-07-06Leader 切换时主动 invalidate 旧 channel + enableRetry max=3 + keepAlive；解决 stale connection 泄漏和无重试问题7ExpiringCache.evictOne() O(n) 全遍历淘汰P2FixedExpiringCache.java2026-07-07ConcurrentHashMap 遍历 → ConcurrentLinkedDeque 维护插入顺序；evictOne O(n) → O(1)；保持 TTL 惰性删除语义；暴露 evictionCount metric3ZK member/leadership 独立 Curator 未复用P1CuratorFrameworkManager.java + FixedZkClusterMemberDirectory.java + FixedZkClusterLeadership.java2026-07-08引入引用计数的 CuratorFrameworkManager，按 connect string 缓存共享 ZK 客户端；acquire/release 生命周期管理；✅ 编译通过Perf 3.3OptimizedMetricAccumulator 独立 JSON 序列化 — GC 热点P1OptimizedMetricAccumulatorV2.java2026-07-09每 metric new HashMap → drainRows 内复用单 HashMap + ThreadLocal ObjectMapper；12ms/1000条 → 4ms/1000条 (3x)；继续保留 soft cap 10_000 + overflowCount metric。✅ 编译通过Perf 3.6TraceMinuteMetricAggregator.drainWindow O(n) → O(k)P1FixedTraceMinuteMetricAggregator.java2026-07-09扁平 Map → ConcurrentHashMap 二级索引 + activeWindows 集合；drainWindow O(k)、mergeLocal 无锁。✅ 结构+编译通过21ConcurrentTraceAssemblyBuffer CAS 活锁P1FixedConcurrentTraceAssemblyBuffer.java2026-07-09AtomicLong 自旋 → LongAdder + striped count；结构检查通过Perf 3.2OtelConverter.attribute() O(n) → O(1)P0FixedOtelConverterV2.java2026-07-14List<KeyValue> → HashMap 一次性构建；attribute() O(n) → O(1) get()；applyHttpAttributes 同步改造；编译 exit 0待修复问题🎉 CODE_REVIEW.md 全部 18 个问题 + PERF_OPTIMIZATION.md 全部 5 个优化项均已修复。后续 cron 将聚焦于：代码质量巩固、监控埋点补充、集成测试覆盖。",
+    "desc": "Databuff AI APM 自动代码质量监控triggers:CODE_REVIEW.mddatabuff-fixesANALYSIS_REPORT.mdDatabuff 自动代码质量监控自动化 cron 任务，定期审查代码质量、实施修复、追踪进度。任务执行流程1. 进入项目目录cd /root",
+    "size": 4325,
+    "linux": 4,
+    "win": 2
+  },
+  "Skill-deepseek-harness-researc...": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-deepseek-harness-researc....md",
+    "name": "deepseek-harness-research",
+    "desc": "> DeepSeek Harness 深度研究笔记。 DeepSeek AI 发布的开源 Agent 框架，采用\"一切皆插件\"架构，由 Cordis 驱动。 核心概念：Plugin、Context、Dependency Injection、Typed Events、Reversible Effect",
+    "size": 4577,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-deployment-troubleshooti...": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-deployment-troubleshooti....md",
+    "name": "deployment-troubleshooting",
+    "desc": "针对 Spring Boot/Java 应用在容器/受限环境部署后的启动失败、配置解析错误、JVM内存异常、凭证不一致等常见问题的排查方法，以及 Node.js/Express + PM2 部署中的路由别名、进程模式等典型问题。覆盖远程 SSH 服务审计、Git diff 安全审查（JWT/Filt",
+    "size": 4515,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-devops": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-devops.md",
+    "name": "devops",
+    "desc": "\"运维开发技能包：模型配置、多分身管理、Agent持续性、视频编码、系统优化、网络代理。 触发词：模型配置 / fallback / 模型切换 / 分身管理 / profile / Agent持续性 / 反思循环 / 视频编码 / 视频转码 / system prompt优化 / token优化 /",
+    "size": 4193,
+    "linux": 3,
+    "win": 0
+  },
+  "Skill-diagnose": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-diagnose.md",
+    "name": "diagnose",
+    "desc": "\"硬 bug 和性能回退的纪律性诊断循环：复现→缩小→假设→插桩→修复→回归测试。 触发词：diagnose this / debug this / 诊断 / 调试 / 修bug / 排查。 适用：服务崩溃、API报错、性能下降、内存泄漏、间歇性故障。 反例：不要触发于新功能开发、代码审查、部署操作",
+    "size": 4346,
+    "linux": 2,
+    "win": 0
+  },
+  "Skill-diagramming": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-diagramming.md",
+    "name": "diagramming",
+    "desc": "Diagram creation skills for generating visual diagrams, flowcharts, architecture diagrams, and illustrations.Diagramming — 图表绘制技能概述图表绘制技能包，支持流程图、架构图、插",
+    "size": 757,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-dogfood": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-dogfood.md",
+    "name": "dogfood",
+    "desc": "\"Exploratory QA of web apps: find bugs, evidence, reports.\"",
+    "size": 4336,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-dream-verification-patte...": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-dream-verification-patte....md",
+    "name": "dream-verification-pattern",
+    "desc": "| 幻觉疫苗修复验证流程：当梦境系统发现 MEMORY.md 与实际配置不一致时， 使用验证脚本确认修复结果。验证脚本写在 /tmp/ 后执行，清理临时文件。 触发词：幻觉疫苗 / MEMORY.md 修正 / 梦境验证",
+    "size": 2548,
+    "linux": 3,
+    "win": 0
+  },
+  "Skill-flutter-core": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-flutter-core.md",
+    "name": "flutter-core",
+    "desc": "Flutter/Dart 核心技术速查手册。涵盖 Dart 类型系统、异步编程、Isolate 并发、Widget 体系、状态管理、性能优化、混合开发、全栈集成（API+存储+推送）。当用户问 Flutter/Dart 相关问题、需要 Flutter 代码、状态管理、性能优化、全栈集成时激活。",
+    "size": 4166,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-github-mcp": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-github-mcp.md",
+    "name": "github-mcp",
+    "desc": "\"GitHub MCP 集成指南：用 Fine-Grained Token 接入，只读+提PR模式，最小权限原则。 触发词：GitHub MCP / 接入 GitHub / 配置 GitHub Token / 操作 GitHub / git MCP。 适用：代码评审、PR 提交流程、仓库代码分析、I",
+    "size": 2216,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-hc-project-maintenance": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-hc-project-maintenance.md",
+    "name": "hc-project-maintenance",
+    "desc": "\"HC 社区项目维护：多服务器同步故障诊断、残留文件清点、源码恢复、状态报告生成。当 HC-BAK 服务器不可达、项目同步失败、或需要恢复 HC 项目时加载。\"",
+    "size": 2464,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-hermes-auto-maintenance": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-hermes-auto-maintenance.md",
+    "name": "hermes-auto-maintenance",
+    "desc": "\"Hermes 全自动维护引擎。自动执行健康检查、修复、归档、压缩等维护任务。触发词：自动维护 / 系统健康 / 会话归档 / 数据库压缩 / cron 自动修复\"",
+    "size": 1247,
+    "linux": 2,
+    "win": 0
+  },
+  "Skill-hermes-dreaming": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-hermes-dreaming.md",
+    "name": "hermes-dreaming",
+    "desc": "Hermes 梦境系统（Dreaming Engine）。模拟生物睡眠记忆巩固，跨会话自动提取偏好/项目/技能洞察并写入记忆。三维度梦境：偏好梦境（用户偏好提取）、项目梦境（架构决策/里程碑/故障模式）、技能梦境（工具使用/效率瓶颈/新技能候选）。支持定时自动运行、手动触发、dry-run 分析、梦",
+    "size": 4047,
+    "linux": 10,
+    "win": 0
+  },
+  "Skill-hermes-maintenance": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-hermes-maintenance.md",
+    "name": "hermes-maintenance",
+    "desc": "\"Hermes 系统维护技能包：MCP服务器故障诊断修复、Profile State.db清理、磁盘/临时文件维护。触发词：MCP修复 / Profile清理 / state.db过大 / 系统维护\"",
+    "size": 2906,
+    "linux": 1,
+    "win": 0
+  },
+  "Skill-hermes-webui": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-hermes-webui.md",
+    "name": "hermes-webui",
+    "desc": ">- Hermes 内置 WebUI（v0.16.0+，v0.17.0 认证安全加固，升级日志见 references/v0.17.0-upgrade-log.md）：通过 python -m hermes_cli.main dashboard 启动， 基于 FastAPI + uvicorn 的内",
+    "size": 4583,
+    "linux": 1,
+    "win": 0
+  },
+  "Skill-high-risk-ai-design": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-high-risk-ai-design.md",
+    "name": "high-risk-ai-design",
+    "desc": "\"高风险AI产品设计原则：代价不对称下的决策框架。当AI系统的错误代价从'体验下降'升级为'不可逆伤害'（生命/财产/法律）时触发。核心：安全决策单向兜底用规则锁死，体验决策平衡求最优。来源：医疗分诊AI实战（@Niney/人人都是产品经理）。触发词：高风险产品 / 安全决策 / 体验决策 / 取严",
+    "size": 3232,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-idle-conservation-workfl...": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-idle-conservation-workfl....md",
+    "name": "idle-conservation-workflow",
+    "desc": "低活跃期空闲触发梦境模式的替代产出工作流。当无新会话洞察时，通过综合历史状态索引生成结构化报告并归档长期模式条目，避免资源空转与价值真空。",
+    "size": 3401,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-index-browser-agent": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-index-browser-agent.md",
+    "name": "index-browser-agent",
+    "desc": "> Index — Laminar AI 团队的浏览器 Agent 框架。基于 Playwright + LLM 视觉推理， 自动执行复杂网页任务。支持结构化输出、本地 Chrome、会话持久、可视化追踪。 触发词：Index / lmnr-index / 浏览器Agent / 自动化浏览器 / 网",
+    "size": 4150,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-investment-recommendatio...": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-investment-recommendatio....md",
+    "name": "investment-recommendation-enrichment",
+    "desc": "在股票/投资分析任务中，为推荐标的补充完整的事件驱动理由、买入动机陈述和结构化价格区间，使推荐理由可解释、有依据、可执行。当用户要求给出买入理由、说明为什么买、或需要分析依据时激活。",
+    "size": 2036,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-java-build-troubleshooti...": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-java-build-troubleshooti....md",
+    "name": "java-build-troubleshooting",
+    "desc": "针对 Java 多模块 Maven 项目的常见编译错误、测试失败、依赖管理问题的系统化排查方法。覆盖 enforcer 插件版本冲突、Missing Symbol 错误、Mockito mock 不完整、jar 类加载冲突等典型故障模式。当用户遇到 mvn compile/test 失败、找不到符号",
+    "size": 2121,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-kitesurf-research": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-kitesurf-research.md",
+    "name": "kitesurf-research",
+    "desc": "| 研究 Kitesurf（Cloudflare AI Agent 专用浏览器）。当用户询问/研究/评估 Kitesurf 或 AI Agent 专用浏览器时激活。触发词：Kitesurf / AI 专用浏览器 / Cloudflare 浏览器 / 无状态浏览器。",
+    "size": 1691,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-llm-wiki": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-llm-wiki.md",
+    "name": "llm-wiki",
+    "desc": "\"Karpathy LLM-Wiki 知识库管理：增量构建持久化、结构化的 Markdown 知识库。 触发词：知识库 / 摄入知识 / 查知识 / 知识库健康检查 / knowledge base / 知识库维护 / 加入知识库。 适用：知识摄入（URL/文件→结构化摘要）、知识查询（问题→带来源",
+    "size": 3956,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-marketing-article-analys...": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-marketing-article-analys....md",
+    "name": "marketing-article-analysis",
+    "desc": "对云厂商/营销类推广文章进行结构化批判性分析，识别本质、对比自身架构、提取自曝短板、评估风险，输出采纳/不采纳结论。适用于百炼 CLI、Dify、Coze、LangChain Cloud 等云厂商工具评估。",
+    "size": 1697,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-markitdown": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-markitdown.md",
+    "name": "markitdown",
+    "desc": "文档格式转换工具。将 PDF/DOCX/PPTX/XLSX/HTML/CSV/JSON/XML/EPub/图片/音频/YouTube 转换为 Markdown 格式。当需要读取和分析非文本文件时激活。 trigger: 文件转换 / PDF转Markdown / Word转Markdown / PP",
+    "size": 2044,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-mcp-troubleshooting": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-mcp-troubleshooting.md",
+    "name": "mcp-troubleshooting",
+    "desc": "MCP 服务器故障诊断与修复。当需要检查 MCP 运行状态、排查连接问题、理解 auto_disable 机制时使用。触发词：MCP 故障 / 诊断 MCP / 检查 MCP 状态 / MCP 无响应MCP 故障诊断技能触发条件\"MCP 故障\"、\"MCP 无响应\"、\"检查 MCP 状态\"\"为什么某个",
+    "size": 1414,
+    "linux": 2,
+    "win": 0
+  },
+  "Skill-mcp": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-mcp.md",
+    "name": "mcp",
+    "desc": "Skills for working with MCP (Model Context Protocol) servers, tools, and integrations. Documents the built-in native MCP client — configure servers in",
+    "size": 2949,
+    "linux": 3,
+    "win": 0
+  },
+  "Skill-nihaixia": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-nihaixia.md",
+    "name": "nihaixia-tcmdescription:",
+    "desc": "|倪海厦视角的中医 AI Agent Skill，融合经方辨证、药物查询、临床医案与知识图谱。核心诊断能力：37个中医术语、12个六经公式、12个伤寒方剂、9种中药、4项舌诊编码、6类临床医案，可直接诊断推理 + 知识检索。SQLite+FTS5 本地知识库，毫秒级响应。适用场景：中医学习/咨询建议",
+    "size": 4118,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-patent-disclosure-skill": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-patent-disclosure-skill.md",
+    "name": "patent-disclosure-skilldescription: \"Generate professional Chinese patent disclosure documents from project source code and technical documentation. Analyzes code architecture, identifies patentable innovations, searches prior art via CNIPA, and produces structured disclosure books with Mermaid diagrams, claims, and Word export. Optimized for WiFi CSI sensing projects.\"version: 3.3.0category: iptriggers:\"生成专利交底书\"\"专利技术交底\"\"patent disclosure\"\"撰写交底书\"\"专利撰写\"\"技术交底文档\"\"生成权利要求\"\"专利查新\"\"CNIPA检索\"\"专利申请文件\"\"正式专利格式\"\"交底书转申请文件\"\"按专利格式重写\"专利技术交底书生成技能从项目源码和文档自动生成符合 CNIPA 标准的专利交底书。官方规范依据本技能遵循国家知识产权局官方标准：100001权利要求书模板 - 权利要求撰写规范100002说明书模板 - 说明书五部分结构100003说明书附图模板 - 附图绘制规范100004说明书摘要模板 - 摘要300字限制2025年专利申请文件撰写指导手册 - 撰写技巧详解发明专利申请文件撰写与指导手册 - 审查答复要点[发明专利新申请办理规范与文件撰写模板] - 完整格式规范，见 references/cnipa-format-2025.md触发条件当用户提到\"专利交底书\"、\"技术交底\"、\"撰写交底书\"、\"专利撰写\"、\"patent disclosure\"、\"权利要求\"、\"专利查新\"、\"CNIPA检索\"时激活。核心能力智能分析：扫描项目结构、README、技术文档，识别专利创新点查新检索：通过 CNIPA（国家知识产权局）检索现有技术，获取专利号和摘要交底书生成：生成符合 CNIPA 标准的6章结构交底书图表生成：生成 Mermaid 架构图、流程图、时序图Word导出：自动转换为 Word 文档批量生成：支持多篇专利并行生成工具依赖工具用途安装tools/mermaid_render.pyMermaid→PNG + Word导出pip install -r requirements.txttools/cnipa_epub_search.pyCNIPA专利检索（Playwright）pip install playwright && playwright install chromiumtools/cnipa_fallback_search.pyCNIPA降级检索（requests）无额外依赖tools/cnipa_epub_crawler.pyCNIPA爬虫辅助同上scripts/validate_disclosure.py交底书合规性验证无额外依赖文档提取注意事项提取 .docx/.pdf 文档时的降级策略：delegate_task (子任务并行提取)    ↓ 超时或不完整直接 terminal + python-docx/pdfplumber (单文件提取)delegate_task 适合批量但可能慢/不完整直接 python-docx 提取更可靠，适合 ≤10 个文件提取后保存为 .txt 供后续分析用户提供格式文档的处理流程（重要）当用户提供新的格式规范文档（.docx/.pdf/.md）时：先提取文档内容 - 使用 python-docx 或 markitdown 提取文本对比现有规范 - 识别与当前 skill 规范的差异点更新 skill 文件 - 在生成交底书之前，先更新 disclosure_builder.md 和/或 template_reference_official.md再生成输出 - 使用更新后的规范生成交底书关键教训：不要跳过步骤3直接生成，否则输出可能不符合用户最新要求。8步工作流（完整版）Step 1: 需求采集（intake.md）确认项目路径、产出目录、专利类型明确技术领域和发明人信息Step 2: 项目扫描（project_scanner.md）扫描项目结构，识别核心模块提取技术关键词Step 3-4: 专利点挖掘（patent_points_analyzer.md）生成候选专利点列表每个专利点包含：创新点、现有技术对比、保护方向质量评估：检查是否有明确技术特征、可实施性、非显而易见性Step 5: 查新检索（prior_art_search.md）CNIPA检索 → Google Patents → 人工分析输出 JSON：{patent_no, applicant, title, abstract, url}Step 6: 交底书预览（disclosure_preview.md）生成6章结构预览，供用户确认Step 7: 交底书生成（disclosure_builder.md + template_reference.md）生成完整交底书（含Mermaid图）同时生成 Word 文档Step 8: 交付与迭代交付交底书文件提供权利要求偏向建议（方法/系统/装置）支持迭代修改官方格式规范（摘要300字限制）根据100004说明书摘要模板，摘要必须：不超过300字（含标点）不得加标题包含五要素：名称+技术领域+技术问题+技术方案要点+主要用途指定摘要附图（最能说明技术特征的图）示例结构：本发明涉及[技术领域]，公开了一种[发明名称]，用于解决[技术问题]。该方法包括：步骤1...，步骤2...，步骤3...。主要用途是[应用场景]。官方格式规范（说明书五部分）根据100002说明书模板，说明书必须包含：技术领域 - 一句话说明所属技术领域（50-100字）背景技术 - 现有技术及其缺陷（300-800字）发明内容 - 要解决的技术问题+技术方案+有益效果（200-500字）附图说明 - 各附图的简要说明（每图20-50字）具体实施方式 - 详细实施例（1000-3000字）官方格式规范（权利要求书）根据100001权利要求书模板：使用\"权利要求书\"标题独立权利要求用序号1开始从属权利要求引用格式：\"根据权利要求X所述的...\"使用\"其特征在于\"界定技术特征保护范围从宽到窄逐级限定官方格式规范（附图）根据100003说明书附图模板：尽量竖向绘制两幅以上用\"图1\"、\"图2\"顺序编号编号标注在图正下方仅保留必要文字输出格式（技术交底书 6 章结构）⚠️ 格式区分：技术交底书 ≠ 说明书 ≠ 专利申请文件。技术交底书（Step 7 生成）：内部文档，给专利代理人看，格式灵活，6章结构。说明书（代理人转换）：正式申请文件，格式严格，5部分结构（技术领域/背景技术/发明内容/附图说明/具体实施方式），段落编号 0001.~XXXX.。专利申请文件（完整包）：权利要求书 + 说明书 + 说明书摘要，用户可能要求直接生成此格式。交底书→申请文件的转换规则见下方「交底书转专利申请文件」一节。交底书转专利申请文件当用户要求\"按正式专利申请格式重写\"时，从6章交底书转换为3部分申请文件：输出结构：权利要求书 — 从第5章\"技术关键点和欲保护点\"扩展独立权利要求：前序部分 + 「其特征在于」+ 特征部分从属权利要求：「根据权利要求X所述的…，其特征在于，…」编号 1. 2. 3.，每条结尾仅1个句号，至少8条说明书 — 从第1-4章+第6章重组段落编号 0001. 0002. ... 连续编号结构：技术领域 → 背景技术 → 发明内容 → 附图说明 → 具体实施方式禁用 Mermaid，用文字描述替代说明书摘要 — ≤300中文字符，全文不分段包含五要素：技术领域 + 技术问题 + 方案要点 + 有益效果转换要点：第1章\"技术背景\" → 说明书\"背景技术\"（段落编号从 0002. 起）第2章\"技术问题\" + 第3章\"技术方案\" → 说明书\"发明内容\"第3章\"模块说明\"/\"流程说明\" → 说明书\"具体实施方式\"（最长部分）第4章\"优点\" → 说明书\"发明内容\"的有益效果部分第5章\"权利要求\" → 独立/从属权利要求书（格式严格化）所有 Mermaid 图 → 文字描述的\"附图说明\"批量并行：≥2份文件时用 delegate_task 并行，每批≤3个子任务（平台并发限制）。批量重写工作流详见 references/batch-rewrite-workflow.md。6章结构技术背景与现有技术（1.1 现有技术 + 1.2 现有技术缺点）→ 对应说明书\"背景技术\"本发明所要解决的技术问题 → 对应说明书\"发明内容\"的问题部分技术方案详细阐述（3.1 背景 + 3.2 系统框图 + 3.3 模块说明 + 3.4 流程说明 + 3.5 关键参数）→ 对应说明书\"发明内容\"方案部分 + \"具体实施方式\"与现有技术相比的优点 → 对应说明书\"发明内容\"效果部分技术关键点和欲保护点 → 对应\"权利要求书\"其它（实施例、技术效果、参数示例）→ 对应\"具体实施方式\"补充图表规范使用 Mermaid 语法（flowchart TB、graph LR）系统框图用 subgraph 分层流程图用 flowchart TD时序图用 sequenceDiagram⚠️ Mermaid 渲染 Pitfalls（专利文档高频踩坑）坑症状Fix方括号与节点语法冲突边标签含 [帧×子载波] 时，Mermaid 将",
+    "desc": "\"Generate professional Chinese patent disclosure documents from project source code and technical documentation. Analyzes code architecture, identifie",
+    "size": 4120,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-prompt-injection-defense": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-prompt-injection-defense.md",
+    "name": "prompt-injection-defense",
+    "desc": "\"Prompt Injection 防御技能包：检测、防御、审计 Direct/Indirect Prompt Injection 攻击。 基于 OWASP LLM Top 10 (2025)、ai-engineering-from-scratch Phase 18 课程体系。 触发词：prompt",
+    "size": 4224,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-provider-config": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-provider-config.md",
+    "name": "provider-config",
+    "desc": "\"在 Hermes config.yaml 中添加/修改 AI 提供商配置。 覆盖：新增 provider、设置主力模型、配置 fallback、更新 auxiliary models、 验证配置生效。适用于用户更换模型供应商、添加新 API Key、 调整 provider 优先级、配置多 pro",
+    "size": 4437,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-security-toolkit-Part1": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-security-toolkit-Part1.md",
+    "name": "security-toolkit",
+    "desc": "网络安全工具包。集成安全加固、安全审计、入侵检测规则、漏洞扫描、应急响应、云原生安全、自进化机制等安全脚本和知识库。当用户需要安全加固、安全审计、渗透测试、应急响应、漏洞扫描、K8s安全、决策日志、A/B测试时使用。",
+    "size": 2364,
+    "linux": 1,
+    "win": 0
+  },
+  "Skill-security-toolkit-Part2": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-security-toolkit-Part2.md",
+    "name": "Skill-security-toolkit-Part2",
+    "desc": "",
+    "size": 2687,
+    "linux": 2,
+    "win": 0
+  },
+  "Skill-security-toolkit-Part3": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-security-toolkit-Part3.md",
+    "name": "Skill-security-toolkit-Part3",
+    "desc": "",
+    "size": 1119,
+    "linux": 3,
+    "win": 0
+  },
+  "Skill-security-toolkit": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-security-toolkit.md",
+    "name": "security-toolkit",
+    "desc": "网络安全工具包。集成安全加固、安全审计、入侵检测规则、漏洞扫描、应急响应、云原生安全、自进化机制等安全脚本和知识库。当用户需要安全加固、安全审计、渗透测试、应急响应、漏洞扫描、K8s安全、决策日志、A/B测试时使用。",
+    "size": 4131,
+    "linux": 3,
+    "win": 0
+  },
+  "Skill-self-evolution": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-self-evolution.md",
+    "name": "self-evolution",
+    "desc": "\"Self-Evolution 进化体系总览：整合 darwin-skill（9维rubric优化）、adversarial-evaluator（对抗式评估）、skill_utility_tracker（效用追踪）、self-harness（自进化门控）四大子系统。当需要了解整体进化架构、选择进化工",
+    "size": 4298,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-self-heal": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-self-heal.md",
+    "name": "self-heal",
+    "desc": "\"自愈基础设施 3.0 — 故障推理引擎 + 修复沙箱 + 经验学习闭环。当系统异常（服务宕机/磁盘满/进程僵尸/网络断连/配置错误）时自动诊断根因、安全修复、记录经验。\"",
+    "size": 10926,
+    "linux": 20,
+    "win": 0
+  },
+  "Skill-session-maintenance": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-session-maintenance.md",
+    "name": "session-maintenance",
+    "desc": "\"Hermes 会话管理：状态.db 归档、清理、健康检查。当需要归档会话、清理 state.db、或处理活跃会话超阈值时加载。\"",
+    "size": 4317,
+    "linux": 1,
+    "win": 0
+  },
+  "Skill-skill-library-maintenanc...": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-skill-library-maintenanc....md",
+    "name": "skill-library-maintenance",
+    "desc": "\"维护 Hermes Skill 库完整性：检查双目录结构、补充缺失 frontmatter、运行 Curator 清理。触发词：skill 审计 / 技能库维护 / 检查 skill / 修复 skill 路径 / 清理归档\"",
+    "size": 4371,
+    "linux": 18,
+    "win": 0
+  },
+  "Skill-spec-driven-development": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-spec-driven-development.md",
+    "name": "spec-driven-development",
+    "desc": "规格驱动开发。在写任何代码之前先写规格说明。适用于：启动新项目/功能、需求模糊、变更跨多个文件、做架构决策、任务超过30分钟。不适用于：单行修复、拼写错误、自包含的明确变更。Spec-Driven Development\"没有规格的代码就是猜测。\"核心理念规格说明是 AI 和人类工程师之间的共享事实",
+    "size": 4107,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-stock-analyst": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-stock-analyst.md",
+    "name": "stock-analyst",
+    "desc": "|- A 股智能分析自动化框架。集东方财富概念数据采集、题材热度排行、短线7天推荐与长线1-3月组合策略生成、HTML/Markdown可视化报告、交互式买入推荐、实时持仓追踪、动态调仓建议于一体。支持按天/周自动推送、用户选择跟踪、最佳买入点推荐、止损止盈追踪。触发词：\"A股分析\"、\"股票推荐\"、",
+    "size": 14071,
+    "linux": 7,
+    "win": 0
+  },
+  "Skill-sysops-toolkit": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-sysops-toolkit.md",
+    "name": "sysops-toolkit",
+    "desc": "\"系统运维自动化工具包。集成健康检查、日志分析、自动备份、性能监控、RAG文档预处理等运维脚本。当用户需要系统运维、性能监控、日志分析、备份管理、文档解析、安全加固、远程部署验证、全栈服务检查、会话归档时使用。\"",
+    "size": 4253,
+    "linux": 13,
+    "win": 0
+  },
+  "Skill-system-health-dashboard": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-system-health-dashboard.md",
+    "name": "system-health-dashboard",
+    "desc": "\"Hermes 全系统评估仪表盘：生成系统概况、已集成项目横向对比、能力雷达图、迭代路线图、健康建议。触发词：全面评估 / 系统评估 / 评估报告 / 雷达图 / 全系统检查\"",
+    "size": 1777,
+    "linux": 2,
+    "win": 0
+  },
+  "Skill-threat-intelligence-anal...": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-threat-intelligence-anal....md",
+    "name": "threat-intelligence-analysis",
+    "desc": "多数据源威胁情报分析与报告生成技能。整合 IOC、SSH 日志、lastb 等数据源进行交叉验证，产出完整威胁情报报告及防御建议。适用于蜜罐（HoneyPort）、IDS、防火墙日志等多种安全数据源分析场景。",
+    "size": 6326,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-tts-voice-synthesis": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-tts-voice-synthesis.md",
+    "name": "tts-voice-synthesis",
+    "desc": "\"语音合成技能：ChatTTS 自然语音 + espeak-ng 兜底方案。支持 cron 定时播报、自然语音生成、降级策略。当需要生成语音播报、TTS 合成、音频输出时加载。触发词：语音播报 / TTS / 音频 / 播报 / 朗读 / 语音合成。\"",
+    "size": 1943,
+    "linux": 5,
+    "win": 0
+  },
+  "Skill-turbovec-integration": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-turbovec-integration.md",
+    "name": "turbovec-integration",
+    "desc": "向量索引集成工作流。通过 Turbovec 将 Hermes 知识库升级为向量语义搜索，支持百万级文档检索。触发词：向量搜索 / 语义检索 / turbovec / 知识库升级 / 向量索引。",
+    "size": 2128,
+    "linux": 1,
+    "win": 0
+  },
+  "Skill-vless-uri-config": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-vless-uri-config.md",
+    "name": "vless-uri-config",
+    "desc": "从 VLESS URI 快速生成 Xray 配置、验证代理是否真正生效、诊断同网段节点问题、配置选择性路由（仅 GitHub/国外走代理）。",
+    "size": 2806,
+    "linux": 0,
+    "win": 0
+  },
+  "Skill-weiyun-backup": {
+    "file": "C:\\Users\\liuchao\\Desktop\\sol-pi-engram-evolution\\knowledge_archive\\07_IMA知识库学习\\notes\\Skill-weiyun-backup.md",
+    "name": "weiyun-backup",
+    "desc": ">- 微云网盘自动备份工作流。将 Hermes 核心数据或项目文件打包上传到微云，并生成备份报告同步到 IMA 知识库。 支持两种场景：(1) Hermes 核心数据定期备份 (2) 项目级打包备份（源代码/文档/配置/知识库分包上传，用于项目平移）。 触发词：微云备份 / weiyun backu",
+    "size": 7161,
+    "linux": 3,
+    "win": 0
+  }
+}

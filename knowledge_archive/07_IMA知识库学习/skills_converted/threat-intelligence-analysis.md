@@ -1,0 +1,278 @@
+---
+name: threat-intelligence-analysis
+description: 多数据源威胁情报分析与报告生成技能
+version: 1.0.0
+category: security
+tags: ["安全", "威胁情报", "蜜罐", "数据分析", "入侵检测", "报告生成"]
+metadata:
+  hermes:
+    tags: ["安全", "威胁情报", "蜜罐", "数据分析", "入侵检测", "报告生成"]
+    source: IMA 知识库导入
+---
+
+# threat-intelligence-analysis
+
+> 多数据源威胁情报分析与报告生成技能。整合 IOC、SSH 日志、lastb 等数据源进行交叉验证，产出完整威胁情报报告及防御建议。适用于蜜罐（HoneyPort）、IDS、防火墙日志等多种安全数据源分析场景。
+
+# 🔍 威胁情报分析与报告生成技能
+
+## 快速开始
+
+```bash
+# 读取并分析 IOC 数据
+cat /var/log/honeyport/iocs.json | python3 -m json.tool
+
+# 生成威胁情报报告
+python3 scripts/threat_analyzer.py --ioc iocs.json --secure /var/log/secure --lastb-output lastb.txt
+```
+
+## 1. 核心数据源及采集方法
+
+### 1.1 IOC 汇总（JSON 格式）
+
+典型路径：`/var/log/honeyport/iocs.json`
+
+关键字段：
+
+* `total_attacks`：总攻击次数
+* `unique_ips`：唯一攻击 IP 数量
+* `attack_patterns`：攻击类型分布计数
+* `blocked_ips`：已封禁 IP 列表
+* `analysis_period`：分析时间范围
+* `top_targeted_users`：被攻击目标账号列表
+
+示例分析：
+
+```python
+import json
+with open('/var/log/honeyport/iocs.json') as f:
+    d = json.load(f)
+print(f"[{d['analysis_period']}] {d['total_attacks']} attacks from {d['unique_ips']} IPs")
+for typ, cnt in d['attack_patterns'].items():
+    pct = cnt/d['total_attacks']*100
+    print(f"  {typ}: {cnt} ({pct:.1f}%)")
+```
+
+### 1.2 SSH 安全日志
+
+典型路径：`/var/log/secure` 或 `/var/log/auth.log`
+
+关键字段提取命令：
+
+```bash
+# 方法A：提取所有连接IP（适用于Connection closed模式）
+grep -oP 'from \K[\d.]+' /var/log/secure | grep -vE '^127\.|^10\.' | sort | uniq -c | sort -rn
+
+# 方法B：从"Connection closed by"模式提取（新端口扫描场景）
+grep "Connection" /var/log/secure | awk '{print $(NF-3)}' | sort | uniq -c | sort -rn
+
+# 统计失败密码尝试数
+grep "Failed password" /var/log/secure | wc -l
+
+# 查看最近成功公钥登录（需人工审计）
+grep "Accepted publickey" /var/log/secure
+```
+
+> ⚠️ **陷阱**: `grep -c "pattern"` 无匹配时返回 exit 1，在 `set -e` 脚本中提前退出。改用 `grep pattern | wc -l` 或 `|| var=0` 模式。
+
+### 1.3 Btmp 失败登录记录（lastb）
+
+命令：
+
+```bash
+# 查看所有失败登录（按时间倒序）
+lastb -n 50
+
+# 按 IP 频次统计（第 3 列为远程 IP）
+lastb | awk '{print $3}' | sort | uniq -c | sort -rn | head -20
+
+# 特定 IP 的攻击强度确认
+lastb | grep '194.59.31.208' | wc -l
+```
+
+## 2. 五步分析法
+
+### Step 1：IOC 概览提取
+
+从 iocs.json 获取总攻击量、唯一攻击数、攻击类型分布。判断威胁等级：
+
+> 100 次攻击 from >10 IPs → **MEDIUM**
+
+> 500 次攻击 or single IP >100 attempts → **HIGH**
+
+* Presence of root/MQ default accounts targeted → **CRITICAL**
+
+### Step 2：独立日志交叉验证
+
+分别运行 SSH 日志分析和 lastb IP 频次统计，与 iocs.json 中的 blocked\_ips 做比对。
+
+### Step 3：发现未封禁的高频攻击源
+
+找出出现在 secure/lastb 中但**不在** iocs.json `blocked_ips` 列表的 IP：
+
+```bash
+# pseudo-code for unlisted high-frequency IPs
+for ip in $(grep -oP 'from \K[\d.]+' /var/log/secure | sort | uniq -c | awk '$1>50{print $2}'); do
+    if ! grep -q "$ip" /var/log/honeyport/blocked_ips.txt; then
+        echo "ALERT: $ip is high-frequency but not blocked"
+    fi
+done
+```
+
+典型案例：`194.59.31.208`（1,469 次 lastb 失败记录）未存在于封禁列表 → **紧急加入黑名单**。
+
+### Step 4：审计成功访问（含公钥指纹比对）
+
+检查是否有成功登录（特别是公钥认证）来自非授权 IP：
+
+```bash
+# 查看所有公钥认证成功记录及IP频次
+grep "Accepted publickey" /var/log/secure | grep -oP 'from \K[^\s]+' | sort | uniq -c | sort -rn
+
+# 获取 authorized_keys 所有密钥指纹（用于交叉比对）
+ssh-keygen -lf ~/.ssh/authorized_keys
+```
+
+**关键技巧**: 将 secure 日志中的 IP 与 authorized\_keys 指纹交叉验证：
+
+* 若 secure 中某 IP 公钥认证成功 → 用 `ssh-keygen -lf` 查找该 IP 对应的密钥所有者
+* 若密钥所有者与预期（用户自有）一致 → 排除威胁
+* 若密钥所有者未知或不匹配 → 标记为可疑，审查密钥
+
+**典型案例**: `27.186.125.237` 在 secure 日志中有 375 次连接（未出现在蜜罐 IOC 中，因蜜罐端口不同），其中 20 次公钥认证成功。通过 `ssh-keygen -lf` 确认密钥指纹 `SHA256:HwTttla9Ft7snVXtLCLNwJZInlDP496pe/dpBjOSRT8` 归属 `a13292988088@??PC`（用户自有），排除威胁。
+
+**陷阱**: 仅靠蜜罐 IOC 数据会遗漏通过公钥正常登录的 IP，必须交叉验证 secure 日志。蜜罐端口（如 22222）与 SSH 端口（如 22）不同时，蜜罐不会捕获 SSH 端口上的攻击。
+
+### Step 5：生成结构化报告
+
+输出包含以下章节的 Markdown 报告：
+
+* 执行摘要（风险等级、总量统计）
+* 攻击 IP Top 10（来源、频率、状态）
+* 攻击类型分布（饼图/条形图 + 表格）
+* 被攻击账号排名
+* 地理分布（基于 ASN/IP 归属）
+* 威胁等级分类（高/中/低）
+* 防御措施建议（立即/短期/长期）
+* 附录：参考命令
+
+## 3. 关键技巧与陷阱
+
+| **问题**                                             | **原因**                                       | **解决方案**                                                                  |   |            |
+| -------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------- | - | ---------- |
+| `grep -c "pattern" file` 无匹配时返回 exit 1             | 匹配行为导致退出码 1，在 `set -e` 脚本中提前退出               | 改用 `grep pattern file \| wc -l` 或 \`                                      | ​ | var=0\` 模式 |
+| `lastb` 重启后数据丢失                                    | btmp 文件在系统重启时被清空                             | 定期备份 lastb 输出到持久化日志，或直接使用 /var/log/secure 作为主要数据源                         |   |            |
+| Cloudflare/AWS IP 误判                               | 这些 ASN 包含合法代理服务                              | 结合行为频率和目标账号综合判断，不仅凭 ASN 封禁                                                |   |            |
+| 公钥认证成功但可疑                                          | 密钥可能已泄露                                      | 审查 `authorized_keys` 中的密钥所有者、指纹和创建时间                                      |   |            |
+| `awk '{print $(NF-3)}'` 误匹配 "Connection closed by" | 该模式在 secure 日志中用于 preauth 连接                 | 需区分 "Connection closed by IP" 和 "Connection from IP" 两种模式，前者是主动关闭，后者是连接建立 |   |            |
+| journalctl 查 sshd 无结果                              | sshd-session 服务条目可能不在 journalctl -u sshd 范围内 | 优先用 `grep "Aug  N" /var/log/secure` 获取当日攻击，journalctl 仅作辅助                |   |            |
+| 周期性扫描模式识别                                          | 同一网段 IP 按固定时间槽出现                             | 记录时间槽规律可作为告警基线，频率异常变化时需关注                                                 |   |            |
+
+## 4. 自动化集成
+
+Cron 定时任务（每 6 小时）：
+
+```
+0 */6 * * * /usr/local/bin/threat_intel_analyzer.sh >> /var/log/honeyport/cran_analyse.log 2>&1
+```
+
+脚本逻辑：
+
+1. 读取 iocs.json 提取当前封禁列表
+2. 解析 secure.log 获取近期活跃 IP 及成功登录项
+3. 运行 `lastb` 获取高频攻击者
+4. 对比生成了：
+   * `new_unlisted_high_freq_ip.txt`（需新增封禁的 IP）
+   * `suspicious_success_login.txt`（需审计的成功登录）
+   * `threat_report_yyyymmdd.md`（完整报告）
+
+## 5. 模板输出样式（节选）
+
+```markdown
+# 🔒 威胁情报分析报告
+
+**日期**: YYYY-MM-DD  
+**分析周期**: YYYY-MM/DD ~ YYYY-MM/DD  
+
+## 1. 执行摘要
+
+过去 X 天内，共记录 **Y 次** 攻击，涉及 **Z 个唯一 IP**。主要方式为 SSH 暴力破解 (占 A.B%)。
+
+## 2. 攻击 IP Top 10
+
+| 排名 | IP | 来源 | 等级 | 状态 |
+|------|-----|------|------|------|
+| 1 | `45.148.10.71` | iocs.json/lastb | 🟥 高 | ✅ 已封禁 |
+...
+
+## 7. 防御建议
+
+### 🔴 立即行动
+- 封禁 `194.59.31.208`（lastb 记录 1,469 次失败）
+- 审查 `27.186.125.237` 的 SSH 公钥授权
+- 检查 `~/.ssh/authorized_keys`
+
+### 🟠 短期加固
+- 禁用 SSH 密码认证 (`PasswordAuthentication no`)
+- 配置 Fail2Ban 实时监控
+- 限制 Root SSH 登录 (`PermitRootLogin prohibit-password`)
+```
+
+### IOC 数据格式注意
+
+`/var/log/honeyport/iocs.json` 存在格式不一致问题：旧条目使用扁平结构（`ip`/`type`/`status`），新条目使用嵌套结构（`src_ip`/`session_id`/`iocs`数组）。解析时需兼容两种格式。
+
+### fail2ban 封禁缺口警示
+
+2026-08-12 分析发现：Top 攻击者 `27.186.125.58`（5天82次攻击）未出现在 fail2ban 封禁列表中，说明 fail2ban 阈值可能过高或 jail 配置未能及时触发。生成报告时应显式对比"高频攻击 IP"与"当前封禁列表"，标注潜在封禁缺口。
+
+### fail2ban findtime 检测盲区（2026-08-17）
+
+`27.186.8.84` 单日 27 次 SSH 暴力破解，fail2ban sshd jail **未触发封禁**：
+
+* **原因**：攻击间隔约 2 小时，单次连接失败后关闭，未在同一 findtime 窗口内累积 3 次失败
+* **配置**：findtime=600s (10分钟)，maxretry=3 → 低频分散攻击无法触发
+* **解决方案**：手动封禁 + 考虑启用 sshd-ddos jail（findtime=60s, maxretry=10 更严格）或降低 findtime/maxretry
+* **报告应显式标注**："⚠️ 高频攻击 IP 未被 fail2ban 封禁"，提示管理员检查 jail 阈值配置
+
+## Cron 式快速分析流程
+
+当作为 cron 任务执行时（无用户交互），使用精简流程：
+
+1. **判断是否需要生成报告**: 若 `journalctl --since <上次报告时间> -u sshd | grep -c "Connection closed\|Invalid user"` 返回 0，生成分支周期报告注明"无新增活动"
+2. **数据采集**: 优先用 `journalctl -u sshd` 而非 `/var/log/secure`（避免权限问题）
+3. **IOC 检查**: 读取 `/var/log/honeyport/iocs.json` 获取封禁列表
+4. **fail2ban 状态**: `sudo fail2ban-client status` 确认 jail 正常运行
+5. **报告路径**: `/var/log/honeyport/threat-report-<日期>.md`
+
+> ⚠️ **注意**: `lastb` 可能因 btmp 文件权限问题无输出，此时依赖 journalctl 作为主要数据源。
+
+## 支持文件
+
+* `scripts/threat_analyzer.py` —— 威胁分析 Python 脚本骨架
+* `templates/report_template.md` —— Markdown 报告模板
+* `references/cross-validation-techniques.md` —— 蜜罐与 SSH 日志交叉验证技巧（含 lastb 缺失处理、公钥认证成功审计流程）
+* `references/secure-log-patterns.md` —— secure 日志连接模式解析（Connection closed by 模式、周期性扫描识别）
+* `references/periodic-scan-pattern.md` —— 172.236.228.x 网段 6 小时周期扫描模式分析及历史趋势
+* `references/2026-08-09-analysis.md` —— 2026-08-09 周期分析报告（攻击降至历史低位）
+* `references/2026-08-12-analysis.md` —— 2026-08-12 周期分析报告（持续性攻击识别+封禁缺口警示）
+* `references/2026-08-18-analysis.md` —— 2026-08-18 周期分析报告（fail2ban findtime 检测盲区案例）
+
+## 步骤
+
+1. **准备输入** — 确认输入数据和参数完整
+2. **执行处理** — 调用工具完成核心逻辑
+3. **输出结果** — 生成目标产物（文件/报告/状态）
+4. **异常处理** — 失败时返回错误信息，不静默
+
+## 验证
+
+- [ ] 输出文件/报告已生成
+
+- [ ] 处理逻辑覆盖主要场景
+
+- [ ] 错误情况有明确提示
+
+- [ ] 输出格式符合预期
+
+

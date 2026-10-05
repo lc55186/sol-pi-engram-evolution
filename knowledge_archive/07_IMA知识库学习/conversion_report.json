@@ -1,0 +1,344 @@
+[
+  {
+    "name": "agent-reach",
+    "cat": "imported",
+    "desc": "Agent Reach 全网信息检索",
+    "size": 6133
+  },
+  {
+    "name": "agnes-image",
+    "cat": "imported",
+    "desc": "AI 图片生成工具",
+    "size": 2377
+  },
+  {
+    "name": "agnes-video",
+    "cat": "imported",
+    "desc": "AI 视频生成工具",
+    "size": 8734
+  },
+  {
+    "name": "api-provider-integration",
+    "cat": "imported",
+    "desc": "第三方 AI API 提供商集成工作流：发现模型列表 → 连通性测试 → 配置验证 → 文档沉淀",
+    "size": 3329
+  },
+  {
+    "name": "auto-hermes",
+    "cat": "autonomous",
+    "desc": "Hermes 自动化核心：新 Skill 自动评估、MCP 自动审查、搜索自动增强、自主进化闭环",
+    "size": 5385
+  },
+  {
+    "name": "bb-browser",
+    "cat": "imported",
+    "desc": "把真实 Chrome 浏览器变成 AI 可操控的 API",
+    "size": 4361
+  },
+  {
+    "name": "beautiful-article",
+    "cat": "imported",
+    "desc": "把素材做成美丽的单文件HTML网页文章",
+    "size": 27102
+  },
+  {
+    "name": "book-to-skill",
+    "cat": "imported",
+    "desc": "把文档(PDF/EPUB/DOCX/HTML/MD/RTF/MOBI)转为Agent Skill",
+    "size": 4634
+  },
+  {
+    "name": "code-review-and-quality",
+    "cat": "software-development",
+    "desc": "按五轴模型审查代码变更（正确性/可读性/架构/安全性/性能）， 以及项目级源代码验证（语法→功能→e2e→架构→报告）",
+    "size": 5139
+  },
+  {
+    "name": "competitive-analysis",
+    "cat": "software-development",
+    "desc": "开源项目竞品技术深度分析",
+    "size": 3710
+  },
+  {
+    "name": "content-authentication",
+    "cat": "security",
+    "desc": "多模态AI内容鉴真框架",
+    "size": 4512
+  },
+  {
+    "name": "continuous-learning",
+    "cat": "imported",
+    "desc": "构建 Hermes Agent 自我进化闭环：会话观察→模式提取→效果监测→分阶段学习计划",
+    "size": 2962
+  },
+  {
+    "name": "cron-troubleshooting",
+    "cat": "devops",
+    "desc": "Hermes Cron 任务故障诊断与修复",
+    "size": 5071
+  },
+  {
+    "name": "databuff-watch",
+    "cat": "imported",
+    "desc": "Databuff AI APM 自动代码质量监控",
+    "size": 11142
+  },
+  {
+    "name": "deepseek-harness-research",
+    "cat": "research",
+    "desc": "DeepSeek Harness 深度研究笔记",
+    "size": 6171
+  },
+  {
+    "name": "deployment-troubleshooting",
+    "cat": "devops",
+    "desc": "针对 Spring Boot/Java 应用在容器/受限环境部署后的启动失败、配置解析错误、JVM内存异常、凭证不一致等常见问题的排查方法，以及 Node",
+    "size": 5142
+  },
+  {
+    "name": "devops",
+    "cat": "devops",
+    "desc": "运维开发技能包：模型配置、多分身管理、Agent持续性、视频编码、系统优化、网络代理",
+    "size": 9756
+  },
+  {
+    "name": "diagnose",
+    "cat": "devops",
+    "desc": "硬 bug 和性能回退的纪律性诊断循环：复现→缩小→假设→插桩→修复→回归测试",
+    "size": 5074
+  },
+  {
+    "name": "diagramming",
+    "cat": "imported",
+    "desc": "Diagram creation skills for generating visual diagrams, flowcharts, architecture diagram",
+    "size": 1649
+  },
+  {
+    "name": "dogfood",
+    "cat": "imported",
+    "desc": "Exploratory QA of web apps: find bugs, evidence, reports",
+    "size": 5319
+  },
+  {
+    "name": "dream-verification-pattern",
+    "cat": "devops",
+    "desc": "幻觉疫苗修复验证流程：当梦境系统发现 MEMORY",
+    "size": 3598
+  },
+  {
+    "name": "flutter-core",
+    "cat": "imported",
+    "desc": "Flutter/Dart 核心技术速查手册",
+    "size": 5893
+  },
+  {
+    "name": "github-mcp",
+    "cat": "devops",
+    "desc": "GitHub MCP 集成指南：用 Fine-Grained Token 接入，只读+提PR模式，最小权限原则",
+    "size": 3268
+  },
+  {
+    "name": "hc-project-maintenance",
+    "cat": "devops",
+    "desc": "HC 社区项目维护：多服务器同步故障诊断、残留文件清点、源码恢复、状态报告生成",
+    "size": 3909
+  },
+  {
+    "name": "hermes-auto-maintenance",
+    "cat": "imported",
+    "desc": "Hermes 全自动维护引擎",
+    "size": 2834
+  },
+  {
+    "name": "hermes-dreaming",
+    "cat": "imported",
+    "desc": "Hermes 梦境系统（Dreaming Engine）",
+    "size": 5512
+  },
+  {
+    "name": "hermes-maintenance",
+    "cat": "devops",
+    "desc": "Hermes 系统维护技能包：MCP服务器故障诊断修复、Profile State",
+    "size": 4425
+  },
+  {
+    "name": "hermes-webui",
+    "cat": "imported",
+    "desc": "Hermes 内置 WebUI（v0",
+    "size": 5249
+  },
+  {
+    "name": "high-risk-ai-design",
+    "cat": "imported",
+    "desc": "高风险AI产品设计原则：代价不对称下的决策框架",
+    "size": 5216
+  },
+  {
+    "name": "idle-conservation-workflow",
+    "cat": "devops",
+    "desc": "低活跃期空闲触发梦境模式的替代产出工作流",
+    "size": 5756
+  },
+  {
+    "name": "index-browser-agent",
+    "cat": "automation",
+    "desc": "Index — Laminar AI 团队的浏览器 Agent 框架",
+    "size": 6092
+  },
+  {
+    "name": "investment-recommendation-enrichment",
+    "cat": "research",
+    "desc": "在股票/投资分析任务中，为推荐标的补充完整的事件驱动理由、买入动机陈述和结构化价格区间，使推荐理由可解释、有依据、可执行",
+    "size": 2802
+  },
+  {
+    "name": "java-build-troubleshooting",
+    "cat": "devops",
+    "desc": "针对 Java 多模块 Maven 项目的常见编译错误、测试失败、依赖管理问题的系统化排查方法",
+    "size": 2740
+  },
+  {
+    "name": "kitesurf-research",
+    "cat": "research",
+    "desc": "研究 Kitesurf（Cloudflare AI Agent 专用浏览器）",
+    "size": 2348
+  },
+  {
+    "name": "llm-wiki",
+    "cat": "imported",
+    "desc": "Karpathy LLM-Wiki 知识库管理：增量构建持久化、结构化的 Markdown 知识库",
+    "size": 5280
+  },
+  {
+    "name": "marketing-article-analysis",
+    "cat": "research",
+    "desc": "对云厂商/营销类推广文章进行结构化批判性分析，识别本质、对比自身架构、提取自曝短板、评估风险，输出采纳/不采纳结论",
+    "size": 2906
+  },
+  {
+    "name": "markitdown",
+    "cat": "imported",
+    "desc": "文档格式转换工具",
+    "size": 3016
+  },
+  {
+    "name": "mcp",
+    "cat": "imported",
+    "desc": "Skills for working with MCP (Model Context Protocol) servers, tools, and integrations",
+    "size": 6906
+  },
+  {
+    "name": "mcp-troubleshooting",
+    "cat": "imported",
+    "desc": "MCP 服务器故障诊断与修复",
+    "size": 2612
+  },
+  {
+    "name": "nihaixia-tcm",
+    "cat": "imported",
+    "desc": "倪海厦视角的中医 AI Agent Skill，融合经方辨证、药物查询、临床医案与知识图谱",
+    "size": 5676
+  },
+  {
+    "name": "patent-disclosure-skill",
+    "cat": "legal",
+    "desc": "Generate professional Chinese patent disclosure documents from project source code and t",
+    "size": 5529
+  },
+  {
+    "name": "prompt-injection-defense",
+    "cat": "security",
+    "desc": "Prompt Injection 防御技能包：检测、防御、审计 Direct/Indirect Prompt Injection 攻击",
+    "size": 5921
+  },
+  {
+    "name": "provider-config",
+    "cat": "imported",
+    "desc": "在 Hermes config",
+    "size": 9354
+  },
+  {
+    "name": "security-toolkit",
+    "cat": "security",
+    "desc": "网络安全工具包",
+    "size": 7912
+  },
+  {
+    "name": "self-evolution",
+    "cat": "imported",
+    "desc": "Self-Evolution 进化体系总览：整合 darwin-skill（9维rubric优化）、adversarial-evaluator（对抗式评估）、skill\\_ut",
+    "size": 5899
+  },
+  {
+    "name": "self-heal",
+    "cat": "devops",
+    "desc": "自愈基础设施 3",
+    "size": 29200
+  },
+  {
+    "name": "session-maintenance",
+    "cat": "devops",
+    "desc": "Hermes 会话管理：状态",
+    "size": 5442
+  },
+  {
+    "name": "skill-library-maintenance",
+    "cat": "devops",
+    "desc": "维护 Hermes Skill 库完整性：检查双目录结构、补充缺失 frontmatter、运行 Curator 清理",
+    "size": 5303
+  },
+  {
+    "name": "spec-driven-development",
+    "cat": "imported",
+    "desc": "规格驱动开发",
+    "size": 5498
+  },
+  {
+    "name": "stock-analyst",
+    "cat": "research",
+    "desc": "A 股智能分析自动化框架",
+    "size": 24193
+  },
+  {
+    "name": "sysops-toolkit",
+    "cat": "devops",
+    "desc": "系统运维自动化工具包",
+    "size": 6013
+  },
+  {
+    "name": "system-health-dashboard",
+    "cat": "devops",
+    "desc": "Hermes 全系统评估仪表盘：生成系统概况、已集成项目横向对比、能力雷达图、迭代路线图、健康建议",
+    "size": 2838
+  },
+  {
+    "name": "threat-intelligence-analysis",
+    "cat": "security",
+    "desc": "多数据源威胁情报分析与报告生成技能",
+    "size": 8348
+  },
+  {
+    "name": "tts-voice-synthesis",
+    "cat": "media",
+    "desc": "语音合成技能：ChatTTS 自然语音 + espeak-ng 兜底方案",
+    "size": 2828
+  },
+  {
+    "name": "turbovec-integration",
+    "cat": "research",
+    "desc": "向量索引集成工作流",
+    "size": 2916
+  },
+  {
+    "name": "vless-uri-config",
+    "cat": "imported",
+    "desc": "从 VLESS URI 快速生成 Xray 配置、验证代理是否真正生效、诊断同网段节点问题、配置选择性路由（仅 GitHub/国外走代理）",
+    "size": 3698
+  },
+  {
+    "name": "weiyun-backup",
+    "cat": "imported",
+    "desc": "微云网盘自动备份工作流",
+    "size": 12739
+  }
+]
